@@ -2,6 +2,10 @@
 
 This document explains how the blog works in the Monsoft Solutions website.
 
+**Related Documentation:**
+- [IMAGES.md](./IMAGES.md) — Image optimization and usage
+- [BLOG-WRITING-SKILL.md](./BLOG-WRITING-SKILL.md) — Content guidelines and SEO best practices
+
 ## Overview
 
 The blog uses **Astro Content Collections** to manage blog posts as Markdown files. This provides:
@@ -54,7 +58,9 @@ featured: false                              # Optional, shows in featured secti
 draft: false                                 # Optional, true hides from production
 readingTime: "5 min read"                    # Optional, displayed on post
 updatedDate: 2026-02-01                      # Optional, for updated posts
-ogImage: "/images/my-post-og.jpg"            # Optional, Open Graph image
+heroImage: "./images/hero.jpg"               # Optional, featured image (relative path)
+heroImageAlt: "Description of hero image"   # Optional, alt text for hero image
+ogImage: "/images/my-post-og.jpg"            # Optional, Open Graph image URL
 ---
 ```
 

@@ -14,12 +14,17 @@ import { z } from 'astro/zod';
  * 
  * Defines the structure and validation for blog posts.
  * All frontmatter properties are type-checked and validated at build time.
+ * 
+ * Image Guidelines:
+ * - heroImage: Main featured image (1200x630px recommended for social sharing)
+ * - Use relative paths for local images: ./images/my-image.jpg
+ * - Images should be stored alongside the post or in src/assets/blog/
  */
 const blog = defineCollection({
   // Load all markdown files from src/data/blog
   loader: glob({ pattern: '**/*.md', base: './src/data/blog' }),
   
-  schema: z.object({
+  schema: ({ image }) => z.object({
     // Required fields
     title: z.string().max(70, 'Title should be under 70 characters for SEO'),
     description: z.string().max(160, 'Description should be under 160 characters for SEO'),
@@ -29,7 +34,11 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     author: z.string().default('Monsoft Solutions'),
     
-    // SEO & Social
+    // Hero Image (featured image at top of post)
+    heroImage: image().optional(),
+    heroImageAlt: z.string().optional(),
+    
+    // SEO & Social (ogImage falls back to heroImage if not set)
     ogImage: z.string().optional(),
     canonicalURL: z.string().url().optional(),
     

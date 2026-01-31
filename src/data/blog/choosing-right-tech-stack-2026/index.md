@@ -7,7 +7,17 @@ category: "Web Development"
 tags: ["Tech Stack", "Web Development", "Software Architecture", "Startups", "Decision Making"]
 featured: false
 readingTime: "10 min read"
+# heroImage: "./images/hero.jpg"
+# heroImageAlt: "Developer workspace with code editor and technology architecture diagram"
 ---
+
+<!-- 
+IMAGE REQUIREMENTS FOR THIS POST:
+1. Hero image (1200x630): Developer workspace with code editor and architecture diagrams
+2. Inline image 1: Decision matrix for technology choices
+3. Inline image 2: Modern web application architecture diagram
+4. Inline image 3: Flowchart of technology decision-making process
+-->
 
 Every week, we talk to business owners who are either frustrated by technology that's holding them back or paralyzed by the sheer number of options available.
 
@@ -57,6 +67,8 @@ Building for a 6-month MVP is different from building for a 10-year enterprise s
 - **Medium-term (1-3 years):** Balance speed with maintainability. Invest in good architecture.
 - **Long-term (3+ years):** Prioritize flexibility and scalability. Avoid vendor lock-in.
 
+<!-- IMAGE: Decision matrix showing technology choices based on timeline and team expertise (./images/decision-matrix.jpg) -->
+
 ## Our Recommended Stack for 2026
 
 For most small-to-medium businesses building web applications, here's what we're recommending:
@@ -84,6 +96,8 @@ For most small-to-medium businesses building web applications, here's what we're
 **AWS or DigitalOcean** — For backend infrastructure, AWS offers the most services but steeper complexity. DigitalOcean is simpler and cheaper for straightforward deployments.
 
 **Docker** — Containerization isn't just for enterprises. It ensures your app runs the same in development, staging, and production.
+
+<!-- IMAGE: Modern web application architecture diagram showing frontend, backend, and infrastructure layers (./images/architecture-diagram.jpg) -->
 
 ## What to Avoid
 
@@ -136,6 +150,8 @@ Here's a practical framework:
 4. **Build a small prototype** with your top choice
 5. **Get feedback** from your team on developer experience
 6. **Commit and move forward** — the worst decision is no decision
+
+<!-- IMAGE: Flowchart showing the technology decision-making process from requirements to implementation (./images/decision-process.jpg) -->
 
 ## A Note on Technical Debt
 

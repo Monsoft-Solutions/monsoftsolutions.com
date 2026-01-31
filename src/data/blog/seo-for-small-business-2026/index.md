@@ -7,7 +7,17 @@ category: "Business Growth"
 tags: ["SEO", "Marketing", "Small Business", "Content Strategy", "Google"]
 featured: false
 readingTime: "7 min read"
+# heroImage: "./images/hero.jpg"
+# heroImageAlt: "Search analytics dashboard showing organic traffic growth trends"
 ---
+
+<!-- 
+IMAGE REQUIREMENTS FOR THIS POST:
+1. Hero image (1200x630): Search analytics dashboard with traffic growth
+2. Inline image 1: SEO checklist/on-page optimization elements
+3. Inline image 2: Graph comparing generic vs specific content performance
+4. Inline image 3: Google Local Pack example screenshot
+-->
 
 SEO advice is everywhere, and most of it is outdated, overcomplicated, or designed to sell you something.
 
@@ -66,6 +76,8 @@ For every important page:
 
 These basics alone put you ahead of most small business websites.
 
+<!-- IMAGE: SEO checklist showing on-page optimization elements for a webpage (./images/seo-checklist.jpg) -->
+
 ## Content That Actually Ranks
 
 Here's the hard truth: most small business blogs are a waste of time. They publish generic content that nobody searches for and wonder why traffic doesn't grow.
@@ -87,6 +99,8 @@ Here's the hard truth: most small business blogs are a waste of time. They publi
 **Regurgitated listicles.** "10 Tips for X" posts are a dime a dozen. If your article could have been written by anyone, it probably won't rank.
 
 **Keyword-stuffed pages.** Google knows what you're doing. Write for humans first.
+
+<!-- IMAGE: Graph showing content performance comparing generic vs. specific topic articles (./images/content-performance.jpg) -->
 
 ## The Link Question
 
@@ -128,6 +142,8 @@ If you serve local customers, your Google Business Profile is arguably more impo
 - Get listed in local directories (Yelp, industry-specific sites)
 
 For many local businesses, dominating the "Local Pack" (the map results) brings more customers than ranking #1 in regular results.
+
+<!-- IMAGE: Screenshot of Google Local Pack search results for a local business (./images/local-pack-example.jpg) -->
 
 ## Measuring What Matters
 
