@@ -1,6 +1,6 @@
 ---
 title: "How to Run Effective Google and Meta Ads for Local Businesses"
-description: "Learn proven strategies for running Google and Meta ads that bring local customers through your door. Includes budget tips, targeting tactics, and real ROI expectations."
+description: "Proven strategies for Google and Meta ads that bring local customers through your door. Budget tips, targeting tactics, and real ROI expectations."
 pubDate: 2026-01-31
 author: "Monsoft Solutions"
 category: "Local Business"
