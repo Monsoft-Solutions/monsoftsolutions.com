@@ -1,0 +1,115 @@
+# =============================================================================
+# robots.txt for monsoftsolutions.com
+# Optimized for major search engine crawlers
+# =============================================================================
+
+# Default rules for all crawlers
+User-agent: *
+Allow: /
+Disallow: /_astro/     # Hashed assets (not useful for indexing)
+
+# Sitemap location
+Sitemap: https://monsoftsolutions.com/sitemap-index.xml
+
+# =============================================================================
+# Crawler-specific rules
+# =============================================================================
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# Apple (Applebot for Siri/Spotlight)
+User-agent: Applebot
+Allow: /
+
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# Slack
+User-agent: Slackbot
+Allow: /
+
+# =============================================================================
+# AI Crawlers (for AI training/indexing)
+# =============================================================================
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Google AI (Bard/Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl (used by many AI companies)
+User-agent: CCBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# =============================================================================
+# Block bad bots and scrapers
+# =============================================================================
+
+# Block aggressive/unwanted bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
