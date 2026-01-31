@@ -2,6 +2,18 @@
 
 This file defines topic areas for automated blog generation. The agent should pick topics that haven't been covered yet.
 
+## IMPORTANT: Valid Categories for Frontmatter
+
+Use ONLY these exact category values in the frontmatter `category` field:
+- `AI & Automation`
+- `Web Development`
+- `Business Growth`
+- `Technology Trends`
+- `Case Studies`
+- `Guides & Tutorials`
+- `Local Business`
+- `Medical & Aesthetics`
+
 ## Target Audience
 - Small business owners (5-50 employees)
 - Medical/aesthetic practice owners (plastic surgery, med spas, dermatology)
@@ -53,7 +65,7 @@ This file defines topic areas for automated blog generation. The agent should pi
 - Partnership and collaboration
 - Scaling operations efficiently
 
-### Medical/Aesthetics Industry
+### Medical & Aesthetics (category: "Medical & Aesthetics")
 - Patient communication automation
 - Before/after gallery best practices
 - HIPAA-compliant marketing
@@ -65,7 +77,7 @@ This file defines topic areas for automated blog generation. The agent should pi
 - Financing options marketing
 - Social proof in aesthetics
 
-### Local Business
+### Local Business (category: "Local Business")
 - Google Business Profile optimization
 - Local SEO strategies
 - Managing multiple locations
