@@ -49,7 +49,9 @@ const blog = defineCollection({
       'Business Growth',
       'Technology Trends',
       'Case Studies',
-      'Guides & Tutorials'
+      'Guides & Tutorials',
+      'Local Business',
+      'Medical & Aesthetics'
     ]),
     tags: z.array(z.string()).default([]),
     
