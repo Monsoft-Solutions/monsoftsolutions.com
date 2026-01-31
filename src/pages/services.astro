@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTA from '../components/CTA.astro';
+import StickyCTA from '../components/StickyCTA.astro';
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -127,12 +128,12 @@ const stats = [
     </section>
 
     <!-- Stats Bar -->
-    <section class="stats-bar">
+    <section class="stats-bar" id="stats-section">
       <div class="container-wide">
         <div class="stats-grid">
           {stats.map((stat, index) => (
             <div class={`stat reveal reveal-delay-${index + 1}`}>
-              <span class="stat-value">{stat.value}</span>
+              <span class="stat-value" data-value={stat.value}>{stat.value}</span>
               <span class="stat-label">{stat.label}</span>
             </div>
           ))}
@@ -290,6 +291,7 @@ const stats = [
 
     <CTA />
   </main>
+  <StickyCTA text="Ready to transform your business?" buttonText="Start a Project" />
   <Footer />
 </Layout>
 
@@ -754,4 +756,45 @@ const stats = [
       (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
     });
   });
+
+  // Animated stats counter
+  function animateValue(element: HTMLElement, start: number, end: number, duration: number, suffix: string, prefix: string) {
+    const range = end - start;
+    const startTime = performance.now();
+    function update(currentTime: number) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(start + range * easeOut);
+      element.textContent = prefix + current + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+      else element.textContent = prefix + end + suffix;
+    }
+    requestAnimationFrame(update);
+  }
+
+  function parseStatValue(value: string) {
+    const match = value.match(/^([<>$]?)(\d+(?:\.\d+)?)(.*?)$/);
+    return match ? { prefix: match[1] || '', number: parseFloat(match[2]), suffix: match[3] || '' } : { prefix: '', number: 0, suffix: value };
+  }
+
+  const statsSection = document.getElementById('stats-section');
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.stat-value').forEach((el, index) => {
+            const element = el as HTMLElement;
+            const parsed = parseStatValue(element.dataset.value || '');
+            if (parsed.number > 0) {
+              element.textContent = parsed.prefix + '0' + parsed.suffix;
+              setTimeout(() => animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix), index * 100);
+            }
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    statsObserver.observe(statsSection);
+  }
 </script>

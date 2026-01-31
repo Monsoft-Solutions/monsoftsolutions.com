@@ -1,0 +1,123 @@
+---
+// Back to top button with scroll progress indicator
+---
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg class="progress-ring" viewBox="0 0 36 36">
+    <circle class="progress-ring-bg" cx="18" cy="18" r="16" />
+    <circle class="progress-ring-circle" cx="18" cy="18" r="16" />
+  </svg>
+  <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<style>
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-black);
+    color: var(--color-white);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .back-to-top:hover {
+    background: var(--color-gray-800);
+    transform: translateY(-2px);
+  }
+
+  .progress-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+
+  .progress-ring-bg {
+    fill: none;
+    stroke: var(--color-gray-700);
+    stroke-width: 2;
+  }
+
+  .progress-ring-circle {
+    fill: none;
+    stroke: var(--color-white);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 100.53;
+    stroke-dashoffset: 100.53;
+    transition: stroke-dashoffset 0.1s ease;
+  }
+
+  .arrow-icon {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Adjust position when sticky CTA is visible */
+  @media (max-width: 640px) {
+    .back-to-top {
+      bottom: 5rem;
+      right: 1rem;
+      width: 44px;
+      height: 44px;
+    }
+  }
+</style>
+
+<script>
+  const backToTop = document.getElementById('back-to-top');
+  const progressCircle = document.querySelector('.progress-ring-circle') as SVGCircleElement;
+  
+  if (backToTop && progressCircle) {
+    const circumference = 2 * Math.PI * 16; // r = 16
+    progressCircle.style.strokeDasharray = `${circumference}`;
+    progressCircle.style.strokeDashoffset = `${circumference}`;
+    
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+      
+      // Update progress ring
+      const offset = circumference - (scrollPercent * circumference);
+      progressCircle.style.strokeDashoffset = `${offset}`;
+      
+      // Show/hide button
+      if (scrollTop > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }
+    
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+    
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>

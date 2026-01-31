@@ -1,18 +1,22 @@
 ---
 import '../styles/global.css';
+import ProgressBar from '../components/ProgressBar.astro';
+import BackToTop from '../components/BackToTop.astro';
 
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
   structuredData?: object;
+  showProgress?: boolean;
 }
 
 const { 
   title, 
   description = "Monsoft Solutions — AI-first software company building intelligent solutions that transform how businesses operate.",
   ogImage = "/og-image.jpg",
-  structuredData
+  structuredData,
+  showProgress = true
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -88,7 +92,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="view-transition" content="same-origin" />
   </head>
   <body>
+    {showProgress && <ProgressBar />}
     <slot />
+    <BackToTop />
     
     <!-- Scroll reveal animation script -->
     <script>

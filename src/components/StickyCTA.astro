@@ -1,0 +1,127 @@
+---
+interface Props {
+  text?: string;
+  buttonText?: string;
+  href?: string;
+}
+
+const { 
+  text = "Ready to transform your business?",
+  buttonText = "Start a Project",
+  href = "/contact"
+} = Astro.props;
+---
+
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta-content">
+    <span class="sticky-cta-text">{text}</span>
+    <a href={href} class="sticky-cta-button">
+      {buttonText}
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<style>
+  .sticky-cta {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--color-gray-800);
+    transition: bottom 0.3s ease;
+  }
+
+  .sticky-cta.visible {
+    bottom: 0;
+  }
+
+  .sticky-cta-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .sticky-cta-text {
+    font-size: 0.9375rem;
+    color: var(--color-gray-300);
+  }
+
+  .sticky-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background: var(--color-white);
+    color: var(--color-black);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .sticky-cta-button:hover {
+    background: var(--color-gray-200);
+    transform: translateX(2px);
+  }
+
+  .sticky-cta-button svg {
+    transition: transform 0.2s ease;
+  }
+
+  .sticky-cta-button:hover svg {
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 640px) {
+    .sticky-cta-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+    }
+
+    .sticky-cta-text {
+      font-size: 0.8125rem;
+    }
+
+    .sticky-cta-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  const stickyCTA = document.getElementById('sticky-cta');
+  const hero = document.querySelector('.hero');
+  
+  if (stickyCTA && hero) {
+    const heroBottom = hero.getBoundingClientRect().height + hero.getBoundingClientRect().top;
+    
+    function checkScroll() {
+      const scrollY = window.scrollY;
+      const heroHeight = hero.getBoundingClientRect().height;
+      
+      // Show sticky CTA after scrolling past hero
+      if (scrollY > heroHeight) {
+        stickyCTA.classList.add('visible');
+      } else {
+        stickyCTA.classList.remove('visible');
+      }
+    }
+    
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll(); // Check on load
+  }
+</script>
