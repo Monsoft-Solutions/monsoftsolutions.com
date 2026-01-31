@@ -1,0 +1,12 @@
+echo "Running pre-push checks..."
+
+echo "→ Running astro check..."
+npm run check
+
+echo "→ Running TypeScript type check..."
+npm run typecheck
+
+echo "→ Running production build..."
+npm run build
+
+echo "✓ All pre-push checks passed!"
