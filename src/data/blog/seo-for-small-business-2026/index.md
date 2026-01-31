@@ -7,7 +7,7 @@ category: "Business Growth"
 tags: ["SEO", "Marketing", "Small Business", "Content Strategy", "Google"]
 featured: false
 readingTime: "7 min read"
-heroImage: "./images/hero.png"
+heroImage: "https://hyr9ejj40hphy7n6.public.blob.vercel-storage.com/blog/seo-for-small-business-2026/hero.png"
 heroImageAlt: "Search analytics dashboard showing organic traffic growth trends"
 ---
 
@@ -68,7 +68,7 @@ For every important page:
 
 These basics alone put you ahead of most small business websites.
 
-![SEO checklist showing on-page optimization elements for a webpage](./images/seo-checklist.png)
+![SEO checklist showing on-page optimization elements for a webpage](https://hyr9ejj40hphy7n6.public.blob.vercel-storage.com/blog/seo-for-small-business-2026/seo-checklist.png)
 
 ## Content That Actually Ranks
 
@@ -92,7 +92,7 @@ Here's the hard truth: most small business blogs are a waste of time. They publi
 
 **Keyword-stuffed pages.** Google knows what you're doing. Write for humans first.
 
-![Graph showing content performance comparing generic vs. specific topic articles](./images/content-performance.png)
+![Graph showing content performance comparing generic vs. specific topic articles](https://hyr9ejj40hphy7n6.public.blob.vercel-storage.com/blog/seo-for-small-business-2026/content-performance.png)
 
 ## The Link Question
 
@@ -135,7 +135,7 @@ If you serve local customers, your Google Business Profile is arguably more impo
 
 For many local businesses, dominating the "Local Pack" (the map results) brings more customers than ranking #1 in regular results.
 
-![Screenshot of Google Local Pack search results for a local business](./images/local-pack-example.png)
+![Screenshot of Google Local Pack search results for a local business](https://hyr9ejj40hphy7n6.public.blob.vercel-storage.com/blog/seo-for-small-business-2026/local-pack-example.png)
 
 ## Measuring What Matters
 

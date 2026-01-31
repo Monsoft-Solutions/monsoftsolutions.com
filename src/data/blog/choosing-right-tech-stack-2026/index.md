@@ -7,7 +7,7 @@ category: "Web Development"
 tags: ["Tech Stack", "Web Development", "Software Architecture", "Startups", "Decision Making"]
 featured: false
 readingTime: "10 min read"
-heroImage: "./images/hero.png"
+heroImage: "https://hyr9ejj40hphy7n6.public.blob.vercel-storage.com/blog/choosing-right-tech-stack-2026/hero.png"
 heroImageAlt: "Developer workspace with code editor and technology architecture diagram"
 ---
 
@@ -59,7 +59,7 @@ Building for a 6-month MVP is different from building for a 10-year enterprise s
 - **Medium-term (1-3 years):** Balance speed with maintainability. Invest in good architecture.
 - **Long-term (3+ years):** Prioritize flexibility and scalability. Avoid vendor lock-in.
 
-![Decision matrix showing technology choices based on timeline and team expertise](./images/decision-matrix.png)
+![Decision matrix showing technology choices based on timeline and team expertise](https://hyr9ejj40hphy7n6.public.blob.vercel-storage.com/blog/choosing-right-tech-stack-2026/decision-matrix.png)
 
 ## Our Recommended Stack for 2026
 
@@ -89,7 +89,7 @@ For most small-to-medium businesses building web applications, here's what we're
 
 **Docker** — Containerization isn't just for enterprises. It ensures your app runs the same in development, staging, and production.
 
-![Modern web application architecture diagram showing frontend, backend, and infrastructure layers](./images/architecture-diagram.png)
+![Modern web application architecture diagram showing frontend, backend, and infrastructure layers](https://hyr9ejj40hphy7n6.public.blob.vercel-storage.com/blog/choosing-right-tech-stack-2026/architecture-diagram.png)
 
 ## What to Avoid
 
@@ -143,7 +143,7 @@ Here's a practical framework:
 5. **Get feedback** from your team on developer experience
 6. **Commit and move forward** — the worst decision is no decision
 
-![Flowchart showing the technology decision-making process from requirements to implementation](./images/decision-process.png)
+![Flowchart showing the technology decision-making process from requirements to implementation](https://hyr9ejj40hphy7n6.public.blob.vercel-storage.com/blog/choosing-right-tech-stack-2026/decision-process.png)
 
 ## A Note on Technical Debt
 

@@ -24,7 +24,7 @@ const blog = defineCollection({
   // Load all markdown files from src/data/blog
   loader: glob({ pattern: '**/*.md', base: './src/data/blog' }),
   
-  schema: ({ image }) => z.object({
+  schema: z.object({
     // Required fields
     title: z.string().max(70, 'Title should be under 70 characters for SEO'),
     description: z.string().max(160, 'Description should be under 160 characters for SEO'),
@@ -34,8 +34,8 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     author: z.string().default('Monsoft Solutions'),
     
-    // Hero Image (featured image at top of post)
-    heroImage: image().optional(),
+    // Hero Image (Vercel Blob URL)
+    heroImage: z.string().url().optional(),
     heroImageAlt: z.string().optional(),
     
     // SEO & Social (ogImage falls back to heroImage if not set)

@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -12,7 +11,7 @@ interface Props {
   author: string;
   category: string;
   tags: string[];
-  heroImage?: ImageMetadata;
+  heroImage?: string;
   heroImageAlt?: string;
   ogImage?: string;
   readingTime?: string;
@@ -118,12 +117,14 @@ const articleStructuredData = {
     {heroImage && (
       <div class="hero-image-container">
         <div class="container">
-          <Image 
+          <img 
             src={heroImage} 
             alt={heroImageAlt || title}
             class="hero-image"
-            widths={[640, 960, 1200, 1600]}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 960px, 1200px"
+            width="1200"
+            height="630"
+            loading="eager"
+            decoding="async"
           />
         </div>
       </div>
