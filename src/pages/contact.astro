@@ -2,7 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { N8N_WEBHOOK_URL } from 'astro:env/client';
+
+// Webhook URL from environment variable (PUBLIC_ prefix makes it client-accessible)
+const webhookUrl = import.meta.env.PUBLIC_N8N_WEBHOOK_URL;
 
 const contactMethods = [
   {
@@ -460,7 +462,7 @@ const projectTypes = [
   }
 </style>
 
-<script define:vars={{ webhookUrl: N8N_WEBHOOK_URL }}>
+<script define:vars={{ webhookUrl }}>
   // Contact form submission handler
   const form = document.getElementById('contact-form');
   

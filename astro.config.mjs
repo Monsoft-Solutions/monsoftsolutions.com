@@ -1,21 +1,11 @@
 // @ts-check
-import { defineConfig, envField } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://monsoftsolutions.com',
-  env: {
-    schema: {
-      // n8n webhook URL for contact form - public and client-accessible
-      N8N_WEBHOOK_URL: envField.string({
-        context: 'client',
-        access: 'public',
-        optional: false,
-      }),
-    },
-  },
   integrations: [
     sitemap({
       // Crawl frequency hints for search engines
