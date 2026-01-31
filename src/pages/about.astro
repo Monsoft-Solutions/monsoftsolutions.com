@@ -8,19 +8,16 @@ const team = [
   {
     name: 'Adriano Flechilla',
     role: 'Founder & CEO',
-    description: 'Entrepreneur, builder, and systems thinker with a focus on AI, automation, and scalable digital products.',
+    description: 'Computer Science graduate with 10+ years building scalable software. Entrepreneur focused on AI, automation, and digital products that solve real business problems.',
     linkedin: 'https://linkedin.com/in/adriano-flechilla',
-    github: 'https://github.com/flechilla'
-  },
-  {
-    name: 'Suheel Athamneh',
-    role: 'Infrastructure Lead',
-    description: 'Expert in cloud architecture, DevOps, and building scalable infrastructure for AI-powered applications.',
+    github: 'https://github.com/flechilla',
+    image: '/images/team/adriano.webp'
   },
   {
     name: 'Hernan Fernandez',
-    role: 'Engineering',
-    description: 'Full-stack developer passionate about creating elegant solutions to complex technical challenges.',
+    role: 'Lead Engineer',
+    description: 'PhD in Physics with 5+ years of software engineering experience. Brings rigorous scientific thinking to complex technical challenges.',
+    image: '/images/team/hernan.webp'
   }
 ];
 
@@ -172,7 +169,14 @@ const values = [
           {team.map((member, index) => (
             <div class={`team-card reveal reveal-delay-${(index % 3) + 1}`}>
               <div class="team-avatar">
-                <span>{member.name.split(' ').map(n => n[0]).join('')}</span>
+                {member.image ? (
+                  <picture>
+                    <source srcset={member.image} type="image/webp" />
+                    <img src={member.image.replace('.webp', '.png')} alt={member.name} loading="lazy" />
+                  </picture>
+                ) : (
+                  <span>{member.name.split(' ').map(n => n[0]).join('')}</span>
+                )}
               </div>
               <h3>{member.name}</h3>
               <span class="team-role">{member.role}</span>
@@ -369,8 +373,10 @@ const values = [
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 800px;
+    margin-inline: auto;
   }
 
   .team-card {
@@ -387,8 +393,8 @@ const values = [
   }
 
   .team-avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     background: var(--color-gray-100);
     border-radius: 50%;
     display: flex;
@@ -398,6 +404,18 @@ const values = [
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-gray-500);
+    overflow: hidden;
+  }
+
+  .team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .team-avatar picture {
+    width: 100%;
+    height: 100%;
   }
 
   .team-card h3 {

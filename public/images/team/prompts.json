@@ -1,0 +1,10 @@
+[
+  {
+    "filename": "001-professional-headshot-photo-of-a-latino-man-in-his.png",
+    "prompt": "Professional headshot photo of a Latino man in his early 30s, PhD scientist turned software engineer, intelligent and approachable expression, wearing smart casual attire (button-up shirt), clean neutral background, professional photography, warm natural lighting, high quality portrait",
+    "model": "gemini-3-pro-image-preview",
+    "aspect_ratio": "1:1",
+    "input_images": null,
+    "mode": "generate"
+  }
+]
