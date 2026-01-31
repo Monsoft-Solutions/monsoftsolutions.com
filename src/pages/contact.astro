@@ -459,14 +459,14 @@ const projectTypes = [
   }
 </style>
 
-<script>
+<script define:vars={{ webhookUrl: import.meta.env.PUBLIC_N8N_WEBHOOK_URL || '' }}>
   // Contact form submission handler
-  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const form = document.getElementById('contact-form');
   
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const button = form.querySelector('button[type="submit"]');
     const originalText = button?.innerHTML;
     
     if (button) {
@@ -475,16 +475,27 @@ const projectTypes = [
     }
 
     try {
-      // Submit to API endpoint
+      // Collect form data
       const formData = new FormData(form);
-      const response = await fetch('/api/contact', {
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        company: formData.get('company') || undefined,
+        projectType: formData.get('project-type'),
+        message: formData.get('message'),
+        budget: formData.get('budget') || undefined,
+        submittedAt: new Date().toISOString(),
+        source: 'monsoftsolutions.com'
+      };
+
+      // Submit directly to n8n webhook
+      const response = await fetch(webhookUrl, {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       });
 
-      const result = await response.json();
-
-      if (result.success) {
+      if (response.ok) {
         if (button) {
           button.innerHTML = '<span>Message Sent! ✓</span>';
           form.reset();
@@ -495,7 +506,7 @@ const projectTypes = [
           }, 3000);
         }
       } else {
-        throw new Error(result.error || 'Failed to send message');
+        throw new Error('Failed to send message');
       }
     } catch (error) {
       console.error('Form submission error:', error);
