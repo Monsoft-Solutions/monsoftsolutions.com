@@ -6,6 +6,12 @@ dist/
 # dependencies
 node_modules/
 
+# Blog images (hosted on Vercel Blob)
+src/data/blog/*/images/
+
+# Blob manifest (local reference only)
+blob-manifest.json
+
 # logs
 npm-debug.log*
 yarn-debug.log*

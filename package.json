@@ -14,5 +14,9 @@
     "astro": "^5.17.1",
     "gsap": "^3.14.2",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@vercel/blob": "^2.0.1",
+    "tsx": "^4.21.0"
   }
 }
