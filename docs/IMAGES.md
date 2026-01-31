@@ -5,6 +5,7 @@ This document covers how to use images in the Monsoft Solutions website, with a 
 ## Overview
 
 Astro provides built-in image optimization through the `<Image />` component. Images are automatically:
+
 - Optimized and compressed
 - Converted to modern formats (WebP/AVIF)
 - Lazy-loaded for performance
@@ -44,16 +45,18 @@ public/
 ### Hero Image (Featured Image)
 
 The hero image appears at the top of the blog post and is used for:
+
 - Visual header on the post page
 - Social sharing previews (Open Graph)
 - Blog listing cards (if implemented)
 
 **Frontmatter:**
+
 ```yaml
 ---
-title: "My Post Title"
-heroImage: "./images/hero.jpg"      # Relative to the .md file
-heroImageAlt: "Description of image for accessibility"
+title: 'My Post Title'
+heroImage: './images/hero.jpg' # Relative to the .md file
+heroImageAlt: 'Description of image for accessibility'
 ---
 ```
 
@@ -80,6 +83,7 @@ More text continues here...
 ```
 
 **Best Practices:**
+
 - Use descriptive alt text for accessibility
 - Place images after introducing the concept
 - Keep file sizes reasonable (under 300KB each)
@@ -88,6 +92,7 @@ More text continues here...
 ### Image Placement Guidelines
 
 For optimal reading experience:
+
 1. **Hero image**: Always at the top (handled by layout)
 2. **Section images**: After the section heading, before detailed text
 3. **Supporting diagrams**: Immediately after the concept they illustrate
@@ -103,12 +108,7 @@ import { Image } from 'astro:assets';
 import myImage from '../assets/my-image.jpg';
 ---
 
-<Image 
-  src={myImage} 
-  alt="Description of the image"
-  width={800}
-  height={450}
-/>
+<Image src={myImage} alt="Description of the image" width={800} height={450} />
 ```
 
 ### Responsive Images
@@ -116,8 +116,8 @@ import myImage from '../assets/my-image.jpg';
 For responsive behavior, use `widths` and `sizes`:
 
 ```astro
-<Image 
-  src={heroImage} 
+<Image
+  src={heroImage}
   alt="Hero image"
   widths={[640, 960, 1200, 1600]}
   sizes="(max-width: 768px) 100vw, 960px"
@@ -134,11 +134,7 @@ import { Picture } from 'astro:assets';
 import myImage from '../assets/my-image.jpg';
 ---
 
-<Picture 
-  src={myImage}
-  formats={['avif', 'webp']}
-  alt="Description"
-/>
+<Picture src={myImage} formats={['avif', 'webp']} alt="Description" />
 ```
 
 ## Image Optimization
@@ -146,6 +142,7 @@ import myImage from '../assets/my-image.jpg';
 ### Automatic Optimization
 
 Astro automatically:
+
 - Converts to WebP/AVIF when supported
 - Generates multiple sizes for srcset
 - Adds width/height to prevent CLS
@@ -154,6 +151,7 @@ Astro automatically:
 ### Manual Optimization Tips
 
 Before adding images:
+
 1. Resize to maximum display size (no larger than 1600px wide)
 2. Compress using tools like:
    - [Squoosh](https://squoosh.app/) (web-based)
@@ -169,23 +167,29 @@ Before adding images:
 ### Alt Text Guidelines
 
 **Good alt text:**
+
 - Describes the image content and purpose
 - Is concise but complete (typically under 125 characters)
 - Doesn't start with "Image of..." or "Picture of..."
 
 **Examples:**
+
 ```markdown
 <!-- Good -->
+
 ![Dashboard showing 40% increase in monthly revenue](./dashboard.png)
 
 <!-- Bad -->
+
 ![Dashboard](./dashboard.png)
 ![Image of a dashboard](./dashboard.png)
 ```
 
 **Decorative images:**
+
 ```markdown
 <!-- For purely decorative images, use empty alt -->
+
 ![](./decorative-pattern.png)
 ```
 
@@ -197,31 +201,30 @@ For external images, configure allowed domains in `astro.config.mjs`:
 export default defineConfig({
   image: {
     domains: ['images.unsplash.com', 'cdn.example.com'],
-  }
+  },
 });
 ```
 
 Then use the full URL:
+
 ```astro
-<Image 
-  src="https://images.unsplash.com/photo-123" 
-  alt="Description"
-  width={800}
-  height={600}
-/>
+<Image src="https://images.unsplash.com/photo-123" alt="Description" width={800} height={600} />
 ```
 
 ## Common Issues
 
 ### Image Not Found
+
 - Check the path is relative to the `.md` file location
 - Ensure the file exists and filename matches exactly (case-sensitive)
 
 ### Image Not Optimized
+
 - Verify image is in `src/`, not `public/`
 - Check that the import path is correct
 
 ### Layout Shift
+
 - Always include width and height, or use the Image component
 - Use aspect-ratio CSS for dynamic content
 

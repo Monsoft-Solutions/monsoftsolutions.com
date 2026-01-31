@@ -6,101 +6,118 @@ import CTA from '../../components/CTA.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Custom AI Assistants",
-  "provider": {
-    "@type": "Organization",
-    "name": "Monsoft Solutions",
-    "url": "https://monsoftsolutions.com"
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Custom AI Assistants',
+  provider: {
+    '@type': 'Organization',
+    name: 'Monsoft Solutions',
+    url: 'https://monsoftsolutions.com',
   },
-  "areaServed": "Worldwide",
-  "description": "Custom AI assistants trained on your business data. 24/7 support, lead qualification, and operations automation—built specifically for your needs.",
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock"
-  }
+  areaServed: 'Worldwide',
+  description:
+    'Custom AI assistants trained on your business data. 24/7 support, lead qualification, and operations automation—built specifically for your needs.',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+  },
 };
 
 const features = [
   {
     title: 'Custom Training',
-    description: 'AI trained on your documents, processes, and brand voice. Your assistant knows your business inside and out.',
-    icon: '🧠'
+    description:
+      'AI trained on your documents, processes, and brand voice. Your assistant knows your business inside and out.',
+    icon: '🧠',
   },
   {
     title: 'Multi-Channel Deployment',
-    description: 'Deploy on web, mobile, WhatsApp, Slack, email—wherever your customers are. One brain, every platform.',
-    icon: '🌐'
+    description:
+      'Deploy on web, mobile, WhatsApp, Slack, email—wherever your customers are. One brain, every platform.',
+    icon: '🌐',
   },
   {
     title: 'CRM Integration',
-    description: 'Syncs with your customer data for personalized interactions. Every conversation is informed by history.',
-    icon: '🔗'
+    description:
+      'Syncs with your customer data for personalized interactions. Every conversation is informed by history.',
+    icon: '🔗',
   },
   {
     title: 'Lead Qualification',
-    description: 'Automatically scores and routes leads based on intent and fit. Your sales team only talks to qualified prospects.',
-    icon: '🎯'
+    description:
+      'Automatically scores and routes leads based on intent and fit. Your sales team only talks to qualified prospects.',
+    icon: '🎯',
   },
   {
     title: 'Support Automation',
-    description: 'Handle common questions instantly, escalate complex issues intelligently. 24/7 coverage without 24/7 staffing.',
-    icon: '🛡️'
+    description:
+      'Handle common questions instantly, escalate complex issues intelligently. 24/7 coverage without 24/7 staffing.',
+    icon: '🛡️',
   },
   {
     title: 'Analytics & Insights',
-    description: 'Learn from every conversation. Continuous improvement driven by real data and customer interactions.',
-    icon: '📊'
-  }
+    description:
+      'Learn from every conversation. Continuous improvement driven by real data and customer interactions.',
+    icon: '📊',
+  },
 ];
 
 const process = [
   {
     step: '01',
     title: 'Data Ingestion',
-    description: 'We ingest your knowledge base—documents, FAQs, product info, processes, and brand guidelines. Everything your assistant needs to know.'
+    description:
+      'We ingest your knowledge base—documents, FAQs, product info, processes, and brand guidelines. Everything your assistant needs to know.',
   },
   {
     step: '02',
     title: 'Training',
-    description: 'The AI learns your business, tone, and edge cases. We fine-tune responses until it sounds like your best employee.'
+    description:
+      'The AI learns your business, tone, and edge cases. We fine-tune responses until it sounds like your best employee.',
   },
   {
     step: '03',
     title: 'Deployment',
-    description: 'Launch across your chosen channels with monitoring dashboards. Go live with confidence and full visibility.'
+    description:
+      'Launch across your chosen channels with monitoring dashboards. Go live with confidence and full visibility.',
   },
   {
     step: '04',
     title: 'Optimization',
-    description: 'Continuous learning from real interactions. The assistant gets smarter every day, handling more with higher accuracy.'
-  }
+    description:
+      'Continuous learning from real interactions. The assistant gets smarter every day, handling more with higher accuracy.',
+  },
 ];
 
 const stats = [
   { value: '80%', label: 'Queries Automated' },
   { value: '24/7', label: 'Always Available' },
   { value: '3sec', label: 'Response Time' },
-  { value: '95%', label: 'Satisfaction Rate' }
+  { value: '95%', label: 'Satisfaction Rate' },
 ];
 
 const useCases = [
   {
     title: 'Customer Support',
-    description: 'Answer common questions, troubleshoot issues, and escalate complex cases—all automatically.',
-    examples: ['FAQ handling', 'Order status', 'Returns & refunds', 'Technical support']
+    description:
+      'Answer common questions, troubleshoot issues, and escalate complex cases—all automatically.',
+    examples: ['FAQ handling', 'Order status', 'Returns & refunds', 'Technical support'],
   },
   {
     title: 'Sales & Lead Gen',
     description: 'Qualify leads, book meetings, and nurture prospects through the funnel 24/7.',
-    examples: ['Lead qualification', 'Meeting scheduling', 'Product recommendations', 'Quote requests']
+    examples: [
+      'Lead qualification',
+      'Meeting scheduling',
+      'Product recommendations',
+      'Quote requests',
+    ],
   },
   {
     title: 'Internal Operations',
     description: 'Help employees find information, complete tasks, and navigate processes faster.',
-    examples: ['HR inquiries', 'IT helpdesk', 'Knowledge search', 'Onboarding assistance']
-  }
+    examples: ['HR inquiries', 'IT helpdesk', 'Knowledge search', 'Onboarding assistance'],
+  },
 ];
 
 const integrations = [
@@ -111,12 +128,12 @@ const integrations = [
   { name: 'Salesforce', icon: '☁️' },
   { name: 'HubSpot', icon: '🧡' },
   { name: 'Zendesk', icon: '🎫' },
-  { name: 'Intercom', icon: '💭' }
+  { name: 'Intercom', icon: '💭' },
 ];
 ---
 
-<Layout 
-  title="AI Assistants - Intelligence That Works for You" 
+<Layout
+  title="AI Assistants - Intelligence That Works for You"
   description="Automate 80% of customer queries with AI assistants trained on your data. 24/7 availability, 3-second responses, seamless CRM integration."
   structuredData={structuredData}
 >
@@ -131,23 +148,34 @@ const integrations = [
           <span class="highlight">works for you.</span>
         </h1>
         <p class="hero-subtitle reveal reveal-delay-2">
-          Custom AI assistants trained on your business data, seamlessly integrated 
-          into your workflows. Always available. Instantly responsive. Continuously learning.
-          Your team, amplified.
+          Custom AI assistants trained on your business data, seamlessly integrated into your
+          workflows. Always available. Instantly responsive. Continuously learning. Your team,
+          amplified.
         </p>
         <div class="hero-cta reveal reveal-delay-3">
           <a href="/contact" class="btn btn-primary">
             Build Your Assistant
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </a>
           <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
         </div>
         <div class="hero-image reveal reveal-delay-4">
           <picture>
-            <source srcset="/images/services/ai-assistants-hero.webp" type="image/webp">
-            <img src="/images/services/ai-assistants-hero.png" alt="AI assistants and intelligent automation" loading="eager" />
+            <source srcset="/images/services/ai-assistants-hero.webp" type="image/webp" />
+            <img
+              src="/images/services/ai-assistants-hero.png"
+              alt="AI assistants and intelligent automation"
+              loading="eager"
+            />
           </picture>
         </div>
       </div>
@@ -157,12 +185,16 @@ const integrations = [
     <section class="stats-bar" id="stats-section">
       <div class="container-wide">
         <div class="stats-grid">
-          {stats.map((stat, index) => (
-            <div class={`stat reveal reveal-delay-${index + 1}`}>
-              <span class="stat-value" data-value={stat.value}>{stat.value}</span>
-              <span class="stat-label">{stat.label}</span>
-            </div>
-          ))}
+          {
+            stats.map((stat, index) => (
+              <div class={`stat reveal reveal-delay-${index + 1}`}>
+                <span class="stat-value" data-value={stat.value}>
+                  {stat.value}
+                </span>
+                <span class="stat-label">{stat.label}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -175,14 +207,14 @@ const integrations = [
             <span class="section-label">The Challenge</span>
             <h2>Your team can't be everywhere</h2>
             <p>
-              Customers expect instant answers. Prospects want information at 2 AM. 
-              Employees spend hours searching for the same information. And your 
-              best people are drowning in repetitive questions.
+              Customers expect instant answers. Prospects want information at 2 AM. Employees spend
+              hours searching for the same information. And your best people are drowning in
+              repetitive questions.
             </p>
             <p>
-              Scaling support means scaling headcount. Training takes months. 
-              Turnover erases knowledge. And inconsistency frustrates customers 
-              who get different answers from different people.
+              Scaling support means scaling headcount. Training takes months. Turnover erases
+              knowledge. And inconsistency frustrates customers who get different answers from
+              different people.
             </p>
           </div>
           <div class="problem-list reveal reveal-delay-1">
@@ -190,28 +222,39 @@ const integrations = [
               <span class="problem-icon">⏰</span>
               <div>
                 <strong>Limited Hours</strong>
-                <p>Customers don't wait for business hours. Missed inquiries mean missed opportunities.</p>
+                <p>
+                  Customers don't wait for business hours. Missed inquiries mean missed
+                  opportunities.
+                </p>
               </div>
             </div>
             <div class="problem-item">
               <span class="problem-icon">🔄</span>
               <div>
                 <strong>Repetitive Work</strong>
-                <p>80% of questions are variations of the same 20 topics. Your team answers them daily.</p>
+                <p>
+                  80% of questions are variations of the same 20 topics. Your team answers them
+                  daily.
+                </p>
               </div>
             </div>
             <div class="problem-item">
               <span class="problem-icon">📚</span>
               <div>
                 <strong>Knowledge Silos</strong>
-                <p>Information is scattered across docs, emails, and people's heads. Finding answers takes too long.</p>
+                <p>
+                  Information is scattered across docs, emails, and people's heads. Finding answers
+                  takes too long.
+                </p>
               </div>
             </div>
             <div class="problem-item">
               <span class="problem-icon">📈</span>
               <div>
                 <strong>Scaling Pain</strong>
-                <p>More customers means more support staff. Costs grow linearly while margins shrink.</p>
+                <p>
+                  More customers means more support staff. Costs grow linearly while margins shrink.
+                </p>
               </div>
             </div>
           </div>
@@ -226,19 +269,21 @@ const integrations = [
           <span class="section-label">The Solution</span>
           <h2>An assistant that knows your business</h2>
           <p>
-            We build AI assistants trained on your data, speaking in your voice, 
-            available everywhere your customers are. Not a generic chatbot—a 
-            knowledgeable team member that never sleeps.
+            We build AI assistants trained on your data, speaking in your voice, available
+            everywhere your customers are. Not a generic chatbot—a knowledgeable team member that
+            never sleeps.
           </p>
         </div>
         <div class="features-grid">
-          {features.map((feature, index) => (
-            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
-              <span class="feature-icon">{feature.icon}</span>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </div>
-          ))}
+          {
+            features.map((feature, index) => (
+              <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+                <span class="feature-icon">{feature.icon}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -252,17 +297,19 @@ const integrations = [
           <p>AI assistants that handle the work, so your team can focus on what matters.</p>
         </div>
         <div class="use-cases-grid">
-          {useCases.map((useCase, index) => (
-            <div class={`use-case-card reveal reveal-delay-${index + 1}`}>
-              <h3>{useCase.title}</h3>
-              <p>{useCase.description}</p>
-              <ul class="use-case-examples">
-                {useCase.examples.map(example => (
-                  <li>{example}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {
+            useCases.map((useCase, index) => (
+              <div class={`use-case-card reveal reveal-delay-${index + 1}`}>
+                <h3>{useCase.title}</h3>
+                <p>{useCase.description}</p>
+                <ul class="use-case-examples">
+                  {useCase.examples.map((example) => (
+                    <li>{example}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -276,16 +323,16 @@ const integrations = [
           <p>A proven approach to building AI assistants that actually work.</p>
         </div>
         <div class="process-grid">
-          {process.map((step, index) => (
-            <div class={`process-step reveal reveal-delay-${index + 1}`}>
-              <span class="step-number">{step.step}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-              {index < process.length - 1 && (
-                <span class="process-arrow">→</span>
-              )}
-            </div>
-          ))}
+          {
+            process.map((step, index) => (
+              <div class={`process-step reveal reveal-delay-${index + 1}`}>
+                <span class="step-number">{step.step}</span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+                {index < process.length - 1 && <span class="process-arrow">→</span>}
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -299,12 +346,14 @@ const integrations = [
           <p>Deploy across channels and connect to your existing tools.</p>
         </div>
         <div class="integrations-grid reveal reveal-delay-1">
-          {integrations.map(integration => (
-            <div class="integration-item">
-              <span class="integration-icon">{integration.icon}</span>
-              <span class="integration-name">{integration.name}</span>
-            </div>
-          ))}
+          {
+            integrations.map((integration) => (
+              <div class="integration-item">
+                <span class="integration-icon">{integration.icon}</span>
+                <span class="integration-name">{integration.name}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -366,23 +415,39 @@ const integrations = [
         <div class="faq-list">
           <div class="faq-item reveal reveal-delay-1">
             <h3>How long does it take to build and deploy?</h3>
-            <p>Most assistants are live within 2-4 weeks. Complex integrations or large knowledge bases may take longer, but we start delivering value fast.</p>
+            <p>
+              Most assistants are live within 2-4 weeks. Complex integrations or large knowledge
+              bases may take longer, but we start delivering value fast.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-2">
             <h3>What data do you need from us?</h3>
-            <p>We work with what you have—FAQs, documentation, product info, support tickets, process guides. The more context, the smarter the assistant.</p>
+            <p>
+              We work with what you have—FAQs, documentation, product info, support tickets, process
+              guides. The more context, the smarter the assistant.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-3">
             <h3>Can the assistant hand off to human agents?</h3>
-            <p>Absolutely. We build smart escalation paths so complex or sensitive issues reach your team with full context. No frustrated customers repeating themselves.</p>
+            <p>
+              Absolutely. We build smart escalation paths so complex or sensitive issues reach your
+              team with full context. No frustrated customers repeating themselves.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-4">
             <h3>How do you ensure accuracy and prevent hallucinations?</h3>
-            <p>We use retrieval-augmented generation (RAG) to ground responses in your actual data. The AI cites sources and admits when it doesn't know. We test extensively before launch.</p>
+            <p>
+              We use retrieval-augmented generation (RAG) to ground responses in your actual data.
+              The AI cites sources and admits when it doesn't know. We test extensively before
+              launch.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-5">
             <h3>Is our data secure?</h3>
-            <p>Yes. Enterprise-grade security, encryption at rest and in transit, and we never use your data to train models for others. Your knowledge stays yours.</p>
+            <p>
+              Yes. Enterprise-grade security, encryption at rest and in transit, and we never use
+              your data to train models for others. Your knowledge stays yours.
+            </p>
           </div>
         </div>
       </div>
@@ -632,7 +697,7 @@ const integrations = [
   }
 
   .use-case-card:hover {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     transform: translateY(-4px);
   }
 
@@ -739,7 +804,7 @@ const integrations = [
   .integration-item:hover {
     border-color: var(--color-gray-200);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   }
 
   .integration-icon {
@@ -921,7 +986,14 @@ const integrations = [
 </style>
 
 <script>
-  function animateValue(element: HTMLElement, start: number, end: number, duration: number, suffix: string, prefix: string) {
+  function animateValue(
+    element: HTMLElement,
+    start: number,
+    end: number,
+    duration: number,
+    suffix: string,
+    prefix: string
+  ) {
     const range = end - start;
     const startTime = performance.now();
     function update(currentTime: number) {
@@ -938,26 +1010,34 @@ const integrations = [
 
   function parseStatValue(value: string) {
     const match = value.match(/^([<>$]?)(\d+(?:\.\d+)?)(.*?)$/);
-    return match ? { prefix: match[1] || '', number: parseFloat(match[2]), suffix: match[3] || '' } : { prefix: '', number: 0, suffix: value };
+    return match
+      ? { prefix: match[1] || '', number: parseFloat(match[2]), suffix: match[3] || '' }
+      : { prefix: '', number: 0, suffix: value };
   }
 
   const statsSection = document.getElementById('stats-section');
   if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.stat-value').forEach((el, index) => {
-            const element = el as HTMLElement;
-            const parsed = parseStatValue(element.dataset.value || '');
-            if (parsed.number > 0) {
-              element.textContent = parsed.prefix + '0' + parsed.suffix;
-              setTimeout(() => animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix), index * 100);
-            }
-          });
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.stat-value').forEach((el, index) => {
+              const element = el as HTMLElement;
+              const parsed = parseStatValue(element.dataset.value || '');
+              if (parsed.number > 0) {
+                element.textContent = parsed.prefix + '0' + parsed.suffix;
+                setTimeout(
+                  () => animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix),
+                  index * 100
+                );
+              }
+            });
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
     statsObserver.observe(statsSection);
   }
 </script>

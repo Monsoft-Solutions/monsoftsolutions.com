@@ -7,18 +7,18 @@
  * https://developers.google.com/search/docs/crawling-indexing/sitemaps/image-sitemaps
  */
 
-import type { APIRoute } from "astro";
-import { getCollection } from "astro:content";
+import type { APIRoute } from 'astro';
+import { getCollection } from 'astro:content';
 
-const SITE_URL = "https://monsoftsolutions.com";
+const SITE_URL = 'https://monsoftsolutions.com';
 
 function slugify(text: string): string {
-  return text.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-");
+  return text.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
 }
 
 export const GET: APIRoute = async () => {
   // Get all published blog posts
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
 
   // Sort by date (newest first)
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -27,7 +27,7 @@ export const GET: APIRoute = async () => {
   const categories = [...new Set(posts.map((post) => post.data.category))];
   const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
 
-  const today = new Date().toISOString().split("T")[0];
+  const today = new Date().toISOString().split('T')[0];
 
   // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -53,7 +53,7 @@ ${categories
     <priority>0.6</priority>
   </url>`
   )
-  .join("\n")}
+  .join('\n')}
   
   <!-- Tag Pages -->
 ${tags
@@ -65,15 +65,13 @@ ${tags
     <priority>0.5</priority>
   </url>`
   )
-  .join("\n")}
+  .join('\n')}
   
   <!-- Blog Posts -->
 ${posts
   .map((post) => {
     const url = `${SITE_URL}/blog/${post.id}`;
-    const lastmod = (post.data.updatedDate || post.data.pubDate)
-      .toISOString()
-      .split("T")[0];
+    const lastmod = (post.data.updatedDate || post.data.pubDate).toISOString().split('T')[0];
 
     // Build image tag if heroImage exists
     const imageTag = post.data.heroImage
@@ -81,9 +79,9 @@ ${posts
     <image:image>
       <image:loc>${escapeXml(post.data.heroImage)}</image:loc>
       <image:title>${escapeXml(post.data.title)}</image:title>
-      ${post.data.heroImageAlt ? `<image:caption>${escapeXml(post.data.heroImageAlt)}</image:caption>` : ""}
+      ${post.data.heroImageAlt ? `<image:caption>${escapeXml(post.data.heroImageAlt)}</image:caption>` : ''}
     </image:image>`
-      : "";
+      : '';
 
     return `  <url>
     <loc>${url}</loc>
@@ -92,13 +90,13 @@ ${posts
     <priority>0.7</priority>${imageTag}
   </url>`;
   })
-  .join("\n")}
+  .join('\n')}
 </urlset>`;
 
   return new Response(xml, {
     headers: {
-      "Content-Type": "application/xml",
-      "Cache-Control": "public, max-age=3600", // Cache for 1 hour
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
     },
   });
 };
@@ -108,9 +106,9 @@ ${posts
  */
 function escapeXml(str: string): string {
   return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 }

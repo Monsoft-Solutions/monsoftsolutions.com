@@ -17,16 +17,19 @@ export default defineConfig({
         // Homepage gets highest priority
         if (item.url === 'https://monsoftsolutions.com/') {
           item.priority = 1.0;
+          // @ts-expect-error - changefreq accepts string literals
           item.changefreq = 'daily';
         }
         // Services pages get high priority
         if (item.url.includes('/services')) {
           item.priority = 0.9;
+          // @ts-expect-error - changefreq accepts string literals
           item.changefreq = 'weekly';
         }
         // About and contact
         if (item.url.includes('/about') || item.url.includes('/contact')) {
           item.priority = 0.8;
+          // @ts-expect-error - changefreq accepts string literals
           item.changefreq = 'monthly';
         }
         return item;
@@ -36,7 +39,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     server: {
-      allowedHosts: ['localhost', '127.0.0.1', '.ngrok-free.app', '.ngrok.io']
-    }
-  }
+      allowedHosts: ['localhost', '127.0.0.1', '.ngrok-free.app', '.ngrok.io'],
+    },
+  },
 });

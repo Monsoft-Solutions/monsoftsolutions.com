@@ -2,34 +2,38 @@
 const services = [
   {
     title: 'Smart SEO & Content',
-    description: 'AI-powered content that writes, optimizes, and publishes itself. Grow your organic traffic on autopilot.',
+    description:
+      'AI-powered content that writes, optimizes, and publishes itself. Grow your organic traffic on autopilot.',
     link: '/services/seo',
-    image: '/images/home/service-seo.webp'
+    image: '/images/home/service-seo.webp',
   },
   {
     title: 'Business Automation',
     description: 'Eliminate repetitive tasks and streamline operations. Save 10+ hours every week.',
     link: '/services/automation',
-    image: '/images/home/service-automation.webp'
+    image: '/images/home/service-automation.webp',
   },
   {
     title: 'AI Assistants',
-    description: '24/7 customer support that never sleeps. Capture leads and book appointments automatically.',
+    description:
+      '24/7 customer support that never sleeps. Capture leads and book appointments automatically.',
     link: '/services/ai-assistants',
-    image: '/images/home/service-ai.webp'
+    image: '/images/home/service-ai.webp',
   },
   {
     title: 'Smart Websites',
-    description: 'Beautiful, fast websites that convert visitors into customers. Mobile-first, SEO-ready.',
+    description:
+      'Beautiful, fast websites that convert visitors into customers. Mobile-first, SEO-ready.',
     link: '/services/websites',
-    image: '/images/home/service-websites.webp'
+    image: '/images/home/service-websites.webp',
   },
   {
     title: 'Paid Advertising',
-    description: 'ROI-focused Meta and Google campaigns. Every dollar tracked, optimized, and working.',
+    description:
+      'ROI-focused Meta and Google campaigns. Every dollar tracked, optimized, and working.',
     link: '/services/automation',
-    image: '/images/home/service-ads.webp'
-  }
+    image: '/images/home/service-ads.webp',
+  },
 ];
 ---
 
@@ -39,34 +43,43 @@ const services = [
     <div class="section-header reveal">
       <span class="section-label">What We Do</span>
       <h2 class="section-title">Everything you need to grow</h2>
-      <p class="section-subtitle">From automated marketing to AI-powered customer service—we handle the tech so you can focus on your business.</p>
+      <p class="section-subtitle">
+        From automated marketing to AI-powered customer service—we handle the tech so you can focus
+        on your business.
+      </p>
     </div>
 
     <!-- Services Grid -->
     <div class="services-grid">
-      {services.map((service, index) => (
-        <article class={`service-card reveal reveal-delay-${(index % 3) + 1}`}>
-          <div class="service-image-wrapper">
-            <img 
-              src={service.image} 
-              alt={service.title}
-              class="service-image"
-              loading="lazy"
-            />
-          </div>
-          <div class="service-content">
-            <h3 class="service-title">{service.title}</h3>
-            <p class="service-description">{service.description}</p>
-            <a href={service.link} class="service-link">
-              Learn more
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-      ))}
+      {
+        services.map((service, index) => (
+          <article class={`service-card reveal reveal-delay-${(index % 3) + 1}`}>
+            <div class="service-image-wrapper">
+              <img src={service.image} alt={service.title} class="service-image" loading="lazy" />
+            </div>
+            <div class="service-content">
+              <h3 class="service-title">{service.title}</h3>
+              <p class="service-description">{service.description}</p>
+              <a href={service.link} class="service-link">
+                Learn more
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>

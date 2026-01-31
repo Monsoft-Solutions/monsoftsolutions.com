@@ -15,26 +15,33 @@
       <h1 class="hero-title">
         <span class="title-line" data-animate="fade-up" data-delay="0.1">More patients.</span>
         <span class="title-line" data-animate="fade-up" data-delay="0.15">More customers.</span>
-        <span class="title-line highlight" data-animate="fade-up" data-delay="0.2">Less busywork.</span>
+        <span class="title-line highlight" data-animate="fade-up" data-delay="0.2"
+          >Less busywork.</span
+        >
       </h1>
 
       <!-- Subtitle -->
       <p class="hero-subtitle" data-animate="fade-up" data-delay="0.3">
-        We help plastic surgery clinics and local businesses automate operations, 
-        attract more customers, and scale—without the complexity.
+        We help plastic surgery clinics and local businesses automate operations, attract more
+        customers, and scale—without the complexity.
       </p>
 
       <!-- CTAs -->
       <div class="hero-ctas" data-animate="fade-up" data-delay="0.4">
         <a href="/services" class="btn btn-primary">
           <span>See How It Works</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg>
         </a>
-        <a href="/services/aesthetics" class="btn btn-secondary">
-          View Case Study
-        </a>
+        <a href="/services/aesthetics" class="btn btn-secondary"> View Case Study </a>
       </div>
 
       <!-- Stats/Results -->
@@ -65,8 +72,8 @@
         <div class="image-wrapper">
           <picture>
             <source srcset="/images/home/hero-main.webp" type="image/webp" />
-            <img 
-              src="/images/home/hero-main.png" 
+            <img
+              src="/images/home/hero-main.png"
               alt="Professional team collaborating on business growth strategies"
               loading="eager"
               decoding="async"
@@ -74,7 +81,7 @@
           </picture>
           <div class="image-overlay"></div>
         </div>
-        
+
         <!-- Subtle floating elements for depth -->
         <div class="floating-element fe-1"></div>
         <div class="floating-element fe-2"></div>
@@ -82,7 +89,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Scroll indicator -->
   <div class="scroll-indicator" data-animate="fade-in" data-delay="1">
     <span>Scroll to explore</span>
@@ -140,8 +147,15 @@
   }
 
   @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.9); }
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.9);
+    }
   }
 
   /* Title */
@@ -214,7 +228,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s ease;
   }
 
@@ -298,7 +312,7 @@
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 
+    box-shadow:
       0 25px 50px -12px rgba(0, 0, 0, 0.15),
       0 12px 24px -8px rgba(0, 0, 0, 0.1);
   }
@@ -357,18 +371,33 @@
   }
 
   @keyframes float-1 {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(5deg); }
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(5deg);
+    }
   }
 
   @keyframes float-2 {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    50% { transform: translateY(-10px) translateX(8px); }
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-10px) translateX(8px);
+    }
   }
 
   @keyframes float-3 {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-18px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-18px);
+    }
   }
 
   /* Scroll Indicator */
@@ -410,10 +439,20 @@
   }
 
   @keyframes scroll-down {
-    0% { top: 0; opacity: 0; }
-    20% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { top: 100%; opacity: 0; }
+    0% {
+      top: 0;
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
   }
 
   /* Responsive */
@@ -503,54 +542,66 @@
 
     // Animate elements with data-animate attribute
     const fadeUpElements = document.querySelectorAll('[data-animate="fade-up"]');
-    fadeUpElements.forEach(el => {
-      const delay = parseFloat(el.dataset.delay) || 0;
-      tl.to(el, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-      }, delay);
-      
+    fadeUpElements.forEach((el) => {
+      const delay = parseFloat((el as HTMLElement).dataset.delay || '0');
+      tl.to(
+        el,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+        },
+        delay
+      );
+
       // Set initial state
       gsap.set(el, { opacity: 0, y: 30 });
     });
 
     // Scale in animation for visual
     const scaleInElements = document.querySelectorAll('[data-animate="scale-in"]');
-    scaleInElements.forEach(el => {
-      const delay = parseFloat(el.dataset.delay) || 0;
+    scaleInElements.forEach((el) => {
+      const delay = parseFloat((el as HTMLElement).dataset.delay || '0');
       gsap.set(el, { opacity: 0, scale: 0.95 });
-      tl.to(el, {
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-      }, delay);
+      tl.to(
+        el,
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+        },
+        delay
+      );
     });
 
     // Fade in animation
     const fadeInElements = document.querySelectorAll('[data-animate="fade-in"]');
-    fadeInElements.forEach(el => {
-      const delay = parseFloat(el.dataset.delay) || 0;
+    fadeInElements.forEach((el) => {
+      const delay = parseFloat((el as HTMLElement).dataset.delay || '0');
       gsap.set(el, { opacity: 0 });
-      tl.to(el, {
-        opacity: 1,
-        duration: 0.8,
-      }, delay);
+      tl.to(
+        el,
+        {
+          opacity: 1,
+          duration: 0.8,
+        },
+        delay
+      );
     });
 
     // Animate numbers counting up
     const countElements = document.querySelectorAll('[data-count]');
-    countElements.forEach(el => {
-      const target = parseInt(el.dataset.count);
+    countElements.forEach((el) => {
+      const target = parseInt((el as HTMLElement).dataset.count || '0');
       gsap.to(el, {
         innerHTML: target,
         duration: 2,
         delay: 0.8,
         snap: { innerHTML: 1 },
         ease: 'power2.out',
-        onUpdate: function() {
+        onUpdate: function () {
           el.innerHTML = Math.round(parseFloat(el.innerHTML)).toLocaleString();
-        }
+        },
       });
     });
 
@@ -560,12 +611,12 @@
       document.addEventListener('mousemove', (e) => {
         const x = (e.clientX - window.innerWidth / 2) / 80;
         const y = (e.clientY - window.innerHeight / 2) / 80;
-        
+
         gsap.to(visual, {
           x: x,
           y: y,
           duration: 1.2,
-          ease: 'power2.out'
+          ease: 'power2.out',
         });
       });
     }

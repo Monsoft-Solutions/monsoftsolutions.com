@@ -1,20 +1,20 @@
 ---
-title: "How to Market Patient Financing That Drives More Bookings"
-description: "Learn proven strategies to present financing options that remove price barriers and convert more consultations into booked procedures."
+title: 'How to Market Patient Financing That Drives More Bookings'
+description: 'Learn proven strategies to present financing options that remove price barriers and convert more consultations into booked procedures.'
 pubDate: 2026-01-31
-author: "Monsoft Solutions"
-category: "Medical & Aesthetics"
-tags: ["Patient Financing", "Aesthetics Marketing", "Conversion", "Medical Spa"]
+author: 'Monsoft Solutions'
+category: 'Medical & Aesthetics'
+tags: ['Patient Financing', 'Aesthetics Marketing', 'Conversion', 'Medical Spa']
 featured: false
 draft: false
-readingTime: "8 min read"
-heroImage: "https://9hvqwvm35snfqcsh.public.blob.vercel-storage.com/blog/patient-financing-marketing-guide/hero.png"
-heroImageAlt: "Patient coordinator discussing financing options with a patient in a modern aesthetics clinic"
+readingTime: '8 min read'
+heroImage: 'https://9hvqwvm35snfqcsh.public.blob.vercel-storage.com/blog/patient-financing-marketing-guide/hero.png'
+heroImageAlt: 'Patient coordinator discussing financing options with a patient in a modern aesthetics clinic'
 ---
 
 Price is the number one reason potential patients don't book aesthetic procedures. They want the results—the confidence boost, the rejuvenation, the transformation—but the upfront cost stops them cold.
 
-Here's what most practices miss: it's not that patients can't afford treatment. It's that they can't afford it *all at once*. The practices that understand this distinction and market financing effectively see 30-50% higher conversion rates from consultation to booking.
+Here's what most practices miss: it's not that patients can't afford treatment. It's that they can't afford it _all at once_. The practices that understand this distinction and market financing effectively see 30-50% higher conversion rates from consultation to booking.
 
 This guide breaks down exactly how to position, present, and promote patient financing so it removes barriers instead of creating awkward money conversations.
 
@@ -35,7 +35,7 @@ That's backwards. Financing should be a core part of your marketing message from
 
 ### The Psychology of Monthly Payments
 
-When you show a patient "$12,000 for a mommy makeover," their brain registers *unaffordable*. When you present "$299/month for 48 months," the same brain thinks *manageable*.
+When you show a patient "$12,000 for a mommy makeover," their brain registers _unaffordable_. When you present "$299/month for 48 months," the same brain thinks _manageable_.
 
 This isn't manipulation—it's how modern consumers evaluate purchases. Your iPhone, car, and mortgage all work this way. Aesthetic treatments should too.
 
@@ -52,12 +52,14 @@ Before you can market financing effectively, you need the right options in place
 These purpose-built cards offer promotional periods—often 0% interest for 12-24 months. They're familiar to patients and easy to apply for.
 
 **Pros:**
+
 - Established, trusted brands
 - Quick approval process
 - No-interest promotional periods
 - You get paid upfront
 
 **Cons:**
+
 - Credit check required
 - Not everyone qualifies
 - Deferred interest can surprise patients
@@ -68,12 +70,14 @@ These purpose-built cards offer promotional periods—often 0% interest for 12-2
 These newer options often have higher approval rates and more flexible terms. Some don't do hard credit pulls.
 
 **Pros:**
+
 - Higher approval rates (some claim 85%+)
 - Soft credit checks available
 - Often more competitive rates
 - Modern, patient-friendly applications
 
 **Cons:**
+
 - Less brand recognition
 - Varying fee structures
 - Some have shorter terms
@@ -83,12 +87,14 @@ These newer options often have higher approval rates and more flexible terms. So
 You handle the financing directly, collecting payments over time.
 
 **Pros:**
+
 - Complete control over terms
 - No third-party fees
 - Can customize to patient needs
 - Builds direct relationship
 
 **Cons:**
+
 - You carry the risk
 - Administrative burden
 - Cash flow is delayed
@@ -204,21 +210,25 @@ Review these monthly. If financing utilization is low, the issue is usually mark
 Here's how to implement everything in this guide:
 
 **This week:**
+
 1. Audit your website—is financing visible on service pages?
 2. Train staff on the consultation language above
 3. Add monthly payment estimates to your top 3 service pages
 
 **This month:**
+
 1. Create a dedicated financing page with all options
 2. Add financing messaging to your next ad campaign
 3. Send an email to your list introducing/reminding about financing
 
 **This quarter:**
+
 1. Evaluate your financing partners—are approval rates where they should be?
 2. Add a financing calculator widget to your website
 3. Create social proof content featuring patients who used financing
 
 **Ongoing:**
+
 1. Track financing metrics monthly
 2. A/B test financing messaging in ads
 3. Refresh staff training quarterly

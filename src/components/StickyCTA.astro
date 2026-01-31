@@ -5,10 +5,10 @@ interface Props {
   href?: string;
 }
 
-const { 
-  text = "Ready to transform your business?",
-  buttonText = "Start a Project",
-  href = "/contact"
+const {
+  text = 'Ready to transform your business?',
+  buttonText = 'Start a Project',
+  href = '/contact',
 } = Astro.props;
 ---
 
@@ -17,8 +17,15 @@ const {
     <span class="sticky-cta-text">{text}</span>
     <a href={href} class="sticky-cta-button">
       {buttonText}
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </a>
   </div>
@@ -105,22 +112,20 @@ const {
 <script>
   const stickyCTA = document.getElementById('sticky-cta');
   const hero = document.querySelector('.hero');
-  
+
   if (stickyCTA && hero) {
-    const heroBottom = hero.getBoundingClientRect().height + hero.getBoundingClientRect().top;
-    
     function checkScroll() {
       const scrollY = window.scrollY;
-      const heroHeight = hero.getBoundingClientRect().height;
-      
+      const heroHeight = hero!.getBoundingClientRect().height;
+
       // Show sticky CTA after scrolling past hero
       if (scrollY > heroHeight) {
-        stickyCTA.classList.add('visible');
+        stickyCTA!.classList.add('visible');
       } else {
-        stickyCTA.classList.remove('visible');
+        stickyCTA!.classList.remove('visible');
       }
     }
-    
+
     window.addEventListener('scroll', checkScroll, { passive: true });
     checkScroll(); // Check on load
   }

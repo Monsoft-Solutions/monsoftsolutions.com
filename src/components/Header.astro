@@ -13,27 +13,44 @@ const navLinks = [
     <nav class="nav">
       <!-- Logo -->
       <a href="/" class="logo" aria-label="Monsoft Solutions Home">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="32" height="32" rx="8" fill="currentColor"/>
-          <path d="M8 22V10L12.5 18L17 10V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 22V15C20 13.3431 21.3431 12 23 12H24" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="32" height="32" rx="8" fill="currentColor"></rect>
+          <path
+            d="M8 22V10L12.5 18L17 10V22"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M20 22V15C20 13.3431 21.3431 12 23 12H24"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"></path>
         </svg>
         <span class="logo-text">Monsoft</span>
       </a>
 
       <!-- Desktop Navigation -->
       <ul class="nav-links">
-        {navLinks.map(link => (
-          <li>
-            <a href={link.href} class="nav-link">{link.label}</a>
-          </li>
-        ))}
+        {
+          navLinks.map((link) => (
+            <li>
+              <a href={link.href} class="nav-link">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
 
       <!-- CTA Button -->
-      <a href="/contact" class="btn btn-primary nav-cta">
-        Start a Project
-      </a>
+      <a href="/contact" class="btn btn-primary nav-cta"> Start a Project </a>
 
       <!-- Mobile Menu Button -->
       <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -48,11 +65,15 @@ const navLinks = [
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
     <ul class="mobile-nav-links">
-      {navLinks.map(link => (
-        <li>
-          <a href={link.href} class="mobile-nav-link">{link.label}</a>
-        </li>
-      ))}
+      {
+        navLinks.map((link) => (
+          <li>
+            <a href={link.href} class="mobile-nav-link">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
     </ul>
     <a href="/contact" class="btn btn-primary mobile-cta">Start a Project</a>
   </div>
@@ -174,11 +195,11 @@ const navLinks = [
     width: 60%;
   }
 
-  .mobile-menu-btn[aria-expanded="true"] .hamburger span:first-child {
+  .mobile-menu-btn[aria-expanded='true'] .hamburger span:first-child {
     transform: rotate(45deg) translate(3px, 5px);
   }
 
-  .mobile-menu-btn[aria-expanded="true"] .hamburger span:last-child {
+  .mobile-menu-btn[aria-expanded='true'] .hamburger span:last-child {
     transform: rotate(-45deg) translate(4px, -6px);
     width: 100%;
   }
@@ -257,18 +278,15 @@ const navLinks = [
 <script>
   // Header scroll effect
   const header = document.getElementById('header');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
+
     if (currentScroll > 50) {
       header?.classList.add('scrolled');
     } else {
       header?.classList.remove('scrolled');
     }
-    
-    lastScroll = currentScroll;
   });
 
   // Mobile menu toggle
@@ -284,7 +302,7 @@ const navLinks = [
   });
 
   // Close mobile menu on link click
-  document.querySelectorAll('.mobile-nav-link, .mobile-cta').forEach(link => {
+  document.querySelectorAll('.mobile-nav-link, .mobile-cta').forEach((link) => {
     link.addEventListener('click', () => {
       mobileMenuBtn?.setAttribute('aria-expanded', 'false');
       mobileMenu?.classList.remove('open');

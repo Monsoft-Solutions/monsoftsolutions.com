@@ -6,115 +6,126 @@ import CTA from '../../components/CTA.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Custom Software Development",
-  "provider": {
-    "@type": "Organization",
-    "name": "Monsoft Solutions",
-    "url": "https://monsoftsolutions.com"
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Custom Software Development',
+  provider: {
+    '@type': 'Organization',
+    name: 'Monsoft Solutions',
+    url: 'https://monsoftsolutions.com',
   },
-  "areaServed": "Worldwide",
-  "description": "Enterprise-grade custom software built for your exact needs. Web apps, mobile apps, APIs, and cloud infrastructure—architected for scale.",
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock"
-  }
+  areaServed: 'Worldwide',
+  description:
+    'Enterprise-grade custom software built for your exact needs. Web apps, mobile apps, APIs, and cloud infrastructure—architected for scale.',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+  },
 };
 
 const features = [
   {
     title: 'Web Applications',
-    description: 'Modern, responsive web apps built with Next.js, React, and enterprise-grade infrastructure. From dashboards to full platforms.',
-    icon: '🌐'
+    description:
+      'Modern, responsive web apps built with Next.js, React, and enterprise-grade infrastructure. From dashboards to full platforms.',
+    icon: '🌐',
   },
   {
     title: 'Mobile Apps',
-    description: 'Native iOS, Android, and cross-platform applications using React Native and Flutter. Beautiful, performant, and built to last.',
-    icon: '📱'
+    description:
+      'Native iOS, Android, and cross-platform applications using React Native and Flutter. Beautiful, performant, and built to last.',
+    icon: '📱',
   },
   {
     title: 'Cloud Infrastructure',
-    description: 'Scalable, secure architecture on AWS, GCP, or Azure. Auto-scaling, redundancy, and enterprise-level security built in.',
-    icon: '☁️'
+    description:
+      'Scalable, secure architecture on AWS, GCP, or Azure. Auto-scaling, redundancy, and enterprise-level security built in.',
+    icon: '☁️',
   },
   {
     title: 'API Development',
-    description: 'RESTful and GraphQL APIs designed for seamless integrations. Clean documentation, versioning, and rock-solid reliability.',
-    icon: '🔌'
+    description:
+      'RESTful and GraphQL APIs designed for seamless integrations. Clean documentation, versioning, and rock-solid reliability.',
+    icon: '🔌',
   },
   {
     title: 'Database Design',
-    description: 'Optimized data structures for performance at any scale. PostgreSQL, MongoDB, Redis—architected for your specific needs.',
-    icon: '🗄️'
+    description:
+      'Optimized data structures for performance at any scale. PostgreSQL, MongoDB, Redis—architected for your specific needs.',
+    icon: '🗄️',
   },
   {
     title: 'DevOps & CI/CD',
-    description: 'Automated testing, continuous deployment, and 24/7 monitoring. Ship faster with confidence. Break nothing.',
-    icon: '⚙️'
-  }
+    description:
+      'Automated testing, continuous deployment, and 24/7 monitoring. Ship faster with confidence. Break nothing.',
+    icon: '⚙️',
+  },
 ];
 
 const process = [
   {
     step: '01',
     title: 'Discovery',
-    description: 'We dive deep into your requirements, users, and business goals. No assumptions—just clarity on what success looks like.'
+    description:
+      'We dive deep into your requirements, users, and business goals. No assumptions—just clarity on what success looks like.',
   },
   {
     step: '02',
     title: 'Architecture',
-    description: 'We design the technical foundation—choosing the right stack, planning for scale, and mapping every component before writing code.'
+    description:
+      'We design the technical foundation—choosing the right stack, planning for scale, and mapping every component before writing code.',
   },
   {
     step: '03',
     title: 'Build',
-    description: 'Agile sprints with continuous delivery. You see progress weekly, provide feedback, and watch your product take shape.'
+    description:
+      'Agile sprints with continuous delivery. You see progress weekly, provide feedback, and watch your product take shape.',
   },
   {
     step: '04',
     title: 'Deploy & Scale',
-    description: 'Launch with confidence. We handle deployment, monitoring, and ongoing optimization as your product grows.'
-  }
+    description:
+      'Launch with confidence. We handle deployment, monitoring, and ongoing optimization as your product grows.',
+  },
 ];
 
 const stats = [
   { value: '100+', label: 'Projects Delivered' },
   { value: '99.9%', label: 'Uptime SLA' },
   { value: '10+', label: 'Years Experience' },
-  { value: '✓', label: 'Enterprise Ready' }
+  { value: '✓', label: 'Enterprise Ready' },
 ];
 
 const capabilities = [
   {
     category: 'Frontend',
-    items: ['React', 'Next.js', 'Vue', 'TypeScript', 'Tailwind CSS']
+    items: ['React', 'Next.js', 'Vue', 'TypeScript', 'Tailwind CSS'],
   },
   {
     category: 'Backend',
-    items: ['Node.js', 'Python', 'Go', 'GraphQL', 'REST APIs']
+    items: ['Node.js', 'Python', 'Go', 'GraphQL', 'REST APIs'],
   },
   {
     category: 'Mobile',
-    items: ['React Native', 'Flutter', 'iOS (Swift)', 'Android (Kotlin)']
+    items: ['React Native', 'Flutter', 'iOS (Swift)', 'Android (Kotlin)'],
   },
   {
     category: 'Infrastructure',
-    items: ['AWS', 'GCP', 'Azure', 'Docker', 'Kubernetes', 'Terraform']
+    items: ['AWS', 'GCP', 'Azure', 'Docker', 'Kubernetes', 'Terraform'],
   },
   {
     category: 'Data',
-    items: ['PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch']
+    items: ['PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch'],
   },
   {
     category: 'DevOps',
-    items: ['GitHub Actions', 'CircleCI', 'Datadog', 'PagerDuty']
-  }
+    items: ['GitHub Actions', 'CircleCI', 'Datadog', 'PagerDuty'],
+  },
 ];
 ---
 
-<Layout 
-  title="Custom Software Development" 
+<Layout
+  title="Custom Software Development"
   description="Enterprise-grade software built by senior engineers. Web apps, mobile apps, APIs—architected for scale, shipped on schedule, 100% your IP."
   structuredData={structuredData}
 >
@@ -129,23 +140,34 @@ const capabilities = [
           <span class="highlight">Built for You.</span>
         </h1>
         <p class="hero-subtitle reveal reveal-delay-2">
-          Software built for your exact needs. From web platforms to mobile apps—architected 
-          for performance, built for longevity. No templates. No shortcuts. Just clean, 
-          powerful software that scales with your business.
+          Software built for your exact needs. From web platforms to mobile apps—architected for
+          performance, built for longevity. No templates. No shortcuts. Just clean, powerful
+          software that scales with your business.
         </p>
         <div class="hero-cta reveal reveal-delay-3">
           <a href="/contact" class="btn btn-primary">
             Start Your Project
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </a>
           <a href="#capabilities" class="btn btn-secondary">See Our Stack</a>
         </div>
         <div class="hero-image reveal reveal-delay-4">
           <picture>
-            <source srcset="/images/services/development-hero.webp" type="image/webp">
-            <img src="/images/services/development-hero.png" alt="Custom software development visualization" loading="eager" />
+            <source srcset="/images/services/development-hero.webp" type="image/webp" />
+            <img
+              src="/images/services/development-hero.png"
+              alt="Custom software development visualization"
+              loading="eager"
+            />
           </picture>
         </div>
       </div>
@@ -155,12 +177,16 @@ const capabilities = [
     <section class="stats-bar" id="stats-section">
       <div class="container-wide">
         <div class="stats-grid">
-          {stats.map((stat, index) => (
-            <div class={`stat reveal reveal-delay-${index + 1}`}>
-              <span class="stat-value" data-value={stat.value}>{stat.value}</span>
-              <span class="stat-label">{stat.label}</span>
-            </div>
-          ))}
+          {
+            stats.map((stat, index) => (
+              <div class={`stat reveal reveal-delay-${index + 1}`}>
+                <span class="stat-value" data-value={stat.value}>
+                  {stat.value}
+                </span>
+                <span class="stat-label">{stat.label}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -173,14 +199,14 @@ const capabilities = [
             <span class="section-label">Our Approach</span>
             <h2>Code is craft. Architecture is strategy.</h2>
             <p>
-              We don't just write code—we engineer solutions. Every line serves a purpose. 
-              Every architectural decision considers your growth trajectory, your team's 
-              capabilities, and your long-term vision.
+              We don't just write code—we engineer solutions. Every line serves a purpose. Every
+              architectural decision considers your growth trajectory, your team's capabilities, and
+              your long-term vision.
             </p>
             <p>
-              The result? Software that doesn't just work today, but evolves with your 
-              business for years to come. No technical debt. No "we'll fix it later." 
-              Just clean, maintainable, production-ready systems.
+              The result? Software that doesn't just work today, but evolves with your business for
+              years to come. No technical debt. No "we'll fix it later." Just clean, maintainable,
+              production-ready systems.
             </p>
           </div>
           <div class="philosophy-pillars reveal reveal-delay-1">
@@ -224,18 +250,20 @@ const capabilities = [
           <span class="section-label">What We Build</span>
           <h2>Full-stack development. Zero compromises.</h2>
           <p>
-            From frontend to infrastructure, we handle the entire stack. 
-            One team, one vision, one seamless product.
+            From frontend to infrastructure, we handle the entire stack. One team, one vision, one
+            seamless product.
           </p>
         </div>
         <div class="features-grid">
-          {features.map((feature, index) => (
-            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
-              <span class="feature-icon">{feature.icon}</span>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </div>
-          ))}
+          {
+            features.map((feature, index) => (
+              <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+                <span class="feature-icon">{feature.icon}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -249,18 +277,20 @@ const capabilities = [
           <p>A proven methodology refined over 100+ successful projects.</p>
         </div>
         <div class="process-timeline">
-          {process.map((step, index) => (
-            <div class={`process-step reveal reveal-delay-${index + 1}`}>
-              <div class="step-marker">
-                <span class="step-number">{step.step}</span>
-                {index < process.length - 1 && <div class="step-line"></div>}
+          {
+            process.map((step, index) => (
+              <div class={`process-step reveal reveal-delay-${index + 1}`}>
+                <div class="step-marker">
+                  <span class="step-number">{step.step}</span>
+                  {index < process.length - 1 && <div class="step-line" />}
+                </div>
+                <div class="step-content">
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
               </div>
-              <div class="step-content">
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -274,16 +304,18 @@ const capabilities = [
           <p>We use the best tools for the job—never locked into a single vendor or framework.</p>
         </div>
         <div class="stack-grid">
-          {capabilities.map((cap, index) => (
-            <div class={`stack-category reveal reveal-delay-${(index % 3) + 1}`}>
-              <h3>{cap.category}</h3>
-              <div class="stack-items">
-                {cap.items.map(item => (
-                  <span class="stack-item">{item}</span>
-                ))}
+          {
+            capabilities.map((cap, index) => (
+              <div class={`stack-category reveal reveal-delay-${(index % 3) + 1}`}>
+                <h3>{cap.category}</h3>
+                <div class="stack-items">
+                  {cap.items.map((item) => (
+                    <span class="stack-item">{item}</span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -299,22 +331,34 @@ const capabilities = [
           <div class="diff-card reveal reveal-delay-1">
             <div class="diff-number">01</div>
             <h3>Senior Engineers Only</h3>
-            <p>No juniors learning on your dime. Every team member has 5+ years of production experience building at scale.</p>
+            <p>
+              No juniors learning on your dime. Every team member has 5+ years of production
+              experience building at scale.
+            </p>
           </div>
           <div class="diff-card reveal reveal-delay-2">
             <div class="diff-number">02</div>
             <h3>Transparent Process</h3>
-            <p>Weekly demos, daily standups if needed, and full visibility into progress. You're never in the dark.</p>
+            <p>
+              Weekly demos, daily standups if needed, and full visibility into progress. You're
+              never in the dark.
+            </p>
           </div>
           <div class="diff-card reveal reveal-delay-3">
             <div class="diff-number">03</div>
             <h3>Ship Date = Ship Date</h3>
-            <p>We hit deadlines. Period. Our track record speaks for itself—on time, on budget, on spec.</p>
+            <p>
+              We hit deadlines. Period. Our track record speaks for itself—on time, on budget, on
+              spec.
+            </p>
           </div>
           <div class="diff-card reveal reveal-delay-4">
             <div class="diff-number">04</div>
             <h3>Your Code. Your IP.</h3>
-            <p>Full ownership from day one. Clean handoffs, comprehensive documentation, and no vendor lock-in.</p>
+            <p>
+              Full ownership from day one. Clean handoffs, comprehensive documentation, and no
+              vendor lock-in.
+            </p>
           </div>
         </div>
       </div>
@@ -330,23 +374,39 @@ const capabilities = [
         <div class="faq-list">
           <div class="faq-item reveal reveal-delay-1">
             <h3>How long does a typical project take?</h3>
-            <p>It depends on scope. A focused MVP can be 6-8 weeks. A full enterprise platform might be 4-6 months. We'll give you an honest timeline after discovery—and we stick to it.</p>
+            <p>
+              It depends on scope. A focused MVP can be 6-8 weeks. A full enterprise platform might
+              be 4-6 months. We'll give you an honest timeline after discovery—and we stick to it.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-2">
             <h3>What does your pricing look like?</h3>
-            <p>We price based on scope, not hours. You get a fixed quote upfront with no surprises. For ongoing work, we offer dedicated team arrangements with predictable monthly costs.</p>
+            <p>
+              We price based on scope, not hours. You get a fixed quote upfront with no surprises.
+              For ongoing work, we offer dedicated team arrangements with predictable monthly costs.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-3">
             <h3>Can you work with our existing team?</h3>
-            <p>Absolutely. We embed seamlessly with in-house teams—adopting your workflows, tools, and coding standards. Or we can lead the project while keeping your team in the loop.</p>
+            <p>
+              Absolutely. We embed seamlessly with in-house teams—adopting your workflows, tools,
+              and coding standards. Or we can lead the project while keeping your team in the loop.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-4">
             <h3>What happens after launch?</h3>
-            <p>We offer ongoing support and maintenance packages. Or we can train your team to take over. Either way, you get comprehensive documentation and a clean codebase.</p>
+            <p>
+              We offer ongoing support and maintenance packages. Or we can train your team to take
+              over. Either way, you get comprehensive documentation and a clean codebase.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-5">
             <h3>Do you do MVPs for startups?</h3>
-            <p>Yes—and we love them. We've helped dozens of startups go from napkin sketch to launched product. We know how to move fast without cutting corners that hurt you later.</p>
+            <p>
+              Yes—and we love them. We've helped dozens of startups go from napkin sketch to
+              launched product. We know how to move fast without cutting corners that hurt you
+              later.
+            </p>
           </div>
         </div>
       </div>
@@ -484,7 +544,7 @@ const capabilities = [
 
   .pillar:hover {
     background: var(--color-white);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
 
   .pillar-icon {
@@ -670,7 +730,7 @@ const capabilities = [
   }
 
   .stack-category:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     transform: translateY(-2px);
   }
 
@@ -829,7 +889,14 @@ const capabilities = [
 </style>
 
 <script>
-  function animateValue(element: HTMLElement, start: number, end: number, duration: number, suffix: string, prefix: string) {
+  function animateValue(
+    element: HTMLElement,
+    start: number,
+    end: number,
+    duration: number,
+    suffix: string,
+    prefix: string
+  ) {
     const range = end - start;
     const startTime = performance.now();
     function update(currentTime: number) {
@@ -846,26 +913,34 @@ const capabilities = [
 
   function parseStatValue(value: string) {
     const match = value.match(/^([<>$]?)(\d+(?:\.\d+)?)(.*?)$/);
-    return match ? { prefix: match[1] || '', number: parseFloat(match[2]), suffix: match[3] || '' } : { prefix: '', number: 0, suffix: value };
+    return match
+      ? { prefix: match[1] || '', number: parseFloat(match[2]), suffix: match[3] || '' }
+      : { prefix: '', number: 0, suffix: value };
   }
 
   const statsSection = document.getElementById('stats-section');
   if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.stat-value').forEach((el, index) => {
-            const element = el as HTMLElement;
-            const parsed = parseStatValue(element.dataset.value || '');
-            if (parsed.number > 0) {
-              element.textContent = parsed.prefix + '0' + parsed.suffix;
-              setTimeout(() => animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix), index * 100);
-            }
-          });
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.stat-value').forEach((el, index) => {
+              const element = el as HTMLElement;
+              const parsed = parseStatValue(element.dataset.value || '');
+              if (parsed.number > 0) {
+                element.textContent = parsed.prefix + '0' + parsed.suffix;
+                setTimeout(
+                  () => animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix),
+                  index * 100
+                );
+              }
+            });
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
     statsObserver.observe(statsSection);
   }
 </script>

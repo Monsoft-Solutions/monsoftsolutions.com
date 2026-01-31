@@ -6,128 +6,150 @@ import CTA from '../../components/CTA.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "AI-Powered Marketing for Aesthetics & Plastic Surgery Clinics",
-  "provider": {
-    "@type": "Organization",
-    "name": "Monsoft Solutions",
-    "url": "https://monsoftsolutions.com"
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'AI-Powered Marketing for Aesthetics & Plastic Surgery Clinics',
+  provider: {
+    '@type': 'Organization',
+    name: 'Monsoft Solutions',
+    url: 'https://monsoftsolutions.com',
   },
-  "areaServed": "Worldwide",
-  "description": "Full-service digital marketing for plastic surgery clinics and med spas. AI-powered SEO, automated patient communication, conversion-optimized websites, and paid ads management.",
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock"
+  areaServed: 'Worldwide',
+  description:
+    'Full-service digital marketing for plastic surgery clinics and med spas. AI-powered SEO, automated patient communication, conversion-optimized websites, and paid ads management.',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
   },
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Plastic Surgery Clinics, Med Spas, Aesthetic Practices"
-  }
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'Plastic Surgery Clinics, Med Spas, Aesthetic Practices',
+  },
 };
 
 const services = [
   {
     title: 'Smart SEO & Content Automation',
-    description: 'AI-generated blog content that writes and publishes itself. Procedure guides, recovery tips, and educational content—optimized for search and compliant with healthcare standards.',
-    icon: '🔍'
+    description:
+      'AI-generated blog content that writes and publishes itself. Procedure guides, recovery tips, and educational content—optimized for search and compliant with healthcare standards.',
+    icon: '🔍',
   },
   {
     title: 'Conversion Optimization',
-    description: 'Turn website visitors into consultation bookings. Strategic design, compelling copy, and optimized patient journeys that maximize every click.',
-    icon: '📈'
+    description:
+      'Turn website visitors into consultation bookings. Strategic design, compelling copy, and optimized patient journeys that maximize every click.',
+    icon: '📈',
   },
   {
     title: 'Automated Patient Communication',
-    description: 'Never lose a lead. Automated follow-ups, appointment reminders, and nurture sequences that keep patients engaged from first click to post-op.',
-    icon: '💬'
+    description:
+      'Never lose a lead. Automated follow-ups, appointment reminders, and nurture sequences that keep patients engaged from first click to post-op.',
+    icon: '💬',
   },
   {
     title: 'Paid Ads Management',
-    description: 'Meta and Google campaigns built specifically for aesthetics. Precise targeting, compelling creative, and continuous optimization for maximum ROI.',
-    icon: '🎯'
+    description:
+      'Meta and Google campaigns built specifically for aesthetics. Precise targeting, compelling creative, and continuous optimization for maximum ROI.',
+    icon: '🎯',
   },
   {
     title: 'Website Design & Development',
-    description: 'Beautiful, fast websites that convert. Before/after galleries, procedure pages, and booking flows designed specifically for aesthetic practices.',
-    icon: '💻'
+    description:
+      'Beautiful, fast websites that convert. Before/after galleries, procedure pages, and booking flows designed specifically for aesthetic practices.',
+    icon: '💻',
   },
   {
     title: 'Reputation Management',
-    description: 'Build and protect your online presence. Review generation, response management, and reputation monitoring across all platforms.',
-    icon: '⭐'
-  }
+    description:
+      'Build and protect your online presence. Review generation, response management, and reputation monitoring across all platforms.',
+    icon: '⭐',
+  },
 ];
 
 const process = [
   {
     step: '01',
     title: 'Discovery & Audit',
-    description: 'We analyze your current digital presence, competitive landscape, and identify the highest-impact opportunities for growth.'
+    description:
+      'We analyze your current digital presence, competitive landscape, and identify the highest-impact opportunities for growth.',
   },
   {
     step: '02',
     title: 'Strategy & Setup',
-    description: 'Custom marketing strategy tailored to your practice. We set up tracking, automation systems, and launch your campaigns.'
+    description:
+      'Custom marketing strategy tailored to your practice. We set up tracking, automation systems, and launch your campaigns.',
   },
   {
     step: '03',
     title: 'Execute & Optimize',
-    description: 'Your marketing engine goes live. Content publishes, ads run, and patients start flowing in while we continuously optimize.'
+    description:
+      'Your marketing engine goes live. Content publishes, ads run, and patients start flowing in while we continuously optimize.',
   },
   {
     step: '04',
     title: 'Scale & Grow',
-    description: 'As results compound, we scale what works. More procedures, more locations, more revenue—all measurable.'
-  }
+    description:
+      'As results compound, we scale what works. More procedures, more locations, more revenue—all measurable.',
+  },
 ];
 
 const stats = [
   { value: '340%', label: 'Traffic Increase' },
   { value: '67%', label: 'More Consultations' },
   { value: '24/7', label: 'Lead Capture' },
-  { value: '<48h', label: 'Response Time' }
+  { value: '<48h', label: 'Response Time' },
 ];
 
 const caseStudyResults = [
   { metric: 'Website Traffic', before: 'Stagnant', after: '+340% increase', icon: '📊' },
   { metric: 'Conversion Rate', before: 'Industry average', after: '+67% improvement', icon: '💰' },
-  { metric: 'Patient Communication', before: 'Manual follow-up', after: 'Fully automated', icon: '🤖' },
+  {
+    metric: 'Patient Communication',
+    before: 'Manual follow-up',
+    after: 'Fully automated',
+    icon: '🤖',
+  },
   { metric: 'Content Production', before: 'Sporadic', after: 'Weekly AI blogs', icon: '✍️' },
   { metric: 'Ad Performance', before: 'No campaigns', after: 'ROI-positive ads', icon: '🎯' },
-  { metric: 'Lead Response', before: 'Next business day', after: 'Instant', icon: '⚡' }
+  { metric: 'Lead Response', before: 'Next business day', after: 'Instant', icon: '⚡' },
 ];
 
 const faqs = [
   {
     question: 'Do you work with practices of all sizes?',
-    answer: 'Yes. Whether you\'re a solo practitioner or a multi-location clinic, we tailor our solutions to your scale. Our systems are designed to grow with you—start focused, then expand as your practice grows.'
+    answer:
+      "Yes. Whether you're a solo practitioner or a multi-location clinic, we tailor our solutions to your scale. Our systems are designed to grow with you—start focused, then expand as your practice grows.",
   },
   {
     question: 'Is the AI-generated content HIPAA compliant?',
-    answer: 'Absolutely. Our content systems are designed with healthcare compliance in mind. All educational content is reviewed for accuracy, and we never include patient information in automated systems without proper consent and security measures.'
+    answer:
+      'Absolutely. Our content systems are designed with healthcare compliance in mind. All educational content is reviewed for accuracy, and we never include patient information in automated systems without proper consent and security measures.',
   },
   {
     question: 'How quickly will I see results?',
-    answer: 'Paid ads can generate consultations within days of launch. SEO takes longer—typically 3-6 months to see significant organic growth. Our automated patient communication starts working immediately, ensuring no leads fall through the cracks.'
+    answer:
+      'Paid ads can generate consultations within days of launch. SEO takes longer—typically 3-6 months to see significant organic growth. Our automated patient communication starts working immediately, ensuring no leads fall through the cracks.',
   },
   {
     question: 'What makes you different from other marketing agencies?',
-    answer: 'We specialize in aesthetics and use AI to do what traditional agencies can\'t: generate consistent content, automate patient journeys, and optimize campaigns 24/7. You get enterprise-level marketing at a fraction of the cost.'
+    answer:
+      "We specialize in aesthetics and use AI to do what traditional agencies can't: generate consistent content, automate patient journeys, and optimize campaigns 24/7. You get enterprise-level marketing at a fraction of the cost.",
   },
   {
     question: 'Do you require long-term contracts?',
-    answer: 'We offer flexible engagement models. Most clients start with a 3-month pilot to prove results, then continue month-to-month. We earn your business through performance, not contracts.'
+    answer:
+      'We offer flexible engagement models. Most clients start with a 3-month pilot to prove results, then continue month-to-month. We earn your business through performance, not contracts.',
   },
   {
     question: 'Can you handle everything or just specific services?',
-    answer: 'Both. Some clients want full-service management—we handle everything. Others need specific help with SEO, ads, or automation. We adapt to what your practice needs.'
-  }
+    answer:
+      'Both. Some clients want full-service management—we handle everything. Others need specific help with SEO, ads, or automation. We adapt to what your practice needs.',
+  },
 ];
 ---
 
-<Layout 
-  title="AI-Powered Marketing for Plastic Surgery Clinics & Med Spas" 
+<Layout
+  title="AI-Powered Marketing for Plastic Surgery Clinics & Med Spas"
   description="Transform your aesthetic practice with AI-powered marketing. Automated SEO, patient communication, conversion-optimized websites, and paid ads—all designed to fill your consultation calendar."
   structuredData={structuredData}
 >
@@ -142,23 +164,34 @@ const faqs = [
           <span class="highlight">Automatically.</span>
         </h1>
         <p class="hero-subtitle reveal reveal-delay-2">
-          Your patients are searching for procedures right now. We build the AI-powered 
-          marketing systems that capture their attention, nurture their interest, and 
-          book them on your calendar—while you focus on transforming lives.
+          Your patients are searching for procedures right now. We build the AI-powered marketing
+          systems that capture their attention, nurture their interest, and book them on your
+          calendar—while you focus on transforming lives.
         </p>
         <div class="hero-cta reveal reveal-delay-3">
           <a href="/contact" class="btn btn-primary">
             Grow Your Practice
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </a>
           <a href="#case-study" class="btn btn-secondary">See Results</a>
         </div>
         <div class="hero-image reveal reveal-delay-4">
           <picture>
-            <source srcset="/images/services/aesthetics-hero.webp" type="image/webp">
-            <img src="/images/services/aesthetics-hero.png" alt="AI-powered marketing dashboard for aesthetic clinics showing patient leads and consultation bookings" loading="eager" />
+            <source srcset="/images/services/aesthetics-hero.webp" type="image/webp" />
+            <img
+              src="/images/services/aesthetics-hero.png"
+              alt="AI-powered marketing dashboard for aesthetic clinics showing patient leads and consultation bookings"
+              loading="eager"
+            />
           </picture>
         </div>
       </div>
@@ -168,12 +201,16 @@ const faqs = [
     <section class="stats-bar" id="stats-section">
       <div class="container-wide">
         <div class="stats-grid">
-          {stats.map((stat, index) => (
-            <div class={`stat reveal reveal-delay-${index + 1}`}>
-              <span class="stat-value" data-value={stat.value}>{stat.value}</span>
-              <span class="stat-label">{stat.label}</span>
-            </div>
-          ))}
+          {
+            stats.map((stat, index) => (
+              <div class={`stat reveal reveal-delay-${index + 1}`}>
+                <span class="stat-value" data-value={stat.value}>
+                  {stat.value}
+                </span>
+                <span class="stat-label">{stat.label}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -186,14 +223,14 @@ const faqs = [
             <span class="section-label">The Challenge</span>
             <h2>Your skills are exceptional. Your marketing isn't.</h2>
             <p>
-              You spent years mastering your craft. You deliver results that change 
-              people's lives. But when it comes to marketing? Most aesthetic practices 
-              are stuck in the past—relying on word-of-mouth and hoping patients find them.
+              You spent years mastering your craft. You deliver results that change people's lives.
+              But when it comes to marketing? Most aesthetic practices are stuck in the past—relying
+              on word-of-mouth and hoping patients find them.
             </p>
             <p>
-              Meanwhile, your competition is everywhere. Patients are researching 
-              procedures online, comparing options, reading reviews—and booking with 
-              whoever shows up first and looks most trustworthy.
+              Meanwhile, your competition is everywhere. Patients are researching procedures online,
+              comparing options, reading reviews—and booking with whoever shows up first and looks
+              most trustworthy.
             </p>
           </div>
           <div class="problem-list reveal reveal-delay-1">
@@ -201,7 +238,10 @@ const faqs = [
               <span class="problem-icon">👻</span>
               <div>
                 <strong>Invisible Online</strong>
-                <p>Your competitors rank for "rhinoplasty near me" while your website collects dust on page 3.</p>
+                <p>
+                  Your competitors rank for "rhinoplasty near me" while your website collects dust
+                  on page 3.
+                </p>
               </div>
             </div>
             <div class="problem-item">
@@ -215,14 +255,20 @@ const faqs = [
               <span class="problem-icon">💸</span>
               <div>
                 <strong>Wasted Ad Spend</strong>
-                <p>Previous agencies burned through your budget with generic campaigns and nothing to show for it.</p>
+                <p>
+                  Previous agencies burned through your budget with generic campaigns and nothing to
+                  show for it.
+                </p>
               </div>
             </div>
             <div class="problem-item">
               <span class="problem-icon">⏰</span>
               <div>
                 <strong>No Time for Marketing</strong>
-                <p>You're busy with patients. Marketing falls to whoever has a free moment—which is never.</p>
+                <p>
+                  You're busy with patients. Marketing falls to whoever has a free moment—which is
+                  never.
+                </p>
               </div>
             </div>
           </div>
@@ -237,19 +283,20 @@ const faqs = [
           <span class="section-label">The Solution</span>
           <h2>AI-powered marketing that works while you sleep</h2>
           <p>
-            We combine aesthetic industry expertise with AI automation to create 
-            marketing systems that generate consultations around the clock—without 
-            requiring your constant attention.
+            We combine aesthetic industry expertise with AI automation to create marketing systems
+            that generate consultations around the clock—without requiring your constant attention.
           </p>
         </div>
         <div class="features-grid">
-          {services.map((service, index) => (
-            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
-              <span class="feature-icon">{service.icon}</span>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
-          ))}
+          {
+            services.map((service, index) => (
+              <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+                <span class="feature-icon">{service.icon}</span>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -261,11 +308,11 @@ const faqs = [
           <span class="section-label">Case Study</span>
           <h2>Alluring Plastic Surgery</h2>
           <p>
-            How we transformed a traditional plastic surgery practice into a 
-            digital marketing machine with AI-powered systems.
+            How we transformed a traditional plastic surgery practice into a digital marketing
+            machine with AI-powered systems.
           </p>
         </div>
-        
+
         <div class="case-study-content">
           <div class="case-intro reveal reveal-delay-1">
             <div class="case-logo">
@@ -274,41 +321,43 @@ const faqs = [
               </a>
             </div>
             <p>
-              Alluring Plastic Surgery came to us with a common problem: great surgeons, 
-              excellent results, but invisible online. Their website wasn't ranking, leads 
-              weren't converting, and they had no systems in place to nurture prospective patients.
+              Alluring Plastic Surgery came to us with a common problem: great surgeons, excellent
+              results, but invisible online. Their website wasn't ranking, leads weren't converting,
+              and they had no systems in place to nurture prospective patients.
             </p>
             <p>
-              We implemented our full AI-powered marketing stack: automated SEO content, 
-              conversion-optimized patient journeys, automated communication sequences, 
-              and targeted paid campaigns. The results speak for themselves.
+              We implemented our full AI-powered marketing stack: automated SEO content,
+              conversion-optimized patient journeys, automated communication sequences, and targeted
+              paid campaigns. The results speak for themselves.
             </p>
           </div>
 
           <div class="results-grid">
-            {caseStudyResults.map((result, index) => (
-              <div class={`result-card reveal reveal-delay-${(index % 3) + 1}`}>
-                <span class="result-icon">{result.icon}</span>
-                <h4>{result.metric}</h4>
-                <div class="result-comparison">
-                  <div class="result-before">
-                    <span class="result-label">Before</span>
-                    <span class="result-value">{result.before}</span>
-                  </div>
-                  <div class="result-arrow">→</div>
-                  <div class="result-after">
-                    <span class="result-label">After</span>
-                    <span class="result-value">{result.after}</span>
+            {
+              caseStudyResults.map((result, index) => (
+                <div class={`result-card reveal reveal-delay-${(index % 3) + 1}`}>
+                  <span class="result-icon">{result.icon}</span>
+                  <h4>{result.metric}</h4>
+                  <div class="result-comparison">
+                    <div class="result-before">
+                      <span class="result-label">Before</span>
+                      <span class="result-value">{result.before}</span>
+                    </div>
+                    <div class="result-arrow">→</div>
+                    <div class="result-after">
+                      <span class="result-label">After</span>
+                      <span class="result-value">{result.after}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
 
           <div class="case-testimonial reveal">
             <blockquote>
-              "We went from hoping patients would find us to having a predictable stream of 
-              qualified consultations. The AI content system alone has been a game-changer—we're 
+              "We went from hoping patients would find us to having a predictable stream of
+              qualified consultations. The AI content system alone has been a game-changer—we're
               ranking for procedures we never thought possible."
             </blockquote>
             <cite>— Dr. Angelina Postoev, Alluring Plastic Surgery</cite>
@@ -326,13 +375,15 @@ const faqs = [
           <p>A proven system for aesthetic practice growth.</p>
         </div>
         <div class="process-grid">
-          {process.map((step, index) => (
-            <div class={`process-step reveal reveal-delay-${index + 1}`}>
-              <span class="step-number">{step.step}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </div>
-          ))}
+          {
+            process.map((step, index) => (
+              <div class={`process-step reveal reveal-delay-${index + 1}`}>
+                <span class="step-number">{step.step}</span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -392,12 +443,14 @@ const faqs = [
           <h2>Questions from practice owners</h2>
         </div>
         <div class="faq-list">
-          {faqs.map((faq, index) => (
-            <div class={`faq-item reveal reveal-delay-${Math.min(index + 1, 5)}`}>
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
-            </div>
-          ))}
+          {
+            faqs.map((faq, index) => (
+              <div class={`faq-item reveal reveal-delay-${Math.min(index + 1, 5)}`}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -980,10 +1033,17 @@ const faqs = [
 
 <script>
   // Animated stats counter
-  function animateValue(element: HTMLElement, start: number, end: number, duration: number, suffix: string, prefix: string) {
+  function animateValue(
+    element: HTMLElement,
+    start: number,
+    end: number,
+    duration: number,
+    suffix: string,
+    prefix: string
+  ) {
     const range = end - start;
     const startTime = performance.now();
-    
+
     function update(currentTime: number) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
@@ -1009,25 +1069,28 @@ const faqs = [
 
   const statsSection = document.getElementById('stats-section');
   if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const statValues = entry.target.querySelectorAll('.stat-value');
-          statValues.forEach((el, index) => {
-            const element = el as HTMLElement;
-            const originalValue = element.dataset.value || '';
-            const parsed = parseStatValue(originalValue);
-            if (parsed.number > 0) {
-              element.textContent = parsed.prefix + '0' + parsed.suffix;
-              setTimeout(() => {
-                animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix);
-              }, index * 100);
-            }
-          });
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const statValues = entry.target.querySelectorAll('.stat-value');
+            statValues.forEach((el, index) => {
+              const element = el as HTMLElement;
+              const originalValue = element.dataset.value || '';
+              const parsed = parseStatValue(originalValue);
+              if (parsed.number > 0) {
+                element.textContent = parsed.prefix + '0' + parsed.suffix;
+                setTimeout(() => {
+                  animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix);
+                }, index * 100);
+              }
+            });
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
     statsObserver.observe(statsSection);
   }
 </script>
