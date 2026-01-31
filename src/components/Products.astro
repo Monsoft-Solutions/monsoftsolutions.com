@@ -1,0 +1,345 @@
+---
+const products = [
+  {
+    name: 'Adfluens',
+    tagline: 'AI-Powered Social Command Center',
+    description: 'The all-in-one platform for social media management. AI content generation, GMB optimization, Meta integration, and smart analytics—all from one dashboard.',
+    stats: [
+      { value: '2,500+', label: 'Active Users' },
+      { value: '50M+', label: 'Posts Published' },
+      { value: '4.9', label: 'Rating' }
+    ],
+    link: 'https://adfluens.io',
+    status: 'live',
+    color: '#2563eb'
+  },
+  {
+    name: 'Praxis Notes',
+    tagline: 'AI-Powered ABA Session Notes',
+    description: 'Generate detailed, insurance-ready ABA session notes with AI. Built for BCBAs and RBTs to save 75% of documentation time while maintaining clinical quality.',
+    stats: [
+      { value: '1,000+', label: 'Professionals' },
+      { value: '75%', label: 'Time Saved' },
+      { value: '97%', label: 'Acceptance Rate' }
+    ],
+    link: 'https://praxisnotes.com',
+    status: 'live',
+    color: '#10b981'
+  },
+  {
+    name: 'Loquent',
+    tagline: 'AI-First Communication Platform',
+    description: 'Next-generation conversational AI for businesses. Realtime AI agents for phone calls, plus unified messaging across SMS, WhatsApp, Instagram DM, and Facebook Messenger.',
+    stats: [
+      { value: 'Q2', label: '2026 Launch' },
+      { value: 'Voice + Text', label: 'Channels' },
+      { value: '5+', label: 'Integrations' }
+    ],
+    link: '/contact',
+    status: 'coming-soon',
+    color: '#8b5cf6'
+  }
+];
+---
+
+<section class="products section-padding" id="products">
+  <div class="container-wide">
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label">Our Products</span>
+      <h2 class="section-title">
+        Software products
+        <br />
+        <span class="text-muted">we've built and run</span>
+      </h2>
+    </div>
+
+    <!-- Products List -->
+    <div class="products-list">
+      {products.map((product, index) => (
+        <article class={`product-card reveal reveal-delay-${(index % 3) + 1}`}>
+          <div class="product-content">
+            <div class="product-header">
+              <div class="product-name-group">
+                <h3 class="product-name">{product.name}</h3>
+                {product.status === 'live' ? (
+                  <span class="status-badge live">
+                    <span class="status-dot"></span>
+                    Live
+                  </span>
+                ) : (
+                  <span class="status-badge coming-soon">Coming Soon</span>
+                )}
+              </div>
+              <p class="product-tagline">{product.tagline}</p>
+            </div>
+            
+            <p class="product-description">{product.description}</p>
+            
+            <div class="product-stats">
+              {product.stats.map(stat => (
+                <div class="stat">
+                  <span class="stat-value">{stat.value}</span>
+                  <span class="stat-label">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <a 
+              href={product.link} 
+              class="product-link"
+              target={product.status === 'live' ? '_blank' : undefined}
+              rel={product.status === 'live' ? 'noopener noreferrer' : undefined}
+            >
+              {product.status === 'live' ? 'Visit Platform' : 'Get Early Access'}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
+          </div>
+          
+          <div class="product-visual" style={`--accent: ${product.color}`}>
+            <div class="visual-shape"></div>
+            <div class="visual-shape-2"></div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .products {
+    background: var(--color-gray-50);
+  }
+
+  .section-header {
+    margin-bottom: 4rem;
+    max-width: 600px;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .text-muted {
+    color: var(--color-gray-400);
+  }
+
+  .products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .product-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 3rem;
+    background: var(--color-white);
+    border-radius: 24px;
+    transition: all 0.3s ease;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+  }
+
+  .product-card:nth-child(even) {
+    direction: rtl;
+  }
+
+  .product-card:nth-child(even) > * {
+    direction: ltr;
+  }
+
+  .product-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .product-name-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-black);
+    letter-spacing: -0.02em;
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .status-badge.live {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .status-badge.coming-soon {
+    background: var(--color-gray-100);
+    color: var(--color-gray-500);
+  }
+
+  .product-tagline {
+    font-size: 1.125rem;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  .product-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 2rem;
+  }
+
+  .product-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .stat-value {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-black);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.8125rem;
+    color: var(--color-gray-400);
+  }
+
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-black);
+    transition: gap 0.2s ease;
+  }
+
+  .product-link:hover {
+    gap: 0.75rem;
+  }
+
+  /* Visual Element */
+  .product-visual {
+    position: relative;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--color-gray-50);
+  }
+
+  .visual-shape {
+    width: 60%;
+    height: 60%;
+    background: var(--accent, var(--color-black));
+    border-radius: 24px;
+    opacity: 0.1;
+    animation: morph 8s ease-in-out infinite;
+  }
+
+  .visual-shape-2 {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    background: var(--accent, var(--color-black));
+    border-radius: 16px;
+    opacity: 0.2;
+    animation: morph 8s ease-in-out infinite reverse;
+  }
+
+  @keyframes morph {
+    0%, 100% {
+      border-radius: 24px;
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      border-radius: 50%;
+      transform: rotate(180deg) scale(1.1);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .product-card {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .product-card:nth-child(even) {
+      direction: ltr;
+    }
+
+    .product-visual {
+      order: -1;
+      max-height: 300px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .product-card {
+      padding: 2rem;
+    }
+
+    .product-stats {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+  }
+</style>

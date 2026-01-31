@@ -1,0 +1,108 @@
+---
+// CTA Section
+---
+
+<section class="cta">
+  <div class="container-narrow">
+    <div class="cta-content reveal">
+      <h2 class="cta-title">
+        Ready to build something
+        <span class="highlight">intelligent?</span>
+      </h2>
+      <p class="cta-description">
+        Let's talk about how AI-powered software can transform your business. 
+        No sales pitch—just a conversation about what's possible.
+      </p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-primary btn-large">
+          Start a Conversation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="mailto:hello@monsoftsolutions.com" class="email-link">
+          or email hello@monsoftsolutions.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    padding: var(--space-section) 0;
+    background: var(--color-black);
+    text-align: center;
+  }
+
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-title .highlight {
+    color: var(--color-gray-400);
+    font-style: italic;
+  }
+
+  .cta-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-400);
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+    margin-inline: auto;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .btn-large {
+    padding: 1.125rem 2.5rem;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: var(--color-white);
+    color: var(--color-black);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-gray-100);
+    transform: translateY(-2px);
+  }
+
+  .email-link {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    transition: color 0.2s ease;
+  }
+
+  .email-link:hover {
+    color: var(--color-gray-300);
+  }
+
+  @media (max-width: 640px) {
+    .cta-actions {
+      width: 100%;
+    }
+
+    .btn-large {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

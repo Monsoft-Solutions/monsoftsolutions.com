@@ -1,0 +1,168 @@
+---
+const services = [
+  {
+    number: '01',
+    title: 'AI Solutions',
+    description: 'Custom AI systems that learn, adapt, and scale. From intelligent automation to predictive analytics—we build AI that delivers measurable ROI.',
+    features: ['Machine Learning', 'NLP & LLMs', 'Computer Vision', 'Predictive Analytics']
+  },
+  {
+    number: '02',
+    title: 'Business Automation',
+    description: 'Eliminate manual processes and unlock efficiency. We design automation workflows that save time, reduce errors, and scale with your business.',
+    features: ['Process Automation', 'Workflow Design', 'Integration APIs', 'Real-time Sync']
+  },
+  {
+    number: '03',
+    title: 'Custom Development',
+    description: 'Enterprise-grade software built for your exact needs. From web platforms to mobile apps—architected for performance, built for longevity.',
+    features: ['Web Applications', 'Mobile Apps', 'Cloud Infrastructure', 'API Development']
+  }
+];
+---
+
+<section class="services section-padding" id="services">
+  <div class="container-wide">
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">
+        Capabilities built for
+        <br />
+        <span class="text-muted">the modern business</span>
+      </h2>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+      {services.map((service, index) => (
+        <article class={`service-card reveal reveal-delay-${index + 1}`}>
+          <span class="service-number">{service.number}</span>
+          <h3 class="service-title">{service.title}</h3>
+          <p class="service-description">{service.description}</p>
+          <ul class="service-features">
+            {service.features.map(feature => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background: var(--color-white);
+  }
+
+  .section-header {
+    margin-bottom: 4rem;
+    max-width: 600px;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .text-muted {
+    color: var(--color-gray-400);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .service-card {
+    padding: 2.5rem;
+    background: var(--color-gray-50);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover {
+    background: var(--color-white);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    transform: translateY(-4px);
+  }
+
+  .service-number {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-gray-300);
+    margin-bottom: 1.5rem;
+  }
+
+  .service-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+  }
+
+  .service-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 1.5rem;
+  }
+
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .service-features li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.8125rem;
+    color: var(--color-gray-600);
+    padding: 0.375rem 0.75rem;
+    background: var(--color-white);
+    border-radius: 6px;
+    border: 1px solid var(--color-gray-100);
+  }
+
+  .service-card:hover .service-features li {
+    background: var(--color-gray-50);
+    border-color: var(--color-gray-200);
+  }
+
+  .service-features svg {
+    color: var(--color-gray-400);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+    }
+  }
+</style>

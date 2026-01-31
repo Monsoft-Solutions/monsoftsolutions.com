@@ -1,0 +1,299 @@
+---
+// Hero component for homepage
+---
+
+<section class="hero">
+  <div class="container-wide">
+    <div class="hero-content">
+      <!-- Eyebrow -->
+      <div class="eyebrow reveal">
+        <span class="eyebrow-dot"></span>
+        AI-First Software Company
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-title reveal reveal-delay-1">
+        We build software that
+        <span class="highlight">thinks</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-subtitle reveal reveal-delay-2">
+        Intelligent solutions that transform how businesses operate. 
+        From AI-powered platforms to custom enterprise systems—we turn 
+        complex problems into elegant software.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-ctas reveal reveal-delay-3">
+        <a href="/contact" class="btn btn-primary">
+          Start a Project
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="/products" class="btn btn-secondary">
+          View Our Products
+        </a>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="trust-indicators reveal reveal-delay-4">
+        <div class="trust-item">
+          <span class="trust-number">2,500+</span>
+          <span class="trust-label">Users on Adfluens</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-number">50M+</span>
+          <span class="trust-label">Posts Published</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-number">15+</span>
+          <span class="trust-label">Enterprise Clients</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Element -->
+    <div class="hero-visual reveal reveal-delay-2">
+      <div class="visual-grid">
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item accent"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item accent-secondary"></div>
+      </div>
+      <div class="visual-glow"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero .container-wide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+
+  .eyebrow-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 5.5vw, 4.5rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: var(--color-black);
+  }
+
+  .hero-title .highlight {
+    color: var(--color-gray-400);
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.0625rem, 1.3vw, 1.25rem);
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 2.5rem;
+    max-width: 520px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .hero-ctas .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .trust-indicators {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-gray-100);
+  }
+
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .trust-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-black);
+    letter-spacing: -0.02em;
+  }
+
+  .trust-label {
+    font-size: 0.8125rem;
+    color: var(--color-gray-400);
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--color-gray-200);
+  }
+
+  /* Visual Element */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .visual-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+  }
+
+  .grid-item {
+    background: var(--color-gray-50);
+    border-radius: 16px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .grid-item:nth-child(1) { animation-delay: 0s; }
+  .grid-item:nth-child(2) { animation-delay: 0.5s; }
+  .grid-item:nth-child(3) { animation-delay: 1s; }
+  .grid-item:nth-child(4) { animation-delay: 1.5s; }
+  .grid-item:nth-child(5) { animation-delay: 2s; }
+  .grid-item:nth-child(6) { animation-delay: 2.5s; }
+  .grid-item:nth-child(7) { animation-delay: 3s; }
+  .grid-item:nth-child(8) { animation-delay: 3.5s; }
+  .grid-item:nth-child(9) { animation-delay: 4s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .grid-item.accent {
+    background: var(--color-black);
+  }
+
+  .grid-item.accent-secondary {
+    background: var(--color-gray-200);
+  }
+
+  .visual-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+  }
+
+  @media (max-width: 1024px) {
+    .hero .container-wide {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 100%;
+      order: 2;
+    }
+
+    .hero-subtitle {
+      margin-inline: auto;
+    }
+
+    .hero-ctas {
+      justify-content: center;
+    }
+
+    .trust-indicators {
+      justify-content: center;
+    }
+
+    .hero-visual {
+      order: 1;
+      margin-bottom: 2rem;
+    }
+
+    .visual-grid {
+      max-width: 280px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 6rem;
+    }
+
+    .trust-indicators {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .trust-divider {
+      display: none;
+    }
+  }
+</style>

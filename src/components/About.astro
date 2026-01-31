@@ -1,0 +1,209 @@
+---
+const values = [
+  {
+    icon: 'brain',
+    title: 'AI-First Thinking',
+    description: 'We don\'t bolt AI onto existing solutions. We architect systems where intelligence is fundamental to how they work.'
+  },
+  {
+    icon: 'target',
+    title: 'Outcome Obsessed',
+    description: 'Beautiful code means nothing without business impact. We measure success in results, not features shipped.'
+  },
+  {
+    icon: 'users',
+    title: 'Partnership Model',
+    description: 'We\'re not vendors—we\'re partners. Your success is our success, and we operate with that alignment.'
+  }
+];
+---
+
+<section class="about section-padding" id="about">
+  <div class="container-wide">
+    <div class="about-grid">
+      <!-- Content Column -->
+      <div class="about-content">
+        <div class="reveal">
+          <span class="section-label">About Us</span>
+          <h2 class="about-title">
+            A team that builds 
+            <span class="highlight">what others can't</span>
+          </h2>
+        </div>
+        
+        <div class="about-text reveal reveal-delay-1">
+          <p>
+            Monsoft Solutions is an AI-first software company based in Miami. 
+            We build intelligent systems that transform how businesses operate—from 
+            AI-powered SaaS products to custom enterprise solutions.
+          </p>
+          <p>
+            Founded by technologists who've shipped software at scale, we combine 
+            deep technical expertise with a relentless focus on business outcomes. 
+            No bloat. No buzzwords. Just software that works.
+          </p>
+        </div>
+
+        <a href="/about" class="learn-more reveal reveal-delay-2">
+          Learn more about us
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Values Column -->
+      <div class="values-list">
+        {values.map((value, index) => (
+          <div class={`value-card reveal reveal-delay-${index + 1}`}>
+            <div class="value-icon">
+              {value.icon === 'brain' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 4.5c-3.5 0-6.5 2.5-6.5 6.5 0 2 1 4 2.5 5.5v4a1 1 0 001 1h6a1 1 0 001-1v-4c1.5-1.5 2.5-3.5 2.5-5.5 0-4-3-6.5-6.5-6.5z"/>
+                  <path d="M10 21.5h4M12 4.5V2M8 11h8"/>
+                </svg>
+              )}
+              {value.icon === 'target' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <circle cx="12" cy="12" r="6"/>
+                  <circle cx="12" cy="12" r="2"/>
+                </svg>
+              )}
+              {value.icon === 'users' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                </svg>
+              )}
+            </div>
+            <h3 class="value-title">{value.title}</h3>
+            <p class="value-description">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--color-white);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .about-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+
+  .about-title .highlight {
+    color: var(--color-gray-400);
+  }
+
+  .about-text {
+    margin-bottom: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-gray-500);
+    margin-bottom: 1.25rem;
+  }
+
+  .about-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .learn-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-black);
+    transition: gap 0.2s ease;
+  }
+
+  .learn-more:hover {
+    gap: 0.75rem;
+  }
+
+  /* Values */
+  .values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .value-card {
+    padding: 2rem;
+    background: var(--color-gray-50);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .value-card:hover {
+    background: var(--color-white);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transform: translateX(8px);
+  }
+
+  .value-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--color-white);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+  }
+
+  .value-card:hover .value-icon {
+    background: var(--color-gray-50);
+  }
+
+  .value-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-black);
+    margin-bottom: 0.5rem;
+  }
+
+  .value-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+  }
+</style>
