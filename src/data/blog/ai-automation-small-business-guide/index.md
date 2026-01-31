@@ -7,17 +7,9 @@ category: "AI & Automation"
 tags: ["AI", "Automation", "Small Business", "Productivity", "Time Management"]
 featured: true
 readingTime: "8 min read"
-# heroImage: "./images/hero.jpg"
-# heroImageAlt: "Business owner working efficiently with automated systems on laptop"
+heroImage: "./images/hero.png"
+heroImageAlt: "Business owner working efficiently with automated systems on laptop"
 ---
-
-<!-- 
-IMAGE REQUIREMENTS FOR THIS POST:
-1. Hero image (1200x630): Business owner working efficiently with automated systems
-2. Inline image 1: Bar chart comparing time spent on manual vs automated tasks
-3. Inline image 2: Flowchart of automated marketing workflow
-4. Inline image 3: Dashboard showing automation ROI metrics
--->
 
 If you're running a small business, you already know the feeling: there's never enough time. Between answering emails, scheduling appointments, managing invoices, and actually doing the work that pays the bills, the days blur together.
 
@@ -35,7 +27,7 @@ Consider a typical small business owner's week:
 
 That's **14-21 hours per week** spent on tasks that don't directly generate revenue. Over a year, that's more than 700 hours—or roughly **18 full work weeks**.
 
-<!-- IMAGE: Bar chart comparing time spent on manual tasks versus automated workflows (./images/time-comparison-chart.jpg) -->
+![Bar chart comparing time spent on manual tasks versus automated workflows](./images/time-comparison-chart.png)
 
 ## Where AI Automation Makes the Biggest Impact
 
@@ -70,7 +62,7 @@ Creating consistent content across channels is exhausting. AI can help by:
 - Optimizing posting schedules based on engagement data
 - A/B testing subject lines and copy at scale
 
-<!-- IMAGE: Flowchart showing automated marketing workflow from content creation to multi-channel distribution (./images/automation-workflow.jpg) -->
+![Flowchart showing automated marketing workflow from content creation to multi-channel distribution](./images/automation-workflow.png)
 
 ## Starting Small: Your First Automation
 
@@ -116,7 +108,7 @@ Automation without measurement is just guessing. Track these metrics to prove (a
 - **Conversion rate:** Are faster responses leading to more sales?
 - **Employee satisfaction:** Is your team happier with less grunt work?
 
-<!-- IMAGE: Dashboard showing automation ROI metrics including time saved and error reduction (./images/roi-dashboard.jpg) -->
+![Dashboard showing automation ROI metrics including time saved and error reduction](./images/roi-dashboard.png)
 
 ## Getting Started This Week
 

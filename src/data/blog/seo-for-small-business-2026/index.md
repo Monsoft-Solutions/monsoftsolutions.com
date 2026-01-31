@@ -7,17 +7,9 @@ category: "Business Growth"
 tags: ["SEO", "Marketing", "Small Business", "Content Strategy", "Google"]
 featured: false
 readingTime: "7 min read"
-# heroImage: "./images/hero.jpg"
-# heroImageAlt: "Search analytics dashboard showing organic traffic growth trends"
+heroImage: "./images/hero.png"
+heroImageAlt: "Search analytics dashboard showing organic traffic growth trends"
 ---
-
-<!-- 
-IMAGE REQUIREMENTS FOR THIS POST:
-1. Hero image (1200x630): Search analytics dashboard with traffic growth
-2. Inline image 1: SEO checklist/on-page optimization elements
-3. Inline image 2: Graph comparing generic vs specific content performance
-4. Inline image 3: Google Local Pack example screenshot
--->
 
 SEO advice is everywhere, and most of it is outdated, overcomplicated, or designed to sell you something.
 
@@ -76,7 +68,7 @@ For every important page:
 
 These basics alone put you ahead of most small business websites.
 
-<!-- IMAGE: SEO checklist showing on-page optimization elements for a webpage (./images/seo-checklist.jpg) -->
+![SEO checklist showing on-page optimization elements for a webpage](./images/seo-checklist.png)
 
 ## Content That Actually Ranks
 
@@ -100,7 +92,7 @@ Here's the hard truth: most small business blogs are a waste of time. They publi
 
 **Keyword-stuffed pages.** Google knows what you're doing. Write for humans first.
 
-<!-- IMAGE: Graph showing content performance comparing generic vs. specific topic articles (./images/content-performance.jpg) -->
+![Graph showing content performance comparing generic vs. specific topic articles](./images/content-performance.png)
 
 ## The Link Question
 
@@ -143,7 +135,7 @@ If you serve local customers, your Google Business Profile is arguably more impo
 
 For many local businesses, dominating the "Local Pack" (the map results) brings more customers than ranking #1 in regular results.
 
-<!-- IMAGE: Screenshot of Google Local Pack search results for a local business (./images/local-pack-example.jpg) -->
+![Screenshot of Google Local Pack search results for a local business](./images/local-pack-example.png)
 
 ## Measuring What Matters
 
