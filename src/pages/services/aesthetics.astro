@@ -1,0 +1,1033 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTA from '../../components/CTA.astro';
+import StickyCTA from '../../components/StickyCTA.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "AI-Powered Marketing for Aesthetics & Plastic Surgery Clinics",
+  "provider": {
+    "@type": "Organization",
+    "name": "Monsoft Solutions",
+    "url": "https://monsoftsolutions.com"
+  },
+  "areaServed": "Worldwide",
+  "description": "Full-service digital marketing for plastic surgery clinics and med spas. AI-powered SEO, automated patient communication, conversion-optimized websites, and paid ads management.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Plastic Surgery Clinics, Med Spas, Aesthetic Practices"
+  }
+};
+
+const services = [
+  {
+    title: 'Smart SEO & Content Automation',
+    description: 'AI-generated blog content that writes and publishes itself. Procedure guides, recovery tips, and educational content—optimized for search and compliant with healthcare standards.',
+    icon: '🔍'
+  },
+  {
+    title: 'Conversion Optimization',
+    description: 'Turn website visitors into consultation bookings. Strategic design, compelling copy, and optimized patient journeys that maximize every click.',
+    icon: '📈'
+  },
+  {
+    title: 'Automated Patient Communication',
+    description: 'Never lose a lead. Automated follow-ups, appointment reminders, and nurture sequences that keep patients engaged from first click to post-op.',
+    icon: '💬'
+  },
+  {
+    title: 'Paid Ads Management',
+    description: 'Meta and Google campaigns built specifically for aesthetics. Precise targeting, compelling creative, and continuous optimization for maximum ROI.',
+    icon: '🎯'
+  },
+  {
+    title: 'Website Design & Development',
+    description: 'Beautiful, fast websites that convert. Before/after galleries, procedure pages, and booking flows designed specifically for aesthetic practices.',
+    icon: '💻'
+  },
+  {
+    title: 'Reputation Management',
+    description: 'Build and protect your online presence. Review generation, response management, and reputation monitoring across all platforms.',
+    icon: '⭐'
+  }
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Discovery & Audit',
+    description: 'We analyze your current digital presence, competitive landscape, and identify the highest-impact opportunities for growth.'
+  },
+  {
+    step: '02',
+    title: 'Strategy & Setup',
+    description: 'Custom marketing strategy tailored to your practice. We set up tracking, automation systems, and launch your campaigns.'
+  },
+  {
+    step: '03',
+    title: 'Execute & Optimize',
+    description: 'Your marketing engine goes live. Content publishes, ads run, and patients start flowing in while we continuously optimize.'
+  },
+  {
+    step: '04',
+    title: 'Scale & Grow',
+    description: 'As results compound, we scale what works. More procedures, more locations, more revenue—all measurable.'
+  }
+];
+
+const stats = [
+  { value: '340%', label: 'Traffic Increase' },
+  { value: '67%', label: 'More Consultations' },
+  { value: '24/7', label: 'Lead Capture' },
+  { value: '<48h', label: 'Response Time' }
+];
+
+const caseStudyResults = [
+  { metric: 'Website Traffic', before: 'Stagnant', after: '+340% increase', icon: '📊' },
+  { metric: 'Conversion Rate', before: 'Industry average', after: '+67% improvement', icon: '💰' },
+  { metric: 'Patient Communication', before: 'Manual follow-up', after: 'Fully automated', icon: '🤖' },
+  { metric: 'Content Production', before: 'Sporadic', after: 'Weekly AI blogs', icon: '✍️' },
+  { metric: 'Ad Performance', before: 'No campaigns', after: 'ROI-positive ads', icon: '🎯' },
+  { metric: 'Lead Response', before: 'Next business day', after: 'Instant', icon: '⚡' }
+];
+
+const faqs = [
+  {
+    question: 'Do you work with practices of all sizes?',
+    answer: 'Yes. Whether you\'re a solo practitioner or a multi-location clinic, we tailor our solutions to your scale. Our systems are designed to grow with you—start focused, then expand as your practice grows.'
+  },
+  {
+    question: 'Is the AI-generated content HIPAA compliant?',
+    answer: 'Absolutely. Our content systems are designed with healthcare compliance in mind. All educational content is reviewed for accuracy, and we never include patient information in automated systems without proper consent and security measures.'
+  },
+  {
+    question: 'How quickly will I see results?',
+    answer: 'Paid ads can generate consultations within days of launch. SEO takes longer—typically 3-6 months to see significant organic growth. Our automated patient communication starts working immediately, ensuring no leads fall through the cracks.'
+  },
+  {
+    question: 'What makes you different from other marketing agencies?',
+    answer: 'We specialize in aesthetics and use AI to do what traditional agencies can\'t: generate consistent content, automate patient journeys, and optimize campaigns 24/7. You get enterprise-level marketing at a fraction of the cost.'
+  },
+  {
+    question: 'Do you require long-term contracts?',
+    answer: 'We offer flexible engagement models. Most clients start with a 3-month pilot to prove results, then continue month-to-month. We earn your business through performance, not contracts.'
+  },
+  {
+    question: 'Can you handle everything or just specific services?',
+    answer: 'Both. Some clients want full-service management—we handle everything. Others need specific help with SEO, ads, or automation. We adapt to what your practice needs.'
+  }
+];
+---
+
+<Layout 
+  title="AI-Powered Marketing for Plastic Surgery Clinics & Med Spas" 
+  description="Transform your aesthetic practice with AI-powered marketing. Automated SEO, patient communication, conversion-optimized websites, and paid ads—all designed to fill your consultation calendar."
+  structuredData={structuredData}
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container-narrow">
+        <span class="hero-label reveal">Aesthetics & Plastic Surgery</span>
+        <h1 class="hero-title reveal reveal-delay-1">
+          Fill your consultation calendar.
+          <span class="highlight">Automatically.</span>
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+          Your patients are searching for procedures right now. We build the AI-powered 
+          marketing systems that capture their attention, nurture their interest, and 
+          book them on your calendar—while you focus on transforming lives.
+        </p>
+        <div class="hero-cta reveal reveal-delay-3">
+          <a href="/contact" class="btn btn-primary">
+            Grow Your Practice
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#case-study" class="btn btn-secondary">See Results</a>
+        </div>
+        <div class="hero-image reveal reveal-delay-4">
+          <picture>
+            <source srcset="/images/services/aesthetics-hero.webp" type="image/webp">
+            <img src="/images/services/aesthetics-hero.png" alt="AI-powered marketing dashboard for aesthetic clinics showing patient leads and consultation bookings" loading="eager" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar" id="stats-section">
+      <div class="container-wide">
+        <div class="stats-grid">
+          {stats.map((stat, index) => (
+            <div class={`stat reveal reveal-delay-${index + 1}`}>
+              <span class="stat-value" data-value={stat.value}>{stat.value}</span>
+              <span class="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem section-padding">
+      <div class="container-wide">
+        <div class="problem-grid">
+          <div class="problem-content reveal">
+            <span class="section-label">The Challenge</span>
+            <h2>Your skills are exceptional. Your marketing isn't.</h2>
+            <p>
+              You spent years mastering your craft. You deliver results that change 
+              people's lives. But when it comes to marketing? Most aesthetic practices 
+              are stuck in the past—relying on word-of-mouth and hoping patients find them.
+            </p>
+            <p>
+              Meanwhile, your competition is everywhere. Patients are researching 
+              procedures online, comparing options, reading reviews—and booking with 
+              whoever shows up first and looks most trustworthy.
+            </p>
+          </div>
+          <div class="problem-list reveal reveal-delay-1">
+            <div class="problem-item">
+              <span class="problem-icon">👻</span>
+              <div>
+                <strong>Invisible Online</strong>
+                <p>Your competitors rank for "rhinoplasty near me" while your website collects dust on page 3.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">📉</span>
+              <div>
+                <strong>Leads Falling Through</strong>
+                <p>Inquiries come in but never convert. No follow-up system means lost patients.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">💸</span>
+              <div>
+                <strong>Wasted Ad Spend</strong>
+                <p>Previous agencies burned through your budget with generic campaigns and nothing to show for it.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">⏰</span>
+              <div>
+                <strong>No Time for Marketing</strong>
+                <p>You're busy with patients. Marketing falls to whoever has a free moment—which is never.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution section-padding bg-dark" id="services">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">The Solution</span>
+          <h2>AI-powered marketing that works while you sleep</h2>
+          <p>
+            We combine aesthetic industry expertise with AI automation to create 
+            marketing systems that generate consultations around the clock—without 
+            requiring your constant attention.
+          </p>
+        </div>
+        <div class="features-grid">
+          {services.map((service, index) => (
+            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+              <span class="feature-icon">{service.icon}</span>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study section-padding bg-gradient" id="case-study">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Case Study</span>
+          <h2>Alluring Plastic Surgery</h2>
+          <p>
+            How we transformed a traditional plastic surgery practice into a 
+            digital marketing machine with AI-powered systems.
+          </p>
+        </div>
+        
+        <div class="case-study-content">
+          <div class="case-intro reveal reveal-delay-1">
+            <div class="case-logo">
+              <a href="https://alluringplasticsurgery.com" target="_blank" rel="noopener">
+                alluringplasticsurgery.com →
+              </a>
+            </div>
+            <p>
+              Alluring Plastic Surgery came to us with a common problem: great surgeons, 
+              excellent results, but invisible online. Their website wasn't ranking, leads 
+              weren't converting, and they had no systems in place to nurture prospective patients.
+            </p>
+            <p>
+              We implemented our full AI-powered marketing stack: automated SEO content, 
+              conversion-optimized patient journeys, automated communication sequences, 
+              and targeted paid campaigns. The results speak for themselves.
+            </p>
+          </div>
+
+          <div class="results-grid">
+            {caseStudyResults.map((result, index) => (
+              <div class={`result-card reveal reveal-delay-${(index % 3) + 1}`}>
+                <span class="result-icon">{result.icon}</span>
+                <h4>{result.metric}</h4>
+                <div class="result-comparison">
+                  <div class="result-before">
+                    <span class="result-label">Before</span>
+                    <span class="result-value">{result.before}</span>
+                  </div>
+                  <div class="result-arrow">→</div>
+                  <div class="result-after">
+                    <span class="result-label">After</span>
+                    <span class="result-value">{result.after}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="case-testimonial reveal">
+            <blockquote>
+              "We went from hoping patients would find us to having a predictable stream of 
+              qualified consultations. The AI content system alone has been a game-changer—we're 
+              ranking for procedures we never thought possible."
+            </blockquote>
+            <cite>— Dr. Angelina Postoev, Alluring Plastic Surgery</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Our Process</span>
+          <h2>From invisible to fully booked</h2>
+          <p>A proven system for aesthetic practice growth.</p>
+        </div>
+        <div class="process-grid">
+          {process.map((step, index) => (
+            <div class={`process-step reveal reveal-delay-${index + 1}`}>
+              <span class="step-number">{step.step}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison section-padding bg-gray">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">The Difference</span>
+          <h2>Traditional Agency vs. AI-Powered</h2>
+        </div>
+        <div class="comparison-table reveal reveal-delay-1">
+          <div class="comparison-header">
+            <div class="comparison-col"></div>
+            <div class="comparison-col traditional">Traditional Agency</div>
+            <div class="comparison-col ai-first">AI-Powered (Us)</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Content Production</div>
+            <div class="comparison-col traditional">1-2 blogs/month</div>
+            <div class="comparison-col ai-first">4-8+ blogs/month</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Lead Response</div>
+            <div class="comparison-col traditional">Business hours</div>
+            <div class="comparison-col ai-first">Instant, 24/7</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Patient Follow-up</div>
+            <div class="comparison-col traditional">Manual, inconsistent</div>
+            <div class="comparison-col ai-first">Automated sequences</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Ad Optimization</div>
+            <div class="comparison-col traditional">Weekly adjustments</div>
+            <div class="comparison-col ai-first">Continuous AI optimization</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Industry Focus</div>
+            <div class="comparison-col traditional">Generalist</div>
+            <div class="comparison-col ai-first">Aesthetics specialist</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Reporting</div>
+            <div class="comparison-col traditional">Monthly PDF</div>
+            <div class="comparison-col ai-first">Real-time dashboard</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding bg-dark">
+      <div class="container-narrow">
+        <div class="section-header reveal">
+          <span class="section-label">FAQ</span>
+          <h2>Questions from practice owners</h2>
+        </div>
+        <div class="faq-list">
+          {faqs.map((faq, index) => (
+            <div class={`faq-item reveal reveal-delay-${Math.min(index + 1, 5)}`}>
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <StickyCTA text="Ready to fill your consultation calendar?" buttonText="Grow Your Practice" />
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .highlight {
+    color: var(--color-gray-400);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    max-width: 650px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    background: var(--color-black);
+    padding: 3rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Problem Section */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .problem-content h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .problem-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 1rem;
+  }
+
+  .problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .problem-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .problem-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .problem-item strong {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .problem-item p {
+    font-size: 0.9375rem;
+    color: var(--color-gray-500);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Solution Section */
+  .bg-dark {
+    background: var(--color-black);
+  }
+
+  .bg-dark .section-label {
+    color: var(--color-gray-500);
+  }
+
+  .bg-dark h2 {
+    color: var(--color-white);
+  }
+
+  .bg-dark .section-header p {
+    color: var(--color-gray-400);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.0625rem;
+    color: var(--color-gray-500);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    border-color: var(--color-gray-700);
+    transform: translateY(-4px);
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  /* Case Study Section */
+  .bg-gradient {
+    background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  }
+
+  .case-study-content {
+    max-width: 1000px;
+    margin-inline: auto;
+  }
+
+  .case-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .case-logo {
+    margin-bottom: 2rem;
+  }
+
+  .case-logo a {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-black);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 8px;
+    display: inline-block;
+    transition: all 0.2s ease;
+  }
+
+  .case-logo a:hover {
+    border-color: var(--color-black);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .case-intro p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .result-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .result-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .result-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .result-card h4 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+  }
+
+  .result-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .result-before,
+  .result-after {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .result-label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-gray-400);
+  }
+
+  .result-before .result-value {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+  }
+
+  .result-after .result-value {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #059669;
+  }
+
+  .result-arrow {
+    color: var(--color-gray-300);
+    font-size: 1.25rem;
+  }
+
+  .case-testimonial {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .case-testimonial blockquote {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--color-black);
+    font-style: italic;
+    margin: 0 0 1.5rem 0;
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  .case-testimonial cite {
+    font-size: 0.9375rem;
+    color: var(--color-gray-500);
+    font-style: normal;
+  }
+
+  /* Process Section */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .process-step {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .step-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-gray-200);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .process-step h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .process-step p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Comparison */
+  .bg-gray {
+    background: var(--color-gray-50);
+  }
+
+  .comparison-table {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .comparison-header,
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .comparison-header {
+    background: var(--color-gray-50);
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .comparison-col {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .comparison-col.label {
+    font-weight: 500;
+  }
+
+  .comparison-col.traditional {
+    color: var(--color-gray-500);
+    text-align: center;
+  }
+
+  .comparison-col.ai-first {
+    background: rgba(16, 185, 129, 0.05);
+    color: var(--color-black);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .comparison-header .comparison-col.ai-first {
+    background: rgba(16, 185, 129, 0.1);
+  }
+
+  .comparison-row:last-child .comparison-col {
+    border-bottom: none;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-gray-800);
+    padding-bottom: 2rem;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .problem-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .results-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparison-header,
+    .comparison-row {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .result-comparison {
+      flex-direction: row;
+    }
+
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .case-testimonial {
+      padding: 2rem;
+    }
+
+    .case-testimonial blockquote {
+      font-size: 1.0625rem;
+    }
+
+    .comparison-header,
+    .comparison-row {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-col.label {
+      background: var(--color-gray-50);
+      font-weight: 600;
+    }
+
+    .comparison-col.traditional,
+    .comparison-col.ai-first {
+      text-align: left;
+    }
+
+    .comparison-col.traditional::before {
+      content: 'Traditional: ';
+      font-weight: 500;
+    }
+
+    .comparison-col.ai-first::before {
+      content: 'AI-Powered: ';
+      font-weight: 600;
+    }
+  }
+</style>
+
+<script>
+  // Animated stats counter
+  function animateValue(element: HTMLElement, start: number, end: number, duration: number, suffix: string, prefix: string) {
+    const range = end - start;
+    const startTime = performance.now();
+    
+    function update(currentTime: number) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(start + range * easeOut);
+      element.textContent = prefix + current + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        element.textContent = prefix + end + suffix;
+      }
+    }
+    requestAnimationFrame(update);
+  }
+
+  function parseStatValue(value: string): { number: number; suffix: string; prefix: string } {
+    const match = value.match(/^([<>$]?)(\d+(?:\.\d+)?)(.*?)$/);
+    if (match) {
+      return { prefix: match[1] || '', number: parseFloat(match[2]), suffix: match[3] || '' };
+    }
+    return { prefix: '', number: 0, suffix: value };
+  }
+
+  const statsSection = document.getElementById('stats-section');
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statValues = entry.target.querySelectorAll('.stat-value');
+          statValues.forEach((el, index) => {
+            const element = el as HTMLElement;
+            const originalValue = element.dataset.value || '';
+            const parsed = parseStatValue(originalValue);
+            if (parsed.number > 0) {
+              element.textContent = parsed.prefix + '0' + parsed.suffix;
+              setTimeout(() => {
+                animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix);
+              }, index * 100);
+            }
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    statsObserver.observe(statsSection);
+  }
+</script>
