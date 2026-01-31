@@ -4,3 +4,5 @@ node_modules/
 package-lock.json
 pnpm-lock.yaml
 .vercel/
+# Prettier can't parse inline scripts in this file
+src/components/Analytics.astro
