@@ -4,6 +4,23 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import CTA from '../../components/CTA.astro';
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Custom Software Development",
+  "provider": {
+    "@type": "Organization",
+    "name": "Monsoft Solutions",
+    "url": "https://monsoftsolutions.com"
+  },
+  "areaServed": "Worldwide",
+  "description": "Enterprise-grade custom software built for your exact needs. Web apps, mobile apps, APIs, and cloud infrastructure—architected for scale.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
 const features = [
   {
     title: 'Web Applications',
@@ -97,7 +114,8 @@ const capabilities = [
 
 <Layout 
   title="Custom Software Development" 
-  description="Enterprise-grade custom software development. Web apps, mobile apps, APIs, and cloud infrastructure—architected for performance, built for longevity."
+  description="Enterprise-grade software built by senior engineers. Web apps, mobile apps, APIs—architected for scale, shipped on schedule, 100% your IP."
+  structuredData={structuredData}
 >
   <Header />
   <main>
@@ -124,7 +142,10 @@ const capabilities = [
           <a href="#capabilities" class="btn btn-secondary">See Our Stack</a>
         </div>
         <div class="hero-image reveal reveal-delay-4">
-          <img src="/images/services/development-hero.png" alt="Custom software development visualization" loading="eager" />
+          <picture>
+            <source srcset="/images/services/development-hero.webp" type="image/webp">
+            <img src="/images/services/development-hero.png" alt="Custom software development visualization" loading="eager" />
+          </picture>
         </div>
       </div>
     </section>

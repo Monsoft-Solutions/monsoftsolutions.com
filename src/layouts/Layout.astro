@@ -5,12 +5,14 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  structuredData?: object;
 }
 
 const { 
   title, 
   description = "Monsoft Solutions — AI-first software company building intelligent solutions that transform how businesses operate.",
-  ogImage = "/og-image.jpg"
+  ogImage = "/og-image.jpg",
+  structuredData
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -77,6 +79,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         ]
       }
     </script>
+    
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    )}
     
     <!-- View Transitions API -->
     <meta name="view-transition" content="same-origin" />

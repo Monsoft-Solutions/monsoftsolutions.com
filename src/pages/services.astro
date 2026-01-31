@@ -4,6 +4,46 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTA from '../components/CTA.astro';
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Monsoft Solutions Services",
+  "description": "AI-powered solutions for modern businesses",
+  "numberOfItems": 5,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Business Automation",
+      "url": "https://monsoftsolutions.com/services/automation"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Custom Software Development",
+      "url": "https://monsoftsolutions.com/services/development"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI Assistants",
+      "url": "https://monsoftsolutions.com/services/ai-assistants"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "AI-First SEO",
+      "url": "https://monsoftsolutions.com/services/seo"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Smart Websites",
+      "url": "https://monsoftsolutions.com/services/websites"
+    }
+  ]
+};
+
 const services = [
   {
     title: 'Business Automation',
@@ -52,7 +92,8 @@ const stats = [
 
 <Layout 
   title="Our Services" 
-  description="AI-powered solutions that transform how businesses operate. From automation to custom software, we build intelligent systems that scale."
+  description="AI-native software solutions: automation, custom development, AI assistants, SEO, and smart websites. 50+ projects delivered, 10x efficiency gains."
+  structuredData={structuredData}
 >
   <Header />
   <main>
@@ -70,7 +111,10 @@ const stats = [
           operates, powered by the latest in AI technology.
         </p>
         <div class="hero-image reveal reveal-delay-3">
-          <img src="/images/services/services-hero.png" alt="AI-powered business solutions" loading="eager" />
+          <picture>
+            <source srcset="/images/services/services-hero.webp" type="image/webp">
+            <img src="/images/services/services-hero.png" alt="AI-powered business solutions" loading="eager" />
+          </picture>
         </div>
       </div>
       

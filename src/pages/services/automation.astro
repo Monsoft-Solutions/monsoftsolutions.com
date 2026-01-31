@@ -4,6 +4,23 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import CTA from '../../components/CTA.astro';
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Business Process Automation",
+  "provider": {
+    "@type": "Organization",
+    "name": "Monsoft Solutions",
+    "url": "https://monsoftsolutions.com"
+  },
+  "areaServed": "Worldwide",
+  "description": "Custom automation workflows that eliminate manual work, reduce errors, and scale your operations without adding headcount.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
 const features = [
   {
     title: 'Process Automation',
@@ -93,7 +110,8 @@ const useCases = [
 
 <Layout 
   title="Business Automation - Eliminate Manual. Unlock Scale." 
-  description="We design automation workflows that save time, reduce errors, and scale with your business. Stop doing repetitive work—let systems do it for you."
+  description="Save 90% of time on repetitive tasks. We build custom automation workflows that run 24/7, eliminate errors, and scale with your business."
+  structuredData={structuredData}
 >
   <Header />
   <main>
@@ -119,7 +137,10 @@ const useCases = [
           <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
         </div>
         <div class="hero-image reveal reveal-delay-4">
-          <img src="/images/services/automation-hero.png" alt="Business automation visualization" loading="eager" />
+          <picture>
+            <source srcset="/images/services/automation-hero.webp" type="image/webp">
+            <img src="/images/services/automation-hero.png" alt="Business automation visualization" loading="eager" />
+          </picture>
         </div>
       </div>
     </section>

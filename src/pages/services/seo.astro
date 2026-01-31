@@ -4,6 +4,23 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import CTA from '../../components/CTA.astro';
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "AI-First SEO & Content Automation",
+  "provider": {
+    "@type": "Organization",
+    "name": "Monsoft Solutions",
+    "url": "https://monsoftsolutions.com"
+  },
+  "areaServed": "Worldwide",
+  "description": "Fully automated SEO content engine powered by AI. From ideation to publish—AI generates articles, images, and optimizes everything for search.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
 const features = [
   {
     title: 'AI Content Ideation',
@@ -87,7 +104,8 @@ const caseStudies = [
 
 <Layout 
   title="AI-First SEO & Content Automation" 
-  description="Fully automated SEO content engine. From ideation to publish—AI generates articles, images, and optimizes everything for search. No manual work required."
+  description="Automate your entire content pipeline. Our AI generates SEO-optimized articles, custom images, and publishes on schedule—10x your output without adding headcount."
+  structuredData={structuredData}
 >
   <Header />
   <main>
@@ -114,7 +132,10 @@ const caseStudies = [
           <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
         </div>
         <div class="hero-image reveal reveal-delay-4">
-          <img src="/images/services/seo-hero.png" alt="AI-powered SEO and content automation visualization" loading="eager" />
+          <picture>
+            <source srcset="/images/services/seo-hero.webp" type="image/webp">
+            <img src="/images/services/seo-hero.png" alt="AI-powered SEO and content automation visualization" loading="eager" />
+          </picture>
         </div>
       </div>
     </section>

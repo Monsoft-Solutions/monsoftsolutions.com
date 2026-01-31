@@ -4,6 +4,23 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import CTA from '../../components/CTA.astro';
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Custom AI Assistants",
+  "provider": {
+    "@type": "Organization",
+    "name": "Monsoft Solutions",
+    "url": "https://monsoftsolutions.com"
+  },
+  "areaServed": "Worldwide",
+  "description": "Custom AI assistants trained on your business data. 24/7 support, lead qualification, and operations automation—built specifically for your needs.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
 const features = [
   {
     title: 'Custom Training',
@@ -99,7 +116,8 @@ const integrations = [
 
 <Layout 
   title="AI Assistants - Intelligence That Works for You" 
-  description="Custom AI assistants trained on your business data, integrated into your workflows. 24/7 availability, instant responses, continuous learning. Transform customer experience."
+  description="Automate 80% of customer queries with AI assistants trained on your data. 24/7 availability, 3-second responses, seamless CRM integration."
+  structuredData={structuredData}
 >
   <Header />
   <main>
@@ -126,7 +144,10 @@ const integrations = [
           <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
         </div>
         <div class="hero-image reveal reveal-delay-4">
-          <img src="/images/services/ai-assistants-hero.png" alt="AI assistants and intelligent automation" loading="eager" />
+          <picture>
+            <source srcset="/images/services/ai-assistants-hero.webp" type="image/webp">
+            <img src="/images/services/ai-assistants-hero.png" alt="AI assistants and intelligent automation" loading="eager" />
+          </picture>
         </div>
       </div>
     </section>
