@@ -256,6 +256,31 @@ const stats = [
       </div>
     </section>
 
+    <!-- Industries We Serve -->
+    <section class="industries section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Industries We Serve</span>
+          <h2>Specialized solutions for your market</h2>
+          <p>We go deep in specific industries to deliver solutions that truly understand your business.</p>
+        </div>
+        <div class="industries-grid">
+          <a href="/services/aesthetics" class="industry-card reveal reveal-delay-1">
+            <div class="industry-icon">💎</div>
+            <h3>Aesthetics & Med Spas</h3>
+            <p>Plastic surgery clinics, med spas, and cosmetic practices. Fill your consultation calendar with qualified patients.</p>
+            <span class="industry-link">See how we helped Alluring Plastic Surgery →</span>
+          </a>
+          <a href="/services/local-business" class="industry-card reveal reveal-delay-2">
+            <div class="industry-icon">🏪</div>
+            <h3>Local Businesses</h3>
+            <p>Contractors, salons, restaurants, and professional services. Big business technology at small business prices.</p>
+            <span class="industry-link">Explore local business solutions →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Process -->
     <section class="process section-padding">
       <div class="container-wide">
@@ -650,6 +675,63 @@ const stats = [
     margin: 0;
   }
 
+  /* Industries Section */
+  .industries {
+    background: var(--color-gray-50);
+  }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .industry-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+
+  .industry-card:hover {
+    border-color: var(--color-gray-400);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .industry-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .industry-card h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+  }
+
+  .industry-card p {
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .industry-link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-black);
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .industry-card:hover .industry-link {
+    text-decoration: underline;
+  }
+
   /* Process Section */
   .process-grid {
     display: grid;
@@ -737,6 +819,14 @@ const stats = [
 
     .stat-value {
       font-size: 2rem;
+    }
+
+    .industries-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .industry-card {
+      padding: 1.5rem;
     }
 
     .process-grid {
