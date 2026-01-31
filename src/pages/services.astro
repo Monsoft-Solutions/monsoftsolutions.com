@@ -6,93 +6,98 @@ import CTA from '../components/CTA.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Monsoft Solutions Services",
-  "description": "AI-powered solutions for modern businesses",
-  "numberOfItems": 5,
-  "itemListElement": [
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Monsoft Solutions Services',
+  description: 'AI-powered solutions for modern businesses',
+  numberOfItems: 5,
+  itemListElement: [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Business Automation",
-      "url": "https://monsoftsolutions.com/services/automation"
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Business Automation',
+      url: 'https://monsoftsolutions.com/services/automation',
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Custom Software Development",
-      "url": "https://monsoftsolutions.com/services/development"
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Custom Software Development',
+      url: 'https://monsoftsolutions.com/services/development',
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "AI Assistants",
-      "url": "https://monsoftsolutions.com/services/ai-assistants"
+      '@type': 'ListItem',
+      position: 3,
+      name: 'AI Assistants',
+      url: 'https://monsoftsolutions.com/services/ai-assistants',
     },
     {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "AI-First SEO",
-      "url": "https://monsoftsolutions.com/services/seo"
+      '@type': 'ListItem',
+      position: 4,
+      name: 'AI-First SEO',
+      url: 'https://monsoftsolutions.com/services/seo',
     },
     {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "Smart Websites",
-      "url": "https://monsoftsolutions.com/services/websites"
-    }
-  ]
+      '@type': 'ListItem',
+      position: 5,
+      name: 'Smart Websites',
+      url: 'https://monsoftsolutions.com/services/websites',
+    },
+  ],
 };
 
 const services = [
   {
     title: 'Business Automation',
-    description: 'Eliminate repetitive tasks and streamline operations with intelligent automation that learns and adapts to your business.',
+    description:
+      'Eliminate repetitive tasks and streamline operations with intelligent automation that learns and adapts to your business.',
     href: '/services/automation',
     icon: 'automation',
-    gradient: 'from-violet-500 to-purple-600'
+    gradient: 'from-violet-500 to-purple-600',
   },
   {
     title: 'Custom Software Development',
-    description: 'Bespoke applications built for your exact needs—scalable, maintainable, and designed to grow with you.',
+    description:
+      'Bespoke applications built for your exact needs—scalable, maintainable, and designed to grow with you.',
     href: '/services/development',
     icon: 'development',
-    gradient: 'from-blue-500 to-cyan-500'
+    gradient: 'from-blue-500 to-cyan-500',
   },
   {
     title: 'AI Assistants',
-    description: 'Intelligent agents that handle customer support, data analysis, and complex workflows—24/7, without human intervention.',
+    description:
+      'Intelligent agents that handle customer support, data analysis, and complex workflows—24/7, without human intervention.',
     href: '/services/ai-assistants',
     icon: 'ai',
-    gradient: 'from-emerald-500 to-teal-500'
+    gradient: 'from-emerald-500 to-teal-500',
   },
   {
     title: 'Smart SEO',
-    description: 'Fully automated content engine. AI generates articles, images, and optimizes everything for search. Zero manual work.',
+    description:
+      'Fully automated content engine. AI generates articles, images, and optimizes everything for search. Zero manual work.',
     href: '/services/seo',
     icon: 'seo',
-    gradient: 'from-orange-500 to-amber-500'
+    gradient: 'from-orange-500 to-amber-500',
   },
   {
     title: 'Smart Websites',
-    description: 'High-performance websites that convert—built with modern tech, optimized for speed, and designed to impress.',
+    description:
+      'High-performance websites that convert—built with modern tech, optimized for speed, and designed to impress.',
     href: '/services/websites',
     icon: 'websites',
-    gradient: 'from-rose-500 to-pink-500'
-  }
+    gradient: 'from-rose-500 to-pink-500',
+  },
 ];
 
 const stats = [
   { value: '50+', label: 'Projects Delivered' },
   { value: '10x', label: 'Efficiency Gains' },
   { value: '24/7', label: 'AI-Powered Support' },
-  { value: '100%', label: 'Client Satisfaction' }
+  { value: '100%', label: 'Client Satisfaction' },
 ];
 ---
 
-<Layout 
-  title="Our Services" 
+<Layout
+  title="Our Services"
   description="AI-native software solutions: automation, custom development, AI assistants, SEO, and smart websites. 50+ projects delivered, 10x efficiency gains."
   structuredData={structuredData}
 >
@@ -107,18 +112,22 @@ const stats = [
           <span class="highlight">modern business</span>
         </h1>
         <p class="hero-subtitle reveal reveal-delay-2">
-          We don't just build software—we build intelligent systems that automate, 
-          adapt, and scale. Every solution is designed to transform how your business 
-          operates, powered by the latest in AI technology.
+          We don't just build software—we build intelligent systems that automate, adapt, and scale.
+          Every solution is designed to transform how your business operates, powered by the latest
+          in AI technology.
         </p>
         <div class="hero-image reveal reveal-delay-3">
           <picture>
-            <source srcset="/images/services/services-hero.webp" type="image/webp">
-            <img src="/images/services/services-hero.png" alt="AI-powered business solutions" loading="eager" />
+            <source srcset="/images/services/services-hero.webp" type="image/webp" />
+            <img
+              src="/images/services/services-hero.png"
+              alt="AI-powered business solutions"
+              loading="eager"
+            />
           </picture>
         </div>
       </div>
-      
+
       <!-- Floating orbs for visual interest -->
       <div class="hero-bg">
         <div class="orb orb-1"></div>
@@ -131,12 +140,16 @@ const stats = [
     <section class="stats-bar" id="stats-section">
       <div class="container-wide">
         <div class="stats-grid">
-          {stats.map((stat, index) => (
-            <div class={`stat reveal reveal-delay-${index + 1}`}>
-              <span class="stat-value" data-value={stat.value}>{stat.value}</span>
-              <span class="stat-label">{stat.label}</span>
-            </div>
-          ))}
+          {
+            stats.map((stat, index) => (
+              <div class={`stat reveal reveal-delay-${index + 1}`}>
+                <span class="stat-value" data-value={stat.value}>
+                  {stat.value}
+                </span>
+                <span class="stat-label">{stat.label}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -148,58 +161,121 @@ const stats = [
           <span class="section-label">Our Expertise</span>
           <h2>Everything you need to transform</h2>
           <p>
-            From automating your workflows to building custom AI solutions, 
-            we have the expertise to take your business to the next level.
+            From automating your workflows to building custom AI solutions, we have the expertise to
+            take your business to the next level.
           </p>
         </div>
-        
+
         <div class="services-grid">
-          {services.map((service, index) => (
-            <a 
-              href={service.href} 
-              class={`service-card reveal reveal-delay-${(index % 3) + 1}`}
-              data-icon={service.icon}
-            >
-              <div class="service-icon-wrapper">
-                {service.icon === 'automation' && (
-                  <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 5.205l-.75-1.3m11.395 16.58l-1.15-.964M4.257 8.923l-1.41-.514m14.095 5.13l1.41.513M7.502 4.204l-1.15.964m11.49 9.642l1.15.964" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                )}
-                {service.icon === 'development' && (
-                  <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                )}
-                {service.icon === 'ai' && (
-                  <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                )}
-                {service.icon === 'seo' && (
-                  <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                )}
-                {service.icon === 'websites' && (
-                  <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                )}
-              </div>
-              <div class="service-content">
-                <h3 class="service-title">{service.title}</h3>
-                <p class="service-description">{service.description}</p>
-                <span class="service-link">
-                  Learn more
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </div>
-              <div class="service-glow"></div>
-            </a>
-          ))}
+          {
+            services.map((service, index) => (
+              <a
+                href={service.href}
+                class={`service-card reveal reveal-delay-${(index % 3) + 1}`}
+                data-icon={service.icon}
+              >
+                <div class="service-icon-wrapper">
+                  {service.icon === 'automation' && (
+                    <svg
+                      class="service-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 5.205l-.75-1.3m11.395 16.58l-1.15-.964M4.257 8.923l-1.41-.514m14.095 5.13l1.41.513M7.502 4.204l-1.15.964m11.49 9.642l1.15.964"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  )}
+                  {service.icon === 'development' && (
+                    <svg
+                      class="service-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  )}
+                  {service.icon === 'ai' && (
+                    <svg
+                      class="service-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  )}
+                  {service.icon === 'seo' && (
+                    <svg
+                      class="service-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  )}
+                  {service.icon === 'websites' && (
+                    <svg
+                      class="service-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  )}
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">{service.title}</h3>
+                  <p class="service-description">{service.description}</p>
+                  <span class="service-link">
+                    Learn more
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M5 12h14M12 5l7 7-7 7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div class="service-glow" />
+              </a>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -212,43 +288,60 @@ const stats = [
             <span class="section-label">Why Monsoft</span>
             <h2>Built different.<br />Built to last.</h2>
             <p>
-              We're not another agency churning out templates. We're engineers 
-              and AI specialists who build systems that actually work—and keep 
-              working as your business grows.
+              We're not another agency churning out templates. We're engineers and AI specialists
+              who build systems that actually work—and keep working as your business grows.
             </p>
           </div>
           <div class="why-features">
             <div class="why-feature reveal reveal-delay-1">
               <div class="why-feature-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path
+                    d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
                 </svg>
               </div>
               <div>
                 <h4>AI-Native Approach</h4>
-                <p>We don't bolt AI onto existing solutions. We build from the ground up with intelligence at the core.</p>
+                <p>
+                  We don't bolt AI onto existing solutions. We build from the ground up with
+                  intelligence at the core.
+                </p>
               </div>
             </div>
             <div class="why-feature reveal reveal-delay-2">
               <div class="why-feature-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path
+                    d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
                 </svg>
               </div>
               <div>
                 <h4>Production-Ready</h4>
-                <p>No prototypes that never ship. Everything we build is designed for the real world from day one.</p>
+                <p>
+                  No prototypes that never ship. Everything we build is designed for the real world
+                  from day one.
+                </p>
               </div>
             </div>
             <div class="why-feature reveal reveal-delay-3">
               <div class="why-feature-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path
+                    d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
                 </svg>
               </div>
               <div>
                 <h4>Continuous Evolution</h4>
-                <p>Your systems learn and improve over time. We build solutions that get smarter, not stale.</p>
+                <p>
+                  Your systems learn and improve over time. We build solutions that get smarter, not
+                  stale.
+                </p>
               </div>
             </div>
           </div>
@@ -262,19 +355,28 @@ const stats = [
         <div class="section-header reveal">
           <span class="section-label">Industries We Serve</span>
           <h2>Specialized solutions for your market</h2>
-          <p>We go deep in specific industries to deliver solutions that truly understand your business.</p>
+          <p>
+            We go deep in specific industries to deliver solutions that truly understand your
+            business.
+          </p>
         </div>
         <div class="industries-grid">
           <a href="/services/aesthetics" class="industry-card reveal reveal-delay-1">
             <div class="industry-icon">💎</div>
             <h3>Aesthetics & Med Spas</h3>
-            <p>Plastic surgery clinics, med spas, and cosmetic practices. Fill your consultation calendar with qualified patients.</p>
+            <p>
+              Plastic surgery clinics, med spas, and cosmetic practices. Fill your consultation
+              calendar with qualified patients.
+            </p>
             <span class="industry-link">See how we helped Alluring Plastic Surgery →</span>
           </a>
           <a href="/services/local-business" class="industry-card reveal reveal-delay-2">
             <div class="industry-icon">🏪</div>
             <h3>Local Businesses</h3>
-            <p>Contractors, salons, restaurants, and professional services. Big business technology at small business prices.</p>
+            <p>
+              Contractors, salons, restaurants, and professional services. Big business technology
+              at small business prices.
+            </p>
             <span class="industry-link">Explore local business solutions →</span>
           </a>
         </div>
@@ -293,22 +395,34 @@ const stats = [
           <div class="process-step reveal reveal-delay-1">
             <span class="step-number">01</span>
             <h3>Discovery</h3>
-            <p>We dive deep into your business, understand your challenges, and identify where intelligent automation can have the biggest impact.</p>
+            <p>
+              We dive deep into your business, understand your challenges, and identify where
+              intelligent automation can have the biggest impact.
+            </p>
           </div>
           <div class="process-step reveal reveal-delay-2">
             <span class="step-number">02</span>
             <h3>Design</h3>
-            <p>We architect solutions that fit your exact needs—no bloat, no unnecessary features, just what moves the needle.</p>
+            <p>
+              We architect solutions that fit your exact needs—no bloat, no unnecessary features,
+              just what moves the needle.
+            </p>
           </div>
           <div class="process-step reveal reveal-delay-3">
             <span class="step-number">03</span>
             <h3>Build</h3>
-            <p>Rapid development with continuous feedback. You see progress weekly, not monthly. We ship fast without cutting corners.</p>
+            <p>
+              Rapid development with continuous feedback. You see progress weekly, not monthly. We
+              ship fast without cutting corners.
+            </p>
           </div>
           <div class="process-step reveal reveal-delay-4">
             <span class="step-number">04</span>
             <h3>Launch & Iterate</h3>
-            <p>Go live with confidence. We monitor, measure, and continuously improve based on real-world performance data.</p>
+            <p>
+              Go live with confidence. We monitor, measure, and continuously improve based on
+              real-world performance data.
+            </p>
           </div>
         </div>
       </div>
@@ -374,10 +488,19 @@ const stats = [
   }
 
   @keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(30px, -30px) scale(1.05); }
-    50% { transform: translate(-20px, 20px) scale(0.95); }
-    75% { transform: translate(20px, 10px) scale(1.02); }
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(30px, -30px) scale(1.05);
+    }
+    50% {
+      transform: translate(-20px, 20px) scale(0.95);
+    }
+    75% {
+      transform: translate(20px, 10px) scale(1.02);
+    }
   }
 
   .hero-label {
@@ -504,7 +627,7 @@ const stats = [
   .service-card:hover {
     border-color: var(--color-gray-200);
     transform: translateY(-8px);
-    box-shadow: 
+    box-shadow:
       0 20px 40px -15px rgba(0, 0, 0, 0.1),
       0 0 0 1px rgba(0, 0, 0, 0.02);
   }
@@ -523,7 +646,11 @@ const stats = [
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
-    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(99, 102, 241, 0.06), transparent 40%);
+    background: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(99, 102, 241, 0.06),
+      transparent 40%
+    );
   }
 
   .service-card:hover .service-glow {
@@ -609,7 +736,8 @@ const stats = [
     color: var(--color-gray-500);
   }
 
-  .bg-dark h2, .bg-dark h4 {
+  .bg-dark h2,
+  .bg-dark h4 {
     color: var(--color-white);
   }
 
@@ -837,8 +965,8 @@ const stats = [
 
 <script>
   // Add mouse position tracking for glow effect
-  document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
+  document.querySelectorAll('.service-card').forEach((card) => {
+    (card as HTMLElement).addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -848,7 +976,14 @@ const stats = [
   });
 
   // Animated stats counter
-  function animateValue(element: HTMLElement, start: number, end: number, duration: number, suffix: string, prefix: string) {
+  function animateValue(
+    element: HTMLElement,
+    start: number,
+    end: number,
+    duration: number,
+    suffix: string,
+    prefix: string
+  ) {
     const range = end - start;
     const startTime = performance.now();
     function update(currentTime: number) {
@@ -865,26 +1000,34 @@ const stats = [
 
   function parseStatValue(value: string) {
     const match = value.match(/^([<>$]?)(\d+(?:\.\d+)?)(.*?)$/);
-    return match ? { prefix: match[1] || '', number: parseFloat(match[2]), suffix: match[3] || '' } : { prefix: '', number: 0, suffix: value };
+    return match
+      ? { prefix: match[1] || '', number: parseFloat(match[2]), suffix: match[3] || '' }
+      : { prefix: '', number: 0, suffix: value };
   }
 
   const statsSection = document.getElementById('stats-section');
   if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.stat-value').forEach((el, index) => {
-            const element = el as HTMLElement;
-            const parsed = parseStatValue(element.dataset.value || '');
-            if (parsed.number > 0) {
-              element.textContent = parsed.prefix + '0' + parsed.suffix;
-              setTimeout(() => animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix), index * 100);
-            }
-          });
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.stat-value').forEach((el, index) => {
+              const element = el as HTMLElement;
+              const parsed = parseStatValue(element.dataset.value || '');
+              if (parsed.number > 0) {
+                element.textContent = parsed.prefix + '0' + parsed.suffix;
+                setTimeout(
+                  () => animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix),
+                  index * 100
+                );
+              }
+            });
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
     statsObserver.observe(statsSection);
   }
 </script>

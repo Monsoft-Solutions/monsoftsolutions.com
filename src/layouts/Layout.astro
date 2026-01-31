@@ -11,33 +11,33 @@ interface Props {
   showProgress?: boolean;
 }
 
-const { 
-  title, 
-  description = "Monsoft Solutions — AI-first software company building intelligent solutions that transform how businesses operate.",
-  ogImage = "/og-image.jpg",
+const {
+  title,
+  description = 'Monsoft Solutions — AI-first software company building intelligent solutions that transform how businesses operate.',
+  ogImage = '/og-image.jpg',
   structuredData,
-  showProgress = true
+  showProgress = true,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
+
     <!-- Primary Meta Tags -->
     <title>{title} | Monsoft Solutions</title>
     <meta name="title" content={`${title} | Monsoft Solutions`} />
     <meta name="description" content={description} />
     <meta name="author" content="Monsoft Solutions" />
-    
+
     <!-- Canonical -->
     <link rel="canonical" href={canonicalURL} />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
@@ -45,25 +45,28 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content="Monsoft Solutions" />
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={`${title} | Monsoft Solutions`} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    
+
     <!-- Fonts - Inter from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" is:inline>
       {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -83,11 +86,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         ]
       }
     </script>
-    
-    {structuredData && (
-      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-    )}
-    
+
+    {
+      structuredData && (
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
+      )
+    }
+
     <!-- View Transitions API -->
     <meta name="view-transition" content="same-origin" />
   </head>
@@ -95,28 +100,28 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     {showProgress && <ProgressBar />}
     <slot />
     <BackToTop />
-    
+
     <!-- Scroll reveal animation script -->
     <script>
       // Intersection Observer for reveal animations
       const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1
+        threshold: 0.1,
       };
 
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
           }
         });
       }, observerOptions);
 
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
       // Smooth image loading
-      document.querySelectorAll('img').forEach(img => {
+      document.querySelectorAll('img').forEach((img) => {
         if (img.complete) {
           img.classList.add('loaded');
         } else {
