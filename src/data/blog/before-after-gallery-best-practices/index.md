@@ -1,15 +1,22 @@
 ---
-title: "How to Build Before-and-After Galleries That Win New Patients"
-description: "Learn how to create compelling before-and-after photo galleries that build trust, showcase your work, and convert website visitors into booked consultations."
+title: 'How to Build Before-and-After Galleries That Win New Patients'
+description: 'Learn how to create compelling before-and-after photo galleries that build trust, showcase your work, and convert website visitors into booked consultations.'
 pubDate: 2026-01-31
-author: "Monsoft Solutions"
-category: "Medical & Aesthetics"
-tags: ["Before and After", "Medical Photography", "Aesthetic Marketing", "Patient Conversion", "Medical Practice"]
+author: 'Monsoft Solutions'
+category: 'Medical & Aesthetics'
+tags:
+  [
+    'Before and After',
+    'Medical Photography',
+    'Aesthetic Marketing',
+    'Patient Conversion',
+    'Medical Practice',
+  ]
 featured: false
 draft: false
-readingTime: "9 min read"
-heroImage: "https://9hvqwvm35snfqcsh.public.blob.vercel-storage.com/blog/before-after-gallery-best-practices/hero.png"
-heroImageAlt: "Doctor showing patient before and after results on digital tablet during consultation"
+readingTime: '9 min read'
+heroImage: 'https://9hvqwvm35snfqcsh.public.blob.vercel-storage.com/blog/before-after-gallery-best-practices/hero.png'
+heroImageAlt: 'Doctor showing patient before and after results on digital tablet during consultation'
 ---
 
 Your before-and-after gallery might be the most important page on your website. When prospective patients are researching aesthetic procedures—whether it's rhinoplasty, breast augmentation, or injectables—they're not just reading about what you do. They're looking for proof that you can deliver the results they want.
@@ -20,7 +27,7 @@ Here's how to create a before-and-after gallery that actually converts.
 
 ## Why Your Gallery Matters More Than You Think
 
-Aesthetic medicine is inherently visual. Unlike other medical specialties where patients trust credentials and reviews, aesthetic patients need to *see* your work before they'll consider trusting you with their appearance.
+Aesthetic medicine is inherently visual. Unlike other medical specialties where patients trust credentials and reviews, aesthetic patients need to _see_ your work before they'll consider trusting you with their appearance.
 
 Studies show that 72% of patients research providers online before scheduling consultations. Of those, nearly 90% say before-and-after photos significantly influence their decision. Your gallery isn't supplementary marketing—it's often the deciding factor.
 
@@ -49,11 +56,13 @@ Every before-and-after pair should look like it belongs together. This means sta
 Nothing destroys credibility faster than before-and-after photos taken from different angles. A patient photographed from slightly below in the "before" shot and from above in the "after" will show apparent changes that have nothing to do with the procedure.
 
 Standard angles for facial procedures typically include:
+
 - Frontal view (face camera directly)
 - 45-degree oblique (left and right)
 - 90-degree profile (left and right)
 
 For body procedures, capture:
+
 - Front view
 - Side profile (left and right)
 - Back view when relevant
@@ -75,6 +84,7 @@ A disorganized gallery frustrates visitors and undermines trust. If patients can
 At minimum, your gallery should be filterable by procedure category. Patients researching breast augmentation don't want to scroll through rhinoplasty results to find relevant examples.
 
 Create clear categories:
+
 - Facial procedures (with subcategories for specific treatments)
 - Body contouring
 - Breast procedures
@@ -122,6 +132,7 @@ Keep these consent forms permanently. If a patient later disputes their inclusio
 Most specialty boards have explicit guidelines about digital photo manipulation. The general principle: you can adjust brightness, contrast, and color balance to make before-and-after photos visually comparable, but you cannot alter the actual results.
 
 Prohibited modifications typically include:
+
 - Changing the shape or size of treated areas
 - Removing scars, stretch marks, or imperfections
 - Adding definition or contouring that wasn't achieved surgically
@@ -134,11 +145,12 @@ When in doubt, err on the side of minimal editing. The goal is consistency betwe
 Your gallery should represent the range of results patients can realistically expect—not just your best outcomes. Including only exceptional results creates unrealistic expectations that lead to disappointed patients and potential complaints.
 
 A balanced gallery includes:
+
 - Excellent results that showcase your best work
 - Good results that represent typical outcomes
 - Cases with limitations that demonstrate honest representation
 
-This transparency builds trust. Patients appreciate knowing what's possible *and* what might limit their results.
+This transparency builds trust. Patients appreciate knowing what's possible _and_ what might limit their results.
 
 ## Technical Website Implementation
 
@@ -181,6 +193,7 @@ Add new cases regularly—at least quarterly for active practices. Fresh content
 ### Removing Outdated Content
 
 Review your gallery periodically and remove:
+
 - Cases where techniques have evolved significantly
 - Photos of patients who've withdrawn consent
 - Lower-quality images as your photography improves
@@ -189,6 +202,7 @@ Review your gallery periodically and remove:
 ### Archival Organization
 
 Maintain an organized archive system that tracks:
+
 - Original high-resolution files
 - Patient consent documentation
 - Procedure dates and details
@@ -203,6 +217,7 @@ A gallery that impresses visitors but doesn't prompt action is a missed opportun
 ### Strategic Call-to-Action Placement
 
 Include clear calls-to-action throughout your gallery:
+
 - **Within filters**: "See results for your procedure—schedule a consultation to discuss your goals"
 - **Beside images**: "Interested in similar results? Book a personalized consultation"
 - **At gallery end**: "Ready to take the next step? Contact us today"
@@ -210,6 +225,7 @@ Include clear calls-to-action throughout your gallery:
 ### Connect Gallery to Booking
 
 Reduce friction between viewing results and taking action:
+
 - Link directly to online scheduling when possible
 - Include phone numbers that are clickable on mobile
 - Offer consultation request forms on the gallery page itself
@@ -218,6 +234,7 @@ Reduce friction between viewing results and taking action:
 ### Retargeting Visitors
 
 Most gallery visitors won't book immediately. Capture their interest for follow-up:
+
 - Use retargeting pixels to show relevant ads after they leave
 - Offer downloadable procedure guides in exchange for email addresses
 - Provide virtual consultation options for research-stage visitors
@@ -229,6 +246,7 @@ What gets measured gets improved. Track how your gallery performs and optimize a
 ### Key Metrics
 
 Monitor:
+
 - **Gallery page views**: How many visitors view your gallery
 - **Time on page**: How long visitors spend viewing images
 - **Filter usage**: Which procedures receive the most interest
@@ -238,6 +256,7 @@ Monitor:
 ### Testing and Iteration
 
 Use this data to improve:
+
 - If certain procedures get heavy traffic but low conversions, examine those specific images
 - If visitors spend little time on the page, evaluate layout and loading speed
 - If mobile metrics differ significantly from desktop, prioritize mobile optimization

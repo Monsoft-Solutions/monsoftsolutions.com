@@ -6,83 +6,94 @@ import CTA from '../../components/CTA.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "AI-First SEO & Content Automation",
-  "provider": {
-    "@type": "Organization",
-    "name": "Monsoft Solutions",
-    "url": "https://monsoftsolutions.com"
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'AI-First SEO & Content Automation',
+  provider: {
+    '@type': 'Organization',
+    name: 'Monsoft Solutions',
+    url: 'https://monsoftsolutions.com',
   },
-  "areaServed": "Worldwide",
-  "description": "Fully automated SEO content engine powered by AI. From ideation to publish—AI generates articles, images, and optimizes everything for search.",
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock"
-  }
+  areaServed: 'Worldwide',
+  description:
+    'Fully automated SEO content engine powered by AI. From ideation to publish—AI generates articles, images, and optimizes everything for search.',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+  },
 };
 
 const features = [
   {
     title: 'AI Content Ideation',
-    description: 'Our AI analyzes your industry, competitors, and search trends to generate high-impact content ideas that drive organic traffic.',
-    icon: '💡'
+    description:
+      'Our AI analyzes your industry, competitors, and search trends to generate high-impact content ideas that drive organic traffic.',
+    icon: '💡',
   },
   {
     title: 'Automated Writing',
-    description: 'Production-ready articles written by AI, trained on your brand voice, optimized for search engines and human readers alike.',
-    icon: '✍️'
+    description:
+      'Production-ready articles written by AI, trained on your brand voice, optimized for search engines and human readers alike.',
+    icon: '✍️',
   },
   {
     title: 'AI Image Generation',
-    description: 'Custom visuals created automatically for every piece of content. No stock photos. No design bottlenecks.',
-    icon: '🎨'
+    description:
+      'Custom visuals created automatically for every piece of content. No stock photos. No design bottlenecks.',
+    icon: '🎨',
   },
   {
     title: 'Auto-Publish Pipeline',
-    description: 'From draft to live—fully automated. Content is optimized, formatted, and published on schedule without human intervention.',
-    icon: '🚀'
+    description:
+      'From draft to live—fully automated. Content is optimized, formatted, and published on schedule without human intervention.',
+    icon: '🚀',
   },
   {
     title: 'SEO Optimization',
-    description: 'Every piece is optimized for keywords, meta tags, internal linking, and schema markup. Search engines love it.',
-    icon: '📈'
+    description:
+      'Every piece is optimized for keywords, meta tags, internal linking, and schema markup. Search engines love it.',
+    icon: '📈',
   },
   {
     title: 'Performance Analytics',
-    description: 'Real-time dashboards showing traffic, rankings, and content performance. The AI learns and improves over time.',
-    icon: '📊'
-  }
+    description:
+      'Real-time dashboards showing traffic, rankings, and content performance. The AI learns and improves over time.',
+    icon: '📊',
+  },
 ];
 
 const process = [
   {
     step: '01',
     title: 'Strategy & Setup',
-    description: 'We analyze your market, define your content pillars, and configure the AI engine with your brand voice and SEO goals.'
+    description:
+      'We analyze your market, define your content pillars, and configure the AI engine with your brand voice and SEO goals.',
   },
   {
     step: '02',
     title: 'Content Generation',
-    description: 'The AI produces a steady stream of optimized articles, complete with custom images and proper formatting.'
+    description:
+      'The AI produces a steady stream of optimized articles, complete with custom images and proper formatting.',
   },
   {
     step: '03',
     title: 'Review & Publish',
-    description: 'Content flows through optional review queues or publishes automatically based on your comfort level.'
+    description:
+      'Content flows through optional review queues or publishes automatically based on your comfort level.',
   },
   {
     step: '04',
     title: 'Optimize & Scale',
-    description: 'The system learns from performance data, refining topics and strategies to maximize your organic growth.'
-  }
+    description:
+      'The system learns from performance data, refining topics and strategies to maximize your organic growth.',
+  },
 ];
 
 const stats = [
   { value: '10x', label: 'Content Output' },
   { value: '75%', label: 'Time Saved' },
   { value: '3-6mo', label: 'To See Results' },
-  { value: '24/7', label: 'Always Publishing' }
+  { value: '24/7', label: 'Always Publishing' },
 ];
 
 const caseStudies = [
@@ -90,21 +101,23 @@ const caseStudies = [
     name: 'Alluring Plastic Surgery',
     industry: 'Healthcare / Aesthetics',
     url: 'alluringplasticsurgery.com/blog',
-    description: 'Fully automated medical blog covering procedures, recovery guides, and patient education. AI-generated content meeting healthcare compliance standards.',
-    results: ['50+ articles published', 'Zero manual writing', 'Consistent brand voice']
+    description:
+      'Fully automated medical blog covering procedures, recovery guides, and patient education. AI-generated content meeting healthcare compliance standards.',
+    results: ['50+ articles published', 'Zero manual writing', 'Consistent brand voice'],
   },
   {
     name: 'Praxis Notes',
     industry: 'SaaS / Healthcare Tech',
     url: 'praxisnotes.com/resources',
-    description: 'Resource library for ABA professionals. Educational content generated automatically, from industry updates to best practice guides.',
-    results: ['Continuous content flow', 'SEO-optimized articles', 'Professional credibility']
-  }
+    description:
+      'Resource library for ABA professionals. Educational content generated automatically, from industry updates to best practice guides.',
+    results: ['Continuous content flow', 'SEO-optimized articles', 'Professional credibility'],
+  },
 ];
 ---
 
-<Layout 
-  title="AI-First SEO & Content Automation" 
+<Layout
+  title="AI-First SEO & Content Automation"
   description="Automate your entire content pipeline. Our AI generates SEO-optimized articles, custom images, and publishes on schedule—10x your output without adding headcount."
   structuredData={structuredData}
 >
@@ -119,23 +132,34 @@ const caseStudies = [
           <span class="highlight">Fully automated.</span>
         </h1>
         <p class="hero-subtitle reveal reveal-delay-2">
-          We don't just do SEO—we automate it. From ideation to publish, 
-          our AI generates articles, creates images, and optimizes everything 
-          for search. You focus on your business. We handle the content.
+          We don't just do SEO—we automate it. From ideation to publish, our AI generates articles,
+          creates images, and optimizes everything for search. You focus on your business. We handle
+          the content.
         </p>
         <div class="hero-cta reveal reveal-delay-3">
           <a href="/contact" class="btn btn-primary">
             Get Your Content Engine
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </a>
           <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
         </div>
         <div class="hero-image reveal reveal-delay-4">
           <picture>
-            <source srcset="/images/services/seo-hero.webp" type="image/webp">
-            <img src="/images/services/seo-hero.png" alt="AI-powered SEO and content automation visualization" loading="eager" />
+            <source srcset="/images/services/seo-hero.webp" type="image/webp" />
+            <img
+              src="/images/services/seo-hero.png"
+              alt="AI-powered SEO and content automation visualization"
+              loading="eager"
+            />
           </picture>
         </div>
       </div>
@@ -145,12 +169,16 @@ const caseStudies = [
     <section class="stats-bar" id="stats-section">
       <div class="container-wide">
         <div class="stats-grid">
-          {stats.map((stat, index) => (
-            <div class={`stat reveal reveal-delay-${index + 1}`}>
-              <span class="stat-value" data-value={stat.value}>{stat.value}</span>
-              <span class="stat-label">{stat.label}</span>
-            </div>
-          ))}
+          {
+            stats.map((stat, index) => (
+              <div class={`stat reveal reveal-delay-${index + 1}`}>
+                <span class="stat-value" data-value={stat.value}>
+                  {stat.value}
+                </span>
+                <span class="stat-label">{stat.label}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -163,13 +191,13 @@ const caseStudies = [
             <span class="section-label">The Problem</span>
             <h2>Manual SEO is broken</h2>
             <p>
-              Traditional content marketing is slow, expensive, and inconsistent. 
-              You hire writers, wait weeks for drafts, go through endless revisions, 
-              source images, optimize for SEO, and finally publish—only to repeat it all again.
+              Traditional content marketing is slow, expensive, and inconsistent. You hire writers,
+              wait weeks for drafts, go through endless revisions, source images, optimize for SEO,
+              and finally publish—only to repeat it all again.
             </p>
             <p>
-              Meanwhile, your competitors are publishing daily. Search engines reward 
-              consistency. And your team is burned out on content they don't have time to create.
+              Meanwhile, your competitors are publishing daily. Search engines reward consistency.
+              And your team is burned out on content they don't have time to create.
             </p>
           </div>
           <div class="problem-list reveal reveal-delay-1">
@@ -213,19 +241,21 @@ const caseStudies = [
           <span class="section-label">The Solution</span>
           <h2>AI that does the work for you</h2>
           <p>
-            Our AI-first SEO engine handles the entire content pipeline—from identifying 
-            what to write, to publishing optimized articles with custom images. 
-            All you do is approve (or let it run autonomously).
+            Our AI-first SEO engine handles the entire content pipeline—from identifying what to
+            write, to publishing optimized articles with custom images. All you do is approve (or
+            let it run autonomously).
           </p>
         </div>
         <div class="features-grid">
-          {features.map((feature, index) => (
-            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
-              <span class="feature-icon">{feature.icon}</span>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </div>
-          ))}
+          {
+            features.map((feature, index) => (
+              <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+                <span class="feature-icon">{feature.icon}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -239,13 +269,15 @@ const caseStudies = [
           <p>We set up your automated content engine and let it run.</p>
         </div>
         <div class="process-grid">
-          {process.map((step, index) => (
-            <div class={`process-step reveal reveal-delay-${index + 1}`}>
-              <span class="step-number">{step.step}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </div>
-          ))}
+          {
+            process.map((step, index) => (
+              <div class={`process-step reveal reveal-delay-${index + 1}`}>
+                <span class="step-number">{step.step}</span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -259,23 +291,25 @@ const caseStudies = [
           <p>Real businesses running on our AI content engine right now.</p>
         </div>
         <div class="cases-grid">
-          {caseStudies.map((study, index) => (
-            <div class={`case-card reveal reveal-delay-${index + 1}`}>
-              <div class="case-header">
-                <span class="case-industry">{study.industry}</span>
-                <h3>{study.name}</h3>
-                <a href={`https://${study.url}`} target="_blank" rel="noopener" class="case-link">
-                  {study.url} →
-                </a>
+          {
+            caseStudies.map((study, index) => (
+              <div class={`case-card reveal reveal-delay-${index + 1}`}>
+                <div class="case-header">
+                  <span class="case-industry">{study.industry}</span>
+                  <h3>{study.name}</h3>
+                  <a href={`https://${study.url}`} target="_blank" rel="noopener" class="case-link">
+                    {study.url} →
+                  </a>
+                </div>
+                <p class="case-description">{study.description}</p>
+                <ul class="case-results">
+                  {study.results.map((result) => (
+                    <li>✓ {result}</li>
+                  ))}
+                </ul>
               </div>
-              <p class="case-description">{study.description}</p>
-              <ul class="case-results">
-                {study.results.map(result => (
-                  <li>✓ {result}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -337,23 +371,39 @@ const caseStudies = [
         <div class="faq-list">
           <div class="faq-item reveal reveal-delay-1">
             <h3>Will the content sound robotic or generic?</h3>
-            <p>No. We train the AI on your brand voice, tone, and style. The output is indistinguishable from quality human writing—because it's built on the same principles, just faster.</p>
+            <p>
+              No. We train the AI on your brand voice, tone, and style. The output is
+              indistinguishable from quality human writing—because it's built on the same
+              principles, just faster.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-2">
             <h3>Is this content original?</h3>
-            <p>Yes. Every piece is generated fresh. We run plagiarism checks and ensure all content is unique and indexed properly by search engines.</p>
+            <p>
+              Yes. Every piece is generated fresh. We run plagiarism checks and ensure all content
+              is unique and indexed properly by search engines.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-3">
             <h3>How does the image generation work?</h3>
-            <p>Our AI creates custom images for each article using advanced generative models. No stock photos, no licensing issues—just unique visuals that match your content.</p>
+            <p>
+              Our AI creates custom images for each article using advanced generative models. No
+              stock photos, no licensing issues—just unique visuals that match your content.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-4">
             <h3>Can I review content before it publishes?</h3>
-            <p>Absolutely. You can set up approval workflows, or let the engine run fully autonomous. Most clients start with review and graduate to autonomous as trust builds.</p>
+            <p>
+              Absolutely. You can set up approval workflows, or let the engine run fully autonomous.
+              Most clients start with review and graduate to autonomous as trust builds.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-5">
             <h3>How long until I see SEO results?</h3>
-            <p>SEO is a long game, but consistent publishing accelerates it. Most clients see meaningful traffic improvements within 3-6 months as content compounds.</p>
+            <p>
+              SEO is a long game, but consistent publishing accelerates it. Most clients see
+              meaningful traffic improvements within 3-6 months as content compounds.
+            </p>
           </div>
         </div>
       </div>
@@ -641,7 +691,7 @@ const caseStudies = [
   }
 
   .case-card:hover {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     transform: translateY(-4px);
   }
 
@@ -846,10 +896,17 @@ const caseStudies = [
 
 <script>
   // Animated stats counter
-  function animateValue(element: HTMLElement, start: number, end: number, duration: number, suffix: string, prefix: string) {
+  function animateValue(
+    element: HTMLElement,
+    start: number,
+    end: number,
+    duration: number,
+    suffix: string,
+    prefix: string
+  ) {
     const range = end - start;
     const startTime = performance.now();
-    
+
     function update(currentTime: number) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
@@ -875,25 +932,28 @@ const caseStudies = [
 
   const statsSection = document.getElementById('stats-section');
   if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const statValues = entry.target.querySelectorAll('.stat-value');
-          statValues.forEach((el, index) => {
-            const element = el as HTMLElement;
-            const originalValue = element.dataset.value || '';
-            const parsed = parseStatValue(originalValue);
-            if (parsed.number > 0) {
-              element.textContent = parsed.prefix + '0' + parsed.suffix;
-              setTimeout(() => {
-                animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix);
-              }, index * 100);
-            }
-          });
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const statValues = entry.target.querySelectorAll('.stat-value');
+            statValues.forEach((el, index) => {
+              const element = el as HTMLElement;
+              const originalValue = element.dataset.value || '';
+              const parsed = parseStatValue(originalValue);
+              if (parsed.number > 0) {
+                element.textContent = parsed.prefix + '0' + parsed.suffix;
+                setTimeout(() => {
+                  animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix);
+                }, index * 100);
+              }
+            });
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
     statsObserver.observe(statsSection);
   }
 </script>

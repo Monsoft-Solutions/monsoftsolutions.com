@@ -6,203 +6,253 @@ import CTA from '../../components/CTA.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "AI-Powered Business Solutions for Small Businesses",
-  "provider": {
-    "@type": "Organization",
-    "name": "Monsoft Solutions",
-    "url": "https://monsoftsolutions.com"
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'AI-Powered Business Solutions for Small Businesses',
+  provider: {
+    '@type': 'Organization',
+    name: 'Monsoft Solutions',
+    url: 'https://monsoftsolutions.com',
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 26.142,
-      "longitude": -81.795
+  areaServed: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: 26.142,
+      longitude: -81.795,
     },
-    "geoRadius": "100 mi"
+    geoRadius: '100 mi',
   },
-  "description": "AI-powered solutions for small businesses in Southwest Florida. Business automation, local SEO, CRM setup, smart websites, and AI assistants that help you compete with bigger players.",
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock"
+  description:
+    'AI-powered solutions for small businesses in Southwest Florida. Business automation, local SEO, CRM setup, smart websites, and AI assistants that help you compete with bigger players.',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
   },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Small Business Services",
-    "itemListElement": [
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Small Business Services',
+    itemListElement: [
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Business Automation"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Business Automation',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Local SEO"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Local SEO',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "CRM Setup & Integrations"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'CRM Setup & Integrations',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Smart Websites"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Smart Websites',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "AI Assistants"
-        }
-      }
-    ]
-  }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI Assistants',
+        },
+      },
+    ],
+  },
 };
 
 const features = [
   {
     title: 'Business Automation',
-    description: 'Stop doing the same tasks over and over. We automate scheduling, invoicing, reminders, and workflows—so you can focus on what you do best.',
+    description:
+      'Stop doing the same tasks over and over. We automate scheduling, invoicing, reminders, and workflows—so you can focus on what you do best.',
     icon: '⚙️',
-    benefits: ['Save 10+ hours per week', 'Reduce errors', 'Never miss a follow-up']
+    benefits: ['Save 10+ hours per week', 'Reduce errors', 'Never miss a follow-up'],
   },
   {
     title: 'Local SEO',
-    description: 'Get found when customers search. We optimize your Google Business Profile, build local citations, and get you ranking on maps where it matters.',
+    description:
+      'Get found when customers search. We optimize your Google Business Profile, build local citations, and get you ranking on maps where it matters.',
     icon: '📍',
-    benefits: ['Top 3 map pack rankings', 'More phone calls', 'Beat local competitors']
+    benefits: ['Top 3 map pack rankings', 'More phone calls', 'Beat local competitors'],
   },
   {
     title: 'CRM Setup & Integrations',
-    description: 'Know every customer, track every deal. We set up systems that manage leads, automate follow-ups, and never let opportunities slip away.',
+    description:
+      'Know every customer, track every deal. We set up systems that manage leads, automate follow-ups, and never let opportunities slip away.',
     icon: '👥',
-    benefits: ['Organized customer data', 'Automated pipelines', 'Better close rates']
+    benefits: ['Organized customer data', 'Automated pipelines', 'Better close rates'],
   },
   {
     title: 'Smart Websites',
-    description: 'Fast, mobile-first websites that turn visitors into customers. Built for speed, optimized for search, designed to convert local traffic.',
+    description:
+      'Fast, mobile-first websites that turn visitors into customers. Built for speed, optimized for search, designed to convert local traffic.',
     icon: '🌐',
-    benefits: ['Sub-2 second load times', 'Mobile optimized', 'Clear calls to action']
+    benefits: ['Sub-2 second load times', 'Mobile optimized', 'Clear calls to action'],
   },
   {
     title: 'AI Assistants',
-    description: 'Never miss a lead again. AI chatbots answer questions, book appointments, and capture leads 24/7—even when you\'re on a job or closed.',
+    description:
+      "Never miss a lead again. AI chatbots answer questions, book appointments, and capture leads 24/7—even when you're on a job or closed.",
     icon: '🤖',
-    benefits: ['24/7 availability', 'Instant responses', 'Automatic booking']
-  }
+    benefits: ['24/7 availability', 'Instant responses', 'Automatic booking'],
+  },
 ];
 
 const process = [
   {
     step: '01',
     title: 'Discovery Call',
-    description: 'We learn about your business, your challenges, and what success looks like. No tech jargon—just a conversation about your goals.'
+    description:
+      'We learn about your business, your challenges, and what success looks like. No tech jargon—just a conversation about your goals.',
   },
   {
     step: '02',
     title: 'Custom Plan',
-    description: 'We create a roadmap tailored to your business. You see exactly what we\'ll do, the timeline, and the expected results.'
+    description:
+      "We create a roadmap tailored to your business. You see exactly what we'll do, the timeline, and the expected results.",
   },
   {
     step: '03',
     title: 'Implementation',
-    description: 'We build and set everything up. You stay focused on your business while we handle the tech work behind the scenes.'
+    description:
+      'We build and set everything up. You stay focused on your business while we handle the tech work behind the scenes.',
   },
   {
     step: '04',
     title: 'Launch & Support',
-    description: 'Go live with full support. We train your team, monitor performance, and optimize continuously for better results.'
-  }
+    description:
+      'Go live with full support. We train your team, monitor performance, and optimize continuously for better results.',
+  },
 ];
 
 const stats = [
   { value: '10+', label: 'Hours Saved Weekly' },
   { value: '3x', label: 'More Leads' },
   { value: '24/7', label: 'Customer Support' },
-  { value: '89%', label: 'Client Satisfaction' }
+  { value: '89%', label: 'Client Satisfaction' },
 ];
 
 const useCases = [
   {
     business: 'Home Service Contractors',
     icon: '🔧',
-    description: 'HVAC, plumbers, electricians, roofers, landscapers—stop juggling phone calls and paperwork.',
-    solutions: ['Automated job scheduling', 'Instant quote follow-ups', 'Google Maps visibility', 'Review generation']
+    description:
+      'HVAC, plumbers, electricians, roofers, landscapers—stop juggling phone calls and paperwork.',
+    solutions: [
+      'Automated job scheduling',
+      'Instant quote follow-ups',
+      'Google Maps visibility',
+      'Review generation',
+    ],
   },
   {
     business: 'Salons & Spas',
     icon: '💇',
-    description: 'Beauty professionals who want more bookings without spending all day on the phone.',
-    solutions: ['Online booking system', 'Appointment reminders', 'No-show reduction', 'Client retention campaigns']
+    description:
+      'Beauty professionals who want more bookings without spending all day on the phone.',
+    solutions: [
+      'Online booking system',
+      'Appointment reminders',
+      'No-show reduction',
+      'Client retention campaigns',
+    ],
   },
   {
     business: 'Restaurants & Cafés',
     icon: '🍽️',
     description: 'Local eateries looking to fill more seats and build a loyal customer base.',
-    solutions: ['Table reservations', 'Menu visibility online', 'Local search dominance', 'Review management']
+    solutions: [
+      'Table reservations',
+      'Menu visibility online',
+      'Local search dominance',
+      'Review management',
+    ],
   },
   {
     business: 'Professional Services',
     icon: '💼',
-    description: 'Accountants, lawyers, consultants, real estate agents—win more clients without cold calling.',
-    solutions: ['Lead capture websites', 'Automated nurture sequences', 'Calendar scheduling', 'Client portals']
+    description:
+      'Accountants, lawyers, consultants, real estate agents—win more clients without cold calling.',
+    solutions: [
+      'Lead capture websites',
+      'Automated nurture sequences',
+      'Calendar scheduling',
+      'Client portals',
+    ],
   },
   {
     business: 'Healthcare & Wellness',
     icon: '🏥',
     description: 'Dentists, chiropractors, therapists, gyms—simplify patient/member management.',
-    solutions: ['Patient scheduling', 'Reminder automation', 'Intake form digitization', 'HIPAA-friendly tools']
+    solutions: [
+      'Patient scheduling',
+      'Reminder automation',
+      'Intake form digitization',
+      'HIPAA-friendly tools',
+    ],
   },
   {
     business: 'Retail & Local Shops',
     icon: '🛍️',
-    description: 'Boutiques, gift shops, specialty stores—compete with big box and online retailers.',
-    solutions: ['Local inventory visibility', 'Google Business optimization', 'Customer loyalty programs', 'E-commerce integration']
-  }
+    description:
+      'Boutiques, gift shops, specialty stores—compete with big box and online retailers.',
+    solutions: [
+      'Local inventory visibility',
+      'Google Business optimization',
+      'Customer loyalty programs',
+      'E-commerce integration',
+    ],
+  },
 ];
 
 const faqs = [
   {
-    question: 'I\'m not tech-savvy. Will I be able to use these systems?',
-    answer: 'Absolutely. We design everything to be simple and intuitive. If you can use a smartphone, you can use our systems. Plus, we provide full training and ongoing support—you\'re never left figuring things out alone.'
+    question: "I'm not tech-savvy. Will I be able to use these systems?",
+    answer:
+      "Absolutely. We design everything to be simple and intuitive. If you can use a smartphone, you can use our systems. Plus, we provide full training and ongoing support—you're never left figuring things out alone.",
   },
   {
     question: 'How much does this cost?',
-    answer: 'Every business is different, so we create custom packages based on your needs. Most small businesses see ROI within the first few months through time savings and increased leads. We\'ll give you clear pricing upfront—no surprises.'
+    answer:
+      "Every business is different, so we create custom packages based on your needs. Most small businesses see ROI within the first few months through time savings and increased leads. We'll give you clear pricing upfront—no surprises.",
   },
   {
     question: 'How long until I see results?',
-    answer: 'Automation and website improvements show results immediately. Local SEO typically takes 2-4 months to see significant ranking improvements. We set realistic expectations and keep you updated on progress throughout.'
+    answer:
+      'Automation and website improvements show results immediately. Local SEO typically takes 2-4 months to see significant ranking improvements. We set realistic expectations and keep you updated on progress throughout.',
   },
   {
     question: 'Do I need to sign a long-term contract?',
-    answer: 'We offer flexible options. Some services are one-time setups, others work best with ongoing support. We\'ll recommend what makes sense for your situation—no pressure to commit to anything that doesn\'t fit.'
+    answer:
+      "We offer flexible options. Some services are one-time setups, others work best with ongoing support. We'll recommend what makes sense for your situation—no pressure to commit to anything that doesn't fit.",
   },
   {
     question: 'Will AI replace my staff or make my business feel impersonal?',
-    answer: 'Not at all. AI handles the repetitive stuff (answering common questions, scheduling, follow-ups) so your team can focus on what humans do best—building real relationships with customers. It\'s assistance, not replacement.'
+    answer:
+      "Not at all. AI handles the repetitive stuff (answering common questions, scheduling, follow-ups) so your team can focus on what humans do best—building real relationships with customers. It's assistance, not replacement.",
   },
   {
     question: 'What if something breaks or I need help after launch?',
-    answer: 'We\'re a local Southwest Florida company—we\'re not going anywhere. All our services include support, and we\'re just a call or message away. Your success is our success.'
-  }
+    answer:
+      "We're a local Southwest Florida company—we're not going anywhere. All our services include support, and we're just a call or message away. Your success is our success.",
+  },
 ];
 ---
 
-<Layout 
-  title="AI-Powered Solutions for Small Businesses | Monsoft Solutions" 
+<Layout
+  title="AI-Powered Solutions for Small Businesses | Monsoft Solutions"
   description="Help your small business compete with the big players. AI automation, local SEO, smart websites, and 24/7 AI assistants for contractors, salons, restaurants & more in Southwest Florida."
   structuredData={structuredData}
 >
@@ -217,23 +267,34 @@ const faqs = [
           <span class="highlight">Small business pricing.</span>
         </h1>
         <p class="hero-subtitle reveal reveal-delay-2">
-          You didn't start your business to spend all day on paperwork, missed calls, 
-          and chasing leads. We use AI and automation to give you back your time—so 
-          you can focus on what you actually love doing.
+          You didn't start your business to spend all day on paperwork, missed calls, and chasing
+          leads. We use AI and automation to give you back your time—so you can focus on what you
+          actually love doing.
         </p>
         <div class="hero-cta reveal reveal-delay-3">
           <a href="/contact" class="btn btn-primary">
             Get Your Free Consultation
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </a>
           <a href="#solutions" class="btn btn-secondary">See How We Help</a>
         </div>
         <div class="hero-image reveal reveal-delay-4">
           <picture>
-            <source srcset="/images/services/local-business-hero.webp" type="image/webp">
-            <img src="/images/services/local-business-hero.png" alt="Small business owner managing their business efficiently with AI-powered tools" loading="eager" />
+            <source srcset="/images/services/local-business-hero.webp" type="image/webp" />
+            <img
+              src="/images/services/local-business-hero.png"
+              alt="Small business owner managing their business efficiently with AI-powered tools"
+              loading="eager"
+            />
           </picture>
         </div>
       </div>
@@ -243,12 +304,16 @@ const faqs = [
     <section class="stats-bar" id="stats-section">
       <div class="container-wide">
         <div class="stats-grid">
-          {stats.map((stat, index) => (
-            <div class={`stat reveal reveal-delay-${index + 1}`}>
-              <span class="stat-value" data-value={stat.value}>{stat.value}</span>
-              <span class="stat-label">{stat.label}</span>
-            </div>
-          ))}
+          {
+            stats.map((stat, index) => (
+              <div class={`stat reveal reveal-delay-${index + 1}`}>
+                <span class="stat-value" data-value={stat.value}>
+                  {stat.value}
+                </span>
+                <span class="stat-label">{stat.label}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -261,14 +326,14 @@ const faqs = [
             <span class="section-label">The Reality</span>
             <h2>Running a small business is hard enough</h2>
             <p>
-              You're the owner, the marketer, the accountant, the customer service rep, and 
-              sometimes the janitor. There's never enough time, and the big chains have 
-              technology and budgets you can't match.
+              You're the owner, the marketer, the accountant, the customer service rep, and
+              sometimes the janitor. There's never enough time, and the big chains have technology
+              and budgets you can't match.
             </p>
             <p>
-              But here's the thing: <strong>you don't need a Fortune 500 budget anymore.</strong> The same 
-              AI and automation tools that power big businesses are now accessible to you—
-              and we make them work without requiring a tech degree.
+              But here's the thing: <strong>you don't need a Fortune 500 budget anymore.</strong> The
+              same AI and automation tools that power big businesses are now accessible to you— and we
+              make them work without requiring a tech degree.
             </p>
           </div>
           <div class="problem-list reveal reveal-delay-1">
@@ -276,7 +341,10 @@ const faqs = [
               <span class="problem-icon">📞</span>
               <div>
                 <strong>Missed Calls = Lost Revenue</strong>
-                <p>Every call you miss while on a job is a potential customer going to your competitor.</p>
+                <p>
+                  Every call you miss while on a job is a potential customer going to your
+                  competitor.
+                </p>
               </div>
             </div>
             <div class="problem-item">
@@ -290,7 +358,10 @@ const faqs = [
               <span class="problem-icon">👻</span>
               <div>
                 <strong>Invisible Online</strong>
-                <p>Customers search "near me" and find your competitors because your online presence is weak.</p>
+                <p>
+                  Customers search "near me" and find your competitors because your online presence
+                  is weak.
+                </p>
               </div>
             </div>
             <div class="problem-item">
@@ -312,23 +383,25 @@ const faqs = [
           <span class="section-label">Our Solutions</span>
           <h2>Technology that works for you</h2>
           <p>
-            We don't just give you tools—we set everything up, train you, and 
-            make sure it actually works for your specific business.
+            We don't just give you tools—we set everything up, train you, and make sure it actually
+            works for your specific business.
           </p>
         </div>
         <div class="features-grid">
-          {features.map((feature, index) => (
-            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
-              <span class="feature-icon">{feature.icon}</span>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-              <ul class="feature-benefits">
-                {feature.benefits.map(benefit => (
-                  <li>✓ {benefit}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {
+            features.map((feature, index) => (
+              <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+                <span class="feature-icon">{feature.icon}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+                <ul class="feature-benefits">
+                  {feature.benefits.map((benefit) => (
+                    <li>✓ {benefit}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -340,23 +413,25 @@ const faqs = [
           <span class="section-label">Who We Help</span>
           <h2>Built for businesses like yours</h2>
           <p>
-            We've helped local businesses across Southwest Florida transform how they operate. 
+            We've helped local businesses across Southwest Florida transform how they operate.
             Here's how we can help your industry.
           </p>
         </div>
         <div class="use-cases-grid">
-          {useCases.map((useCase, index) => (
-            <div class={`use-case-card reveal reveal-delay-${(index % 3) + 1}`}>
-              <span class="use-case-icon">{useCase.icon}</span>
-              <h3>{useCase.business}</h3>
-              <p class="use-case-description">{useCase.description}</p>
-              <ul class="use-case-solutions">
-                {useCase.solutions.map(solution => (
-                  <li>{solution}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {
+            useCases.map((useCase, index) => (
+              <div class={`use-case-card reveal reveal-delay-${(index % 3) + 1}`}>
+                <span class="use-case-icon">{useCase.icon}</span>
+                <h3>{useCase.business}</h3>
+                <p class="use-case-description">{useCase.description}</p>
+                <ul class="use-case-solutions">
+                  {useCase.solutions.map((solution) => (
+                    <li>{solution}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -370,13 +445,15 @@ const faqs = [
           <p>No tech headaches. No confusing jargon. Just results.</p>
         </div>
         <div class="process-grid">
-          {process.map((step, index) => (
-            <div class={`process-step reveal reveal-delay-${index + 1}`}>
-              <span class="step-number">{step.step}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </div>
-          ))}
+          {
+            process.map((step, index) => (
+              <div class={`process-step reveal reveal-delay-${index + 1}`}>
+                <span class="step-number">{step.step}</span>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -388,9 +465,9 @@ const faqs = [
           <span class="section-label">Why Monsoft</span>
           <h2>We're local. We get it.</h2>
           <p>
-            We're not some big agency that treats you like a number. We're a Southwest Florida 
-            company that understands local business. We've seen what works here, we know 
-            the challenges, and we build solutions that fit your budget.
+            We're not some big agency that treats you like a number. We're a Southwest Florida
+            company that understands local business. We've seen what works here, we know the
+            challenges, and we build solutions that fit your budget.
           </p>
           <div class="value-points">
             <div class="value-point">
@@ -434,12 +511,14 @@ const faqs = [
           <h2>Questions we get asked</h2>
         </div>
         <div class="faq-list">
-          {faqs.map((faq, index) => (
-            <div class={`faq-item reveal reveal-delay-${Math.min(index + 1, 5)}`}>
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
-            </div>
-          ))}
+          {
+            faqs.map((faq, index) => (
+              <div class={`faq-item reveal reveal-delay-${Math.min(index + 1, 5)}`}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -710,7 +789,7 @@ const faqs = [
   }
 
   .use-case-card:hover {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     transform: translateY(-4px);
   }
 
@@ -919,10 +998,17 @@ const faqs = [
 
 <script>
   // Animated stats counter
-  function animateValue(element: HTMLElement, start: number, end: number, duration: number, suffix: string, prefix: string) {
+  function animateValue(
+    element: HTMLElement,
+    start: number,
+    end: number,
+    duration: number,
+    suffix: string,
+    prefix: string
+  ) {
     const range = end - start;
     const startTime = performance.now();
-    
+
     function update(currentTime: number) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
@@ -948,25 +1034,28 @@ const faqs = [
 
   const statsSection = document.getElementById('stats-section');
   if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const statValues = entry.target.querySelectorAll('.stat-value');
-          statValues.forEach((el, index) => {
-            const element = el as HTMLElement;
-            const originalValue = element.dataset.value || '';
-            const parsed = parseStatValue(originalValue);
-            if (parsed.number > 0) {
-              element.textContent = parsed.prefix + '0' + parsed.suffix;
-              setTimeout(() => {
-                animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix);
-              }, index * 100);
-            }
-          });
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const statValues = entry.target.querySelectorAll('.stat-value');
+            statValues.forEach((el, index) => {
+              const element = el as HTMLElement;
+              const originalValue = element.dataset.value || '';
+              const parsed = parseStatValue(originalValue);
+              if (parsed.number > 0) {
+                element.textContent = parsed.prefix + '0' + parsed.suffix;
+                setTimeout(() => {
+                  animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix);
+                }, index * 100);
+              }
+            });
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
     statsObserver.observe(statsSection);
   }
 </script>

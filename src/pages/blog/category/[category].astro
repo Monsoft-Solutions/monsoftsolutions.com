@@ -7,20 +7,20 @@ import Footer from '../../../components/Footer.astro';
 // Generate static paths for all categories
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  
+
   // Get unique categories
-  const categories = [...new Set(posts.map(post => post.data.category))];
-  
-  return categories.map(category => ({
-    params: { 
-      category: category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')
+  const categories = [...new Set(posts.map((post) => post.data.category))];
+
+  return categories.map((category) => ({
+    params: {
+      category: category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-'),
     },
-    props: { 
+    props: {
       category,
       posts: posts
-        .filter(post => post.data.category === category)
-        .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-    }
+        .filter((post) => post.data.category === category)
+        .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+    },
   }));
 }
 
@@ -33,7 +33,7 @@ const description = `Browse our ${category.toLowerCase()} articles. Practical gu
 
 <Layout title={title} description={description}>
   <Header />
-  
+
   <main class="category-page">
     <!-- Hero Section -->
     <section class="category-hero">
@@ -45,47 +45,49 @@ const description = `Browse our ${category.toLowerCase()} articles. Practical gu
         </p>
       </div>
     </section>
-    
+
     <!-- Posts Grid -->
     <section class="posts-section">
       <div class="container">
         <div class="posts-grid">
-          {posts.map(post => (
-            <article class="post-card">
-              <a href={`/blog/${post.id}`} class="post-link">
-                {post.data.heroImage && (
-                  <div class="post-image">
-                    <img 
-                      src={post.data.heroImage} 
-                      alt={post.data.heroImageAlt || post.data.title}
-                      loading="lazy"
-                    />
+          {
+            posts.map((post) => (
+              <article class="post-card">
+                <a href={`/blog/${post.id}`} class="post-link">
+                  {post.data.heroImage && (
+                    <div class="post-image">
+                      <img
+                        src={post.data.heroImage}
+                        alt={post.data.heroImageAlt || post.data.title}
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div class="post-content">
+                    <h3 class="post-title">{post.data.title}</h3>
+                    <p class="post-description">{post.data.description}</p>
+                    <div class="post-meta">
+                      <time datetime={post.data.pubDate.toISOString()}>
+                        {post.data.pubDate.toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric',
+                        })}
+                      </time>
+                      {post.data.readingTime && (
+                        <span class="reading-time">{post.data.readingTime}</span>
+                      )}
+                    </div>
                   </div>
-                )}
-                <div class="post-content">
-                  <h3 class="post-title">{post.data.title}</h3>
-                  <p class="post-description">{post.data.description}</p>
-                  <div class="post-meta">
-                    <time datetime={post.data.pubDate.toISOString()}>
-                      {post.data.pubDate.toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'short', 
-                        day: 'numeric' 
-                      })}
-                    </time>
-                    {post.data.readingTime && (
-                      <span class="reading-time">{post.data.readingTime}</span>
-                    )}
-                  </div>
-                </div>
-              </a>
-            </article>
-          ))}
+                </a>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </Layout>
 
@@ -93,18 +95,18 @@ const description = `Browse our ${category.toLowerCase()} articles. Practical gu
   .category-page {
     padding-top: 5rem;
   }
-  
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
   }
-  
+
   /* Hero */
   .category-hero {
     padding: 3rem 0 2rem;
   }
-  
+
   .back-link {
     display: inline-block;
     font-size: 0.875rem;
@@ -112,34 +114,34 @@ const description = `Browse our ${category.toLowerCase()} articles. Practical gu
     margin-bottom: 1rem;
     transition: color 0.2s;
   }
-  
+
   .back-link:hover {
     color: var(--color-black);
   }
-  
+
   .category-hero h1 {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 600;
     letter-spacing: -0.03em;
     margin-bottom: 0.5rem;
   }
-  
+
   .hero-description {
     font-size: 1.125rem;
     color: var(--color-gray-600);
   }
-  
+
   /* Posts Grid */
   .posts-section {
     padding: 2rem 0 4rem;
   }
-  
+
   .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 2rem;
   }
-  
+
   .post-card {
     background: var(--color-white);
     border: 1px solid var(--color-gray-100);
@@ -147,38 +149,38 @@ const description = `Browse our ${category.toLowerCase()} articles. Practical gu
     overflow: hidden;
     transition: all 0.3s ease;
   }
-  
+
   .post-card:hover {
     border-color: var(--color-gray-200);
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   }
-  
+
   .post-link {
     display: block;
   }
-  
+
   .post-image {
     aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--color-gray-100);
   }
-  
+
   .post-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
-  
+
   .post-card:hover .post-image img {
     transform: scale(1.03);
   }
-  
+
   .post-content {
     padding: 1.5rem;
   }
-  
+
   .post-title {
     font-size: 1.25rem;
     font-weight: 600;
@@ -186,7 +188,7 @@ const description = `Browse our ${category.toLowerCase()} articles. Practical gu
     margin-bottom: 0.75rem;
     line-height: 1.4;
   }
-  
+
   .post-description {
     font-size: 0.9375rem;
     color: var(--color-gray-600);
@@ -197,7 +199,7 @@ const description = `Browse our ${category.toLowerCase()} articles. Practical gu
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .post-meta {
     display: flex;
     align-items: center;
@@ -205,12 +207,12 @@ const description = `Browse our ${category.toLowerCase()} articles. Practical gu
     font-size: 0.8125rem;
     color: var(--color-gray-400);
   }
-  
+
   .reading-time::before {
     content: '•';
     margin-right: 1rem;
   }
-  
+
   @media (max-width: 768px) {
     .posts-grid {
       grid-template-columns: 1fr;

@@ -3,6 +3,7 @@
 This document explains how the blog works in the Monsoft Solutions website.
 
 **Related Documentation:**
+
 - [IMAGES.md](./IMAGES.md) — Image optimization and usage
 - [BLOG-WRITING-SKILL.md](./BLOG-WRITING-SKILL.md) — Content guidelines and SEO best practices
 
@@ -48,25 +49,26 @@ Every post requires frontmatter with these fields:
 
 ```yaml
 ---
-title: "Your Post Title"                    # Required, max 70 chars for SEO
-description: "A brief description"           # Required, max 160 chars for SEO
-pubDate: 2026-01-31                          # Required, YYYY-MM-DD format
-author: "Monsoft Solutions"                  # Optional, defaults to "Monsoft Solutions"
-category: "AI & Automation"                  # Required, must match allowed categories
-tags: ["AI", "Automation"]                   # Optional, array of strings
-featured: false                              # Optional, shows in featured section
-draft: false                                 # Optional, true hides from production
-readingTime: "5 min read"                    # Optional, displayed on post
-updatedDate: 2026-02-01                      # Optional, for updated posts
-heroImage: "./images/hero.jpg"               # Optional, featured image (relative path)
-heroImageAlt: "Description of hero image"   # Optional, alt text for hero image
-ogImage: "/images/my-post-og.jpg"            # Optional, Open Graph image URL
+title: 'Your Post Title' # Required, max 70 chars for SEO
+description: 'A brief description' # Required, max 160 chars for SEO
+pubDate: 2026-01-31 # Required, YYYY-MM-DD format
+author: 'Monsoft Solutions' # Optional, defaults to "Monsoft Solutions"
+category: 'AI & Automation' # Required, must match allowed categories
+tags: ['AI', 'Automation'] # Optional, array of strings
+featured: false # Optional, shows in featured section
+draft: false # Optional, true hides from production
+readingTime: '5 min read' # Optional, displayed on post
+updatedDate: 2026-02-01 # Optional, for updated posts
+heroImage: './images/hero.jpg' # Optional, featured image (relative path)
+heroImageAlt: 'Description of hero image' # Optional, alt text for hero image
+ogImage: '/images/my-post-og.jpg' # Optional, Open Graph image URL
 ---
 ```
 
 ### Allowed Categories
 
 Posts must use one of these categories:
+
 - `AI & Automation`
 - `Web Development`
 - `Business Growth`
@@ -80,7 +82,7 @@ Write your content in Markdown below the frontmatter:
 
 ```markdown
 ---
-title: "My Post Title"
+title: 'My Post Title'
 # ... other frontmatter
 ---
 
@@ -104,6 +106,7 @@ Set `featured: true` in frontmatter to display a post prominently at the top of 
 ### Draft Mode
 
 Set `draft: true` to hide a post from production builds. Drafts are excluded from:
+
 - Blog listing page
 - Sitemap
 - RSS feed (if added)
@@ -111,6 +114,7 @@ Set `draft: true` to hide a post from production builds. Drafts are excluded fro
 ### Tags
 
 Tags create linkable hashtags on each post. Use consistent naming:
+
 - Capitalize properly: "AI" not "ai"
 - Use spaces for multi-word: "Small Business" not "small-business"
 
@@ -129,6 +133,7 @@ Each post automatically generates:
 - Canonical URLs
 
 **Best Practices:**
+
 - Keep titles under 70 characters
 - Keep descriptions under 160 characters
 - Use descriptive, keyword-rich filenames
@@ -155,15 +160,13 @@ import { getCollection } from 'astro:content';
 const posts = await getCollection('blog', ({ data }) => !data.draft);
 
 // Sort by date (newest first)
-const sortedPosts = posts.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 // Filter by category
-const aiPosts = posts.filter(p => p.data.category === 'AI & Automation');
+const aiPosts = posts.filter((p) => p.data.category === 'AI & Automation');
 
 // Get featured posts
-const featuredPosts = posts.filter(p => p.data.featured);
+const featuredPosts = posts.filter((p) => p.data.featured);
 ```
 
 ## Rendering Posts

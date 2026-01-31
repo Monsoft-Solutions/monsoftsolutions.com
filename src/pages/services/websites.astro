@@ -6,83 +6,94 @@ import CTA from '../../components/CTA.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
 
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Smart Website Development",
-  "provider": {
-    "@type": "Organization",
-    "name": "Monsoft Solutions",
-    "url": "https://monsoftsolutions.com"
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Smart Website Development',
+  provider: {
+    '@type': 'Organization',
+    name: 'Monsoft Solutions',
+    url: 'https://monsoftsolutions.com',
   },
-  "areaServed": "Worldwide",
-  "description": "Modern websites with AI-powered personalization, blazing performance, and conversion-focused design. Built with Next.js, Astro, and React.",
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock"
-  }
+  areaServed: 'Worldwide',
+  description:
+    'Modern websites with AI-powered personalization, blazing performance, and conversion-focused design. Built with Next.js, Astro, and React.',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+  },
 };
 
 const features = [
   {
     title: 'Modern Stack',
-    description: 'Built with Next.js, Astro, and React. Your site loads in milliseconds, not seconds. Lightning-fast performance that search engines and users love.',
-    icon: '⚡'
+    description:
+      'Built with Next.js, Astro, and React. Your site loads in milliseconds, not seconds. Lightning-fast performance that search engines and users love.',
+    icon: '⚡',
   },
   {
     title: 'AI Personalization',
-    description: 'Content that adapts to each visitor. Dynamic experiences that feel personal—increasing engagement and building stronger connections.',
-    icon: '🧠'
+    description:
+      'Content that adapts to each visitor. Dynamic experiences that feel personal—increasing engagement and building stronger connections.',
+    icon: '🧠',
   },
   {
     title: 'Conversion Optimization',
-    description: 'Data-driven design that turns visitors into customers. Every element is tested and refined for maximum impact on your bottom line.',
-    icon: '🎯'
+    description:
+      'Data-driven design that turns visitors into customers. Every element is tested and refined for maximum impact on your bottom line.',
+    icon: '🎯',
   },
   {
     title: 'Mobile-First',
-    description: 'Perfect experience on every device. Responsive by default, with touch-optimized interactions and fluid layouts that just work.',
-    icon: '📱'
+    description:
+      'Perfect experience on every device. Responsive by default, with touch-optimized interactions and fluid layouts that just work.',
+    icon: '📱',
   },
   {
     title: 'SEO Foundation',
-    description: 'Built-in optimization for search visibility. Semantic HTML, structured data, and performance-first architecture that ranks.',
-    icon: '🔍'
+    description:
+      'Built-in optimization for search visibility. Semantic HTML, structured data, and performance-first architecture that ranks.',
+    icon: '🔍',
   },
   {
     title: 'Analytics Integration',
-    description: 'Track everything, optimize continuously. Real-time insights into user behavior, conversion paths, and growth opportunities.',
-    icon: '📊'
-  }
+    description:
+      'Track everything, optimize continuously. Real-time insights into user behavior, conversion paths, and growth opportunities.',
+    icon: '📊',
+  },
 ];
 
 const process = [
   {
     step: '01',
     title: 'Strategy',
-    description: 'We dig deep into your business, audience, and goals. Research informs every decision—from architecture to user flows.'
+    description:
+      'We dig deep into your business, audience, and goals. Research informs every decision—from architecture to user flows.',
   },
   {
     step: '02',
     title: 'Design',
-    description: 'Pixel-perfect interfaces that embody your brand. Clean, modern aesthetics paired with intuitive user experiences.'
+    description:
+      'Pixel-perfect interfaces that embody your brand. Clean, modern aesthetics paired with intuitive user experiences.',
   },
   {
     step: '03',
     title: 'Development',
-    description: 'Rock-solid code with the latest technologies. Blazing fast, secure, and built to scale with your business.'
+    description:
+      'Rock-solid code with the latest technologies. Blazing fast, secure, and built to scale with your business.',
   },
   {
     step: '04',
     title: 'Launch & Iterate',
-    description: 'Deploy with confidence, then optimize relentlessly. Your site gets smarter and more effective over time.'
-  }
+    description:
+      'Deploy with confidence, then optimize relentlessly. Your site gets smarter and more effective over time.',
+  },
 ];
 
 const stats = [
   { value: '<2s', label: 'Load Time' },
   { value: '40%', label: 'Higher Conversion' },
   { value: '100%', label: 'Mobile Optimized' },
-  { value: 'A+', label: 'SEO Score' }
+  { value: 'A+', label: 'SEO Score' },
 ];
 
 const techStack = [
@@ -91,30 +102,33 @@ const techStack = [
   { name: 'React', description: 'Component-based UI library' },
   { name: 'TypeScript', description: 'Type-safe development' },
   { name: 'Tailwind', description: 'Utility-first CSS' },
-  { name: 'Vercel', description: 'Edge deployment platform' }
+  { name: 'Vercel', description: 'Edge deployment platform' },
 ];
 
 const differentiators = [
   {
     title: 'Intelligence Built In',
-    description: 'Your website isn\'t just a digital brochure—it\'s an intelligent system that learns, adapts, and works around the clock to grow your business.',
-    icon: '🤖'
+    description:
+      "Your website isn't just a digital brochure—it's an intelligent system that learns, adapts, and works around the clock to grow your business.",
+    icon: '🤖',
   },
   {
     title: 'Performance Obsessed',
-    description: 'Every millisecond matters. We optimize images, code, and delivery to ensure your site is among the fastest on the web.',
-    icon: '🚀'
+    description:
+      'Every millisecond matters. We optimize images, code, and delivery to ensure your site is among the fastest on the web.',
+    icon: '🚀',
   },
   {
     title: 'Future-Proof Architecture',
-    description: 'Built on modern foundations that scale. Your site grows with your business without costly rebuilds or technical debt.',
-    icon: '🏗️'
-  }
+    description:
+      'Built on modern foundations that scale. Your site grows with your business without costly rebuilds or technical debt.',
+    icon: '🏗️',
+  },
 ];
 ---
 
-<Layout 
-  title="Smart Websites | Beautiful. Fast. Intelligent." 
+<Layout
+  title="Smart Websites | Beautiful. Fast. Intelligent."
   description="Websites that load in under 2 seconds and convert 40% better. AI personalization, mobile-first design, and A+ SEO scores—starting at $15K."
   structuredData={structuredData}
 >
@@ -129,15 +143,21 @@ const differentiators = [
           <span class="highlight">Intelligent.</span>
         </h1>
         <p class="hero-subtitle reveal reveal-delay-2">
-          Modern websites that don't just look good—they work hard. 
-          AI-powered personalization, blazing performance, and 
-          conversion-focused design that turns visitors into customers.
+          Modern websites that don't just look good—they work hard. AI-powered personalization,
+          blazing performance, and conversion-focused design that turns visitors into customers.
         </p>
         <div class="hero-cta reveal reveal-delay-3">
           <a href="/contact" class="btn btn-primary">
             Build Your Smart Website
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
           </a>
           <a href="#features" class="btn btn-secondary">Explore Features</a>
@@ -145,8 +165,12 @@ const differentiators = [
       </div>
       <div class="hero-image reveal reveal-delay-4">
         <picture>
-          <source srcset="/images/services/websites-hero.webp" type="image/webp">
-          <img src="/images/services/websites-hero.png" alt="Smart websites and modern web development" loading="eager" />
+          <source srcset="/images/services/websites-hero.webp" type="image/webp" />
+          <img
+            src="/images/services/websites-hero.png"
+            alt="Smart websites and modern web development"
+            loading="eager"
+          />
         </picture>
       </div>
     </section>
@@ -155,12 +179,16 @@ const differentiators = [
     <section class="stats-bar" id="stats-section">
       <div class="container-wide">
         <div class="stats-grid">
-          {stats.map((stat, index) => (
-            <div class={`stat reveal reveal-delay-${index + 1}`}>
-              <span class="stat-value" data-value={stat.value}>{stat.value}</span>
-              <span class="stat-label">{stat.label}</span>
-            </div>
-          ))}
+          {
+            stats.map((stat, index) => (
+              <div class={`stat reveal reveal-delay-${index + 1}`}>
+                <span class="stat-value" data-value={stat.value}>
+                  {stat.value}
+                </span>
+                <span class="stat-label">{stat.label}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -173,13 +201,13 @@ const differentiators = [
             <span class="section-label">The Problem</span>
             <h2>Most websites are digital dead weight</h2>
             <p>
-              Your website is often the first impression potential customers have of your business. 
-              Yet most sites are slow, generic, and forgettable—expensive brochures that don't 
+              Your website is often the first impression potential customers have of your business.
+              Yet most sites are slow, generic, and forgettable—expensive brochures that don't
               actually drive results.
             </p>
             <p>
-              In a world where attention spans are measured in seconds, you can't afford 
-              a website that loads slowly, looks dated, or treats every visitor the same way.
+              In a world where attention spans are measured in seconds, you can't afford a website
+              that loads slowly, looks dated, or treats every visitor the same way.
             </p>
           </div>
           <div class="problem-list reveal reveal-delay-1">
@@ -194,7 +222,10 @@ const differentiators = [
               <span class="problem-icon">📦</span>
               <div>
                 <strong>Generic & Forgettable</strong>
-                <p>Template websites that look like everyone else. No personality, no differentiation.</p>
+                <p>
+                  Template websites that look like everyone else. No personality, no
+                  differentiation.
+                </p>
               </div>
             </div>
             <div class="problem-item">
@@ -223,19 +254,21 @@ const differentiators = [
           <span class="section-label">The Solution</span>
           <h2>Websites that actually work</h2>
           <p>
-            We build intelligent websites that combine stunning design with cutting-edge 
-            technology. Every site is engineered for speed, optimized for conversion, 
-            and smart enough to personalize the experience for each visitor.
+            We build intelligent websites that combine stunning design with cutting-edge technology.
+            Every site is engineered for speed, optimized for conversion, and smart enough to
+            personalize the experience for each visitor.
           </p>
         </div>
         <div class="features-grid">
-          {features.map((feature, index) => (
-            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
-              <span class="feature-icon">{feature.icon}</span>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </div>
-          ))}
+          {
+            features.map((feature, index) => (
+              <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+                <span class="feature-icon">{feature.icon}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -248,13 +281,15 @@ const differentiators = [
           <h2>Not just another web agency</h2>
         </div>
         <div class="diff-grid">
-          {differentiators.map((diff, index) => (
-            <div class={`diff-card reveal reveal-delay-${index + 1}`}>
-              <span class="diff-icon">{diff.icon}</span>
-              <h3>{diff.title}</h3>
-              <p>{diff.description}</p>
-            </div>
-          ))}
+          {
+            differentiators.map((diff, index) => (
+              <div class={`diff-card reveal reveal-delay-${index + 1}`}>
+                <span class="diff-icon">{diff.icon}</span>
+                <h3>{diff.title}</h3>
+                <p>{diff.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -266,17 +301,18 @@ const differentiators = [
           <span class="section-label">Our Toolkit</span>
           <h2>Built with the best</h2>
           <p>
-            We use the same technologies powering the world's fastest, 
-            most successful websites.
+            We use the same technologies powering the world's fastest, most successful websites.
           </p>
         </div>
         <div class="tech-grid">
-          {techStack.map((tech, index) => (
-            <div class={`tech-item reveal reveal-delay-${(index % 3) + 1}`}>
-              <h4>{tech.name}</h4>
-              <p>{tech.description}</p>
-            </div>
-          ))}
+          {
+            techStack.map((tech, index) => (
+              <div class={`tech-item reveal reveal-delay-${(index % 3) + 1}`}>
+                <h4>{tech.name}</h4>
+                <p>{tech.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -290,18 +326,20 @@ const differentiators = [
           <p>A proven methodology that delivers results, not surprises.</p>
         </div>
         <div class="process-timeline">
-          {process.map((step, index) => (
-            <div class={`process-step reveal reveal-delay-${index + 1}`}>
-              <div class="step-marker">
-                <span class="step-number">{step.step}</span>
-                {index < process.length - 1 && <div class="step-line"></div>}
+          {
+            process.map((step, index) => (
+              <div class={`process-step reveal reveal-delay-${index + 1}`}>
+                <div class="step-marker">
+                  <span class="step-number">{step.step}</span>
+                  {index < process.length - 1 && <div class="step-line" />}
+                </div>
+                <div class="step-content">
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
               </div>
-              <div class="step-content">
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -358,23 +396,38 @@ const differentiators = [
         <div class="faq-list">
           <div class="faq-item reveal reveal-delay-1">
             <h3>How long does a website project take?</h3>
-            <p>Most projects take 6-12 weeks from kickoff to launch, depending on complexity. We'll give you a specific timeline after our discovery call.</p>
+            <p>
+              Most projects take 6-12 weeks from kickoff to launch, depending on complexity. We'll
+              give you a specific timeline after our discovery call.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-2">
             <h3>What's the investment for a smart website?</h3>
-            <p>Our websites start at $15K and scale based on features, integrations, and complexity. We'll scope your project and provide a detailed proposal.</p>
+            <p>
+              Our websites start at $15K and scale based on features, integrations, and complexity.
+              We'll scope your project and provide a detailed proposal.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-3">
             <h3>Can I update the content myself?</h3>
-            <p>Absolutely. We integrate user-friendly content management systems that let you update text, images, and pages without touching code.</p>
+            <p>
+              Absolutely. We integrate user-friendly content management systems that let you update
+              text, images, and pages without touching code.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-4">
             <h3>Do you offer hosting and maintenance?</h3>
-            <p>Yes. We offer managed hosting on enterprise-grade infrastructure, plus ongoing maintenance and support packages to keep your site running perfectly.</p>
+            <p>
+              Yes. We offer managed hosting on enterprise-grade infrastructure, plus ongoing
+              maintenance and support packages to keep your site running perfectly.
+            </p>
           </div>
           <div class="faq-item reveal reveal-delay-5">
             <h3>What makes your websites "smart"?</h3>
-            <p>Our sites use AI to personalize content for each visitor, adapt messaging based on behavior, and continuously optimize for conversions—all automatically.</p>
+            <p>
+              Our sites use AI to personalize content for each visitor, adapt messaging based on
+              behavior, and continuously optimize for conversions—all automatically.
+            </p>
           </div>
         </div>
       </div>
@@ -661,7 +714,7 @@ const differentiators = [
 
   .tech-item:hover {
     border-color: var(--color-gray-300);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
   .tech-item h4 {
@@ -886,7 +939,14 @@ const differentiators = [
 </style>
 
 <script>
-  function animateValue(element: HTMLElement, start: number, end: number, duration: number, suffix: string, prefix: string) {
+  function animateValue(
+    element: HTMLElement,
+    start: number,
+    end: number,
+    duration: number,
+    suffix: string,
+    prefix: string
+  ) {
     const range = end - start;
     const startTime = performance.now();
     function update(currentTime: number) {
@@ -903,26 +963,34 @@ const differentiators = [
 
   function parseStatValue(value: string) {
     const match = value.match(/^([<>$]?)(\d+(?:\.\d+)?)(.*?)$/);
-    return match ? { prefix: match[1] || '', number: parseFloat(match[2]), suffix: match[3] || '' } : { prefix: '', number: 0, suffix: value };
+    return match
+      ? { prefix: match[1] || '', number: parseFloat(match[2]), suffix: match[3] || '' }
+      : { prefix: '', number: 0, suffix: value };
   }
 
   const statsSection = document.getElementById('stats-section');
   if (statsSection) {
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.stat-value').forEach((el, index) => {
-            const element = el as HTMLElement;
-            const parsed = parseStatValue(element.dataset.value || '');
-            if (parsed.number > 0) {
-              element.textContent = parsed.prefix + '0' + parsed.suffix;
-              setTimeout(() => animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix), index * 100);
-            }
-          });
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.stat-value').forEach((el, index) => {
+              const element = el as HTMLElement;
+              const parsed = parseStatValue(element.dataset.value || '');
+              if (parsed.number > 0) {
+                element.textContent = parsed.prefix + '0' + parsed.suffix;
+                setTimeout(
+                  () => animateValue(element, 0, parsed.number, 1500, parsed.suffix, parsed.prefix),
+                  index * 100
+                );
+              }
+            });
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
     statsObserver.observe(statsSection);
   }
 </script>

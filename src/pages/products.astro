@@ -8,74 +8,80 @@ const products = [
   {
     name: 'Adfluens',
     tagline: 'AI-Powered Social Command Center',
-    description: 'The all-in-one platform for social media management. AI content generation, GMB optimization, Meta integration, and smart analytics—all from one dashboard.',
-    longDescription: 'Adfluens transforms how businesses manage their social presence. Our AI understands your brand voice and generates platform-perfect content in seconds. Connect Google My Business, Instagram, Facebook, and Threads—manage everything from a single command center. Real-time analytics show you exactly what\'s working, while smart scheduling ensures your content reaches the right audience at the right time.',
+    description:
+      'The all-in-one platform for social media management. AI content generation, GMB optimization, Meta integration, and smart analytics—all from one dashboard.',
+    longDescription:
+      "Adfluens transforms how businesses manage their social presence. Our AI understands your brand voice and generates platform-perfect content in seconds. Connect Google My Business, Instagram, Facebook, and Threads—manage everything from a single command center. Real-time analytics show you exactly what's working, while smart scheduling ensures your content reaches the right audience at the right time.",
     features: [
       'AI Content Engine — Generate posts that match your brand voice',
       'GMB Command Center — Full control of your Google presence',
       'Meta Unified — Instagram, Facebook, Threads in sync',
-      'Smart Analytics — AI-powered insights on what\'s working',
+      "Smart Analytics — AI-powered insights on what's working",
       'Multi-location Support — Manage multiple business profiles',
-      'Team Collaboration — Assign roles and approve content'
+      'Team Collaboration — Assign roles and approve content',
     ],
     stats: [
       { value: '2,500+', label: 'Active Users' },
       { value: '50M+', label: 'Posts Published' },
-      { value: '4.9', label: 'Customer Rating' }
+      { value: '4.9', label: 'Customer Rating' },
     ],
     link: 'https://adfluens.io',
     status: 'live',
-    color: '#2563eb'
+    color: '#2563eb',
   },
   {
     name: 'Praxis Notes',
     tagline: 'AI-Powered ABA Session Notes',
-    description: 'Generate detailed, insurance-ready ABA session notes with AI. Built for BCBAs and RBTs to save 75% of documentation time.',
-    longDescription: 'Praxis Notes eliminates the documentation burden for ABA professionals. Enter basic session details, and our AI generates comprehensive, clinically-accurate notes in seconds. Every note is formatted for insurance compliance, supporting CPT codes 97153-97158. Focus on your clients, not paperwork.',
+    description:
+      'Generate detailed, insurance-ready ABA session notes with AI. Built for BCBAs and RBTs to save 75% of documentation time.',
+    longDescription:
+      'Praxis Notes eliminates the documentation burden for ABA professionals. Enter basic session details, and our AI generates comprehensive, clinically-accurate notes in seconds. Every note is formatted for insurance compliance, supporting CPT codes 97153-97158. Focus on your clients, not paperwork.',
     features: [
       'AI Note Generation — Detailed notes in seconds',
       'Insurance-Ready — Formatted for billing compliance',
       'CPT Code Support — 97153, 97154, 97155, 97156, 97157, 97158',
       'HIPAA Compliant — Enterprise-grade security',
-      'Custom Templates — Match your clinic\'s requirements',
-      'Progress Tracking — Monitor client goals over time'
+      "Custom Templates — Match your clinic's requirements",
+      'Progress Tracking — Monitor client goals over time',
     ],
     stats: [
       { value: '1,000+', label: 'Professionals' },
       { value: '75%', label: 'Time Saved' },
-      { value: '97%', label: 'Acceptance Rate' }
+      { value: '97%', label: 'Acceptance Rate' },
     ],
     link: 'https://praxisnotes.com',
     status: 'live',
-    color: '#10b981'
+    color: '#10b981',
   },
   {
     name: 'Loquent',
     tagline: 'AI-First Communication Platform',
-    description: 'Next-generation conversational AI for businesses. Realtime AI agents for phone calls, plus unified messaging across SMS, WhatsApp, Instagram DM, and Facebook Messenger.',
-    longDescription: 'Loquent is the future of business communication. Deploy AI agents that handle phone calls with human-like conversation—answering questions, booking appointments, and qualifying leads 24/7. Unify all your text channels in one platform: SMS, WhatsApp, Instagram DM, and Facebook Messenger. Your customers reach you anywhere; your AI responds everywhere.',
+    description:
+      'Next-generation conversational AI for businesses. Realtime AI agents for phone calls, plus unified messaging across SMS, WhatsApp, Instagram DM, and Facebook Messenger.',
+    longDescription:
+      'Loquent is the future of business communication. Deploy AI agents that handle phone calls with human-like conversation—answering questions, booking appointments, and qualifying leads 24/7. Unify all your text channels in one platform: SMS, WhatsApp, Instagram DM, and Facebook Messenger. Your customers reach you anywhere; your AI responds everywhere.',
     features: [
       'Realtime Voice AI — Phone agents that sound human',
       'Omnichannel Messaging — SMS, WhatsApp, IG, Messenger',
       'Lead Qualification — AI-powered conversation flows',
       'Appointment Booking — Integrated scheduling',
       'CRM Integration — Sync with your existing tools',
-      'Analytics Dashboard — Track every conversation'
+      'Analytics Dashboard — Track every conversation',
     ],
     stats: [
       { value: 'Q2', label: '2026 Launch' },
       { value: 'Voice + Text', label: 'Channels' },
-      { value: '5+', label: 'Integrations' }
+      { value: '5+', label: 'Integrations' },
     ],
     link: '/contact',
     status: 'coming-soon',
-    color: '#8b5cf6'
-  }
+    color: '#8b5cf6',
+  },
 ];
 ---
 
-<Layout 
-  title="Products" 
+<Layout
+  title="Products"
   description="AI-powered software products built by Monsoft Solutions. Adfluens for social media, Praxis Notes for ABA professionals, and Loquent for business communication."
 >
   <Header />
@@ -89,71 +95,90 @@ const products = [
           <span class="highlight">we've built and run</span>
         </h1>
         <p class="page-subtitle reveal reveal-delay-2">
-          We don't just build for clients—we build products we believe in. 
-          Each one solves a real problem with intelligent software.
+          We don't just build for clients—we build products we believe in. Each one solves a real
+          problem with intelligent software.
         </p>
       </div>
     </section>
 
     <!-- Products -->
-    {products.map((product, index) => (
-      <section class={`product-detail section-padding ${index % 2 === 1 ? 'bg-gray' : ''}`} id={product.name.toLowerCase().replace(' ', '-')}>
-        <div class="container-wide">
-          <div class={`product-grid ${index % 2 === 1 ? 'reverse' : ''}`}>
-            <div class="product-content reveal">
-              <div class="product-header">
-                <h2>{product.name}</h2>
-                {product.status === 'live' ? (
-                  <span class="status-badge live">
-                    <span class="status-dot"></span>
-                    Live
-                  </span>
-                ) : (
-                  <span class="status-badge coming-soon">Coming Soon</span>
-                )}
-              </div>
-              <p class="product-tagline">{product.tagline}</p>
-              <p class="product-description">{product.longDescription}</p>
-              
-              <div class="product-stats">
-                {product.stats.map(stat => (
-                  <div class="stat">
-                    <span class="stat-value">{stat.value}</span>
-                    <span class="stat-label">{stat.label}</span>
-                  </div>
-                ))}
+    {
+      products.map((product, index) => (
+        <section
+          class={`product-detail section-padding ${index % 2 === 1 ? 'bg-gray' : ''}`}
+          id={product.name.toLowerCase().replace(' ', '-')}
+        >
+          <div class="container-wide">
+            <div class={`product-grid ${index % 2 === 1 ? 'reverse' : ''}`}>
+              <div class="product-content reveal">
+                <div class="product-header">
+                  <h2>{product.name}</h2>
+                  {product.status === 'live' ? (
+                    <span class="status-badge live">
+                      <span class="status-dot" />
+                      Live
+                    </span>
+                  ) : (
+                    <span class="status-badge coming-soon">Coming Soon</span>
+                  )}
+                </div>
+                <p class="product-tagline">{product.tagline}</p>
+                <p class="product-description">{product.longDescription}</p>
+
+                <div class="product-stats">
+                  {product.stats.map((stat) => (
+                    <div class="stat">
+                      <span class="stat-value">{stat.value}</span>
+                      <span class="stat-label">{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href={product.link}
+                  class="btn btn-primary"
+                  target={product.status === 'live' ? '_blank' : undefined}
+                  rel={product.status === 'live' ? 'noopener noreferrer' : undefined}
+                >
+                  {product.status === 'live' ? 'Visit Platform' : 'Get Early Access'}
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </a>
               </div>
 
-              <a 
-                href={product.link} 
-                class="btn btn-primary"
-                target={product.status === 'live' ? '_blank' : undefined}
-                rel={product.status === 'live' ? 'noopener noreferrer' : undefined}
-              >
-                {product.status === 'live' ? 'Visit Platform' : 'Get Early Access'}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                </svg>
-              </a>
-            </div>
-
-            <div class="product-features reveal reveal-delay-1">
-              <h3>Key Features</h3>
-              <ul>
-                {product.features.map(feature => (
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <div class="product-features reveal reveal-delay-1">
+                <h3>Key Features</h3>
+                <ul>
+                  {product.features.map((feature) => (
+                    <li>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    ))}
+        </section>
+      ))
+    }
 
     <CTA />
   </main>
@@ -256,8 +281,13 @@ const products = [
   }
 
   @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
   }
 
   .status-badge.coming-soon {

@@ -5,24 +5,26 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
 // Get all non-draft blog posts, sorted by date (newest first)
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
 // Get featured posts
-const featuredPosts = posts.filter(post => post.data.featured);
-const regularPosts = posts.filter(post => !post.data.featured);
+const featuredPosts = posts.filter((post) => post.data.featured);
+const regularPosts = posts.filter((post) => !post.data.featured);
 
 // Get unique categories
-const categories = [...new Set(posts.map(post => post.data.category))];
+const categories = [...new Set(posts.map((post) => post.data.category))];
 
 // SEO
-const title = "Blog";
-const description = "Insights on AI, automation, and digital transformation. Practical guides and strategies to help your business leverage technology effectively.";
+const title = 'Blog';
+const description =
+  'Insights on AI, automation, and digital transformation. Practical guides and strategies to help your business leverage technology effectively.';
 ---
 
 <Layout title={title} description={description}>
   <Header />
-  
+
   <main class="blog-page">
     <!-- Hero Section -->
     <section class="blog-hero">
@@ -33,121 +35,132 @@ const description = "Insights on AI, automation, and digital transformation. Pra
         </p>
       </div>
     </section>
-    
+
     <!-- Categories Filter -->
     <section class="categories-section">
       <div class="container">
         <div class="categories">
           <a href="/blog" class="category-pill active">All</a>
-          {categories.map(category => (
-            <a 
-              href={`/blog/category/${category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} 
-              class="category-pill"
-            >
-              {category}
-            </a>
-          ))}
+          {
+            categories.map((category) => (
+              <a
+                href={`/blog/category/${category.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
+                class="category-pill"
+              >
+                {category}
+              </a>
+            ))
+          }
         </div>
       </div>
     </section>
-    
+
     <!-- Featured Post -->
-    {featuredPosts.length > 0 && (
-      <section class="featured-section">
-        <div class="container">
-          <div class="featured-post">
-            <a href={`/blog/${featuredPosts[0].id}`} class="featured-link">
-              {featuredPosts[0].data.heroImage && (
-                <div class="featured-image">
-                  <img 
-                    src={featuredPosts[0].data.heroImage} 
-                    alt={featuredPosts[0].data.heroImageAlt || featuredPosts[0].data.title}
-                    loading="eager"
-                  />
-                </div>
-              )}
-              <div class="featured-content">
-                <span class="featured-badge">Featured</span>
-                <span class="featured-category">{featuredPosts[0].data.category}</span>
-                <h2 class="featured-title">{featuredPosts[0].data.title}</h2>
-                <p class="featured-description">{featuredPosts[0].data.description}</p>
-                <div class="featured-meta">
-                  <time datetime={featuredPosts[0].data.pubDate.toISOString()}>
-                    {featuredPosts[0].data.pubDate.toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}
-                  </time>
-                  {featuredPosts[0].data.readingTime && (
-                    <span class="reading-time">{featuredPosts[0].data.readingTime}</span>
-                  )}
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-    )}
-    
-    <!-- Posts Grid -->
-    <section class="posts-section">
-      <div class="container">
-        <div class="posts-grid">
-          {(featuredPosts.length > 0 ? regularPosts : posts).map(post => (
-            <article class="post-card">
-              <a href={`/blog/${post.id}`} class="post-link">
-                {post.data.heroImage && (
-                  <div class="post-image">
-                    <img 
-                      src={post.data.heroImage} 
-                      alt={post.data.heroImageAlt || post.data.title}
-                      loading="lazy"
+    {
+      featuredPosts.length > 0 && (
+        <section class="featured-section">
+          <div class="container">
+            <div class="featured-post">
+              <a href={`/blog/${featuredPosts[0].id}`} class="featured-link">
+                {featuredPosts[0].data.heroImage && (
+                  <div class="featured-image">
+                    <img
+                      src={featuredPosts[0].data.heroImage}
+                      alt={featuredPosts[0].data.heroImageAlt || featuredPosts[0].data.title}
+                      loading="eager"
                     />
                   </div>
                 )}
-                <div class="post-content">
-                  <div class="post-category">{post.data.category}</div>
-                  <h3 class="post-title">{post.data.title}</h3>
-                  <p class="post-description">{post.data.description}</p>
-                  <div class="post-meta">
-                    <time datetime={post.data.pubDate.toISOString()}>
-                      {post.data.pubDate.toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'short', 
-                        day: 'numeric' 
+                <div class="featured-content">
+                  <span class="featured-badge">Featured</span>
+                  <span class="featured-category">{featuredPosts[0].data.category}</span>
+                  <h2 class="featured-title">{featuredPosts[0].data.title}</h2>
+                  <p class="featured-description">{featuredPosts[0].data.description}</p>
+                  <div class="featured-meta">
+                    <time datetime={featuredPosts[0].data.pubDate.toISOString()}>
+                      {featuredPosts[0].data.pubDate.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
                       })}
                     </time>
-                    {post.data.readingTime && (
-                      <span class="reading-time">{post.data.readingTime}</span>
+                    {featuredPosts[0].data.readingTime && (
+                      <span class="reading-time">{featuredPosts[0].data.readingTime}</span>
                     )}
                   </div>
                 </div>
               </a>
-            </article>
-          ))}
-        </div>
-        
-        {posts.length === 0 && (
-          <div class="no-posts">
-            <p>No posts yet. Check back soon!</p>
+            </div>
           </div>
-        )}
+        </section>
+      )
+    }
+
+    <!-- Posts Grid -->
+    <section class="posts-section">
+      <div class="container">
+        <div class="posts-grid">
+          {
+            (featuredPosts.length > 0 ? regularPosts : posts).map((post) => (
+              <article class="post-card">
+                <a href={`/blog/${post.id}`} class="post-link">
+                  {post.data.heroImage && (
+                    <div class="post-image">
+                      <img
+                        src={post.data.heroImage}
+                        alt={post.data.heroImageAlt || post.data.title}
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div class="post-content">
+                    <div class="post-category">{post.data.category}</div>
+                    <h3 class="post-title">{post.data.title}</h3>
+                    <p class="post-description">{post.data.description}</p>
+                    <div class="post-meta">
+                      <time datetime={post.data.pubDate.toISOString()}>
+                        {post.data.pubDate.toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric',
+                        })}
+                      </time>
+                      {post.data.readingTime && (
+                        <span class="reading-time">{post.data.readingTime}</span>
+                      )}
+                    </div>
+                  </div>
+                </a>
+              </article>
+            ))
+          }
+        </div>
+
+        {
+          posts.length === 0 && (
+            <div class="no-posts">
+              <p>No posts yet. Check back soon!</p>
+            </div>
+          )
+        }
       </div>
     </section>
-    
+
     <!-- Newsletter CTA -->
     <section class="newsletter-section">
       <div class="container-narrow">
         <div class="newsletter-card">
           <h2>Stay Updated</h2>
-          <p>Get insights on AI and automation delivered to your inbox. No spam, just valuable content.</p>
+          <p>
+            Get insights on AI and automation delivered to your inbox. No spam, just valuable
+            content.
+          </p>
           <a href="/contact" class="btn btn-primary">Get in Touch</a>
         </div>
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </Layout>
 
@@ -155,51 +168,51 @@ const description = "Insights on AI, automation, and digital transformation. Pra
   .blog-page {
     padding-top: 5rem;
   }
-  
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
   }
-  
+
   .container-narrow {
     max-width: 720px;
     margin: 0 auto;
     padding: 0 2rem;
   }
-  
+
   /* Hero */
   .blog-hero {
     padding: 4rem 0 2rem;
     text-align: center;
   }
-  
+
   .blog-hero h1 {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     font-weight: 600;
     letter-spacing: -0.03em;
     margin-bottom: 1rem;
   }
-  
+
   .hero-description {
     font-size: 1.25rem;
     color: var(--color-gray-600);
     max-width: 600px;
     margin: 0 auto;
   }
-  
+
   /* Categories */
   .categories-section {
     padding: 1rem 0 2rem;
   }
-  
+
   .categories {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
     justify-content: center;
   }
-  
+
   .category-pill {
     font-size: 0.875rem;
     font-weight: 500;
@@ -209,58 +222,60 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     color: var(--color-gray-600);
     transition: all 0.2s ease;
   }
-  
+
   .category-pill:hover,
   .category-pill.active {
     background: var(--color-black);
     color: var(--color-white);
   }
-  
+
   /* Featured Post */
   .featured-section {
     padding: 2rem 0;
   }
-  
+
   .featured-post {
     background: var(--color-gray-50);
     border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
-  
+
   .featured-post:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   }
-  
+
   .featured-link {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: center;
   }
-  
+
   .featured-image {
     aspect-ratio: 16 / 10;
     overflow: hidden;
   }
-  
+
   .featured-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
-  
+
   .featured-post:hover .featured-image img {
     transform: scale(1.03);
   }
-  
+
   .featured-content {
     max-width: 700px;
     padding: 2rem;
   }
-  
+
   .featured-badge {
     display: inline-block;
     font-size: 0.75rem;
@@ -273,14 +288,14 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     border-radius: 4px;
     margin-bottom: 1rem;
   }
-  
+
   .featured-category {
     display: inline-block;
     font-size: 0.875rem;
     color: var(--color-gray-500);
     margin-left: 0.75rem;
   }
-  
+
   .featured-title {
     font-size: 2rem;
     font-weight: 600;
@@ -288,14 +303,14 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     margin-bottom: 1rem;
     line-height: 1.3;
   }
-  
+
   .featured-description {
     font-size: 1.125rem;
     color: var(--color-gray-600);
     line-height: 1.6;
     margin-bottom: 1.5rem;
   }
-  
+
   .featured-meta {
     display: flex;
     align-items: center;
@@ -303,18 +318,18 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     font-size: 0.875rem;
     color: var(--color-gray-500);
   }
-  
+
   /* Posts Grid */
   .posts-section {
     padding: 2rem 0 4rem;
   }
-  
+
   .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 2rem;
   }
-  
+
   .post-card {
     background: var(--color-white);
     border: 1px solid var(--color-gray-100);
@@ -322,38 +337,38 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     overflow: hidden;
     transition: all 0.3s ease;
   }
-  
+
   .post-card:hover {
     border-color: var(--color-gray-200);
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   }
-  
+
   .post-link {
     display: block;
   }
-  
+
   .post-image {
     aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--color-gray-100);
   }
-  
+
   .post-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
-  
+
   .post-card:hover .post-image img {
     transform: scale(1.03);
   }
-  
+
   .post-content {
     padding: 1.5rem;
   }
-  
+
   .post-category {
     font-size: 0.75rem;
     font-weight: 500;
@@ -362,7 +377,7 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     color: var(--color-gray-500);
     margin-bottom: 0.75rem;
   }
-  
+
   .post-title {
     font-size: 1.25rem;
     font-weight: 600;
@@ -370,7 +385,7 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     margin-bottom: 0.75rem;
     line-height: 1.4;
   }
-  
+
   .post-description {
     font-size: 0.9375rem;
     color: var(--color-gray-600);
@@ -381,7 +396,7 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .post-meta {
     display: flex;
     align-items: center;
@@ -389,23 +404,23 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     font-size: 0.8125rem;
     color: var(--color-gray-400);
   }
-  
+
   .reading-time::before {
     content: '•';
     margin-right: 1rem;
   }
-  
+
   .no-posts {
     text-align: center;
     padding: 4rem 0;
     color: var(--color-gray-500);
   }
-  
+
   /* Newsletter */
   .newsletter-section {
     padding: 2rem 0 6rem;
   }
-  
+
   .newsletter-card {
     background: var(--color-gray-900);
     color: var(--color-white);
@@ -413,13 +428,13 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     border-radius: 16px;
     text-align: center;
   }
-  
+
   .newsletter-card h2 {
     font-size: 1.75rem;
     font-weight: 600;
     margin-bottom: 1rem;
   }
-  
+
   .newsletter-card p {
     color: var(--color-gray-400);
     margin-bottom: 1.5rem;
@@ -427,37 +442,37 @@ const description = "Insights on AI, automation, and digital transformation. Pra
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .newsletter-card .btn-primary {
     background: var(--color-white);
     color: var(--color-black);
   }
-  
+
   .newsletter-card .btn-primary:hover {
     background: var(--color-gray-100);
   }
-  
+
   @media (max-width: 768px) {
     .posts-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .featured-link {
       grid-template-columns: 1fr;
     }
-    
+
     .featured-image {
       aspect-ratio: 16 / 9;
     }
-    
+
     .featured-content {
       padding: 1.5rem;
     }
-    
+
     .featured-title {
       font-size: 1.5rem;
     }
-    
+
     .newsletter-card {
       padding: 2rem;
     }

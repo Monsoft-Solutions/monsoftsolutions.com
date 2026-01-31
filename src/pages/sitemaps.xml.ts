@@ -6,12 +6,12 @@
  * https://developers.google.com/search/docs/crawling-indexing/sitemaps/large-sitemaps
  */
 
-import type { APIRoute } from "astro";
+import type { APIRoute } from 'astro';
 
-const SITE_URL = "https://monsoftsolutions.com";
+const SITE_URL = 'https://monsoftsolutions.com';
 
 export const GET: APIRoute = async () => {
-  const lastmod = new Date().toISOString().split("T")[0];
+  const lastmod = new Date().toISOString().split('T')[0];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -30,8 +30,8 @@ export const GET: APIRoute = async () => {
 
   return new Response(xml, {
     headers: {
-      "Content-Type": "application/xml",
-      "Cache-Control": "public, max-age=3600",
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, max-age=3600',
     },
   });
 };

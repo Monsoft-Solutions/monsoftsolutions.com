@@ -1,14 +1,14 @@
 ---
-title: "SEO in 2026: What Actually Works for Small Business Websites"
-description: "Cut through the noise and focus on the SEO strategies that drive real traffic. No tricks, no shortcuts—just what works."
+title: 'SEO in 2026: What Actually Works for Small Business Websites'
+description: 'Cut through the noise and focus on the SEO strategies that drive real traffic. No tricks, no shortcuts—just what works.'
 pubDate: 2026-01-20
-author: "Monsoft Solutions"
-category: "Business Growth"
-tags: ["SEO", "Marketing", "Small Business", "Content Strategy", "Google"]
+author: 'Monsoft Solutions'
+category: 'Business Growth'
+tags: ['SEO', 'Marketing', 'Small Business', 'Content Strategy', 'Google']
 featured: false
-readingTime: "7 min read"
-heroImage: "https://hyr9ejj40hphy7n6.public.blob.vercel-storage.com/blog/seo-for-small-business-2026/hero.png"
-heroImageAlt: "Search analytics dashboard showing organic traffic growth trends"
+readingTime: '7 min read'
+heroImage: 'https://hyr9ejj40hphy7n6.public.blob.vercel-storage.com/blog/seo-for-small-business-2026/hero.png'
+heroImageAlt: 'Search analytics dashboard showing organic traffic growth trends'
 ---
 
 SEO advice is everywhere, and most of it is outdated, overcomplicated, or designed to sell you something.
@@ -32,6 +32,7 @@ Before chasing advanced strategies, nail these basics:
 ### Technical Foundation
 
 Your site needs to:
+
 - Load fast (under 2.5 seconds on mobile)
 - Work perfectly on phones (60%+ of searches are mobile)
 - Be crawlable (no broken links, proper sitemaps)
@@ -61,6 +62,7 @@ Use descriptive URLs (`/services/web-development` not `/page?id=42`).
 ### On-Page Essentials
 
 For every important page:
+
 - **Title tag:** Include your primary keyword, keep under 60 characters
 - **Meta description:** Compelling summary, under 155 characters
 - **H1 heading:** One per page, include your keyword naturally
@@ -99,12 +101,14 @@ Here's the hard truth: most small business blogs are a waste of time. They publi
 Backlinks still matter—but not the way many SEO agencies pitch them.
 
 ### What works:
+
 - Being cited as a source because your content is genuinely useful
 - Guest posts on relevant, reputable sites in your industry
 - Local business directories and chamber of commerce listings
 - Press coverage for newsworthy activities
 
 ### What doesn't (or gets you penalized):
+
 - Buying links from "SEO services"
 - Mass directory submissions
 - Comment spam
@@ -123,12 +127,14 @@ This is slower than buying links, but it works long-term and won't blow up in yo
 If you serve local customers, your Google Business Profile is arguably more important than your website.
 
 **Optimize your profile:**
+
 - Complete every section (hours, services, attributes)
 - Add quality photos regularly
 - Post updates at least monthly
 - Get reviews (and respond to all of them)
 
 **Local content strategy:**
+
 - Create pages for each service area
 - Include local landmarks and neighborhood names naturally
 - Get listed in local directories (Yelp, industry-specific sites)
@@ -170,18 +176,21 @@ If you can't tell the difference between your AI-assisted content and fully AI-g
 Here's how to meaningfully improve your SEO in the next 90 days:
 
 **Days 1-30: Foundation**
+
 - Fix technical issues (speed, mobile, crawlability)
 - Optimize existing pages (titles, descriptions, headings)
 - Claim and optimize Google Business Profile
 - Set up Google Search Console if you haven't
 
 **Days 31-60: Content**
+
 - Identify 5-10 specific queries you want to rank for
 - Create or improve pages targeting each query
 - Add internal links between related pages
 - Start documenting customer questions for future content
 
 **Days 61-90: Authority**
+
 - Reach out to 5 relevant sites for guest posts or collaborations
 - Get listed in industry directories
 - Ask happy customers for reviews

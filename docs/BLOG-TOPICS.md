@@ -5,6 +5,7 @@ This file defines topic areas for automated blog generation. The agent should pi
 ## IMPORTANT: Valid Categories for Frontmatter
 
 Use ONLY these exact category values in the frontmatter `category` field:
+
 - `AI & Automation`
 - `Web Development`
 - `Business Growth`
@@ -15,6 +16,7 @@ Use ONLY these exact category values in the frontmatter `category` field:
 - `Medical & Aesthetics`
 
 ## Target Audience
+
 - Small business owners (5-50 employees)
 - Medical/aesthetic practice owners (plastic surgery, med spas, dermatology)
 - Local service businesses (HVAC, plumbing, legal, dental)
@@ -23,6 +25,7 @@ Use ONLY these exact category values in the frontmatter `category` field:
 ## Topic Categories
 
 ### AI & Automation
+
 - Automating customer onboarding
 - AI chatbots for small business
 - Automating invoicing and payments
@@ -40,6 +43,7 @@ Use ONLY these exact category values in the frontmatter `category` field:
 - Predictive analytics for small business
 
 ### Web Development
+
 - Website speed optimization
 - Mobile-first design principles
 - Headless CMS benefits
@@ -54,6 +58,7 @@ Use ONLY these exact category values in the frontmatter `category` field:
 - Website maintenance checklist
 
 ### Business Growth
+
 - Customer retention strategies
 - Referral program design
 - Customer feedback loops
@@ -66,6 +71,7 @@ Use ONLY these exact category values in the frontmatter `category` field:
 - Scaling operations efficiently
 
 ### Medical & Aesthetics (category: "Medical & Aesthetics")
+
 - Patient communication automation
 - Before/after gallery best practices
 - HIPAA-compliant marketing
@@ -78,6 +84,7 @@ Use ONLY these exact category values in the frontmatter `category` field:
 - Social proof in aesthetics
 
 ### Local Business (category: "Local Business")
+
 - Google Business Profile optimization
 - Local SEO strategies
 - Managing multiple locations
@@ -90,6 +97,7 @@ Use ONLY these exact category values in the frontmatter `category` field:
 - Neighborhood targeting
 
 ### Technology Trends
+
 - AI trends for 2026
 - Emerging marketing technologies
 - Privacy and data protection
@@ -103,7 +111,7 @@ Use ONLY these exact category values in the frontmatter `category` field:
 ## Topic Selection Rules
 
 1. **Check existing posts** - Never duplicate a topic already covered
-2. **Rotate categories** - Don't publish 3 posts in same category consecutively  
+2. **Rotate categories** - Don't publish 3 posts in same category consecutively
 3. **Seasonal relevance** - Consider current month/season
 4. **Audience fit** - Match topic to target audience needs
 5. **Actionable content** - Every post should have takeaways

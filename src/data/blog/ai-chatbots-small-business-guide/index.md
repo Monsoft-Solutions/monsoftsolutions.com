@@ -1,15 +1,15 @@
 ---
-title: "AI Chatbots for Small Business: A Practical 2026 Guide"
-description: "Learn how AI chatbots can handle customer inquiries 24/7, reduce response times, and free your team to focus on growth. Practical setup guide included."
+title: 'AI Chatbots for Small Business: A Practical 2026 Guide'
+description: 'Learn how AI chatbots can handle customer inquiries 24/7, reduce response times, and free your team to focus on growth. Practical setup guide included.'
 pubDate: 2026-01-31
-author: "Monsoft Solutions"
-category: "AI & Automation"
-tags: ["AI", "Chatbots", "Customer Service", "Automation", "Small Business"]
+author: 'Monsoft Solutions'
+category: 'AI & Automation'
+tags: ['AI', 'Chatbots', 'Customer Service', 'Automation', 'Small Business']
 featured: false
 draft: false
-readingTime: "8 min read"
-heroImage: "https://9hvqwvm35snfqcsh.public.blob.vercel-storage.com/blog/ai-chatbots-small-business-guide/hero.png"
-heroImageAlt: "Business owner engaging with AI chatbot interface on laptop in modern office"
+readingTime: '8 min read'
+heroImage: 'https://9hvqwvm35snfqcsh.public.blob.vercel-storage.com/blog/ai-chatbots-small-business-guide/hero.png'
+heroImageAlt: 'Business owner engaging with AI chatbot interface on laptop in modern office'
 ---
 
 Your phone rings at 2 AM. A potential customer in another time zone wants to know if you offer same-day service. By the time you see the missed call in the morning, they've already booked with your competitor.

@@ -3,27 +3,27 @@ const checklist = [
   'Automated SEO with AI-powered weekly blog content',
   'Optimized Meta & Google ad campaigns',
   'Set up automated patient communication',
-  'Redesigned website for conversions'
+  'Redesigned website for conversions',
 ];
 
 const results = [
   {
     value: '+340%',
-    label: 'Website Traffic'
+    label: 'Website Traffic',
   },
   {
     value: '+67%',
-    label: 'Consultation Bookings'
+    label: 'Consultation Bookings',
   },
   {
     value: '<48hr',
     label: 'Lead Response Time',
-    sublabel: 'was "next business day"'
+    sublabel: 'was "next business day"',
   },
   {
     value: '24/7',
-    label: 'Automated Lead Capture'
-  }
+    label: 'Automated Lead Capture',
+  },
 ];
 ---
 
@@ -32,9 +32,7 @@ const results = [
     <!-- Section Header -->
     <div class="section-header reveal">
       <span class="section-label">Case Study</span>
-      <h2 class="section-title">
-        How we transformed Alluring Plastic Surgery's digital presence
-      </h2>
+      <h2 class="section-title">How we transformed Alluring Plastic Surgery's digital presence</h2>
     </div>
 
     <!-- Two Column Layout -->
@@ -49,23 +47,33 @@ const results = [
         <div class="challenge reveal reveal-delay-2">
           <span class="challenge-label">The Challenge</span>
           <p class="challenge-text">
-            Exceptional surgical skills, but invisible online. Leads were slipping through the cracks and marketing spend wasn't delivering.
+            Exceptional surgical skills, but invisible online. Leads were slipping through the
+            cracks and marketing spend wasn't delivering.
           </p>
         </div>
 
         <div class="solution reveal reveal-delay-3">
           <span class="solution-label">What We Did</span>
           <ul class="checklist">
-            {checklist.map((item, index) => (
-              <li class="checklist-item" style={`animation-delay: ${0.4 + index * 0.1}s`}>
-                <span class="check-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
+            {
+              checklist.map((item, index) => (
+                <li class="checklist-item" style={`animation-delay: ${0.4 + index * 0.1}s`}>
+                  <span class="check-icon">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
@@ -73,15 +81,15 @@ const results = [
       <!-- Right Column - Results -->
       <div class="results-column">
         <div class="results-grid">
-          {results.map((result, index) => (
-            <div class={`result-card reveal reveal-delay-${index + 1}`}>
-              <span class="result-value">{result.value}</span>
-              <span class="result-label">{result.label}</span>
-              {result.sublabel && (
-                <span class="result-sublabel">{result.sublabel}</span>
-              )}
-            </div>
-          ))}
+          {
+            results.map((result, index) => (
+              <div class={`result-card reveal reveal-delay-${index + 1}`}>
+                <span class="result-value">{result.value}</span>
+                <span class="result-label">{result.label}</span>
+                {result.sublabel && <span class="result-sublabel">{result.sublabel}</span>}
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -90,20 +98,28 @@ const results = [
     <div class="testimonial reveal">
       <blockquote class="testimonial-quote">
         <svg class="quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/>
+          <path
+            d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"
+          ></path>
         </svg>
         <p>
-          Monsoft transformed our online presence. We're now booking more consultations than ever, and I don't have to think about marketing anymore.
+          Monsoft transformed our online presence. We're now booking more consultations than ever,
+          and I don't have to think about marketing anymore.
         </p>
-        <footer class="testimonial-attribution">
-          — Alluring Plastic Surgery Team
-        </footer>
+        <footer class="testimonial-attribution">— Alluring Plastic Surgery Team</footer>
       </blockquote>
 
       <a href="/services/aesthetics" class="cta-button">
         See Full Case Study
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
       </a>
     </div>
@@ -122,7 +138,7 @@ const results = [
     content: '';
     position: absolute;
     inset: 0;
-    background: 
+    background:
       radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
     pointer-events: none;

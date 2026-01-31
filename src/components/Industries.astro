@@ -3,19 +3,21 @@ const industries = [
   {
     image: '/images/home/industry-aesthetics.webp',
     title: 'Aesthetics & Med Spas',
-    description: 'Plastic surgery clinics, med spas, and cosmetic practices. Fill your consultation calendar with qualified patients.',
+    description:
+      'Plastic surgery clinics, med spas, and cosmetic practices. Fill your consultation calendar with qualified patients.',
     highlight: 'See how we increased consultations by 67%',
     cta: 'View Case Study →',
-    link: '/services/aesthetics'
+    link: '/services/aesthetics',
   },
   {
     image: '/images/home/industry-local.webp',
     title: 'Local Businesses',
-    description: 'Contractors, salons, restaurants, and professional services. Big business technology at small business pricing.',
+    description:
+      'Contractors, salons, restaurants, and professional services. Big business technology at small business pricing.',
     highlight: 'Serving Southwest Florida businesses',
     cta: 'Explore Solutions →',
-    link: '/services/local-business'
-  }
+    link: '/services/local-business',
+  },
 ];
 ---
 
@@ -33,32 +35,41 @@ const industries = [
 
     <!-- Industries Grid -->
     <div class="industries-grid">
-      {industries.map((industry, index) => (
-        <article class={`industry-card reveal reveal-delay-${index + 1}`}>
-          <div class="industry-image-wrapper">
-            <img 
-              src={industry.image} 
-              alt={industry.title}
-              class="industry-image"
-              loading="lazy"
-            />
-          </div>
-          <div class="industry-content">
-            <h3 class="industry-title">{industry.title}</h3>
-            <p class="industry-description">{industry.description}</p>
-            <div class="industry-highlight">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-              <span>{industry.highlight}</span>
+      {
+        industries.map((industry, index) => (
+          <article class={`industry-card reveal reveal-delay-${index + 1}`}>
+            <div class="industry-image-wrapper">
+              <img
+                src={industry.image}
+                alt={industry.title}
+                class="industry-image"
+                loading="lazy"
+              />
             </div>
-            <a href={industry.link} class="industry-cta">
-              {industry.cta}
-            </a>
-          </div>
-        </article>
-      ))}
+            <div class="industry-content">
+              <h3 class="industry-title">{industry.title}</h3>
+              <p class="industry-description">{industry.description}</p>
+              <div class="industry-highlight">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span>{industry.highlight}</span>
+              </div>
+              <a href={industry.link} class="industry-cta">
+                {industry.cta}
+              </a>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>
