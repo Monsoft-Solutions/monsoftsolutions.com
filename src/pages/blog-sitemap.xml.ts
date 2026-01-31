@@ -2,6 +2,7 @@
  * Blog Sitemap with Image Support
  *
  * Generates an XML sitemap specifically for blog posts with image extensions.
+ * Includes category and tag pages.
  * Follows Google's sitemap image extension specification:
  * https://developers.google.com/search/docs/crawling-indexing/sitemaps/image-sitemaps
  */
@@ -11,12 +12,22 @@ import { getCollection } from "astro:content";
 
 const SITE_URL = "https://monsoftsolutions.com";
 
+function slugify(text: string): string {
+  return text.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-");
+}
+
 export const GET: APIRoute = async () => {
   // Get all published blog posts
   const posts = await getCollection("blog", ({ data }) => !data.draft);
 
   // Sort by date (newest first)
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  // Get unique categories and tags
+  const categories = [...new Set(posts.map((post) => post.data.category))];
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+
+  const today = new Date().toISOString().split("T")[0];
 
   // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -27,10 +38,34 @@ export const GET: APIRoute = async () => {
   <!-- Blog Index Page -->
   <url>
     <loc>${SITE_URL}/blog</loc>
-    <lastmod>${new Date().toISOString().split("T")[0]}</lastmod>
+    <lastmod>${today}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- Category Pages -->
+${categories
+  .map(
+    (category) => `  <url>
+    <loc>${SITE_URL}/blog/category/${slugify(category)}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>`
+  )
+  .join("\n")}
+  
+  <!-- Tag Pages -->
+${tags
+  .map(
+    (tag) => `  <url>
+    <loc>${SITE_URL}/blog/tag/${slugify(tag)}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>`
+  )
+  .join("\n")}
   
   <!-- Blog Posts -->
 ${posts
