@@ -1,0 +1,806 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTA from '../../components/CTA.astro';
+
+const features = [
+  {
+    title: 'Web Applications',
+    description: 'Modern, responsive web apps built with Next.js, React, and enterprise-grade infrastructure. From dashboards to full platforms.',
+    icon: '🌐'
+  },
+  {
+    title: 'Mobile Apps',
+    description: 'Native iOS, Android, and cross-platform applications using React Native and Flutter. Beautiful, performant, and built to last.',
+    icon: '📱'
+  },
+  {
+    title: 'Cloud Infrastructure',
+    description: 'Scalable, secure architecture on AWS, GCP, or Azure. Auto-scaling, redundancy, and enterprise-level security built in.',
+    icon: '☁️'
+  },
+  {
+    title: 'API Development',
+    description: 'RESTful and GraphQL APIs designed for seamless integrations. Clean documentation, versioning, and rock-solid reliability.',
+    icon: '🔌'
+  },
+  {
+    title: 'Database Design',
+    description: 'Optimized data structures for performance at any scale. PostgreSQL, MongoDB, Redis—architected for your specific needs.',
+    icon: '🗄️'
+  },
+  {
+    title: 'DevOps & CI/CD',
+    description: 'Automated testing, continuous deployment, and 24/7 monitoring. Ship faster with confidence. Break nothing.',
+    icon: '⚙️'
+  }
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Discovery',
+    description: 'We dive deep into your requirements, users, and business goals. No assumptions—just clarity on what success looks like.'
+  },
+  {
+    step: '02',
+    title: 'Architecture',
+    description: 'We design the technical foundation—choosing the right stack, planning for scale, and mapping every component before writing code.'
+  },
+  {
+    step: '03',
+    title: 'Build',
+    description: 'Agile sprints with continuous delivery. You see progress weekly, provide feedback, and watch your product take shape.'
+  },
+  {
+    step: '04',
+    title: 'Deploy & Scale',
+    description: 'Launch with confidence. We handle deployment, monitoring, and ongoing optimization as your product grows.'
+  }
+];
+
+const stats = [
+  { value: '100+', label: 'Projects Delivered' },
+  { value: '99.9%', label: 'Uptime SLA' },
+  { value: '10+', label: 'Years Experience' },
+  { value: '✓', label: 'Enterprise Ready' }
+];
+
+const capabilities = [
+  {
+    category: 'Frontend',
+    items: ['React', 'Next.js', 'Vue', 'TypeScript', 'Tailwind CSS']
+  },
+  {
+    category: 'Backend',
+    items: ['Node.js', 'Python', 'Go', 'GraphQL', 'REST APIs']
+  },
+  {
+    category: 'Mobile',
+    items: ['React Native', 'Flutter', 'iOS (Swift)', 'Android (Kotlin)']
+  },
+  {
+    category: 'Infrastructure',
+    items: ['AWS', 'GCP', 'Azure', 'Docker', 'Kubernetes', 'Terraform']
+  },
+  {
+    category: 'Data',
+    items: ['PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch']
+  },
+  {
+    category: 'DevOps',
+    items: ['GitHub Actions', 'CircleCI', 'Datadog', 'PagerDuty']
+  }
+];
+---
+
+<Layout 
+  title="Custom Software Development" 
+  description="Enterprise-grade custom software development. Web apps, mobile apps, APIs, and cloud infrastructure—architected for performance, built for longevity."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container-narrow">
+        <span class="hero-label reveal">Custom Development</span>
+        <h1 class="hero-title reveal reveal-delay-1">
+          Enterprise-Grade.
+          <span class="highlight">Built for You.</span>
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+          Software built for your exact needs. From web platforms to mobile apps—architected 
+          for performance, built for longevity. No templates. No shortcuts. Just clean, 
+          powerful software that scales with your business.
+        </p>
+        <div class="hero-cta reveal reveal-delay-3">
+          <a href="/contact" class="btn btn-primary">
+            Start Your Project
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#capabilities" class="btn btn-secondary">See Our Stack</a>
+        </div>
+        <div class="hero-image reveal reveal-delay-4">
+          <img src="/images/services/development-hero.png" alt="Custom software development visualization" loading="eager" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+      <div class="container-wide">
+        <div class="stats-grid">
+          {stats.map((stat, index) => (
+            <div class={`stat reveal reveal-delay-${index + 1}`}>
+              <span class="stat-value">{stat.value}</span>
+              <span class="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy section-padding">
+      <div class="container-wide">
+        <div class="philosophy-grid">
+          <div class="philosophy-content reveal">
+            <span class="section-label">Our Approach</span>
+            <h2>Code is craft. Architecture is strategy.</h2>
+            <p>
+              We don't just write code—we engineer solutions. Every line serves a purpose. 
+              Every architectural decision considers your growth trajectory, your team's 
+              capabilities, and your long-term vision.
+            </p>
+            <p>
+              The result? Software that doesn't just work today, but evolves with your 
+              business for years to come. No technical debt. No "we'll fix it later." 
+              Just clean, maintainable, production-ready systems.
+            </p>
+          </div>
+          <div class="philosophy-pillars reveal reveal-delay-1">
+            <div class="pillar">
+              <span class="pillar-icon">🎯</span>
+              <div>
+                <strong>Purpose-Built</strong>
+                <p>Every feature solves a real problem. We don't build bloatware.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">🏗️</span>
+              <div>
+                <strong>Scalable by Design</strong>
+                <p>Architecture that handles 10 users or 10 million. No rewrites needed.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">🔒</span>
+              <div>
+                <strong>Security-First</strong>
+                <p>Enterprise-grade security baked in. Not bolted on.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">📖</span>
+              <div>
+                <strong>Documented & Testable</strong>
+                <p>Clean code, comprehensive tests, and documentation your team can use.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section-padding bg-dark" id="capabilities">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">What We Build</span>
+          <h2>Full-stack development. Zero compromises.</h2>
+          <p>
+            From frontend to infrastructure, we handle the entire stack. 
+            One team, one vision, one seamless product.
+          </p>
+        </div>
+        <div class="features-grid">
+          {features.map((feature, index) => (
+            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+              <span class="feature-icon">{feature.icon}</span>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Our Process</span>
+          <h2>From vision to production</h2>
+          <p>A proven methodology refined over 100+ successful projects.</p>
+        </div>
+        <div class="process-timeline">
+          {process.map((step, index) => (
+            <div class={`process-step reveal reveal-delay-${index + 1}`}>
+              <div class="step-marker">
+                <span class="step-number">{step.step}</span>
+                {index < process.length - 1 && <div class="step-line"></div>}
+              </div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack section-padding bg-gray">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Tech Stack</span>
+          <h2>Modern tools. Proven at scale.</h2>
+          <p>We use the best tools for the job—never locked into a single vendor or framework.</p>
+        </div>
+        <div class="stack-grid">
+          {capabilities.map((cap, index) => (
+            <div class={`stack-category reveal reveal-delay-${(index % 3) + 1}`}>
+              <h3>{cap.category}</h3>
+              <div class="stack-items">
+                {cap.items.map(item => (
+                  <span class="stack-item">{item}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentiators Section -->
+    <section class="differentiators section-padding bg-dark">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Why Us</span>
+          <h2>What sets us apart</h2>
+        </div>
+        <div class="diff-grid">
+          <div class="diff-card reveal reveal-delay-1">
+            <div class="diff-number">01</div>
+            <h3>Senior Engineers Only</h3>
+            <p>No juniors learning on your dime. Every team member has 5+ years of production experience building at scale.</p>
+          </div>
+          <div class="diff-card reveal reveal-delay-2">
+            <div class="diff-number">02</div>
+            <h3>Transparent Process</h3>
+            <p>Weekly demos, daily standups if needed, and full visibility into progress. You're never in the dark.</p>
+          </div>
+          <div class="diff-card reveal reveal-delay-3">
+            <div class="diff-number">03</div>
+            <h3>Ship Date = Ship Date</h3>
+            <p>We hit deadlines. Period. Our track record speaks for itself—on time, on budget, on spec.</p>
+          </div>
+          <div class="diff-card reveal reveal-delay-4">
+            <div class="diff-number">04</div>
+            <h3>Your Code. Your IP.</h3>
+            <p>Full ownership from day one. Clean handoffs, comprehensive documentation, and no vendor lock-in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding">
+      <div class="container-narrow">
+        <div class="section-header reveal">
+          <span class="section-label">FAQ</span>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal reveal-delay-1">
+            <h3>How long does a typical project take?</h3>
+            <p>It depends on scope. A focused MVP can be 6-8 weeks. A full enterprise platform might be 4-6 months. We'll give you an honest timeline after discovery—and we stick to it.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-2">
+            <h3>What does your pricing look like?</h3>
+            <p>We price based on scope, not hours. You get a fixed quote upfront with no surprises. For ongoing work, we offer dedicated team arrangements with predictable monthly costs.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-3">
+            <h3>Can you work with our existing team?</h3>
+            <p>Absolutely. We embed seamlessly with in-house teams—adopting your workflows, tools, and coding standards. Or we can lead the project while keeping your team in the loop.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-4">
+            <h3>What happens after launch?</h3>
+            <p>We offer ongoing support and maintenance packages. Or we can train your team to take over. Either way, you get comprehensive documentation and a clean codebase.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-5">
+            <h3>Do you do MVPs for startups?</h3>
+            <p>Yes—and we love them. We've helped dozens of startups go from napkin sketch to launched product. We know how to move fast without cutting corners that hurt you later.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .highlight {
+    color: var(--color-gray-400);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    max-width: 650px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    background: var(--color-black);
+    padding: 3rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Philosophy Section */
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .philosophy-content h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .philosophy-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 1rem;
+  }
+
+  .philosophy-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .pillar {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: var(--color-gray-50);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .pillar:hover {
+    background: var(--color-white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .pillar-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .pillar strong {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .pillar p {
+    font-size: 0.9375rem;
+    color: var(--color-gray-500);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Features Section */
+  .bg-dark {
+    background: var(--color-black);
+  }
+
+  .bg-dark .section-label {
+    color: var(--color-gray-500);
+  }
+
+  .bg-dark h2 {
+    color: var(--color-white);
+  }
+
+  .bg-dark .section-header p {
+    color: var(--color-gray-400);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.0625rem;
+    color: var(--color-gray-500);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    border-color: var(--color-gray-700);
+    transform: translateY(-4px);
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  /* Process Section */
+  .process-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .process-step:last-child {
+    margin-bottom: 0;
+  }
+
+  .step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--color-black);
+    color: var(--color-white);
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 50%;
+  }
+
+  .step-line {
+    width: 2px;
+    flex-grow: 1;
+    background: linear-gradient(to bottom, var(--color-black), var(--color-gray-200));
+    margin-top: 0.5rem;
+  }
+
+  .step-content {
+    padding-top: 0.75rem;
+    padding-bottom: 2rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.375rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Tech Stack Section */
+  .bg-gray {
+    background: var(--color-gray-50);
+  }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .stack-category {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .stack-category:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+  }
+
+  .stack-category h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .stack-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .stack-item {
+    display: inline-block;
+    padding: 0.5rem 0.875rem;
+    background: var(--color-gray-50);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-gray-700);
+  }
+
+  /* Differentiators Section */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .diff-card {
+    background: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .diff-card:hover {
+    border-color: var(--color-gray-700);
+    transform: translateY(-4px);
+  }
+
+  .diff-number {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .diff-card h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .diff-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  /* FAQ Section */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: 2rem;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .philosophy-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stack-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .diff-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stack-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-step {
+      gap: 1rem;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      font-size: 1rem;
+    }
+
+    .step-content {
+      padding-top: 0.5rem;
+    }
+  }
+</style>

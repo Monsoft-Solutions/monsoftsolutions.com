@@ -6,173 +6,240 @@ import CTA from '../components/CTA.astro';
 
 const services = [
   {
-    id: 'ai-solutions',
-    title: 'AI Solutions',
-    subtitle: 'Intelligence Built In, Not Bolted On',
-    description: 'Custom AI systems that learn, adapt, and scale with your business. We build AI that delivers measurable ROI—not science experiments.',
-    features: [
-      {
-        title: 'Custom LLM Applications',
-        description: 'Purpose-built AI assistants, chatbots, and agents trained on your data and workflows.'
-      },
-      {
-        title: 'Predictive Analytics',
-        description: 'Machine learning models that forecast trends, identify opportunities, and reduce risk.'
-      },
-      {
-        title: 'Document Intelligence',
-        description: 'Extract, classify, and process information from contracts, invoices, and unstructured data.'
-      },
-      {
-        title: 'Computer Vision',
-        description: 'Image and video analysis for quality control, security, and content moderation.'
-      }
-    ],
-    color: '#2563eb'
-  },
-  {
-    id: 'automation',
     title: 'Business Automation',
-    subtitle: 'Eliminate Manual. Unlock Scale.',
-    description: 'We design automation workflows that save time, reduce errors, and scale with your business. Stop doing repetitive work—let systems do it for you.',
-    features: [
-      {
-        title: 'Process Automation',
-        description: 'End-to-end automation of repetitive tasks across your entire operation.'
-      },
-      {
-        title: 'Workflow Orchestration',
-        description: 'Complex multi-step workflows that connect your tools and teams seamlessly.'
-      },
-      {
-        title: 'Integration APIs',
-        description: 'Connect any system to any system. We build the bridges your tech stack needs.'
-      },
-      {
-        title: 'Real-time Sync',
-        description: 'Keep data consistent across platforms with intelligent synchronization.'
-      }
-    ],
-    color: '#10b981'
+    description: 'Eliminate repetitive tasks and streamline operations with intelligent automation that learns and adapts to your business.',
+    href: '/services/automation',
+    icon: 'automation',
+    gradient: 'from-violet-500 to-purple-600'
   },
   {
-    id: 'development',
-    title: 'Custom Development',
-    subtitle: 'Enterprise-Grade. Built for You.',
-    description: 'Software built for your exact needs. From web platforms to mobile apps—architected for performance, built for longevity.',
-    features: [
-      {
-        title: 'Web Applications',
-        description: 'Modern, responsive web apps built with Next.js, React, and enterprise-grade infrastructure.'
-      },
-      {
-        title: 'Mobile Apps',
-        description: 'Native and cross-platform mobile applications that your users will love.'
-      },
-      {
-        title: 'Cloud Infrastructure',
-        description: 'Scalable, secure cloud architecture designed for growth and reliability.'
-      },
-      {
-        title: 'API Development',
-        description: 'RESTful and GraphQL APIs that power your integrations and third-party access.'
-      }
-    ],
-    color: '#8b5cf6'
+    title: 'Custom Software Development',
+    description: 'Bespoke applications built for your exact needs—scalable, maintainable, and designed to grow with you.',
+    href: '/services/development',
+    icon: 'development',
+    gradient: 'from-blue-500 to-cyan-500'
+  },
+  {
+    title: 'AI Assistants',
+    description: 'Intelligent agents that handle customer support, data analysis, and complex workflows—24/7, without human intervention.',
+    href: '/services/ai-assistants',
+    icon: 'ai',
+    gradient: 'from-emerald-500 to-teal-500'
+  },
+  {
+    title: 'Smart SEO',
+    description: 'Fully automated content engine. AI generates articles, images, and optimizes everything for search. Zero manual work.',
+    href: '/services/seo',
+    icon: 'seo',
+    gradient: 'from-orange-500 to-amber-500'
+  },
+  {
+    title: 'Smart Websites',
+    description: 'High-performance websites that convert—built with modern tech, optimized for speed, and designed to impress.',
+    href: '/services/websites',
+    icon: 'websites',
+    gradient: 'from-rose-500 to-pink-500'
   }
 ];
 
-const process = [
-  {
-    step: '01',
-    title: 'Discovery',
-    description: 'We dive deep into your business, understand your challenges, and identify where intelligent software can create the most impact.'
-  },
-  {
-    step: '02',
-    title: 'Architecture',
-    description: 'We design the system—data flows, integrations, AI models, and infrastructure—before writing a single line of code.'
-  },
-  {
-    step: '03',
-    title: 'Build',
-    description: 'Rapid development with continuous feedback. We ship early, iterate often, and keep you in the loop at every step.'
-  },
-  {
-    step: '04',
-    title: 'Deploy & Scale',
-    description: 'Launch with confidence. We handle deployment, monitoring, and optimization as your usage grows.'
-  }
+const stats = [
+  { value: '50+', label: 'Projects Delivered' },
+  { value: '10x', label: 'Efficiency Gains' },
+  { value: '24/7', label: 'AI-Powered Support' },
+  { value: '100%', label: 'Client Satisfaction' }
 ];
 ---
 
 <Layout 
-  title="Services" 
-  description="AI solutions, business automation, and custom software development. We build intelligent systems that transform how businesses operate."
+  title="Our Services" 
+  description="AI-powered solutions that transform how businesses operate. From automation to custom software, we build intelligent systems that scale."
 >
   <Header />
   <main>
     <!-- Hero Section -->
-    <section class="page-hero">
+    <section class="hero">
       <div class="container-narrow">
-        <span class="page-label reveal">Services</span>
-        <h1 class="page-title reveal reveal-delay-1">
-          Capabilities built for
-          <span class="highlight">the modern business</span>
+        <span class="hero-label reveal">What We Do</span>
+        <h1 class="hero-title reveal reveal-delay-1">
+          AI-powered solutions for
+          <span class="highlight">modern business</span>
         </h1>
-        <p class="page-subtitle reveal reveal-delay-2">
-          From AI-powered automation to custom enterprise software—we build 
-          solutions that create real competitive advantage.
+        <p class="hero-subtitle reveal reveal-delay-2">
+          We don't just build software—we build intelligent systems that automate, 
+          adapt, and scale. Every solution is designed to transform how your business 
+          operates, powered by the latest in AI technology.
         </p>
+        <div class="hero-image reveal reveal-delay-3">
+          <img src="/images/services/services-hero.png" alt="AI-powered business solutions" loading="eager" />
+        </div>
+      </div>
+      
+      <!-- Floating orbs for visual interest -->
+      <div class="hero-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
       </div>
     </section>
 
-    <!-- Services Detail -->
-    {services.map((service, index) => (
-      <section class={`service-detail section-padding ${index % 2 === 1 ? 'bg-gray' : ''}`} id={service.id}>
-        <div class="container-wide">
-          <div class="service-grid">
-            <div class="service-content reveal">
-              <span class="service-number" style={`color: ${service.color}`}>0{index + 1}</span>
-              <h2>{service.title}</h2>
-              <p class="service-subtitle">{service.subtitle}</p>
-              <p class="service-description">{service.description}</p>
-              <a href="/contact" class="btn btn-primary">
-                Discuss Your Project
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+      <div class="container-wide">
+        <div class="stats-grid">
+          {stats.map((stat, index) => (
+            <div class={`stat reveal reveal-delay-${index + 1}`}>
+              <span class="stat-value">{stat.value}</span>
+              <span class="stat-label">{stat.label}</span>
             </div>
-            <div class="service-features reveal reveal-delay-1">
-              {service.features.map((feature, fIndex) => (
-                <div class="feature-card" style={`--delay: ${fIndex * 0.1}s`}>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
-                </div>
-              ))}
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Our Expertise</span>
+          <h2>Everything you need to transform</h2>
+          <p>
+            From automating your workflows to building custom AI solutions, 
+            we have the expertise to take your business to the next level.
+          </p>
+        </div>
+        
+        <div class="services-grid">
+          {services.map((service, index) => (
+            <a 
+              href={service.href} 
+              class={`service-card reveal reveal-delay-${(index % 3) + 1}`}
+              data-icon={service.icon}
+            >
+              <div class="service-icon-wrapper">
+                {service.icon === 'automation' && (
+                  <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3m-6.063 16.658l.26-1.477m2.605-14.772l.26-1.477m0 17.726l-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 5.205l-.75-1.3m11.395 16.58l-1.15-.964M4.257 8.923l-1.41-.514m14.095 5.13l1.41.513M7.502 4.204l-1.15.964m11.49 9.642l1.15.964" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
+                {service.icon === 'development' && (
+                  <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
+                {service.icon === 'ai' && (
+                  <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
+                {service.icon === 'seo' && (
+                  <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
+                {service.icon === 'websites' && (
+                  <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">{service.title}</h3>
+                <p class="service-description">{service.description}</p>
+                <span class="service-link">
+                  Learn more
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="service-glow"></div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us section-padding bg-dark">
+      <div class="container-wide">
+        <div class="why-grid">
+          <div class="why-content reveal">
+            <span class="section-label">Why Monsoft</span>
+            <h2>Built different.<br />Built to last.</h2>
+            <p>
+              We're not another agency churning out templates. We're engineers 
+              and AI specialists who build systems that actually work—and keep 
+              working as your business grows.
+            </p>
+          </div>
+          <div class="why-features">
+            <div class="why-feature reveal reveal-delay-1">
+              <div class="why-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4>AI-Native Approach</h4>
+                <p>We don't bolt AI onto existing solutions. We build from the ground up with intelligence at the core.</p>
+              </div>
+            </div>
+            <div class="why-feature reveal reveal-delay-2">
+              <div class="why-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Production-Ready</h4>
+                <p>No prototypes that never ship. Everything we build is designed for the real world from day one.</p>
+              </div>
+            </div>
+            <div class="why-feature reveal reveal-delay-3">
+              <div class="why-feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Continuous Evolution</h4>
+                <p>Your systems learn and improve over time. We build solutions that get smarter, not stale.</p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    ))}
+      </div>
+    </section>
 
-    <!-- Process Section -->
+    <!-- Process -->
     <section class="process section-padding">
       <div class="container-wide">
         <div class="section-header reveal">
           <span class="section-label">Our Process</span>
-          <h2>How we work</h2>
-          <p>A proven approach to delivering intelligent software that actually works.</p>
+          <h2>From idea to impact</h2>
+          <p>A proven approach that gets results without the typical agency overhead.</p>
         </div>
         <div class="process-grid">
-          {process.map((step, index) => (
-            <div class={`process-step reveal reveal-delay-${index + 1}`}>
-              <span class="step-number">{step.step}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </div>
-          ))}
+          <div class="process-step reveal reveal-delay-1">
+            <span class="step-number">01</span>
+            <h3>Discovery</h3>
+            <p>We dive deep into your business, understand your challenges, and identify where intelligent automation can have the biggest impact.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <span class="step-number">02</span>
+            <h3>Design</h3>
+            <p>We architect solutions that fit your exact needs—no bloat, no unnecessary features, just what moves the needle.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-3">
+            <span class="step-number">03</span>
+            <h3>Build</h3>
+            <p>Rapid development with continuous feedback. You see progress weekly, not monthly. We ship fast without cutting corners.</p>
+          </div>
+          <div class="process-step reveal reveal-delay-4">
+            <span class="step-number">04</span>
+            <h3>Launch & Iterate</h3>
+            <p>Go live with confidence. We monitor, measure, and continuously improve based on real-world performance data.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -183,14 +250,66 @@ const process = [
 </Layout>
 
 <style>
-  /* Page Hero */
-  .page-hero {
+  /* Hero */
+  .hero {
     padding-top: 10rem;
     padding-bottom: 4rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
 
-  .page-label {
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .orb-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+    top: -200px;
+    right: -100px;
+  }
+
+  .orb-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #22d3ee 0%, #34d399 100%);
+    bottom: -150px;
+    left: -100px;
+    animation-delay: -7s;
+  }
+
+  .orb-3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #f472b6 0%, #fb923c 100%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -14s;
+    opacity: 0.2;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -30px) scale(1.05); }
+    50% { transform: translate(-20px, 20px) scale(0.95); }
+    75% { transform: translate(20px, 10px) scale(1.02); }
+  }
+
+  .hero-label {
     display: inline-block;
     font-size: 0.8125rem;
     font-weight: 600;
@@ -200,7 +319,7 @@ const process = [
     margin-bottom: 1rem;
   }
 
-  .page-title {
+  .hero-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 500;
     line-height: 1.1;
@@ -208,122 +327,284 @@ const process = [
     margin-bottom: 1.5rem;
   }
 
-  .page-title .highlight {
+  .hero-title .highlight {
     color: var(--color-gray-400);
   }
 
-  .page-subtitle {
+  .hero-subtitle {
     font-size: 1.125rem;
     line-height: 1.7;
+    color: var(--color-gray-500);
+    max-width: 650px;
+    margin-inline: auto;
+  }
+
+  .hero-image {
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-inline: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    background: var(--color-black);
+    padding: 3rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Section Headers */
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.0625rem;
     color: var(--color-gray-500);
     max-width: 600px;
     margin-inline: auto;
   }
 
-  /* Service Detail Sections */
-  .service-detail.bg-gray {
-    background: var(--color-gray-50);
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
   }
 
-  .service-grid {
+  .service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+  }
+
+  .service-card:hover {
+    border-color: var(--color-gray-200);
+    transform: translateY(-8px);
+    box-shadow: 
+      0 20px 40px -15px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(0, 0, 0, 0.02);
+  }
+
+  .service-card:nth-child(4) {
+    grid-column: 1 / 2;
+  }
+
+  .service-card:nth-child(5) {
+    grid-column: 2 / 3;
+  }
+
+  .service-glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(99, 102, 241, 0.06), transparent 40%);
+  }
+
+  .service-card:hover .service-glow {
+    opacity: 1;
+  }
+
+  .service-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gray-50);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover .service-icon-wrapper {
+    background: var(--color-black);
+  }
+
+  .service-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-gray-600);
+    transition: color 0.3s ease;
+  }
+
+  .service-card:hover .service-icon {
+    color: var(--color-white);
+  }
+
+  .service-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: var(--color-black);
+  }
+
+  .service-description {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin-bottom: 1.5rem;
+    flex: 1;
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-gray-600);
+    transition: all 0.2s ease;
+  }
+
+  .service-link svg {
+    transition: transform 0.2s ease;
+  }
+
+  .service-card:hover .service-link {
+    color: var(--color-black);
+  }
+
+  .service-card:hover .service-link svg {
+    transform: translateX(4px);
+  }
+
+  /* Why Us Section */
+  .bg-dark {
+    background: var(--color-black);
+  }
+
+  .bg-dark .section-label {
+    color: var(--color-gray-500);
+  }
+
+  .bg-dark h2, .bg-dark h4 {
+    color: var(--color-white);
+  }
+
+  .why-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     gap: 4rem;
     align-items: start;
   }
 
-  .service-number {
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  .service-content h2 {
+  .why-content h2 {
     font-size: clamp(2rem, 3.5vw, 2.75rem);
     font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-
-  .service-subtitle {
-    font-size: 1.25rem;
-    color: var(--color-gray-400);
     margin-bottom: 1.5rem;
+    line-height: 1.2;
   }
 
-  .service-description {
+  .why-content p {
     font-size: 1.0625rem;
     line-height: 1.7;
-    color: var(--color-gray-500);
-    margin-bottom: 2rem;
+    color: var(--color-gray-400);
   }
 
-  .service-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+  .why-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
-  .feature-card {
-    background: var(--color-white);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--color-gray-100);
-    transition: all 0.3s ease;
-    animation-delay: var(--delay);
+  .why-feature {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
   }
 
-  .bg-gray .feature-card {
-    background: var(--color-white);
+  .why-feature-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gray-800);
+    border-radius: 10px;
+    flex-shrink: 0;
   }
 
-  .feature-card:hover {
-    border-color: var(--color-gray-200);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transform: translateY(-2px);
+  .why-feature-icon svg {
+    width: 22px;
+    height: 22px;
+    color: var(--color-white);
   }
 
-  .feature-card h3 {
-    font-size: 1rem;
+  .why-feature h4 {
+    font-size: 1.0625rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
 
-  .feature-card p {
-    font-size: 0.875rem;
+  .why-feature p {
+    font-size: 0.9375rem;
     line-height: 1.6;
-    color: var(--color-gray-500);
+    color: var(--color-gray-400);
     margin: 0;
   }
 
   /* Process Section */
-  .process {
-    background: var(--color-black);
-  }
-
-  .process .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .process .section-label {
-    color: var(--color-gray-500);
-  }
-
-  .process .section-header h2 {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
-    color: var(--color-white);
-    margin-bottom: 1rem;
-  }
-
-  .process .section-header p {
-    font-size: 1.0625rem;
-    color: var(--color-gray-400);
-    max-width: 500px;
-    margin-inline: auto;
-  }
-
   .process-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -339,42 +620,46 @@ const process = [
     display: block;
     font-size: 3rem;
     font-weight: 600;
-    color: var(--color-gray-700);
+    color: var(--color-gray-200);
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
   }
 
   .process-step h3 {
     font-size: 1.25rem;
-    color: var(--color-white);
+    font-weight: 500;
     margin-bottom: 0.75rem;
   }
 
   .process-step p {
     font-size: 0.9375rem;
     line-height: 1.6;
-    color: var(--color-gray-400);
+    color: var(--color-gray-500);
     margin: 0;
-  }
-
-  /* Section Header */
-  .section-header {
-    margin-bottom: 3rem;
-  }
-
-  .section-label {
-    display: inline-block;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-gray-400);
-    margin-bottom: 0.5rem;
   }
 
   /* Responsive */
   @media (max-width: 1024px) {
-    .service-grid {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card:nth-child(4),
+    .service-card:nth-child(5) {
+      grid-column: auto;
+    }
+
+    .service-card:nth-child(5) {
+      grid-column: 1 / -1;
+      max-width: 50%;
+      margin-inline: auto;
+    }
+
+    .why-grid {
       grid-template-columns: 1fr;
       gap: 3rem;
     }
@@ -384,9 +669,28 @@ const process = [
     }
   }
 
-  @media (max-width: 640px) {
-    .service-features {
+  @media (max-width: 768px) {
+    .services-grid {
       grid-template-columns: 1fr;
+    }
+
+    .service-card:nth-child(5) {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 8rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
     }
 
     .process-grid {
@@ -394,3 +698,16 @@ const process = [
     }
   }
 </style>
+
+<script>
+  // Add mouse position tracking for glow effect
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
+      (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+</script>

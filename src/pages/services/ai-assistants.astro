@@ -1,0 +1,898 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTA from '../../components/CTA.astro';
+
+const features = [
+  {
+    title: 'Custom Training',
+    description: 'AI trained on your documents, processes, and brand voice. Your assistant knows your business inside and out.',
+    icon: '🧠'
+  },
+  {
+    title: 'Multi-Channel Deployment',
+    description: 'Deploy on web, mobile, WhatsApp, Slack, email—wherever your customers are. One brain, every platform.',
+    icon: '🌐'
+  },
+  {
+    title: 'CRM Integration',
+    description: 'Syncs with your customer data for personalized interactions. Every conversation is informed by history.',
+    icon: '🔗'
+  },
+  {
+    title: 'Lead Qualification',
+    description: 'Automatically scores and routes leads based on intent and fit. Your sales team only talks to qualified prospects.',
+    icon: '🎯'
+  },
+  {
+    title: 'Support Automation',
+    description: 'Handle common questions instantly, escalate complex issues intelligently. 24/7 coverage without 24/7 staffing.',
+    icon: '🛡️'
+  },
+  {
+    title: 'Analytics & Insights',
+    description: 'Learn from every conversation. Continuous improvement driven by real data and customer interactions.',
+    icon: '📊'
+  }
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Data Ingestion',
+    description: 'We ingest your knowledge base—documents, FAQs, product info, processes, and brand guidelines. Everything your assistant needs to know.'
+  },
+  {
+    step: '02',
+    title: 'Training',
+    description: 'The AI learns your business, tone, and edge cases. We fine-tune responses until it sounds like your best employee.'
+  },
+  {
+    step: '03',
+    title: 'Deployment',
+    description: 'Launch across your chosen channels with monitoring dashboards. Go live with confidence and full visibility.'
+  },
+  {
+    step: '04',
+    title: 'Optimization',
+    description: 'Continuous learning from real interactions. The assistant gets smarter every day, handling more with higher accuracy.'
+  }
+];
+
+const stats = [
+  { value: '80%', label: 'Queries Automated' },
+  { value: '24/7', label: 'Always Available' },
+  { value: '3sec', label: 'Response Time' },
+  { value: '95%', label: 'Satisfaction Rate' }
+];
+
+const useCases = [
+  {
+    title: 'Customer Support',
+    description: 'Answer common questions, troubleshoot issues, and escalate complex cases—all automatically.',
+    examples: ['FAQ handling', 'Order status', 'Returns & refunds', 'Technical support']
+  },
+  {
+    title: 'Sales & Lead Gen',
+    description: 'Qualify leads, book meetings, and nurture prospects through the funnel 24/7.',
+    examples: ['Lead qualification', 'Meeting scheduling', 'Product recommendations', 'Quote requests']
+  },
+  {
+    title: 'Internal Operations',
+    description: 'Help employees find information, complete tasks, and navigate processes faster.',
+    examples: ['HR inquiries', 'IT helpdesk', 'Knowledge search', 'Onboarding assistance']
+  }
+];
+
+const integrations = [
+  { name: 'Slack', icon: '💬' },
+  { name: 'WhatsApp', icon: '📱' },
+  { name: 'Website', icon: '🌐' },
+  { name: 'Email', icon: '📧' },
+  { name: 'Salesforce', icon: '☁️' },
+  { name: 'HubSpot', icon: '🧡' },
+  { name: 'Zendesk', icon: '🎫' },
+  { name: 'Intercom', icon: '💭' }
+];
+---
+
+<Layout 
+  title="AI Assistants - Intelligence That Works for You" 
+  description="Custom AI assistants trained on your business data, integrated into your workflows. 24/7 availability, instant responses, continuous learning. Transform customer experience."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container-narrow">
+        <span class="hero-label reveal">AI Assistants</span>
+        <h1 class="hero-title reveal reveal-delay-1">
+          Intelligence that
+          <span class="highlight">works for you.</span>
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+          Custom AI assistants trained on your business data, seamlessly integrated 
+          into your workflows. Always available. Instantly responsive. Continuously learning.
+          Your team, amplified.
+        </p>
+        <div class="hero-cta reveal reveal-delay-3">
+          <a href="/contact" class="btn btn-primary">
+            Build Your Assistant
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+        </div>
+        <div class="hero-image reveal reveal-delay-4">
+          <img src="/images/services/ai-assistants-hero.png" alt="AI assistants and intelligent automation" loading="eager" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+      <div class="container-wide">
+        <div class="stats-grid">
+          {stats.map((stat, index) => (
+            <div class={`stat reveal reveal-delay-${index + 1}`}>
+              <span class="stat-value">{stat.value}</span>
+              <span class="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem section-padding">
+      <div class="container-wide">
+        <div class="problem-grid">
+          <div class="problem-content reveal">
+            <span class="section-label">The Challenge</span>
+            <h2>Your team can't be everywhere</h2>
+            <p>
+              Customers expect instant answers. Prospects want information at 2 AM. 
+              Employees spend hours searching for the same information. And your 
+              best people are drowning in repetitive questions.
+            </p>
+            <p>
+              Scaling support means scaling headcount. Training takes months. 
+              Turnover erases knowledge. And inconsistency frustrates customers 
+              who get different answers from different people.
+            </p>
+          </div>
+          <div class="problem-list reveal reveal-delay-1">
+            <div class="problem-item">
+              <span class="problem-icon">⏰</span>
+              <div>
+                <strong>Limited Hours</strong>
+                <p>Customers don't wait for business hours. Missed inquiries mean missed opportunities.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">🔄</span>
+              <div>
+                <strong>Repetitive Work</strong>
+                <p>80% of questions are variations of the same 20 topics. Your team answers them daily.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">📚</span>
+              <div>
+                <strong>Knowledge Silos</strong>
+                <p>Information is scattered across docs, emails, and people's heads. Finding answers takes too long.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">📈</span>
+              <div>
+                <strong>Scaling Pain</strong>
+                <p>More customers means more support staff. Costs grow linearly while margins shrink.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution section-padding bg-dark" id="how-it-works">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">The Solution</span>
+          <h2>An assistant that knows your business</h2>
+          <p>
+            We build AI assistants trained on your data, speaking in your voice, 
+            available everywhere your customers are. Not a generic chatbot—a 
+            knowledgeable team member that never sleeps.
+          </p>
+        </div>
+        <div class="features-grid">
+          {features.map((feature, index) => (
+            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+              <span class="feature-icon">{feature.icon}</span>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Use Cases</span>
+          <h2>From support to sales to operations</h2>
+          <p>AI assistants that handle the work, so your team can focus on what matters.</p>
+        </div>
+        <div class="use-cases-grid">
+          {useCases.map((useCase, index) => (
+            <div class={`use-case-card reveal reveal-delay-${index + 1}`}>
+              <h3>{useCase.title}</h3>
+              <p>{useCase.description}</p>
+              <ul class="use-case-examples">
+                {useCase.examples.map(example => (
+                  <li>{example}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-padding bg-gray">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Our Process</span>
+          <h2>From concept to conversation</h2>
+          <p>A proven approach to building AI assistants that actually work.</p>
+        </div>
+        <div class="process-grid">
+          {process.map((step, index) => (
+            <div class={`process-step reveal reveal-delay-${index + 1}`}>
+              <span class="step-number">{step.step}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+              {index < process.length - 1 && (
+                <span class="process-arrow">→</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="integrations section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Integrations</span>
+          <h2>Works where you work</h2>
+          <p>Deploy across channels and connect to your existing tools.</p>
+        </div>
+        <div class="integrations-grid reveal reveal-delay-1">
+          {integrations.map(integration => (
+            <div class="integration-item">
+              <span class="integration-icon">{integration.icon}</span>
+              <span class="integration-name">{integration.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison section-padding bg-dark">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">The Difference</span>
+          <h2>Generic chatbot vs. Custom AI assistant</h2>
+        </div>
+        <div class="comparison-table reveal reveal-delay-1">
+          <div class="comparison-header">
+            <div class="comparison-col"></div>
+            <div class="comparison-col generic">Generic Chatbots</div>
+            <div class="comparison-col custom">Custom AI (Ours)</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Knowledge</div>
+            <div class="comparison-col generic">Pre-built scripts</div>
+            <div class="comparison-col custom">Trained on your data</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Responses</div>
+            <div class="comparison-col generic">Robotic, templated</div>
+            <div class="comparison-col custom">Natural, brand-aligned</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Complex Questions</div>
+            <div class="comparison-col generic">Fails or escalates</div>
+            <div class="comparison-col custom">Understands context</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Integration</div>
+            <div class="comparison-col generic">Limited connectors</div>
+            <div class="comparison-col custom">Deep CRM/tool sync</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Learning</div>
+            <div class="comparison-col generic">Static rules</div>
+            <div class="comparison-col custom">Continuous improvement</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Customer Experience</div>
+            <div class="comparison-col generic">Frustrating</div>
+            <div class="comparison-col custom">Delightful</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding">
+      <div class="container-narrow">
+        <div class="section-header reveal">
+          <span class="section-label">FAQ</span>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal reveal-delay-1">
+            <h3>How long does it take to build and deploy?</h3>
+            <p>Most assistants are live within 2-4 weeks. Complex integrations or large knowledge bases may take longer, but we start delivering value fast.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-2">
+            <h3>What data do you need from us?</h3>
+            <p>We work with what you have—FAQs, documentation, product info, support tickets, process guides. The more context, the smarter the assistant.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-3">
+            <h3>Can the assistant hand off to human agents?</h3>
+            <p>Absolutely. We build smart escalation paths so complex or sensitive issues reach your team with full context. No frustrated customers repeating themselves.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-4">
+            <h3>How do you ensure accuracy and prevent hallucinations?</h3>
+            <p>We use retrieval-augmented generation (RAG) to ground responses in your actual data. The AI cites sources and admits when it doesn't know. We test extensively before launch.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-5">
+            <h3>Is our data secure?</h3>
+            <p>Yes. Enterprise-grade security, encryption at rest and in transit, and we never use your data to train models for others. Your knowledge stays yours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .highlight {
+    color: var(--color-gray-400);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    max-width: 650px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    background: var(--color-black);
+    padding: 3rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Problem Section */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .problem-content h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .problem-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 1rem;
+  }
+
+  .problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .problem-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .problem-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .problem-item strong {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .problem-item p {
+    font-size: 0.9375rem;
+    color: var(--color-gray-500);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Solution Section */
+  .bg-dark {
+    background: var(--color-black);
+  }
+
+  .bg-dark .section-label {
+    color: var(--color-gray-500);
+  }
+
+  .bg-dark h2 {
+    color: var(--color-white);
+  }
+
+  .bg-dark .section-header p {
+    color: var(--color-gray-400);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.0625rem;
+    color: var(--color-gray-500);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    border-color: var(--color-gray-700);
+    transform: translateY(-4px);
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  /* Use Cases Section */
+  .use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .use-case-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .use-case-card:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+  }
+
+  .use-case-card h3 {
+    font-size: 1.375rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .use-case-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin-bottom: 1.5rem;
+  }
+
+  .use-case-examples {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .use-case-examples li {
+    font-size: 0.8125rem;
+    background: var(--color-gray-100);
+    padding: 0.375rem 0.75rem;
+    border-radius: 100px;
+    color: var(--color-gray-600);
+  }
+
+  /* Process Section */
+  .bg-gray {
+    background: var(--color-gray-50);
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+  }
+
+  .process-step {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .step-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-gray-200);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .process-step h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .process-step p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  .process-arrow {
+    position: absolute;
+    right: -1rem;
+    top: 2.5rem;
+    font-size: 1.5rem;
+    color: var(--color-gray-300);
+    font-weight: 300;
+  }
+
+  /* Integrations Section */
+  .integrations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .integration-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 2rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    min-width: 120px;
+  }
+
+  .integration-item:hover {
+    border-color: var(--color-gray-200);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  }
+
+  .integration-icon {
+    font-size: 2rem;
+  }
+
+  .integration-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-gray-600);
+  }
+
+  /* Comparison */
+  .comparison-table {
+    background: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .comparison-header,
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .comparison-header {
+    background: var(--color-gray-800);
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .comparison-col {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--color-gray-800);
+    color: var(--color-gray-300);
+  }
+
+  .comparison-col.label {
+    font-weight: 500;
+    color: var(--color-white);
+  }
+
+  .comparison-col.generic {
+    color: var(--color-gray-500);
+    text-align: center;
+  }
+
+  .comparison-col.custom {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--color-white);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .comparison-header .comparison-col.custom {
+    background: rgba(16, 185, 129, 0.15);
+  }
+
+  .comparison-row:last-child .comparison-col {
+    border-bottom: none;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-gray-100);
+    padding-bottom: 2rem;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-black);
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .problem-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .use-cases-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-arrow {
+      display: none;
+    }
+
+    .comparison-header,
+    .comparison-row {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .integrations-grid {
+      gap: 1rem;
+    }
+
+    .integration-item {
+      padding: 1rem 1.5rem;
+      min-width: 100px;
+    }
+
+    .comparison-header,
+    .comparison-row {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-col.label {
+      background: var(--color-gray-800);
+      font-weight: 600;
+    }
+
+    .comparison-col.generic,
+    .comparison-col.custom {
+      text-align: left;
+    }
+
+    .comparison-col.generic::before {
+      content: 'Generic: ';
+      font-weight: 500;
+    }
+
+    .comparison-col.custom::before {
+      content: 'Custom AI: ';
+      font-weight: 600;
+    }
+  }
+</style>

@@ -1,0 +1,963 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTA from '../../components/CTA.astro';
+
+const features = [
+  {
+    title: 'Process Automation',
+    description: 'End-to-end automation of repetitive tasks. From data entry to report generation—if a human does it the same way twice, we automate it.',
+    icon: '⚙️'
+  },
+  {
+    title: 'Workflow Orchestration',
+    description: 'Complex multi-step workflows connecting tools and teams. Chain actions across departments, trigger approvals, and keep everything in sync.',
+    icon: '🔗'
+  },
+  {
+    title: 'Integration APIs',
+    description: 'Connect any system to any system. Your CRM talks to your ERP, your ERP talks to your warehouse, your warehouse talks to your shipping—seamlessly.',
+    icon: '🔌'
+  },
+  {
+    title: 'Real-time Sync',
+    description: 'Keep data consistent across platforms. No more copy-pasting between systems. Changes propagate instantly, everywhere.',
+    icon: '🔄'
+  },
+  {
+    title: 'Custom Triggers',
+    description: 'Event-driven automation that responds instantly. New lead? Auto-assign. Invoice overdue? Auto-escalate. Inventory low? Auto-reorder.',
+    icon: '⚡'
+  },
+  {
+    title: 'Analytics Dashboard',
+    description: 'Monitor and optimize your automated workflows. See what\'s running, what\'s queued, what failed—and fix issues before they become problems.',
+    icon: '📊'
+  }
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Audit',
+    description: 'We map your current processes, identify bottlenecks, and find the highest-impact automation opportunities.'
+  },
+  {
+    step: '02',
+    title: 'Design',
+    description: 'We architect your automation workflows—logic, triggers, error handling, and integrations—before writing a single line of code.'
+  },
+  {
+    step: '03',
+    title: 'Implement',
+    description: 'We build, test, and deploy your automations with proper monitoring, logging, and failsafes built in from day one.'
+  },
+  {
+    step: '04',
+    title: 'Optimize',
+    description: 'We continuously refine your workflows based on real-world performance, scaling what works and improving what doesn\'t.'
+  }
+];
+
+const stats = [
+  { value: '90%', label: 'Time Saved' },
+  { value: '50+', label: 'Integrations' },
+  { value: '24/7', label: 'Running' },
+  { value: 'Zero', label: 'Errors' }
+];
+
+const useCases = [
+  {
+    title: 'Customer Onboarding',
+    description: 'New signup triggers welcome email, CRM update, Slack notification, task creation, and calendar invite—automatically.',
+    impact: 'Reduce onboarding time from 2 hours to 2 minutes.'
+  },
+  {
+    title: 'Invoice Processing',
+    description: 'Invoices arrive, get parsed, matched to POs, routed for approval, and synced to accounting—zero manual touch.',
+    impact: 'Process 100x more invoices with the same team.'
+  },
+  {
+    title: 'Inventory Management',
+    description: 'Real-time stock tracking, automatic reorder triggers, supplier notifications, and demand forecasting.',
+    impact: 'Never stockout. Never overstock.'
+  },
+  {
+    title: 'Lead Qualification',
+    description: 'Score leads based on behavior, enrich with external data, route to the right rep, and trigger personalized sequences.',
+    impact: 'Sales focuses on closing, not sorting.'
+  }
+];
+---
+
+<Layout 
+  title="Business Automation - Eliminate Manual. Unlock Scale." 
+  description="We design automation workflows that save time, reduce errors, and scale with your business. Stop doing repetitive work—let systems do it for you."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container-narrow">
+        <span class="hero-label reveal">Business Automation</span>
+        <h1 class="hero-title reveal reveal-delay-1">
+          Eliminate manual.
+          <span class="highlight">Unlock scale.</span>
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+          We design automation workflows that save time, reduce errors, and scale 
+          with your business. Stop doing repetitive work—let systems do it for you.
+        </p>
+        <div class="hero-cta reveal reveal-delay-3">
+          <a href="/contact" class="btn btn-primary">
+            Automate Your Business
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+        </div>
+        <div class="hero-image reveal reveal-delay-4">
+          <img src="/images/services/automation-hero.png" alt="Business automation visualization" loading="eager" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+      <div class="container-wide">
+        <div class="stats-grid">
+          {stats.map((stat, index) => (
+            <div class={`stat reveal reveal-delay-${index + 1}`}>
+              <span class="stat-value">{stat.value}</span>
+              <span class="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem section-padding">
+      <div class="container-wide">
+        <div class="problem-grid">
+          <div class="problem-content reveal">
+            <span class="section-label">The Problem</span>
+            <h2>Manual work doesn't scale</h2>
+            <p>
+              Your team is drowning in repetitive tasks. Copy-pasting data between systems. 
+              Chasing approvals through email. Manually updating spreadsheets. 
+              Every hour spent on busywork is an hour not spent on growth.
+            </p>
+            <p>
+              And as you grow? It gets worse. More customers mean more manual work. 
+              More systems mean more data silos. More complexity means more errors. 
+              You can't hire your way out of this problem.
+            </p>
+          </div>
+          <div class="problem-list reveal reveal-delay-1">
+            <div class="problem-item">
+              <span class="problem-icon">🔁</span>
+              <div>
+                <strong>Repetitive Work</strong>
+                <p>Your best people are stuck doing the same tasks over and over, every single day.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">🚧</span>
+              <div>
+                <strong>Data Silos</strong>
+                <p>Information lives in 10 different systems. Nothing talks to anything else.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">⚠️</span>
+              <div>
+                <strong>Human Error</strong>
+                <p>Manual processes mean mistakes. Typos, missed steps, forgotten follow-ups.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">🐌</span>
+              <div>
+                <strong>Slow Response</strong>
+                <p>Customers wait while tasks sit in queues. Speed is limited by human bandwidth.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution section-padding bg-dark" id="how-it-works">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">The Solution</span>
+          <h2>Systems that work while you sleep</h2>
+          <p>
+            We build intelligent automation that handles the work your team shouldn't be doing. 
+            Connect your tools, automate your workflows, and free your people to do what humans do best.
+          </p>
+        </div>
+        <div class="features-grid">
+          {features.map((feature, index) => (
+            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+              <span class="feature-icon">{feature.icon}</span>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Our Process</span>
+          <h2>From audit to automation</h2>
+          <p>We don't just connect tools—we transform how your business operates.</p>
+        </div>
+        <div class="process-timeline">
+          {process.map((step, index) => (
+            <div class={`process-step reveal reveal-delay-${index + 1}`}>
+              <div class="step-marker">
+                <span class="step-number">{step.step}</span>
+                {index < process.length - 1 && <div class="step-line"></div>}
+              </div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases section-padding bg-gray">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Use Cases</span>
+          <h2>Automation in action</h2>
+          <p>See how businesses like yours are eliminating manual work.</p>
+        </div>
+        <div class="cases-grid">
+          {useCases.map((useCase, index) => (
+            <div class={`use-case-card reveal reveal-delay-${index + 1}`}>
+              <h3>{useCase.title}</h3>
+              <p class="use-case-description">{useCase.description}</p>
+              <div class="use-case-impact">
+                <span class="impact-label">Impact</span>
+                <span class="impact-text">{useCase.impact}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Before & After</span>
+          <h2>The automation difference</h2>
+        </div>
+        <div class="comparison-table reveal reveal-delay-1">
+          <div class="comparison-header">
+            <div class="comparison-col"></div>
+            <div class="comparison-col before">Before</div>
+            <div class="comparison-col after">After Automation</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Processing Time</div>
+            <div class="comparison-col before">Hours to days</div>
+            <div class="comparison-col after">Seconds to minutes</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Error Rate</div>
+            <div class="comparison-col before">5-10% (human error)</div>
+            <div class="comparison-col after">Near zero</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Operating Hours</div>
+            <div class="comparison-col before">Business hours only</div>
+            <div class="comparison-col after">24/7/365</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Scaling Cost</div>
+            <div class="comparison-col before">Hire more people</div>
+            <div class="comparison-col after">Marginal increase</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Data Consistency</div>
+            <div class="comparison-col before">Constant sync issues</div>
+            <div class="comparison-col after">Always in sync</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Team Focus</div>
+            <div class="comparison-col before">Busywork and firefighting</div>
+            <div class="comparison-col after">Strategy and growth</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="tech section-padding bg-dark">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Technology</span>
+          <h2>Built on proven platforms</h2>
+          <p>We use the best automation tools for each job—and build custom when needed.</p>
+        </div>
+        <div class="tech-grid reveal reveal-delay-1">
+          <div class="tech-category">
+            <h3>Automation Platforms</h3>
+            <ul>
+              <li>Zapier</li>
+              <li>Make (Integromat)</li>
+              <li>n8n</li>
+              <li>Power Automate</li>
+            </ul>
+          </div>
+          <div class="tech-category">
+            <h3>Integration</h3>
+            <ul>
+              <li>REST APIs</li>
+              <li>Webhooks</li>
+              <li>GraphQL</li>
+              <li>Custom Connectors</li>
+            </ul>
+          </div>
+          <div class="tech-category">
+            <h3>Data & Processing</h3>
+            <ul>
+              <li>Python</li>
+              <li>Node.js</li>
+              <li>SQL / NoSQL</li>
+              <li>Cloud Functions</li>
+            </ul>
+          </div>
+          <div class="tech-category">
+            <h3>Monitoring</h3>
+            <ul>
+              <li>Custom Dashboards</li>
+              <li>Alerting Systems</li>
+              <li>Error Tracking</li>
+              <li>Performance Analytics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding">
+      <div class="container-narrow">
+        <div class="section-header reveal">
+          <span class="section-label">FAQ</span>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal reveal-delay-1">
+            <h3>How long does it take to implement automation?</h3>
+            <p>Simple automations can be live in days. Complex, multi-system workflows typically take 2-6 weeks. We prioritize quick wins while building toward bigger transformations.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-2">
+            <h3>What if something goes wrong?</h3>
+            <p>Every automation we build includes error handling, logging, and alerting. When issues occur, you know immediately—and most are self-healing. We also provide ongoing support and monitoring.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-3">
+            <h3>Can you integrate with our existing systems?</h3>
+            <p>Almost certainly yes. We've integrated with hundreds of tools—from modern SaaS to legacy on-premise systems. If it has an API (or even just email), we can connect it.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-4">
+            <h3>Will this replace our team?</h3>
+            <p>No—it frees them. Automation handles the tedious work so your people can focus on judgment, creativity, and relationship-building. The goal is leverage, not replacement.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-5">
+            <h3>What's the ROI on automation?</h3>
+            <p>Most clients see full payback within 3-6 months. Beyond direct time savings, you get fewer errors, faster response times, happier customers, and a team that can focus on growth instead of busywork.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .highlight {
+    color: var(--color-gray-400);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    max-width: 650px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    background: var(--color-black);
+    padding: 3rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Problem Section */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .problem-content h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .problem-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 1rem;
+  }
+
+  .problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .problem-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .problem-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .problem-item strong {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .problem-item p {
+    font-size: 0.9375rem;
+    color: var(--color-gray-500);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Solution Section */
+  .bg-dark {
+    background: var(--color-black);
+  }
+
+  .bg-dark .section-label {
+    color: var(--color-gray-500);
+  }
+
+  .bg-dark h2 {
+    color: var(--color-white);
+  }
+
+  .bg-dark .section-header p {
+    color: var(--color-gray-400);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.0625rem;
+    color: var(--color-gray-500);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    border-color: var(--color-gray-700);
+    transform: translateY(-4px);
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  /* Process Section - Timeline Style */
+  .process-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .process-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--color-black);
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .step-line {
+    width: 2px;
+    flex-grow: 1;
+    background: linear-gradient(to bottom, var(--color-black), var(--color-gray-200));
+    margin-top: 0.5rem;
+    min-height: 60px;
+  }
+
+  .step-content {
+    padding-top: 0.5rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Use Cases Section */
+  .bg-gray {
+    background: var(--color-gray-50);
+  }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .use-case-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .use-case-card:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+  }
+
+  .use-case-card h3 {
+    font-size: 1.375rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .use-case-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin-bottom: 1.5rem;
+  }
+
+  .use-case-impact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-gray-100);
+  }
+
+  .impact-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+  }
+
+  .impact-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-black);
+  }
+
+  /* Comparison */
+  .comparison-table {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .comparison-header,
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .comparison-header {
+    background: var(--color-gray-50);
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .comparison-col {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .comparison-col.label {
+    font-weight: 500;
+  }
+
+  .comparison-col.before {
+    color: var(--color-gray-500);
+    text-align: center;
+  }
+
+  .comparison-col.after {
+    background: rgba(16, 185, 129, 0.05);
+    color: var(--color-black);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .comparison-header .comparison-col.after {
+    background: rgba(16, 185, 129, 0.1);
+  }
+
+  .comparison-row:last-child .comparison-col {
+    border-bottom: none;
+  }
+
+  /* Technologies Section */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .tech-category {
+    background: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+
+  .tech-category h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-gray-800);
+  }
+
+  .tech-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .tech-category li {
+    font-size: 0.9375rem;
+    color: var(--color-gray-400);
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: 2rem;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-black);
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .problem-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cases-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tech-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparison-header,
+    .comparison-row {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-step {
+      flex-direction: column;
+      gap: 1rem;
+      padding-bottom: 2rem;
+    }
+
+    .step-marker {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    .step-line {
+      width: auto;
+      height: 2px;
+      min-height: auto;
+      flex-grow: 1;
+      background: linear-gradient(to right, var(--color-black), var(--color-gray-200));
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+    .step-number {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 0.875rem;
+    }
+
+    .step-content {
+      padding-top: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1.25rem;
+    }
+
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-header,
+    .comparison-row {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-col.label {
+      background: var(--color-gray-50);
+      font-weight: 600;
+    }
+
+    .comparison-col.before,
+    .comparison-col.after {
+      text-align: left;
+    }
+
+    .comparison-col.before::before {
+      content: 'Before: ';
+      font-weight: 500;
+    }
+
+    .comparison-col.after::before {
+      content: 'After: ';
+      font-weight: 600;
+    }
+  }
+</style>

@@ -1,0 +1,863 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTA from '../../components/CTA.astro';
+
+const features = [
+  {
+    title: 'Modern Stack',
+    description: 'Built with Next.js, Astro, and React. Your site loads in milliseconds, not seconds. Lightning-fast performance that search engines and users love.',
+    icon: '⚡'
+  },
+  {
+    title: 'AI Personalization',
+    description: 'Content that adapts to each visitor. Dynamic experiences that feel personal—increasing engagement and building stronger connections.',
+    icon: '🧠'
+  },
+  {
+    title: 'Conversion Optimization',
+    description: 'Data-driven design that turns visitors into customers. Every element is tested and refined for maximum impact on your bottom line.',
+    icon: '🎯'
+  },
+  {
+    title: 'Mobile-First',
+    description: 'Perfect experience on every device. Responsive by default, with touch-optimized interactions and fluid layouts that just work.',
+    icon: '📱'
+  },
+  {
+    title: 'SEO Foundation',
+    description: 'Built-in optimization for search visibility. Semantic HTML, structured data, and performance-first architecture that ranks.',
+    icon: '🔍'
+  },
+  {
+    title: 'Analytics Integration',
+    description: 'Track everything, optimize continuously. Real-time insights into user behavior, conversion paths, and growth opportunities.',
+    icon: '📊'
+  }
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Strategy',
+    description: 'We dig deep into your business, audience, and goals. Research informs every decision—from architecture to user flows.'
+  },
+  {
+    step: '02',
+    title: 'Design',
+    description: 'Pixel-perfect interfaces that embody your brand. Clean, modern aesthetics paired with intuitive user experiences.'
+  },
+  {
+    step: '03',
+    title: 'Development',
+    description: 'Rock-solid code with the latest technologies. Blazing fast, secure, and built to scale with your business.'
+  },
+  {
+    step: '04',
+    title: 'Launch & Iterate',
+    description: 'Deploy with confidence, then optimize relentlessly. Your site gets smarter and more effective over time.'
+  }
+];
+
+const stats = [
+  { value: '<2s', label: 'Load Time' },
+  { value: '40%', label: 'Higher Conversion' },
+  { value: '100%', label: 'Mobile Optimized' },
+  { value: 'A+', label: 'SEO Score' }
+];
+
+const techStack = [
+  { name: 'Next.js', description: 'React framework for production' },
+  { name: 'Astro', description: 'Content-focused web framework' },
+  { name: 'React', description: 'Component-based UI library' },
+  { name: 'TypeScript', description: 'Type-safe development' },
+  { name: 'Tailwind', description: 'Utility-first CSS' },
+  { name: 'Vercel', description: 'Edge deployment platform' }
+];
+
+const differentiators = [
+  {
+    title: 'Intelligence Built In',
+    description: 'Your website isn\'t just a digital brochure—it\'s an intelligent system that learns, adapts, and works around the clock to grow your business.',
+    icon: '🤖'
+  },
+  {
+    title: 'Performance Obsessed',
+    description: 'Every millisecond matters. We optimize images, code, and delivery to ensure your site is among the fastest on the web.',
+    icon: '🚀'
+  },
+  {
+    title: 'Future-Proof Architecture',
+    description: 'Built on modern foundations that scale. Your site grows with your business without costly rebuilds or technical debt.',
+    icon: '🏗️'
+  }
+];
+---
+
+<Layout 
+  title="Smart Websites | Beautiful. Fast. Intelligent." 
+  description="Modern websites that don't just look good—they work hard. AI-powered personalization, blazing performance, and conversion-focused design."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container-narrow">
+        <span class="hero-label reveal">Smart Websites</span>
+        <h1 class="hero-title reveal reveal-delay-1">
+          Beautiful. Fast.
+          <span class="highlight">Intelligent.</span>
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+          Modern websites that don't just look good—they work hard. 
+          AI-powered personalization, blazing performance, and 
+          conversion-focused design that turns visitors into customers.
+        </p>
+        <div class="hero-cta reveal reveal-delay-3">
+          <a href="/contact" class="btn btn-primary">
+            Build Your Smart Website
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#features" class="btn btn-secondary">Explore Features</a>
+        </div>
+      </div>
+      <div class="hero-image reveal reveal-delay-4">
+        <img src="/images/services/websites-hero.png" alt="Smart websites and modern web development" loading="eager" />
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+      <div class="container-wide">
+        <div class="stats-grid">
+          {stats.map((stat, index) => (
+            <div class={`stat reveal reveal-delay-${index + 1}`}>
+              <span class="stat-value">{stat.value}</span>
+              <span class="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem section-padding">
+      <div class="container-wide">
+        <div class="problem-grid">
+          <div class="problem-content reveal">
+            <span class="section-label">The Problem</span>
+            <h2>Most websites are digital dead weight</h2>
+            <p>
+              Your website is often the first impression potential customers have of your business. 
+              Yet most sites are slow, generic, and forgettable—expensive brochures that don't 
+              actually drive results.
+            </p>
+            <p>
+              In a world where attention spans are measured in seconds, you can't afford 
+              a website that loads slowly, looks dated, or treats every visitor the same way.
+            </p>
+          </div>
+          <div class="problem-list reveal reveal-delay-1">
+            <div class="problem-item">
+              <span class="problem-icon">🐌</span>
+              <div>
+                <strong>Painfully Slow</strong>
+                <p>Average site takes 3+ seconds to load. 53% of visitors leave before that.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">📦</span>
+              <div>
+                <strong>Generic & Forgettable</strong>
+                <p>Template websites that look like everyone else. No personality, no differentiation.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">📉</span>
+              <div>
+                <strong>Low Conversions</strong>
+                <p>Pretty designs that don't convert. Traffic without action is meaningless.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">🔧</span>
+              <div>
+                <strong>Hard to Update</strong>
+                <p>Outdated CMS platforms that require developers for simple changes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution section-padding bg-dark" id="features">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">The Solution</span>
+          <h2>Websites that actually work</h2>
+          <p>
+            We build intelligent websites that combine stunning design with cutting-edge 
+            technology. Every site is engineered for speed, optimized for conversion, 
+            and smart enough to personalize the experience for each visitor.
+          </p>
+        </div>
+        <div class="features-grid">
+          {features.map((feature, index) => (
+            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+              <span class="feature-icon">{feature.icon}</span>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentiators Section -->
+    <section class="differentiators section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Why We're Different</span>
+          <h2>Not just another web agency</h2>
+        </div>
+        <div class="diff-grid">
+          {differentiators.map((diff, index) => (
+            <div class={`diff-card reveal reveal-delay-${index + 1}`}>
+              <span class="diff-icon">{diff.icon}</span>
+              <h3>{diff.title}</h3>
+              <p>{diff.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack section-padding bg-gray">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Our Toolkit</span>
+          <h2>Built with the best</h2>
+          <p>
+            We use the same technologies powering the world's fastest, 
+            most successful websites.
+          </p>
+        </div>
+        <div class="tech-grid">
+          {techStack.map((tech, index) => (
+            <div class={`tech-item reveal reveal-delay-${(index % 3) + 1}`}>
+              <h4>{tech.name}</h4>
+              <p>{tech.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Our Process</span>
+          <h2>Strategy → Design → Development → Launch</h2>
+          <p>A proven methodology that delivers results, not surprises.</p>
+        </div>
+        <div class="process-timeline">
+          {process.map((step, index) => (
+            <div class={`process-step reveal reveal-delay-${index + 1}`}>
+              <div class="step-marker">
+                <span class="step-number">{step.step}</span>
+                {index < process.length - 1 && <div class="step-line"></div>}
+              </div>
+              <div class="step-content">
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="deliverables section-padding bg-dark">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">What You Get</span>
+          <h2>Everything included</h2>
+        </div>
+        <div class="deliverables-grid">
+          <div class="deliverable-col reveal reveal-delay-1">
+            <h4>Design</h4>
+            <ul>
+              <li>Custom UI/UX design</li>
+              <li>Mobile-first responsive layouts</li>
+              <li>Interactive prototypes</li>
+              <li>Brand-aligned visual system</li>
+              <li>Micro-interactions & animations</li>
+            </ul>
+          </div>
+          <div class="deliverable-col reveal reveal-delay-2">
+            <h4>Development</h4>
+            <ul>
+              <li>Modern tech stack implementation</li>
+              <li>Headless CMS integration</li>
+              <li>API connections & integrations</li>
+              <li>Performance optimization</li>
+              <li>Security hardening</li>
+            </ul>
+          </div>
+          <div class="deliverable-col reveal reveal-delay-3">
+            <h4>Launch & Beyond</h4>
+            <ul>
+              <li>Managed hosting setup</li>
+              <li>Analytics & tracking</li>
+              <li>SEO configuration</li>
+              <li>Training & documentation</li>
+              <li>Ongoing support options</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding">
+      <div class="container-narrow">
+        <div class="section-header reveal">
+          <span class="section-label">FAQ</span>
+          <h2>Questions answered</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal reveal-delay-1">
+            <h3>How long does a website project take?</h3>
+            <p>Most projects take 6-12 weeks from kickoff to launch, depending on complexity. We'll give you a specific timeline after our discovery call.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-2">
+            <h3>What's the investment for a smart website?</h3>
+            <p>Our websites start at $15K and scale based on features, integrations, and complexity. We'll scope your project and provide a detailed proposal.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-3">
+            <h3>Can I update the content myself?</h3>
+            <p>Absolutely. We integrate user-friendly content management systems that let you update text, images, and pages without touching code.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-4">
+            <h3>Do you offer hosting and maintenance?</h3>
+            <p>Yes. We offer managed hosting on enterprise-grade infrastructure, plus ongoing maintenance and support packages to keep your site running perfectly.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-5">
+            <h3>What makes your websites "smart"?</h3>
+            <p>Our sites use AI to personalize content for each visitor, adapt messaging based on behavior, and continuously optimize for conversions—all automatically.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .highlight {
+    color: var(--color-gray-400);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    max-width: 650px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    background: var(--color-black);
+    padding: 3rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Problem Section */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .problem-content h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .problem-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 1rem;
+  }
+
+  .problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .problem-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .problem-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .problem-item strong {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .problem-item p {
+    font-size: 0.9375rem;
+    color: var(--color-gray-500);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Solution Section */
+  .bg-dark {
+    background: var(--color-black);
+  }
+
+  .bg-dark .section-label {
+    color: var(--color-gray-500);
+  }
+
+  .bg-dark h2 {
+    color: var(--color-white);
+  }
+
+  .bg-dark .section-header p {
+    color: var(--color-gray-400);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.0625rem;
+    color: var(--color-gray-500);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    border-color: var(--color-gray-700);
+    transform: translateY(-4px);
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  /* Differentiators Section */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .diff-card {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .diff-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .diff-card h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .diff-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Tech Stack */
+  .bg-gray {
+    background: var(--color-gray-50);
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+  }
+
+  .tech-item {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .tech-item:hover {
+    border-color: var(--color-gray-300);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  .tech-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .tech-item p {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Process Section */
+  .process-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-black);
+    color: var(--color-white);
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .step-line {
+    width: 2px;
+    flex-grow: 1;
+    min-height: 60px;
+    background: var(--color-gray-200);
+  }
+
+  .step-content {
+    padding-bottom: 3rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Deliverables Section */
+  .deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .deliverable-col h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-gray-800);
+  }
+
+  .deliverable-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .deliverable-col li {
+    font-size: 0.9375rem;
+    color: var(--color-gray-400);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--color-gray-800);
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .deliverable-col li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-gray-500);
+  }
+
+  .deliverable-col li:last-child {
+    border-bottom: none;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-gray-200);
+    padding-bottom: 2rem;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .problem-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .diff-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .diff-card {
+      text-align: left;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .diff-icon {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+
+    .tech-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .deliverables-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-visual {
+      display: none;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tech-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mockup-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-step {
+      gap: 1rem;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 0.75rem;
+    }
+  }
+</style>
