@@ -1,0 +1,46 @@
+---
+/**
+ * Analytics Component
+ * 
+ * Includes Google Analytics 4 and Microsoft Clarity.
+ * Only loads in production (import.meta.env.PROD).
+ * IDs configured via environment variables.
+ */
+
+const ga4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID;
+const clarityId = import.meta.env.PUBLIC_CLARITY_PROJECT_ID;
+const isProd = import.meta.env.PROD;
+---
+
+{isProd && ga4Id && (
+  <>
+    {/* Google Analytics 4 */}
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+    <script is:inline define:vars={{ ga4Id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', ga4Id);
+    </script>
+  </>
+)}
+
+{isProd && clarityId && (
+  /* Microsoft Clarity */
+  <script is:inline define:vars={{ clarityId }}>
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', clarityId);
+  </script>
+)}
