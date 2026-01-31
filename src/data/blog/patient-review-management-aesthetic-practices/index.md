@@ -1,6 +1,6 @@
 ---
 title: "Patient Review Management: A Complete Guide for Aesthetic Practices"
-description: "Learn proven strategies to collect more 5-star reviews, respond professionally to feedback, and turn patient testimonials into your practice's most powerful marketing asset."
+description: "Proven strategies to collect 5-star reviews, respond to feedback professionally, and turn patient testimonials into your most powerful marketing tool."
 pubDate: 2026-01-31
 author: "Monsoft Solutions"
 category: "Medical & Aesthetics"
