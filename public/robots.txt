@@ -8,8 +8,9 @@ User-agent: *
 Allow: /
 Disallow: /_astro/     # Hashed assets (not useful for indexing)
 
-# Sitemap location
-Sitemap: https://monsoftsolutions.com/sitemap.xml
+# Sitemap locations
+Sitemap: https://monsoftsolutions.com/sitemaps.xml
+Sitemap: https://monsoftsolutions.com/blog-sitemap.xml
 
 # =============================================================================
 # Crawler-specific rules
