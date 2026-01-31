@@ -1,0 +1,396 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTA from '../components/CTA.astro';
+
+const services = [
+  {
+    id: 'ai-solutions',
+    title: 'AI Solutions',
+    subtitle: 'Intelligence Built In, Not Bolted On',
+    description: 'Custom AI systems that learn, adapt, and scale with your business. We build AI that delivers measurable ROI—not science experiments.',
+    features: [
+      {
+        title: 'Custom LLM Applications',
+        description: 'Purpose-built AI assistants, chatbots, and agents trained on your data and workflows.'
+      },
+      {
+        title: 'Predictive Analytics',
+        description: 'Machine learning models that forecast trends, identify opportunities, and reduce risk.'
+      },
+      {
+        title: 'Document Intelligence',
+        description: 'Extract, classify, and process information from contracts, invoices, and unstructured data.'
+      },
+      {
+        title: 'Computer Vision',
+        description: 'Image and video analysis for quality control, security, and content moderation.'
+      }
+    ],
+    color: '#2563eb'
+  },
+  {
+    id: 'automation',
+    title: 'Business Automation',
+    subtitle: 'Eliminate Manual. Unlock Scale.',
+    description: 'We design automation workflows that save time, reduce errors, and scale with your business. Stop doing repetitive work—let systems do it for you.',
+    features: [
+      {
+        title: 'Process Automation',
+        description: 'End-to-end automation of repetitive tasks across your entire operation.'
+      },
+      {
+        title: 'Workflow Orchestration',
+        description: 'Complex multi-step workflows that connect your tools and teams seamlessly.'
+      },
+      {
+        title: 'Integration APIs',
+        description: 'Connect any system to any system. We build the bridges your tech stack needs.'
+      },
+      {
+        title: 'Real-time Sync',
+        description: 'Keep data consistent across platforms with intelligent synchronization.'
+      }
+    ],
+    color: '#10b981'
+  },
+  {
+    id: 'development',
+    title: 'Custom Development',
+    subtitle: 'Enterprise-Grade. Built for You.',
+    description: 'Software built for your exact needs. From web platforms to mobile apps—architected for performance, built for longevity.',
+    features: [
+      {
+        title: 'Web Applications',
+        description: 'Modern, responsive web apps built with Next.js, React, and enterprise-grade infrastructure.'
+      },
+      {
+        title: 'Mobile Apps',
+        description: 'Native and cross-platform mobile applications that your users will love.'
+      },
+      {
+        title: 'Cloud Infrastructure',
+        description: 'Scalable, secure cloud architecture designed for growth and reliability.'
+      },
+      {
+        title: 'API Development',
+        description: 'RESTful and GraphQL APIs that power your integrations and third-party access.'
+      }
+    ],
+    color: '#8b5cf6'
+  }
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Discovery',
+    description: 'We dive deep into your business, understand your challenges, and identify where intelligent software can create the most impact.'
+  },
+  {
+    step: '02',
+    title: 'Architecture',
+    description: 'We design the system—data flows, integrations, AI models, and infrastructure—before writing a single line of code.'
+  },
+  {
+    step: '03',
+    title: 'Build',
+    description: 'Rapid development with continuous feedback. We ship early, iterate often, and keep you in the loop at every step.'
+  },
+  {
+    step: '04',
+    title: 'Deploy & Scale',
+    description: 'Launch with confidence. We handle deployment, monitoring, and optimization as your usage grows.'
+  }
+];
+---
+
+<Layout 
+  title="Services" 
+  description="AI solutions, business automation, and custom software development. We build intelligent systems that transform how businesses operate."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="page-hero">
+      <div class="container-narrow">
+        <span class="page-label reveal">Services</span>
+        <h1 class="page-title reveal reveal-delay-1">
+          Capabilities built for
+          <span class="highlight">the modern business</span>
+        </h1>
+        <p class="page-subtitle reveal reveal-delay-2">
+          From AI-powered automation to custom enterprise software—we build 
+          solutions that create real competitive advantage.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Detail -->
+    {services.map((service, index) => (
+      <section class={`service-detail section-padding ${index % 2 === 1 ? 'bg-gray' : ''}`} id={service.id}>
+        <div class="container-wide">
+          <div class="service-grid">
+            <div class="service-content reveal">
+              <span class="service-number" style={`color: ${service.color}`}>0{index + 1}</span>
+              <h2>{service.title}</h2>
+              <p class="service-subtitle">{service.subtitle}</p>
+              <p class="service-description">{service.description}</p>
+              <a href="/contact" class="btn btn-primary">
+                Discuss Your Project
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+            <div class="service-features reveal reveal-delay-1">
+              {service.features.map((feature, fIndex) => (
+                <div class="feature-card" style={`--delay: ${fIndex * 0.1}s`}>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- Process Section -->
+    <section class="process section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Our Process</span>
+          <h2>How we work</h2>
+          <p>A proven approach to delivering intelligent software that actually works.</p>
+        </div>
+        <div class="process-grid">
+          {process.map((step, index) => (
+            <div class={`process-step reveal reveal-delay-${index + 1}`}>
+              <span class="step-number">{step.step}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Page Hero */
+  .page-hero {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .page-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .page-title .highlight {
+    color: var(--color-gray-400);
+  }
+
+  .page-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  /* Service Detail Sections */
+  .service-detail.bg-gray {
+    background: var(--color-gray-50);
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .service-number {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .service-content h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-gray-400);
+    margin-bottom: 1.5rem;
+  }
+
+  .service-description {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 2rem;
+  }
+
+  .service-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-gray-100);
+    transition: all 0.3s ease;
+    animation-delay: var(--delay);
+  }
+
+  .bg-gray .feature-card {
+    background: var(--color-white);
+  }
+
+  .feature-card:hover {
+    border-color: var(--color-gray-200);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Process Section */
+  .process {
+    background: var(--color-black);
+  }
+
+  .process .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .process .section-label {
+    color: var(--color-gray-500);
+  }
+
+  .process .section-header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    color: var(--color-white);
+    margin-bottom: 1rem;
+  }
+
+  .process .section-header p {
+    font-size: 1.0625rem;
+    color: var(--color-gray-400);
+    max-width: 500px;
+    margin-inline: auto;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .process-step {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .step-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .process-step h3 {
+    font-size: 1.25rem;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .process-step p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  /* Section Header */
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 0.5rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .service-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .service-features {
+      grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
