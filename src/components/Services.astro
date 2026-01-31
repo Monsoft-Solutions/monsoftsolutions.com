@@ -1,22 +1,34 @@
 ---
 const services = [
   {
-    number: '01',
-    title: 'AI Solutions',
-    description: 'Custom AI systems that learn, adapt, and scale. From intelligent automation to predictive analytics—we build AI that delivers measurable ROI.',
-    features: ['Machine Learning', 'NLP & LLMs', 'Computer Vision', 'Predictive Analytics']
+    title: 'Smart SEO & Content',
+    description: 'AI-powered content that writes, optimizes, and publishes itself. Grow your organic traffic on autopilot.',
+    link: '/services/seo',
+    image: '/images/home/service-seo.webp'
   },
   {
-    number: '02',
     title: 'Business Automation',
-    description: 'Eliminate manual processes and unlock efficiency. We design automation workflows that save time, reduce errors, and scale with your business.',
-    features: ['Process Automation', 'Workflow Design', 'Integration APIs', 'Real-time Sync']
+    description: 'Eliminate repetitive tasks and streamline operations. Save 10+ hours every week.',
+    link: '/services/automation',
+    image: '/images/home/service-automation.webp'
   },
   {
-    number: '03',
-    title: 'Custom Development',
-    description: 'Enterprise-grade software built for your exact needs. From web platforms to mobile apps—architected for performance, built for longevity.',
-    features: ['Web Applications', 'Mobile Apps', 'Cloud Infrastructure', 'API Development']
+    title: 'AI Assistants',
+    description: '24/7 customer support that never sleeps. Capture leads and book appointments automatically.',
+    link: '/services/ai-assistants',
+    image: '/images/home/service-ai.webp'
+  },
+  {
+    title: 'Smart Websites',
+    description: 'Beautiful, fast websites that convert visitors into customers. Mobile-first, SEO-ready.',
+    link: '/services/websites',
+    image: '/images/home/service-websites.webp'
+  },
+  {
+    title: 'Paid Advertising',
+    description: 'ROI-focused Meta and Google campaigns. Every dollar tracked, optimized, and working.',
+    link: '/services/automation',
+    image: '/images/home/service-ads.webp'
   }
 ];
 ---
@@ -26,30 +38,33 @@ const services = [
     <!-- Section Header -->
     <div class="section-header reveal">
       <span class="section-label">What We Do</span>
-      <h2 class="section-title">
-        Capabilities built for
-        <br />
-        <span class="text-muted">the modern business</span>
-      </h2>
+      <h2 class="section-title">Everything you need to grow</h2>
+      <p class="section-subtitle">From automated marketing to AI-powered customer service—we handle the tech so you can focus on your business.</p>
     </div>
 
     <!-- Services Grid -->
     <div class="services-grid">
       {services.map((service, index) => (
-        <article class={`service-card reveal reveal-delay-${index + 1}`}>
-          <span class="service-number">{service.number}</span>
-          <h3 class="service-title">{service.title}</h3>
-          <p class="service-description">{service.description}</p>
-          <ul class="service-features">
-            {service.features.map(feature => (
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                {feature}
-              </li>
-            ))}
-          </ul>
+        <article class={`service-card reveal reveal-delay-${(index % 3) + 1}`}>
+          <div class="service-image-wrapper">
+            <img 
+              src={service.image} 
+              alt={service.title}
+              class="service-image"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">{service.title}</h3>
+            <p class="service-description">{service.description}</p>
+            <a href={service.link} class="service-link">
+              Learn more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
         </article>
       ))}
     </div>
@@ -81,10 +96,13 @@ const services = [
     font-weight: 500;
     line-height: 1.15;
     letter-spacing: -0.02em;
+    margin-bottom: 1rem;
   }
 
-  .text-muted {
-    color: var(--color-gray-400);
+  .section-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
   }
 
   .services-grid {
@@ -94,30 +112,43 @@ const services = [
   }
 
   .service-card {
-    padding: 2.5rem;
     background: var(--color-gray-50);
     border-radius: 16px;
+    overflow: hidden;
     transition: all 0.3s ease;
   }
 
   .service-card:hover {
     background: var(--color-white);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
   }
 
-  .service-number {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--color-gray-300);
-    margin-bottom: 1.5rem;
+  .service-image-wrapper {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover .service-image {
+    transform: scale(1.05);
+  }
+
+  .service-content {
+    padding: 1.75rem;
   }
 
   .service-title {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 500;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     color: var(--color-black);
   }
 
@@ -125,44 +156,51 @@ const services = [
     font-size: 0.9375rem;
     line-height: 1.7;
     color: var(--color-gray-500);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
-  .service-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-black);
+    text-decoration: none;
+    transition: gap 0.2s ease;
+  }
+
+  .service-link:hover {
     gap: 0.75rem;
   }
 
-  .service-features li {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    font-size: 0.8125rem;
-    color: var(--color-gray-600);
-    padding: 0.375rem 0.75rem;
-    background: var(--color-white);
-    border-radius: 6px;
-    border: 1px solid var(--color-gray-100);
+  .service-link svg {
+    transition: transform 0.2s ease;
   }
 
-  .service-card:hover .service-features li {
-    background: var(--color-gray-50);
-    border-color: var(--color-gray-200);
+  .service-link:hover svg {
+    transform: translateX(2px);
   }
 
-  .service-features svg {
-    color: var(--color-gray-400);
-    flex-shrink: 0;
-  }
-
+  /* Tablet: 2 columns */
   @media (max-width: 1024px) {
     .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Mobile: 1 column */
+  @media (max-width: 640px) {
+    .services-grid {
       grid-template-columns: 1fr;
-      max-width: 600px;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .service-content {
+      padding: 1.5rem;
     }
   }
 </style>

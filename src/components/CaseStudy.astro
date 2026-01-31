@@ -1,0 +1,386 @@
+---
+const checklist = [
+  'Automated SEO with AI-powered weekly blog content',
+  'Optimized Meta & Google ad campaigns',
+  'Set up automated patient communication',
+  'Redesigned website for conversions'
+];
+
+const results = [
+  {
+    value: '+340%',
+    label: 'Website Traffic'
+  },
+  {
+    value: '+67%',
+    label: 'Consultation Bookings'
+  },
+  {
+    value: '<48hr',
+    label: 'Lead Response Time',
+    sublabel: 'was "next business day"'
+  },
+  {
+    value: '24/7',
+    label: 'Automated Lead Capture'
+  }
+];
+---
+
+<section class="case-study section-padding" id="case-study">
+  <div class="container-wide">
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label">Case Study</span>
+      <h2 class="section-title">
+        How we transformed Alluring Plastic Surgery's digital presence
+      </h2>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="case-study-grid">
+      <!-- Left Column - The Story -->
+      <div class="story-column">
+        <div class="client-info reveal reveal-delay-1">
+          <span class="client-label">Client</span>
+          <h3 class="client-name">Alluring Plastic Surgery, Miami</h3>
+        </div>
+
+        <div class="challenge reveal reveal-delay-2">
+          <span class="challenge-label">The Challenge</span>
+          <p class="challenge-text">
+            Exceptional surgical skills, but invisible online. Leads were slipping through the cracks and marketing spend wasn't delivering.
+          </p>
+        </div>
+
+        <div class="solution reveal reveal-delay-3">
+          <span class="solution-label">What We Did</span>
+          <ul class="checklist">
+            {checklist.map((item, index) => (
+              <li class="checklist-item" style={`animation-delay: ${0.4 + index * 0.1}s`}>
+                <span class="check-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Column - Results -->
+      <div class="results-column">
+        <div class="results-grid">
+          {results.map((result, index) => (
+            <div class={`result-card reveal reveal-delay-${index + 1}`}>
+              <span class="result-value">{result.value}</span>
+              <span class="result-label">{result.label}</span>
+              {result.sublabel && (
+                <span class="result-sublabel">{result.sublabel}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="testimonial reveal">
+      <blockquote class="testimonial-quote">
+        <svg class="quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/>
+        </svg>
+        <p>
+          Monsoft transformed our online presence. We're now booking more consultations than ever, and I don't have to think about marketing anymore.
+        </p>
+        <footer class="testimonial-attribution">
+          — Alluring Plastic Surgery Team
+        </footer>
+      </blockquote>
+
+      <a href="/services/aesthetics" class="cta-button">
+        See Full Case Study
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .case-study {
+    background: var(--color-black);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle background pattern */
+  .case-study::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .container-wide {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Section Header */
+  .section-header {
+    margin-bottom: 4rem;
+    max-width: 700px;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent-light);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-white);
+  }
+
+  /* Two Column Grid */
+  .case-study-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  /* Left Column - Story */
+  .story-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .client-label,
+  .challenge-label,
+  .solution-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gray-400);
+    margin-bottom: 0.75rem;
+  }
+
+  .client-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin: 0;
+  }
+
+  .challenge-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-300);
+    margin: 0;
+  }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    font-size: 1rem;
+    color: var(--color-gray-200);
+    line-height: 1.5;
+  }
+
+  .check-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    border-radius: 50%;
+    color: var(--color-accent-light);
+    flex-shrink: 0;
+  }
+
+  /* Right Column - Results */
+  .results-column {
+    display: flex;
+    align-items: center;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .result-card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .result-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .result-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(37, 99, 235, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .result-card:hover::before {
+    opacity: 1;
+  }
+
+  .result-value {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 600;
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .result-label {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-gray-300);
+  }
+
+  .result-sublabel {
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    font-style: italic;
+  }
+
+  /* Testimonial */
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .testimonial-quote {
+    max-width: 700px;
+    margin: 0 0 2.5rem 0;
+    position: relative;
+  }
+
+  .quote-icon {
+    color: rgba(37, 99, 235, 0.3);
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-quote p {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    color: var(--color-gray-200);
+    font-weight: 400;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .testimonial-attribution {
+    font-size: 0.9375rem;
+    color: var(--color-gray-400);
+    font-weight: 500;
+  }
+
+  /* CTA Button */
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--color-white);
+    color: var(--color-black);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: var(--color-gray-100);
+    gap: 1rem;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .cta-button svg {
+    transition: transform 0.3s ease;
+  }
+
+  .cta-button:hover svg {
+    transform: translateX(4px);
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .case-study-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .result-card {
+      padding: 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,218 @@
+---
+const industries = [
+  {
+    image: '/images/home/industry-aesthetics.webp',
+    title: 'Aesthetics & Med Spas',
+    description: 'Plastic surgery clinics, med spas, and cosmetic practices. Fill your consultation calendar with qualified patients.',
+    highlight: 'See how we increased consultations by 67%',
+    cta: 'View Case Study →',
+    link: '/services/aesthetics'
+  },
+  {
+    image: '/images/home/industry-local.webp',
+    title: 'Local Businesses',
+    description: 'Contractors, salons, restaurants, and professional services. Big business technology at small business pricing.',
+    highlight: 'Serving Southwest Florida businesses',
+    cta: 'Explore Solutions →',
+    link: '/services/local-business'
+  }
+];
+---
+
+<section class="industries section-padding" id="industries">
+  <div class="container-wide">
+    <!-- Section Header -->
+    <div class="section-header reveal">
+      <span class="section-label">Who We Help</span>
+      <h2 class="section-title">
+        Specialized solutions for
+        <br />
+        <span class="text-muted">your industry</span>
+      </h2>
+    </div>
+
+    <!-- Industries Grid -->
+    <div class="industries-grid">
+      {industries.map((industry, index) => (
+        <article class={`industry-card reveal reveal-delay-${index + 1}`}>
+          <div class="industry-image-wrapper">
+            <img 
+              src={industry.image} 
+              alt={industry.title}
+              class="industry-image"
+              loading="lazy"
+            />
+          </div>
+          <div class="industry-content">
+            <h3 class="industry-title">{industry.title}</h3>
+            <p class="industry-description">{industry.description}</p>
+            <div class="industry-highlight">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              <span>{industry.highlight}</span>
+            </div>
+            <a href={industry.link} class="industry-cta">
+              {industry.cta}
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .industries {
+    background: var(--color-gray-50);
+  }
+
+  .section-header {
+    margin-bottom: 4rem;
+    max-width: 600px;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .text-muted {
+    color: var(--color-gray-400);
+  }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .industry-card {
+    background: var(--color-white);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--color-gray-100);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .industry-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-gray-200);
+  }
+
+  .industry-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+    background: var(--color-gray-100);
+  }
+
+  .industry-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .industry-card:hover .industry-image {
+    transform: scale(1.05);
+  }
+
+  .industry-content {
+    padding: 2rem 2.5rem 2.5rem;
+  }
+
+  .industry-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-black);
+    margin-bottom: 0.875rem;
+    letter-spacing: -0.01em;
+  }
+
+  .industry-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 1.5rem;
+  }
+
+  .industry-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    padding: 0.625rem 1rem;
+    background: rgba(37, 99, 235, 0.06);
+    border-radius: 8px;
+    margin-bottom: 1.75rem;
+  }
+
+  .industry-highlight svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+  }
+
+  .industry-cta {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-black);
+    transition: all 0.2s ease;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-gray-50);
+    border-radius: 10px;
+    border: 1px solid var(--color-gray-100);
+  }
+
+  .industry-cta:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+    border-color: var(--color-black);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .industries-grid {
+      grid-template-columns: 1fr;
+      max-width: 560px;
+      margin-inline: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .industry-content {
+      padding: 1.5rem 1.75rem 2rem;
+    }
+
+    .industry-title {
+      font-size: 1.3rem;
+    }
+
+    .industry-highlight {
+      font-size: 0.8125rem;
+      padding: 0.5rem 0.875rem;
+    }
+  }
+</style>

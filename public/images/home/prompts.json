@@ -1,0 +1,10 @@
+[
+  {
+    "filename": "001-friendly-local-business-owner-standing-proudly-in-.png",
+    "prompt": "Friendly local business owner standing proudly in front of their shop, small business storefront, welcoming smile, American main street feel, warm afternoon lighting, community business success",
+    "model": "gemini-3-pro-image-preview",
+    "aspect_ratio": "16:9",
+    "input_images": null,
+    "mode": "generate"
+  }
+]
