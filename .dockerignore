@@ -1,0 +1,47 @@
+# =============================================================================
+# .dockerignore - Exclude files from Docker build context
+# Speeds up builds and reduces image size
+# =============================================================================
+
+# Dependencies (will be installed fresh in container)
+node_modules
+
+# Build output (will be generated in container)
+dist
+.astro
+
+# Version control
+.git
+.gitignore
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# Documentation and planning files
+*.md
+!README.md
+docs/
+
+# Environment files (secrets should be injected at runtime)
+.env
+.env.*
+!.env.example
+
+# Test and development files
+*.test.*
+*.spec.*
+coverage/
+.nyc_output/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Docker files (not needed in build context)
+Dockerfile
+docker-compose*.yml
+.dockerignore
