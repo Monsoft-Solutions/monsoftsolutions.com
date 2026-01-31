@@ -9,7 +9,7 @@ Allow: /
 Disallow: /_astro/     # Hashed assets (not useful for indexing)
 
 # Sitemap location
-Sitemap: https://monsoftsolutions.com/sitemap-index.xml
+Sitemap: https://monsoftsolutions.com/sitemap.xml
 
 # =============================================================================
 # Crawler-specific rules
@@ -95,15 +95,22 @@ User-agent: cohere-ai
 Allow: /
 
 # =============================================================================
-# Block bad bots and scrapers
+# SEO Tool Crawlers
 # =============================================================================
 
-# Block aggressive/unwanted bots
+# Ahrefs
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
+Crawl-delay: 2
 
+# Semrush
 User-agent: SemrushBot
-Disallow: /
+Allow: /
+Crawl-delay: 2
+
+# =============================================================================
+# Block unwanted bots
+# =============================================================================
 
 User-agent: MJ12bot
 Disallow: /
