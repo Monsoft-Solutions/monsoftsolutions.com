@@ -1,0 +1,806 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTA from '../../components/CTA.astro';
+
+const features = [
+  {
+    title: 'AI Content Ideation',
+    description: 'Our AI analyzes your industry, competitors, and search trends to generate high-impact content ideas that drive organic traffic.',
+    icon: '💡'
+  },
+  {
+    title: 'Automated Writing',
+    description: 'Production-ready articles written by AI, trained on your brand voice, optimized for search engines and human readers alike.',
+    icon: '✍️'
+  },
+  {
+    title: 'AI Image Generation',
+    description: 'Custom visuals created automatically for every piece of content. No stock photos. No design bottlenecks.',
+    icon: '🎨'
+  },
+  {
+    title: 'Auto-Publish Pipeline',
+    description: 'From draft to live—fully automated. Content is optimized, formatted, and published on schedule without human intervention.',
+    icon: '🚀'
+  },
+  {
+    title: 'SEO Optimization',
+    description: 'Every piece is optimized for keywords, meta tags, internal linking, and schema markup. Search engines love it.',
+    icon: '📈'
+  },
+  {
+    title: 'Performance Analytics',
+    description: 'Real-time dashboards showing traffic, rankings, and content performance. The AI learns and improves over time.',
+    icon: '📊'
+  }
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Strategy & Setup',
+    description: 'We analyze your market, define your content pillars, and configure the AI engine with your brand voice and SEO goals.'
+  },
+  {
+    step: '02',
+    title: 'Content Generation',
+    description: 'The AI produces a steady stream of optimized articles, complete with custom images and proper formatting.'
+  },
+  {
+    step: '03',
+    title: 'Review & Publish',
+    description: 'Content flows through optional review queues or publishes automatically based on your comfort level.'
+  },
+  {
+    step: '04',
+    title: 'Optimize & Scale',
+    description: 'The system learns from performance data, refining topics and strategies to maximize your organic growth.'
+  }
+];
+
+const stats = [
+  { value: '10x', label: 'Content Output' },
+  { value: '75%', label: 'Time Saved' },
+  { value: '3-6mo', label: 'To See Results' },
+  { value: '24/7', label: 'Always Publishing' }
+];
+
+const caseStudies = [
+  {
+    name: 'Alluring Plastic Surgery',
+    industry: 'Healthcare / Aesthetics',
+    url: 'alluringplasticsurgery.com/blog',
+    description: 'Fully automated medical blog covering procedures, recovery guides, and patient education. AI-generated content meeting healthcare compliance standards.',
+    results: ['50+ articles published', 'Zero manual writing', 'Consistent brand voice']
+  },
+  {
+    name: 'Praxis Notes',
+    industry: 'SaaS / Healthcare Tech',
+    url: 'praxisnotes.com/resources',
+    description: 'Resource library for ABA professionals. Educational content generated automatically, from industry updates to best practice guides.',
+    results: ['Continuous content flow', 'SEO-optimized articles', 'Professional credibility']
+  }
+];
+---
+
+<Layout 
+  title="AI-First SEO & Content Automation" 
+  description="Fully automated SEO content engine. From ideation to publish—AI generates articles, images, and optimizes everything for search. No manual work required."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container-narrow">
+        <span class="hero-label reveal">AI-First SEO</span>
+        <h1 class="hero-title reveal reveal-delay-1">
+          Your content engine.
+          <span class="highlight">Fully automated.</span>
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+          We don't just do SEO—we automate it. From ideation to publish, 
+          our AI generates articles, creates images, and optimizes everything 
+          for search. You focus on your business. We handle the content.
+        </p>
+        <div class="hero-cta reveal reveal-delay-3">
+          <a href="/contact" class="btn btn-primary">
+            Get Your Content Engine
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+      <div class="container-wide">
+        <div class="stats-grid">
+          {stats.map((stat, index) => (
+            <div class={`stat reveal reveal-delay-${index + 1}`}>
+              <span class="stat-value">{stat.value}</span>
+              <span class="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem section-padding">
+      <div class="container-wide">
+        <div class="problem-grid">
+          <div class="problem-content reveal">
+            <span class="section-label">The Problem</span>
+            <h2>Manual SEO is broken</h2>
+            <p>
+              Traditional content marketing is slow, expensive, and inconsistent. 
+              You hire writers, wait weeks for drafts, go through endless revisions, 
+              source images, optimize for SEO, and finally publish—only to repeat it all again.
+            </p>
+            <p>
+              Meanwhile, your competitors are publishing daily. Search engines reward 
+              consistency. And your team is burned out on content they don't have time to create.
+            </p>
+          </div>
+          <div class="problem-list reveal reveal-delay-1">
+            <div class="problem-item">
+              <span class="problem-icon">⏰</span>
+              <div>
+                <strong>Time-Intensive</strong>
+                <p>A single quality article takes 4-8 hours to research, write, and optimize.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">💸</span>
+              <div>
+                <strong>Expensive</strong>
+                <p>Quality writers cost $200-500+ per article. Images and editing add more.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">📉</span>
+              <div>
+                <strong>Inconsistent</strong>
+                <p>Publishing gaps hurt rankings. Most teams can't maintain a steady cadence.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="problem-icon">🎯</span>
+              <div>
+                <strong>Hard to Scale</strong>
+                <p>Growing content output means growing headcount. It doesn't scale.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution section-padding bg-dark" id="how-it-works">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">The Solution</span>
+          <h2>AI that does the work for you</h2>
+          <p>
+            Our AI-first SEO engine handles the entire content pipeline—from identifying 
+            what to write, to publishing optimized articles with custom images. 
+            All you do is approve (or let it run autonomously).
+          </p>
+        </div>
+        <div class="features-grid">
+          {features.map((feature, index) => (
+            <div class={`feature-card reveal reveal-delay-${(index % 3) + 1}`}>
+              <span class="feature-icon">{feature.icon}</span>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">How It Works</span>
+          <h2>From zero to publishing in weeks</h2>
+          <p>We set up your automated content engine and let it run.</p>
+        </div>
+        <div class="process-grid">
+          {process.map((step, index) => (
+            <div class={`process-step reveal reveal-delay-${index + 1}`}>
+              <span class="step-number">{step.step}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies section-padding bg-gray">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">Live Examples</span>
+          <h2>See it in action</h2>
+          <p>Real businesses running on our AI content engine right now.</p>
+        </div>
+        <div class="cases-grid">
+          {caseStudies.map((study, index) => (
+            <div class={`case-card reveal reveal-delay-${index + 1}`}>
+              <div class="case-header">
+                <span class="case-industry">{study.industry}</span>
+                <h3>{study.name}</h3>
+                <a href={`https://${study.url}`} target="_blank" rel="noopener" class="case-link">
+                  {study.url} →
+                </a>
+              </div>
+              <p class="case-description">{study.description}</p>
+              <ul class="case-results">
+                {study.results.map(result => (
+                  <li>✓ {result}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison section-padding">
+      <div class="container-wide">
+        <div class="section-header reveal">
+          <span class="section-label">The Difference</span>
+          <h2>Traditional vs. AI-First SEO</h2>
+        </div>
+        <div class="comparison-table reveal reveal-delay-1">
+          <div class="comparison-header">
+            <div class="comparison-col"></div>
+            <div class="comparison-col traditional">Traditional SEO</div>
+            <div class="comparison-col ai-first">AI-First (Ours)</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Content Volume</div>
+            <div class="comparison-col traditional">2-4 articles/month</div>
+            <div class="comparison-col ai-first">20-50+ articles/month</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Time to Publish</div>
+            <div class="comparison-col traditional">1-2 weeks per article</div>
+            <div class="comparison-col ai-first">Same day, automated</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Cost per Article</div>
+            <div class="comparison-col traditional">$200-500+</div>
+            <div class="comparison-col ai-first">Fraction of the cost</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Images</div>
+            <div class="comparison-col traditional">Stock photos or designer</div>
+            <div class="comparison-col ai-first">AI-generated, unique</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Consistency</div>
+            <div class="comparison-col traditional">Depends on team capacity</div>
+            <div class="comparison-col ai-first">24/7, never misses</div>
+          </div>
+          <div class="comparison-row">
+            <div class="comparison-col label">Scalability</div>
+            <div class="comparison-col traditional">Hire more people</div>
+            <div class="comparison-col ai-first">Turn up the dial</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding bg-dark">
+      <div class="container-narrow">
+        <div class="section-header reveal">
+          <span class="section-label">FAQ</span>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal reveal-delay-1">
+            <h3>Will the content sound robotic or generic?</h3>
+            <p>No. We train the AI on your brand voice, tone, and style. The output is indistinguishable from quality human writing—because it's built on the same principles, just faster.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-2">
+            <h3>Is this content original?</h3>
+            <p>Yes. Every piece is generated fresh. We run plagiarism checks and ensure all content is unique and indexed properly by search engines.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-3">
+            <h3>How does the image generation work?</h3>
+            <p>Our AI creates custom images for each article using advanced generative models. No stock photos, no licensing issues—just unique visuals that match your content.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-4">
+            <h3>Can I review content before it publishes?</h3>
+            <p>Absolutely. You can set up approval workflows, or let the engine run fully autonomous. Most clients start with review and graduate to autonomous as trust builds.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-5">
+            <h3>How long until I see SEO results?</h3>
+            <p>SEO is a long game, but consistent publishing accelerates it. Most clients see meaningful traffic improvements within 3-6 months as content compounds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    text-align: center;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .highlight {
+    color: var(--color-gray-400);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    max-width: 650px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    background: var(--color-black);
+    padding: 3rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Problem Section */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .problem-content h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .problem-content p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    margin-bottom: 1rem;
+  }
+
+  .problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .problem-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .problem-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .problem-item strong {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  .problem-item p {
+    font-size: 0.9375rem;
+    color: var(--color-gray-500);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Solution Section */
+  .bg-dark {
+    background: var(--color-black);
+  }
+
+  .bg-dark .section-label {
+    color: var(--color-gray-500);
+  }
+
+  .bg-dark h2 {
+    color: var(--color-white);
+  }
+
+  .bg-dark .section-header p {
+    color: var(--color-gray-400);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.0625rem;
+    color: var(--color-gray-500);
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: var(--color-gray-900);
+    border: 1px solid var(--color-gray-800);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    border-color: var(--color-gray-700);
+    transform: translateY(-4px);
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  /* Process Section */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .process-step {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .step-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-gray-200);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .process-step h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .process-step p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin: 0;
+  }
+
+  /* Case Studies */
+  .bg-gray {
+    background: var(--color-gray-50);
+  }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .case-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .case-card:hover {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+  }
+
+  .case-industry {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+  }
+
+  .case-card h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0.5rem 0;
+  }
+
+  .case-link {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .case-link:hover {
+    color: var(--color-black);
+  }
+
+  .case-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-gray-500);
+    margin: 1.5rem 0;
+  }
+
+  .case-results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .case-results li {
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+  }
+
+  /* Comparison */
+  .comparison-table {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .comparison-header,
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .comparison-header {
+    background: var(--color-gray-50);
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .comparison-col {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .comparison-col.label {
+    font-weight: 500;
+  }
+
+  .comparison-col.traditional {
+    color: var(--color-gray-500);
+    text-align: center;
+  }
+
+  .comparison-col.ai-first {
+    background: rgba(16, 185, 129, 0.05);
+    color: var(--color-black);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .comparison-header .comparison-col.ai-first {
+    background: rgba(16, 185, 129, 0.1);
+  }
+
+  .comparison-row:last-child .comparison-col {
+    border-bottom: none;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-gray-800);
+    padding-bottom: 2rem;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-400);
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .problem-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cases-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-header,
+    .comparison-row {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-header,
+    .comparison-row {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-col.label {
+      background: var(--color-gray-50);
+      font-weight: 600;
+    }
+
+    .comparison-col.traditional,
+    .comparison-col.ai-first {
+      text-align: left;
+    }
+
+    .comparison-col.traditional::before {
+      content: 'Traditional: ';
+      font-weight: 500;
+    }
+
+    .comparison-col.ai-first::before {
+      content: 'AI-First: ';
+      font-weight: 600;
+    }
+  }
+</style>
