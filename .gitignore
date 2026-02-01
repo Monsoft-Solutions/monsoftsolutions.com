@@ -34,3 +34,6 @@ pnpm-debug.log*
 .env.vercel
 
 src/data/blog/*/images/*
+
+# Worktrees (if created locally)
+.worktrees/
