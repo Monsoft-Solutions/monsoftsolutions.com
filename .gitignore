@@ -31,3 +31,6 @@ pnpm-debug.log*
 .vercel
 .env*.local
 .env.vercel
+.env.vercel
+
+src/data/blog/*/images/*
