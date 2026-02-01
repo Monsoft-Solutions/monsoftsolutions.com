@@ -28,6 +28,10 @@ npm run format:check # Check formatting without changes
 - **Pre-commit:** Runs lint-staged (ESLint + Prettier on staged files only)
 - **Pre-push:** Runs `astro check`, `typecheck`, and `build` for full validation
 
+### Git Worktrees
+
+For parallel feature development, see [docs/GIT-WORKTREE.md](./docs/GIT-WORKTREE.md).
+
 ## Architecture
 
 ### Tech Stack
