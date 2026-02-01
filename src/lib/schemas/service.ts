@@ -4,7 +4,8 @@
  */
 
 import type { ServiceSchema, Offer } from './types';
-import { createOrganizationRef } from './organization';
+import { COMPANY } from './config';
+import { createOrganizationRefFull } from './organization';
 
 export interface ServiceConfig {
   name?: string;
@@ -29,24 +30,18 @@ export interface ServiceConfig {
   };
 }
 
-// Default service provider
-const defaultProvider = {
-  name: 'Monsoft Solutions',
-  url: 'https://monsoftsolutions.com',
-};
-
 /**
  * Creates a Service schema
  */
 export function createServiceSchema(config: ServiceConfig): ServiceSchema {
-  const provider = config.provider || defaultProvider;
+  const provider = config.provider ?? { name: COMPANY.name, url: COMPANY.url };
 
   const schema: ServiceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: config.serviceType,
     description: config.description,
-    provider: createOrganizationRef(provider.name, provider.url),
+    provider: createOrganizationRefFull(provider.name, provider.url),
   };
 
   // Add name if provided

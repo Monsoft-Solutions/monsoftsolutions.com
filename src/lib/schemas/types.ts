@@ -12,7 +12,18 @@ export interface SchemaType {
   '@type': string;
 }
 
-export interface SchemaBase extends SchemaContext, SchemaType {}
+export interface SchemaId {
+  '@id'?: string;
+}
+
+export interface SchemaBase extends SchemaContext, SchemaType, SchemaId {}
+
+/**
+ * Reference to another schema by @id (for use within @graph)
+ */
+export interface SchemaRef {
+  '@id': string;
+}
 
 // Reusable entity types
 export interface PostalAddress {
@@ -86,6 +97,7 @@ export interface AggregateRating {
 // Main schema types
 export interface OrganizationSchema extends SchemaBase {
   '@type': 'Organization';
+  '@id'?: string;
   name: string;
   url: string;
   logo?: string | ImageObject;
@@ -100,9 +112,9 @@ export interface OrganizationSchema extends SchemaBase {
 
 export interface LocalBusinessSchema extends SchemaBase {
   '@type': 'LocalBusiness' | 'ProfessionalService' | 'ITService';
+  '@id'?: string;
   name: string;
   url: string;
-  '@id'?: string;
   image?: string | string[];
   logo?: string | ImageObject;
   description?: string;
@@ -119,10 +131,11 @@ export interface LocalBusinessSchema extends SchemaBase {
 
 export interface WebSiteSchema extends SchemaBase {
   '@type': 'WebSite';
+  '@id'?: string;
   name: string;
   url: string;
   description?: string;
-  publisher?: OrganizationSchema | { '@type': 'Organization'; name: string };
+  publisher?: SchemaRef | OrganizationSchema | { '@type': 'Organization'; name: string };
   potentialAction?: SearchAction | SearchAction[];
 }
 
@@ -168,7 +181,10 @@ export interface ServiceSchema extends SchemaBase {
   name?: string;
   serviceType: string;
   description?: string;
-  provider?: OrganizationSchema | { '@type': 'Organization'; name: string; url?: string };
+  provider?:
+    | SchemaRef
+    | OrganizationSchema
+    | { '@type': 'Organization'; name: string; url?: string };
   areaServed?: string | string[];
   hasOfferCatalog?: OfferCatalog;
   offers?: Offer;
@@ -202,7 +218,7 @@ export interface SoftwareApplicationSchema extends SchemaBase {
   operatingSystem?: string;
   offers?: Offer;
   aggregateRating?: AggregateRating;
-  author?: OrganizationSchema | { '@type': 'Organization'; name: string };
+  author?: SchemaRef | OrganizationSchema | { '@type': 'Organization'; name: string; url?: string };
   url?: string;
 }
 

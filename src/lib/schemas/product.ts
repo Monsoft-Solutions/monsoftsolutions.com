@@ -4,7 +4,8 @@
  */
 
 import type { ProductSchema, SoftwareApplicationSchema, Offer } from './types';
-import { createOrganizationRef } from './organization';
+import { COMPANY } from './config';
+import { createOrganizationRefFull } from './organization';
 
 export interface ProductConfig {
   name: string;
@@ -106,7 +107,7 @@ export function createSoftwareApplicationSchema(config: SoftwareConfig): Softwar
     name: config.name,
     description: config.description,
     applicationCategory: config.applicationCategory,
-    author: createOrganizationRef('Monsoft Solutions', 'https://monsoftsolutions.com'),
+    author: createOrganizationRefFull(COMPANY.name, COMPANY.url),
   };
 
   // Add URL

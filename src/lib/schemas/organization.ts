@@ -4,6 +4,7 @@
  */
 
 import type { OrganizationSchema, PostalAddress, ContactPoint, ImageObject } from './types';
+import { COMPANY, SCHEMA_IDS } from './config';
 
 export interface OrganizationConfig {
   name?: string;
@@ -18,82 +19,70 @@ export interface OrganizationConfig {
   telephone?: string;
 }
 
-// Default organization data for Monsoft Solutions
-const defaults: Required<
-  Pick<OrganizationConfig, 'name' | 'url' | 'logo' | 'description' | 'address' | 'sameAs'>
-> = {
-  name: 'Monsoft Solutions',
-  url: 'https://monsoftsolutions.com',
-  logo: 'https://monsoftsolutions.com/logo.svg',
-  description:
-    'AI-first software company building intelligent solutions that transform how businesses operate.',
-  address: {
-    addressLocality: 'Miami',
-    addressRegion: 'FL',
-    addressCountry: 'US',
-  },
-  sameAs: [
-    'https://linkedin.com/company/monsoft-solutions',
-    'https://github.com/Monsoft-Solutions',
-  ],
-};
-
 /**
  * Creates an Organization schema with sensible defaults for Monsoft Solutions
  */
 export function createOrganizationSchema(config: OrganizationConfig = {}): OrganizationSchema {
-  const mergedConfig = { ...defaults, ...config };
-
   const schema: OrganizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: mergedConfig.name,
-    url: mergedConfig.url,
-    logo: mergedConfig.logo,
-    description: mergedConfig.description,
+    '@id': SCHEMA_IDS.organization,
+    name: config.name ?? COMPANY.name,
+    url: config.url ?? COMPANY.url,
+    logo: config.logo ?? COMPANY.logo,
+    description: config.description ?? COMPANY.description,
   };
 
-  // Add optional address
-  if (mergedConfig.address) {
+  // Add address
+  const address = config.address ?? COMPANY.address;
+  if (address) {
     schema.address = {
       '@type': 'PostalAddress',
-      ...mergedConfig.address,
+      ...address,
     };
   }
 
   // Add social profiles
-  if (mergedConfig.sameAs && mergedConfig.sameAs.length > 0) {
-    schema.sameAs = mergedConfig.sameAs;
+  const sameAs = config.sameAs ?? COMPANY.sameAs;
+  if (sameAs && sameAs.length > 0) {
+    schema.sameAs = [...sameAs];
   }
 
   // Add contact point if provided
-  if (mergedConfig.contactPoint) {
-    schema.contactPoint = mergedConfig.contactPoint;
+  if (config.contactPoint) {
+    schema.contactPoint = config.contactPoint;
   }
 
   // Add email if provided
-  if (mergedConfig.email) {
-    schema.email = mergedConfig.email;
+  if (config.email) {
+    schema.email = config.email;
   }
 
   // Add telephone if provided
-  if (mergedConfig.telephone) {
-    schema.telephone = mergedConfig.telephone;
+  if (config.telephone) {
+    schema.telephone = config.telephone;
   }
 
   // Add founding date if provided
-  if (mergedConfig.foundingDate) {
-    schema.foundingDate = mergedConfig.foundingDate;
+  if (config.foundingDate) {
+    schema.foundingDate = config.foundingDate;
   }
 
   return schema;
 }
 
 /**
- * Creates a minimal organization reference (for use within other schemas)
+ * Creates a minimal organization reference using @id (for linking within @graph)
  */
-export function createOrganizationRef(
-  name: string = defaults.name,
+export function createOrganizationRef(): { '@id': string } {
+  return { '@id': SCHEMA_IDS.organization };
+}
+
+/**
+ * Creates a full organization reference (for use outside @graph context)
+ */
+export function createOrganizationRefFull(
+  name: string = COMPANY.name,
   url?: string
 ): { '@type': 'Organization'; name: string; url?: string } {
   const ref: { '@type': 'Organization'; name: string; url?: string } = {
@@ -110,8 +99,8 @@ export function createOrganizationRef(
  * Creates a publisher object with logo (commonly used in Article schemas)
  */
 export function createPublisher(
-  name: string = defaults.name,
-  logoUrl: string = defaults.logo
+  name: string = COMPANY.name,
+  logoUrl: string = COMPANY.logo
 ): { '@type': 'Organization'; name: string; logo: ImageObject } {
   return {
     '@type': 'Organization',

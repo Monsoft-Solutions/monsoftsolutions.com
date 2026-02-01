@@ -4,6 +4,7 @@
  */
 
 import type { BreadcrumbListSchema, BreadcrumbItem } from './types';
+import { BASE_URL } from './config';
 
 export interface BreadcrumbConfig {
   items: {
@@ -12,8 +13,6 @@ export interface BreadcrumbConfig {
   }[];
   baseUrl?: string;
 }
-
-const BASE_URL = 'https://monsoftsolutions.com';
 
 /**
  * Creates a BreadcrumbList schema from an array of breadcrumb items

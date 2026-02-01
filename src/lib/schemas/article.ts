@@ -4,6 +4,7 @@
  */
 
 import type { ArticleSchema } from './types';
+import { COMPANY } from './config';
 import { createPublisher } from './organization';
 
 export interface ArticleConfig {
@@ -53,13 +54,13 @@ export function createArticleSchema(config: ArticleConfig): ArticleSchema {
   const authorType = config.authorType || 'Organization';
   schema.author = {
     '@type': authorType,
-    name: config.authorName || 'Monsoft Solutions',
+    name: config.authorName || COMPANY.name,
   };
 
   // Add publisher
   schema.publisher = createPublisher(
-    config.publisherName || 'Monsoft Solutions',
-    config.publisherLogo || 'https://monsoftsolutions.com/logo.svg'
+    config.publisherName || COMPANY.name,
+    config.publisherLogo || COMPANY.logo
   );
 
   // Add image

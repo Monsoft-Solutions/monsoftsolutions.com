@@ -4,51 +4,55 @@
  */
 
 import type { WebSiteSchema, SearchAction } from './types';
+import { COMPANY, SCHEMA_IDS } from './config';
 import { createOrganizationRef } from './organization';
 
 export interface WebSiteConfig {
   name?: string;
   url?: string;
   description?: string;
-  publisher?: { name: string; url?: string };
-  searchAction?: {
-    urlTemplate: string;
-    queryInput?: string;
-  };
+  /**
+   * Enable SearchAction for sitelinks search box in Google
+   * Set to false to disable, or provide custom config
+   */
+  searchAction?:
+    | boolean
+    | {
+        urlTemplate: string;
+        queryInput?: string;
+      };
 }
-
-// Default website data for Monsoft Solutions
-const defaults: Required<Pick<WebSiteConfig, 'name' | 'url' | 'description'>> = {
-  name: 'Monsoft Solutions',
-  url: 'https://monsoftsolutions.com',
-  description:
-    'AI-first software company building intelligent solutions for plastic surgery clinics and local businesses. Custom development, business automation, and AI-powered products.',
-};
 
 /**
  * Creates a WebSite schema with optional SearchAction
+ * SearchAction is enabled by default (points to /blog search)
  */
 export function createWebSiteSchema(config: WebSiteConfig = {}): WebSiteSchema {
-  const mergedConfig = { ...defaults, ...config };
+  const url = config.url ?? COMPANY.url;
 
   const schema: WebSiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: mergedConfig.name,
-    url: mergedConfig.url,
-    description: mergedConfig.description,
-    publisher: createOrganizationRef(
-      mergedConfig.publisher?.name || defaults.name,
-      mergedConfig.publisher?.url || defaults.url
-    ),
+    '@id': SCHEMA_IDS.website,
+    name: config.name ?? COMPANY.name,
+    url: url,
+    description: config.description ?? COMPANY.description,
+    publisher: createOrganizationRef(),
   };
 
-  // Add search action if provided
-  if (mergedConfig.searchAction) {
-    schema.potentialAction = createSearchAction(
-      mergedConfig.searchAction.urlTemplate,
-      mergedConfig.searchAction.queryInput
-    );
+  // Add search action (enabled by default)
+  const searchAction = config.searchAction ?? true;
+  if (searchAction !== false) {
+    if (searchAction === true) {
+      // Default search action pointing to blog
+      schema.potentialAction = createSearchAction(`${url}/blog?q={search_term_string}`);
+    } else {
+      // Custom search action
+      schema.potentialAction = createSearchAction(
+        searchAction.urlTemplate,
+        searchAction.queryInput
+      );
+    }
   }
 
   return schema;
@@ -74,15 +78,13 @@ export function createSearchAction(
 
 /**
  * Creates a WebSite schema with blog search capability
+ * @deprecated Use createWebSiteSchema() which now includes search by default
  */
-export function createWebSiteWithBlogSearch(
-  baseUrl: string = 'https://monsoftsolutions.com'
-): WebSiteSchema {
+export function createWebSiteWithBlogSearch(baseUrl: string = COMPANY.url): WebSiteSchema {
   return createWebSiteSchema({
     url: baseUrl,
     searchAction: {
       urlTemplate: `${baseUrl}/blog?q={search_term_string}`,
-      queryInput: 'required name=search_term_string',
     },
   });
 }

@@ -10,6 +10,7 @@ import type {
   OpeningHoursSpecification,
   AggregateRating,
 } from './types';
+import { COMPANY, SCHEMA_IDS } from './config';
 
 export interface LocalBusinessConfig {
   name?: string;
@@ -29,102 +30,66 @@ export interface LocalBusinessConfig {
   areaServed?: string | string[];
 }
 
-// Default local business data for Monsoft Solutions
-const defaults: Required<
-  Pick<
-    LocalBusinessConfig,
-    'name' | 'url' | 'type' | 'description' | 'logo' | 'address' | 'sameAs' | 'email' | 'areaServed'
-  >
-> = {
-  name: 'Monsoft Solutions',
-  url: 'https://monsoftsolutions.com',
-  type: 'ProfessionalService',
-  description:
-    'AI-first software company specializing in business automation, custom software development, and AI solutions for plastic surgery clinics and local businesses.',
-  logo: 'https://monsoftsolutions.com/logo.svg',
-  email: 'hello@monsoftsolutions.com',
-  address: {
-    addressLocality: 'Miami',
-    addressRegion: 'FL',
-    addressCountry: 'US',
-  },
-  sameAs: [
-    'https://linkedin.com/company/monsoft-solutions',
-    'https://github.com/Monsoft-Solutions',
-  ],
-  areaServed: ['United States', 'Worldwide'],
-};
-
 /**
  * Creates a LocalBusiness schema with sensible defaults for Monsoft Solutions
  */
 export function createLocalBusinessSchema(config: LocalBusinessConfig = {}): LocalBusinessSchema {
-  const mergedConfig = { ...defaults, ...config };
-
   const schema: LocalBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': mergedConfig.type,
-    '@id': `${mergedConfig.url}/#localbusiness`,
-    name: mergedConfig.name,
-    url: mergedConfig.url,
-    description: mergedConfig.description,
+    '@type': config.type ?? 'ProfessionalService',
+    '@id': SCHEMA_IDS.localBusiness,
+    name: config.name ?? COMPANY.name,
+    url: config.url ?? COMPANY.url,
+    description: config.description ?? COMPANY.description,
+    logo: config.logo ?? COMPANY.logo,
+    image: config.image ?? COMPANY.image,
+    email: config.email ?? COMPANY.email,
   };
 
-  // Add logo
-  if (mergedConfig.logo) {
-    schema.logo = mergedConfig.logo;
-  }
-
-  // Add image(s)
-  if (mergedConfig.image) {
-    schema.image = mergedConfig.image;
-  }
-
   // Add address
-  if (mergedConfig.address) {
+  const address = config.address ?? COMPANY.address;
+  if (address) {
     schema.address = {
       '@type': 'PostalAddress',
-      ...mergedConfig.address,
+      ...address,
     };
   }
 
-  // Add geo coordinates
-  if (mergedConfig.geo) {
-    schema.geo = mergedConfig.geo;
+  // Add geo coordinates if provided
+  if (config.geo) {
+    schema.geo = config.geo;
   }
 
-  // Add contact info
-  if (mergedConfig.telephone) {
-    schema.telephone = mergedConfig.telephone;
+  // Add telephone if provided
+  if (config.telephone) {
+    schema.telephone = config.telephone;
   }
 
-  if (mergedConfig.email) {
-    schema.email = mergedConfig.email;
+  // Add price range if provided
+  if (config.priceRange) {
+    schema.priceRange = config.priceRange;
   }
 
-  // Add price range
-  if (mergedConfig.priceRange) {
-    schema.priceRange = mergedConfig.priceRange;
-  }
-
-  // Add opening hours
-  if (mergedConfig.openingHours && mergedConfig.openingHours.length > 0) {
-    schema.openingHoursSpecification = mergedConfig.openingHours;
+  // Add opening hours if provided
+  if (config.openingHours && config.openingHours.length > 0) {
+    schema.openingHoursSpecification = config.openingHours;
   }
 
   // Add social profiles
-  if (mergedConfig.sameAs && mergedConfig.sameAs.length > 0) {
-    schema.sameAs = mergedConfig.sameAs;
+  const sameAs = config.sameAs ?? COMPANY.sameAs;
+  if (sameAs && sameAs.length > 0) {
+    schema.sameAs = [...sameAs];
   }
 
-  // Add aggregate rating
-  if (mergedConfig.aggregateRating) {
-    schema.aggregateRating = mergedConfig.aggregateRating;
+  // Add aggregate rating if provided
+  if (config.aggregateRating) {
+    schema.aggregateRating = config.aggregateRating;
   }
 
   // Add area served
-  if (mergedConfig.areaServed) {
-    schema.areaServed = mergedConfig.areaServed;
+  const areaServed = config.areaServed ?? [...COMPANY.areaServed];
+  if (areaServed) {
+    schema.areaServed = Array.isArray(areaServed) ? areaServed : areaServed;
   }
 
   return schema;

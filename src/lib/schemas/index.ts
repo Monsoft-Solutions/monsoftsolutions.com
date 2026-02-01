@@ -14,9 +14,13 @@
  * });
  */
 
+// Config - single source of truth for company data
+export { COMPANY, SCHEMA_IDS, BASE_URL } from './config';
+
 // Types
 export type {
   SchemaBase,
+  SchemaRef,
   OrganizationSchema,
   LocalBusinessSchema,
   WebSiteSchema,
@@ -42,6 +46,7 @@ export type {
 export {
   createOrganizationSchema,
   createOrganizationRef,
+  createOrganizationRefFull,
   createPublisher,
   type OrganizationConfig,
 } from './organization';
