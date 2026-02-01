@@ -3,6 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTA from '../components/CTA.astro';
+import {
+  createSoftwareApplicationSchema,
+  createBreadcrumbSchema,
+  breadcrumbPaths,
+} from '../lib/schemas';
 
 const products = [
   {
@@ -78,11 +83,46 @@ const products = [
     color: '#8b5cf6',
   },
 ];
+
+// Products page structured data
+const adfluensSchema = createSoftwareApplicationSchema({
+  name: 'Adfluens',
+  description:
+    'The all-in-one platform for social media management. AI content generation, GMB optimization, Meta integration, and smart analytics.',
+  applicationCategory: 'SocialNetworkingApplication',
+  url: 'https://adfluens.io',
+  operatingSystem: 'Web',
+  offers: { price: 0, priceCurrency: 'USD' },
+  rating: { value: 4.9, reviewCount: 2500 },
+});
+
+const praxisNotesSchema = createSoftwareApplicationSchema({
+  name: 'Praxis Notes',
+  description:
+    'Generate detailed, insurance-ready ABA session notes with AI. Built for BCBAs and RBTs to save 75% of documentation time.',
+  applicationCategory: 'HealthApplication',
+  url: 'https://praxisnotes.com',
+  operatingSystem: 'Web',
+  offers: { price: 0, priceCurrency: 'USD' },
+});
+
+const loquentSchema = createSoftwareApplicationSchema({
+  name: 'Loquent',
+  description:
+    'Next-generation conversational AI for businesses. Realtime AI agents for phone calls, plus unified messaging across SMS, WhatsApp, Instagram DM, and Facebook Messenger.',
+  applicationCategory: 'CommunicationApplication',
+  operatingSystem: 'Web',
+});
+
+const breadcrumbSchema = createBreadcrumbSchema(breadcrumbPaths.simple('Products'));
+
+const structuredData = [adfluensSchema, praxisNotesSchema, loquentSchema, breadcrumbSchema];
 ---
 
 <Layout
   title="Products"
   description="AI-powered software products built by Monsoft Solutions. Adfluens for social media, Praxis Notes for ABA professionals, and Loquent for business communication."
+  structuredData={structuredData}
 >
   <Header />
   <main>
