@@ -3,6 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTA from '../components/CTA.astro';
+import { createLocalBusinessSchema, createBreadcrumbSchema, breadcrumbPaths } from '../lib/schemas';
+
+// About page structured data
+const localBusinessSchema = createLocalBusinessSchema({
+  type: 'ProfessionalService',
+  description:
+    'AI-first software company based in Miami. We build intelligent systems that transform how businesses operate—from AI-powered SaaS products to custom enterprise solutions.',
+});
+
+const breadcrumbSchema = createBreadcrumbSchema(breadcrumbPaths.simple('About Us'));
+
+const structuredData = [localBusinessSchema, breadcrumbSchema];
 
 interface TeamMember {
   name: string;
@@ -61,6 +73,7 @@ const values = [
 <Layout
   title="About Us"
   description="Meet the team behind Monsoft Solutions. We're an AI-first software company building intelligent solutions that transform how businesses operate."
+  structuredData={structuredData}
 >
   <Header />
   <main>
