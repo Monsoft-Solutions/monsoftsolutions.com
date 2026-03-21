@@ -2,9 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { createLocalBusinessSchema, createBreadcrumbSchema, breadcrumbPaths } from '../lib/schemas';
 
 // Webhook URL from environment variable (PUBLIC_ prefix makes it client-accessible)
 const webhookUrl = import.meta.env.PUBLIC_N8N_WEBHOOK_URL;
+
+// Contact page structured data
+const localBusinessSchema = createLocalBusinessSchema({
+  type: 'ProfessionalService',
+  email: 'hello@monsoftsolutions.com',
+  description:
+    'Get in touch with Monsoft Solutions. We build AI-powered software solutions for plastic surgery clinics and local businesses.',
+});
+
+const breadcrumbSchema = createBreadcrumbSchema(breadcrumbPaths.simple('Contact'));
+
+const structuredData = [localBusinessSchema, breadcrumbSchema];
 
 const contactMethods = [
   {
@@ -42,6 +55,7 @@ const projectTypes = [
 <Layout
   title="Contact"
   description="Get in touch with Monsoft Solutions. Let's discuss how AI-powered software can transform your business."
+  structuredData={structuredData}
 >
   <Header />
   <main>
