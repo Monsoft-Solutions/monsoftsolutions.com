@@ -2,6 +2,12 @@
 import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import {
+  createBlogPostingSchema,
+  createBreadcrumbSchema,
+  breadcrumbPaths,
+  extractKeywords,
+} from '../lib/schemas';
 
 interface Props {
   title: string;
@@ -44,38 +50,26 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString('en-US', {
 });
 
 // Article structured data for SEO
-const articleStructuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
+const articleSchema = createBlogPostingSchema({
   headline: title,
   description: description,
-  author: {
-    '@type': 'Organization',
-    name: author,
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'Monsoft Solutions',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://monsoftsolutions.com/logo.svg',
-    },
-  },
-  datePublished: pubDate.toISOString(),
-  dateModified: (updatedDate || pubDate).toISOString(),
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': Astro.url.href,
-  },
-};
+  url: Astro.url.href,
+  datePublished: pubDate,
+  dateModified: updatedDate || pubDate,
+  authorName: author,
+  authorType: 'Organization',
+  image: heroImage,
+  articleSection: category,
+  keywords: extractKeywords(tags),
+});
+
+// Breadcrumb for blog post
+const breadcrumbSchema = createBreadcrumbSchema(breadcrumbPaths.blogPost(title));
+
+const structuredData = [articleSchema, breadcrumbSchema];
 ---
 
-<Layout
-  title={title}
-  description={description}
-  ogImage={ogImage}
-  structuredData={articleStructuredData}
->
+<Layout title={title} description={description} ogImage={ogImage} structuredData={structuredData}>
   <Header />
 
   <main class="blog-post">
