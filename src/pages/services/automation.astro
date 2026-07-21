@@ -4,24 +4,48 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import CTA from '../../components/CTA.astro';
 import StickyCTA from '../../components/StickyCTA.astro';
+import {
+  serviceSchemas,
+  createFAQSchema,
+  createBreadcrumbSchema,
+  breadcrumbPaths,
+} from '../../lib/schemas';
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  serviceType: 'Business Process Automation',
-  provider: {
-    '@type': 'Organization',
-    name: 'Monsoft Solutions',
-    url: 'https://monsoftsolutions.com',
+// FAQ items for this service page
+const faqItems = [
+  {
+    question: 'How long does it take to implement automation?',
+    answer:
+      'Simple automations can be live in days. Complex, multi-system workflows typically take 2-6 weeks. We prioritize quick wins while building toward bigger transformations.',
   },
-  areaServed: 'Worldwide',
-  description:
-    'Custom automation workflows that eliminate manual work, reduce errors, and scale your operations without adding headcount.',
-  offers: {
-    '@type': 'Offer',
-    availability: 'https://schema.org/InStock',
+  {
+    question: 'What if something goes wrong?',
+    answer:
+      'Every automation we build includes error handling, logging, and alerting. When issues occur, you know immediately—and most are self-healing. We also provide ongoing support and monitoring.',
   },
-};
+  {
+    question: 'Can you integrate with our existing systems?',
+    answer:
+      "Almost certainly yes. We've integrated with hundreds of tools—from modern SaaS to legacy on-premise systems. If it has an API (or even just email), we can connect it.",
+  },
+  {
+    question: 'Will this replace our team?',
+    answer:
+      'No—it frees them. Automation handles the tedious work so your people can focus on judgment, creativity, and relationship-building. The goal is leverage, not replacement.',
+  },
+  {
+    question: "What's the ROI on automation?",
+    answer:
+      'Most clients see full payback within 3-6 months. Beyond direct time savings, you get fewer errors, faster response times, happier customers, and a team that can focus on growth instead of busywork.',
+  },
+];
+
+// Service page structured data
+const serviceSchema = serviceSchemas.automation();
+const faqSchema = createFAQSchema(faqItems);
+const breadcrumbSchema = createBreadcrumbSchema(breadcrumbPaths.service('Business Automation'));
+
+const structuredData = [serviceSchema, faqSchema, breadcrumbSchema];
 
 const features = [
   {
