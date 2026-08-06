@@ -3,13 +3,15 @@ import '../styles/global.css';
 import ProgressBar from '../components/ProgressBar.astro';
 import BackToTop from '../components/BackToTop.astro';
 import Analytics from '../components/Analytics.astro';
+import { createOrganizationSchema, createSchemaGraph } from '../lib/schemas';
 
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
-  structuredData?: object;
+  structuredData?: object | object[];
   showProgress?: boolean;
+  includeOrgSchema?: boolean;
 }
 
 const {
@@ -18,9 +20,45 @@ const {
   ogImage = '/og-image.jpg',
   structuredData,
   showProgress = true,
+  includeOrgSchema = true,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Build the final schema - use graph pattern for multiple schemas
+const baseOrgSchema = createOrganizationSchema();
+
+function buildFinalSchema() {
+  if (!structuredData && !includeOrgSchema) {
+    return null;
+  }
+
+  const schemas: object[] = [];
+
+  // Add base organization schema if enabled
+  if (includeOrgSchema) {
+    schemas.push(baseOrgSchema);
+  }
+
+  // Add page-specific schema(s)
+  if (structuredData) {
+    if (Array.isArray(structuredData)) {
+      schemas.push(...structuredData);
+    } else {
+      schemas.push(structuredData);
+    }
+  }
+
+  // If only one schema, return it directly (no graph needed)
+  if (schemas.length === 1) {
+    return schemas[0];
+  }
+
+  // Multiple schemas - use @graph pattern
+  return createSchemaGraph(...schemas);
+}
+
+const finalSchema = buildFinalSchema();
 ---
 
 <!doctype html>
@@ -67,30 +105,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     />
 
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Monsoft Solutions",
-        "url": "https://monsoftsolutions.com",
-        "logo": "https://monsoftsolutions.com/logo.svg",
-        "description": "AI-first software company building intelligent solutions that transform how businesses operate.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Miami",
-          "addressRegion": "FL",
-          "addressCountry": "US"
-        },
-        "sameAs": [
-          "https://linkedin.com/company/monsoft-solutions",
-          "https://github.com/Monsoft-Solutions"
-        ]
-      }
-    </script>
-
     {
-      structuredData && (
-        <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
+      finalSchema && (
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(finalSchema)} />
       )
     }
 

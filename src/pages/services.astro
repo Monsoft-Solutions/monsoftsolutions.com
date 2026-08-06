@@ -4,8 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTA from '../components/CTA.astro';
 import StickyCTA from '../components/StickyCTA.astro';
+import { createBreadcrumbSchema, breadcrumbPaths } from '../lib/schemas';
 
-const structuredData = {
+// ItemList schema for services
+const itemListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Monsoft Solutions Services',
@@ -44,6 +46,10 @@ const structuredData = {
     },
   ],
 };
+
+const breadcrumbSchema = createBreadcrumbSchema(breadcrumbPaths.simple('Services'));
+
+const structuredData = [itemListSchema, breadcrumbSchema];
 
 const services = [
   {
